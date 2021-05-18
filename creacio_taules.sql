@@ -1,57 +1,87 @@
 create table unitat(
-	number(7) codi,
-	varchar2(40) nom
+	 codi integer (7),
+	 nom varchar(40),
+     PRIMARY KEY (codi)
 );
 
 create table categoria(
-	number (7) codi,
-	varchar2 (40) nom,
-	number(8)color
+	codi integer (7),
+	nom varchar (40),
+	color integer (8),
+    PRIMARY KEY (codi)
 );
 create table plat(
-	number(7) codi,
-	varchar2(40) nom,
-	varchar2(100) descripcioMD,
-	number(3,2) preu,
-	blob foto,
-	boolean disponible,
-	number(7) categoria FOREIGN KEY REFERENCES Categoria(codi)
+	codi integer(7),
+	nom varchar(40),
+	descripcioMD varchar(100),
+	preu float,
+	foto blob,
+	disponible boolean,
+	categoria integer(7),
+    
+    PRIMARY KEY (codi),
+    CONSTRAINT FK_Plat_Categoria FOREIGN KEY (categoria)
+    REFERENCES Categoria(codi)
+    
+    
+    
 	
 );
 create table Ingredient(
-	number (7) codi,
-	varchar2 (40) nom
+	codi integer (7),
+	nom varchar (40),
+    PRIMARY KEY (codi)
 );
 create table Linea_Escandall(
-	number (7) plat foreign key references Plat(codi),
-	number (7) num,
-	number (3) quantitat,
-	number (7) unitat foreign key references Unitat (codi),
-	number (7) ingredient foreign key references Ingredient (codi),
+	plat integer (7),
+	num integer (7),
+	quantitat integer (3),
+	unitat integer (7),
+	ingredient integer (7),
+    PRIMARY KEY (plat,num),
+    CONSTRAINT FK_Escandall_Plat FOREIGN KEY (plat)
+    REFERENCES Plat(codi),
+    CONSTRAINT FK_Escandall_Unitat FOREIGN KEY (unitat)
+    REFERENCES unitat(codi),
+    CONSTRAINT FK_Escandall_Ingredient FOREIGN KEY (ingredient)
+    REFERENCES Ingredient(codi)
 );
 create table Cambrer(
-	number (7) codi,
-	varchar2 (40) nom,
-	varchar2 (40) cognom1,
-	varchar2 (40) cognom2,
-	varchar2 (40) user,
-	varchar2 (40) password,
+	codi integer (7),
+	nom varchar (40),
+	cognom1 varchar (40),
+	cognom2 varchar (40),
+	user varchar (40),
+	password varchar (40),
+    PRIMARY KEY (codi)
 );
 create table Taula(
-	number (3) numero
+	numero integer (3),
+    PRIMARY KEY (numero)
 );
 create table comanda(
-	number (7) codi,
-	date data,
-	number(3) taula foreign key references Taula(numero),
-	number (7) cambrer foreign key references Cambrer (codi)
+	codi integer (7),
+	data date,
+	taula integer(3),
+	cambrer integer (7),
+    PRIMARY KEY (codi),
+    CONSTRAINT FK_Comanda_Taula FOREIGN KEY (taula)
+    REFERENCES Taula(numero),
+    CONSTRAINT FK_Comanda_Cambrer FOREIGN KEY (cambrer)
+    REFERENCES Cambrer(codi)
 );
 create table Estat_Linia(
-	number (1) estat
+	estat integer (1),
+    PRIMARY KEY (estat)
 );
 create table Linea_Comanda(
-	number (3) num,
-	number (3) quantitat,
-	number (7) item foreign key references Plat(codi),
-	number (1) estat foreign key references Estat_Linia(estat)
+	num integer (3),
+	quantitat integer (3),
+	item integer (7),
+	estat integer (1),
+    PRIMARY KEY (item,num),
+    CONSTRAINT FK_Lin_Com_Plat FOREIGN KEY (item)
+    REFERENCES Plat(codi),
+    CONSTRAINT FK_Lin_Com_Estat_Linia FOREIGN KEY (estat)
+    REFERENCES Estat_Linia(estat)
 );
