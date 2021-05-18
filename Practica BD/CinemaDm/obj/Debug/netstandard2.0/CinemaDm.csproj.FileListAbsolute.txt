@@ -1,0 +1,29 @@
+E:\GS\DAM - 2\Desenvolupament d'Interfícies\Practica BD\CinemaDm\bin\Debug\netstandard2.0\CinemaDm.deps.json
+E:\GS\DAM - 2\Desenvolupament d'Interfícies\Practica BD\CinemaDm\bin\Debug\netstandard2.0\CinemaDm.dll
+E:\GS\DAM - 2\Desenvolupament d'Interfícies\Practica BD\CinemaDm\obj\Debug\netstandard2.0\CinemaDm.csproj.CoreCompileInputs.cache
+E:\GS\DAM - 2\Desenvolupament d'Interfícies\Practica BD\CinemaDm\obj\Debug\netstandard2.0\CinemaDm.AssemblyInfoInputs.cache
+E:\GS\DAM - 2\Desenvolupament d'Interfícies\Practica BD\CinemaDm\obj\Debug\netstandard2.0\CinemaDm.AssemblyInfo.cs
+E:\GS\DAM - 2\Desenvolupament d'Interfícies\Practica BD\CinemaDm\bin\Debug\netstandard2.0\CinemaDm.pdb
+E:\GS\DAM - 2\Desenvolupament d'Interfícies\Practica BD\CinemaDm\obj\Debug\netstandard2.0\CinemaDm.csproj.Fody.CopyLocal.cache
+E:\GS\DAM - 2\Desenvolupament d'Interfícies\Practica BD\CinemaDm\obj\Debug\netstandard2.0\CinemaDm.dll
+E:\GS\DAM - 2\Desenvolupament d'Interfícies\Practica BD\CinemaDm\obj\Debug\netstandard2.0\CinemaDm.pdb
+E:\GS\DAM - 2\Desenvolupament d'Interfícies\Practica BD\CinemaDm\obj\Debug\netstandard2.0\CinemaDm.csprojAssemblyReference.cache
+E:\GGSS\GS\DAM - 2.1\Projecte\Practica BD\CinemaDm\bin\Debug\netstandard2.0\CinemaDm.deps.json
+E:\GGSS\GS\DAM - 2.1\Projecte\Practica BD\CinemaDm\bin\Debug\netstandard2.0\CinemaDm.dll
+E:\GGSS\GS\DAM - 2.1\Projecte\Practica BD\CinemaDm\bin\Debug\netstandard2.0\CinemaDm.pdb
+E:\GGSS\GS\DAM - 2.1\Projecte\Practica BD\CinemaDm\obj\Debug\netstandard2.0\CinemaDm.csproj.CoreCompileInputs.cache
+E:\GGSS\GS\DAM - 2.1\Projecte\Practica BD\CinemaDm\obj\Debug\netstandard2.0\CinemaDm.AssemblyInfoInputs.cache
+E:\GGSS\GS\DAM - 2.1\Projecte\Practica BD\CinemaDm\obj\Debug\netstandard2.0\CinemaDm.AssemblyInfo.cs
+E:\GGSS\GS\DAM - 2.1\Projecte\Practica BD\CinemaDm\obj\Debug\netstandard2.0\CinemaDm.csproj.Fody.CopyLocal.cache
+E:\GGSS\GS\DAM - 2.1\Projecte\Practica BD\CinemaDm\obj\Debug\netstandard2.0\CinemaDm.dll
+E:\GGSS\GS\DAM - 2.1\Projecte\Practica BD\CinemaDm\obj\Debug\netstandard2.0\CinemaDm.pdb
+E:\GGSS\GS\DAM - 2.1\Projecte\Practica BD\CinemaDm\obj\Debug\netstandard2.0\CinemaDm.csprojAssemblyReference.cache
+E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\CinemaDm\bin\Debug\netstandard2.0\CinemaDm.deps.json
+E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\CinemaDm\bin\Debug\netstandard2.0\CinemaDm.dll
+E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\CinemaDm\bin\Debug\netstandard2.0\CinemaDm.pdb
+E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\CinemaDm\obj\Debug\netstandard2.0\CinemaDm.csproj.CoreCompileInputs.cache
+E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\CinemaDm\obj\Debug\netstandard2.0\CinemaDm.AssemblyInfoInputs.cache
+E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\CinemaDm\obj\Debug\netstandard2.0\CinemaDm.AssemblyInfo.cs
+E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\CinemaDm\obj\Debug\netstandard2.0\CinemaDm.csproj.Fody.CopyLocal.cache
+E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\CinemaDm\obj\Debug\netstandard2.0\CinemaDm.dll
+E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\CinemaDm\obj\Debug\netstandard2.0\CinemaDm.pdb

@@ -1,0 +1,30 @@
+﻿<UserControl x:ConnectionId='1'
+    x:Class="_9_Cinema_UserControl.View.UIDetall"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:_9_Cinema_UserControl.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="400"
+    x:Name="ucDetall"
+    >
+
+    <Grid x:ConnectionId='2' x:Name="grdDetall">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="Cadira"></TextBlock>
+        <TextBlock Grid.Row="0" Grid.Column="1" Text="Preu"></TextBlock>
+
+        <TextBlock x:ConnectionId='3' x:Name="txbCadira" Grid.Row="1" Grid.Column="0" ></TextBlock>
+        <TextBlock x:ConnectionId='4' x:Name="txbPreu" Grid.Row="1" Grid.Column="1" ></TextBlock>
+    </Grid>
+</UserControl>
+
