@@ -4,7 +4,7 @@ using System.Data;
 using System.Data.Common;
 using System.IO;
 
-namespace CinemaDm
+namespace GestioRestaurantDm
 {
     public class DBUtils
     {

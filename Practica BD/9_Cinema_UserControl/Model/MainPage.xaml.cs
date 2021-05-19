@@ -1,6 +1,6 @@
-﻿using _9_Cinema_UserControl.View;
-using CinemaDm;
-using CinemaDM;
+﻿
+using GestioRestaurant;
+using GestioRestaurantDm;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -68,53 +68,53 @@ namespace _9_Cinema_UserControl
 
         int i = 0;
         int j = 0;
-        List<UITotal> uitList = new List<UITotal>();
+        //List<UITotal> uitList = new List<UITotal>();
 
-        private void Uicad_CadiraSelectionChanged(object sender, EventArgs e)
-        {
-            UICadira c = (UICadira)sender;
+        //private void Uicad_CadiraSelectionChanged(object sender, EventArgs e)
+        //{
+        //    UICadira c = (UICadira)sender;
 
 
-                UITotal uit = new UITotal();
+        //        UITotal uit = new UITotal();
             
-            if (c.LaCadira.Estat == EnumEstat.SELECCIONADA)
-            {
-                Canvas.SetLeft(uit, 600);
-                Canvas.SetTop(uit, 100 + i * 30);
-                i = i + 1;
+        //    if (c.LaCadira.Estat == EnumEstat.SELECCIONADA)
+        //    {
+        //        Canvas.SetLeft(uit, 600);
+        //        Canvas.SetTop(uit, 100 + i * 30);
+        //        i = i + 1;
 
-                uit.id = c.LaCadira.Id.ToString();
-               // uit.preu = c.LaCadira.Cat.Preu.ToString() + "€";
-                //total = total + c.LaCadira.Cat.Preu;
+        //        uit.id = c.LaCadira.Id.ToString();
+        //       // uit.preu = c.LaCadira.Cat.Preu.ToString() + "€";
+        //        //total = total + c.LaCadira.Cat.Preu;
 
-                uitList.Add(uit);
-            }
-            else
-            {
-                foreach(UITotal u in uitList)
-                {
-                    if(u.id == c.LaCadira.Id.ToString())
-                    {
+        //        uitList.Add(uit);
+        //    }
+        //    else
+        //    {
+        //        foreach(UITotal u in uitList)
+        //        {
+        //            if(u.id == c.LaCadira.Id.ToString())
+        //            {
                        
-                        if (uitList.Count ==1) j = 0;
-                        break;
-                    }
-                    j++;
+        //                if (uitList.Count ==1) j = 0;
+        //                break;
+        //            }
+        //            j++;
              
-                }
-                uitList.RemoveAt(j);
-                j = 0;
-                //total = total - c.LaCadira.Cat.Preu;
-            }
-            i = 0;
-            cnvTotal.Children.Clear();
+        //        }
+        //        uitList.RemoveAt(j);
+        //        j = 0;
+        //        //total = total - c.LaCadira.Cat.Preu;
+        //    }
+        //    i = 0;
+        //    cnvTotal.Children.Clear();
             
-           foreach(UITotal ui in uitList)
-           {
+        //   foreach(UITotal ui in uitList)
+        //   {
 
-                cnvTotal.Children.Add(uitList[i]);
-                i++;
-           }
+        //        cnvTotal.Children.Add(uitList[i]);
+        //        i++;
+        //   }
 
 
 
@@ -122,10 +122,10 @@ namespace _9_Cinema_UserControl
             
             
 
-            //txbTotal.Text = total+" €";
+        //    //txbTotal.Text = total+" €";
 
            
-        }
+        //}
 
         private void BtnSave_Click(object sender, RoutedEventArgs e)
         {

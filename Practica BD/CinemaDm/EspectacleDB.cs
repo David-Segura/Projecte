@@ -7,7 +7,7 @@ using System.Data;
 using System.Data.Common;
 using System.Text;
 
-namespace CinemaDm
+namespace GestioRestaurantDm
 {
     public class EspectacleDB
     {
@@ -21,7 +21,7 @@ namespace CinemaDm
             try
             {
 
-                using (CinemaDBContext context = new CinemaDBContext())
+                using (RestaurantDBContext context = new RestaurantDBContext())
                 {
                     using (var connexio = context.Database.GetDbConnection())
                     {
@@ -71,7 +71,7 @@ namespace CinemaDm
             try
             {
 
-                using (CinemaDBContext context = new CinemaDBContext())
+                using (RestaurantDBContext context = new RestaurantDBContext())
                 {
                     using (var connexio = context.Database.GetDbConnection())
                     {
@@ -118,7 +118,7 @@ namespace CinemaDm
         {
             try
             {
-                using (CinemaDBContext context = new CinemaDBContext())
+                using (RestaurantDBContext context = new RestaurantDBContext())
                 {
                     using (var connexio = context.Database.GetDbConnection())
                     {
@@ -212,7 +212,7 @@ namespace CinemaDm
            
             try
             {
-                using (CinemaDBContext context = new CinemaDBContext())
+                using (RestaurantDBContext context = new RestaurantDBContext())
                 {
                     using (var connexio = context.Database.GetDbConnection())
                     {

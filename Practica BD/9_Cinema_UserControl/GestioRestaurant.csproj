@@ -7,8 +7,8 @@
     <ProjectGuid>{C79C2F9F-89A9-42B8-9F3A-AE2FD115E4FC}</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>_9_Cinema_UserControl</RootNamespace>
-    <AssemblyName>9_Cinema_UserControl</AssemblyName>
+    <RootNamespace>GestioRestaurant</RootNamespace>
+    <AssemblyName>GestioRestaurant</AssemblyName>
     <DefaultLanguage>es-ES</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.17134.0</TargetPlatformVersion>
@@ -101,32 +101,8 @@
     <Compile Include="Manteniment.xaml.cs">
       <DependentUpon>Manteniment.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Model\MainPage.xaml.cs">
-      <DependentUpon>MainPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="View\IsNullToBooleanConverter.cs" />
-    <Compile Include="View\UICadira.xaml.cs">
-      <DependentUpon>UICadira.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\UIDescripcioFuncio.xaml.cs">
-      <DependentUpon>UIDescripcioFuncio.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\UIDetall.xaml.cs">
-      <DependentUpon>UIDetall.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\UIItems.xaml.cs">
-      <DependentUpon>UIItems.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\UILlegenda.xaml.cs">
-      <DependentUpon>UILlegenda.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\UIManteniment.xaml.cs">
-      <DependentUpon>UIManteniment.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\UITotal.xaml.cs">
-      <DependentUpon>UITotal.xaml</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -154,38 +130,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Manteniment.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Model\MainPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="View\UICadira.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\UIDescripcioFuncio.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\UIDetall.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\UIItems.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\UILlegenda.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\UIManteniment.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\UITotal.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

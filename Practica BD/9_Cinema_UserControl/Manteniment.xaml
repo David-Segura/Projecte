@@ -29,7 +29,7 @@
             <RowDefinition Height="auto" ></RowDefinition>
             <RowDefinition Height="auto" ></RowDefinition>
         </Grid.RowDefinitions>
-        <Button Grid.Row="0" Grid.Column="0" Content="⏪ Torna a la pàgina principal" Click="BtnPagina_Click"></Button>
+        <Button Grid.Row="0" Grid.Column="0" Content="⏪ Torna a la pàgina principal" ></Button>
         <StackPanel Orientation="Vertical" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" >
                 <TextBlock Text="Nom o Descripció" Padding="20,0,10,0"></TextBlock>
@@ -43,7 +43,7 @@
         </StackPanel>
         <controls:DataGrid Grid.Row="1" Grid.Column="0" Margin="10" x:Name="dtgEspectacles" MinHeight="500" MaxHeight="800" SelectionChanged="DtgEspectacles_SelectionChanged"  VerticalScrollBarVisibility="Auto"/>
 
-        <view:UIManteniment Grid.Row="2" Grid.Column="1" x:Name="uiManteniment"></view:UIManteniment>
+        
 
         <StackPanel Grid.Column="1" Grid.Row="3" Orientation="Horizontal" >
 

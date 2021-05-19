@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
 
-namespace CinemaDm
+namespace GestioRestaurantDm
 {
     public class CadiraDB
     {
@@ -15,7 +15,7 @@ namespace CinemaDm
             try
             {
 
-                using (CinemaDBContext context = new CinemaDBContext())
+                using (RestaurantDBContext context = new RestaurantDBContext())
                 {
                     using (var connexio = context.Database.GetDbConnection())
                     {
@@ -58,7 +58,7 @@ namespace CinemaDm
             try
             {
 
-                using (CinemaDBContext context = new CinemaDBContext())
+                using (RestaurantDBContext context = new RestaurantDBContext())
                 {
                     using (var connexio = context.Database.GetDbConnection())
                     {

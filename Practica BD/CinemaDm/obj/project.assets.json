@@ -5891,9 +5891,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\GGSS\\GS\\DAM - 2.1\\Projecte\\Projecte\\Projecte\\Practica BD\\CinemaDm\\CinemaDm.csproj",
-      "projectName": "CinemaDm",
-      "projectPath": "E:\\GGSS\\GS\\DAM - 2.1\\Projecte\\Projecte\\Projecte\\Practica BD\\CinemaDm\\CinemaDm.csproj",
+      "projectUniqueName": "E:\\GGSS\\GS\\DAM - 2.1\\Projecte\\Projecte\\Projecte\\Practica BD\\CinemaDm\\GestioRestaurantDm.csproj",
+      "projectName": "GestioRestaurantDm",
+      "projectPath": "E:\\GGSS\\GS\\DAM - 2.1\\Projecte\\Projecte\\Projecte\\Practica BD\\CinemaDm\\GestioRestaurantDm.csproj",
       "packagesPath": "C:\\Users\\David-PC\\.nuget\\packages\\",
       "outputPath": "E:\\GGSS\\GS\\DAM - 2.1\\Projecte\\Projecte\\Projecte\\Practica BD\\CinemaDm\\obj\\",
       "projectStyle": "PackageReference",

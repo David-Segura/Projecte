@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 
 
-namespace CinemaDm
+namespace GestioRestaurantDm
 {
     public class Categoria
     {

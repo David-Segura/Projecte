@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
 
-namespace CinemaDm
+namespace GestioRestaurantDm
 {
     public class IngredientDB
     {
@@ -14,7 +14,7 @@ namespace CinemaDm
             try
             {
 
-                using (CinemaDBContext context = new CinemaDBContext())
+                using (RestaurantDBContext context = new RestaurantDBContext())
                 {
                     using (var connexio = context.Database.GetDbConnection())
                     {

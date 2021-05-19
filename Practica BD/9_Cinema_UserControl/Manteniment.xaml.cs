@@ -1,5 +1,5 @@
-﻿using CinemaDm;
-using CinemaDM;
+﻿
+using GestioRestaurantDm;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -62,10 +62,7 @@ namespace _9_Cinema_UserControl
             dtgEspectacles.ItemsSource = EspectacleDB.getLlistaEspectacles(nom_desc, numCat);
         }
 
-        private void BtnPagina_Click(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(MainPage));
-        }
+        
 
         private void DtgEspectacles_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -73,46 +70,46 @@ namespace _9_Cinema_UserControl
             if (esp != null)
             {
                 Espectacle clonic = new Espectacle(esp);
-                uiManteniment.UnEspectacle = clonic;
+                //uiManteniment.UnEspectacle = clonic;
             }
 
         }
 
         private void Button_Save_Click(object sender, RoutedEventArgs e)
         {
-            string nom =     uiManteniment.UnEspectacle.Esp_nom;
-            DateTime inici = uiManteniment.UnEspectacle.Esp_data_inici; 
-            DateTime fi=     uiManteniment.UnEspectacle.Esp_data_fi; 
-            int sal_id =     uiManteniment.UnEspectacle.Esp_sal_id;
-            int cae_id =     uiManteniment.UnEspectacle.Esp_cae_id;
-            string desc =    uiManteniment.UnEspectacle.Esp_desc;
+        //    string nom =     uiManteniment.UnEspectacle.Esp_nom;
+        //    DateTime inici = uiManteniment.UnEspectacle.Esp_data_inici; 
+        //    DateTime fi=     uiManteniment.UnEspectacle.Esp_data_fi; 
+        //    int sal_id =     uiManteniment.UnEspectacle.Esp_sal_id;
+        //    int cae_id =     uiManteniment.UnEspectacle.Esp_cae_id;
+        //    string desc =    uiManteniment.UnEspectacle.Esp_desc;
 
 
             
-            if (EspectacleDB.Update(((Espectacle)dtgEspectacles.SelectedItem).Esp_id,
-                            nom,
-                            inici,fi,sal_id,cae_id,desc))
-            {
+            //if (EspectacleDB.Update(((Espectacle)dtgEspectacles.SelectedItem).Esp_id,
+            //                nom,
+            //                inici,fi,sal_id,cae_id,desc))
+            //{
 
-               // Espectacle esp = ((Espectacle)dtgEspectacles.SelectedItem);
-               // esp.Esp_nom =        (string)uiManteniment.UnEspectacle.Esp_nom;
-               // esp.Esp_data_inici = (DateTime)uiManteniment.UnEspectacle.Esp_data_inici;
-               // esp.Esp_data_fi =    (DateTime)uiManteniment.UnEspectacle.Esp_data_fi; 
-               // esp.Esp_sal_id =     uiManteniment.UnEspectacle.Esp_sal_id;
-               // esp.Esp_cae_id =     uiManteniment.UnEspectacle.Esp_cae_id;
-               // esp.Esp_desc =       uiManteniment.UnEspectacle.Esp_desc;
+            //   // Espectacle esp = ((Espectacle)dtgEspectacles.SelectedItem);
+            //   // esp.Esp_nom =        (string)uiManteniment.UnEspectacle.Esp_nom;
+            //   // esp.Esp_data_inici = (DateTime)uiManteniment.UnEspectacle.Esp_data_inici;
+            //   // esp.Esp_data_fi =    (DateTime)uiManteniment.UnEspectacle.Esp_data_fi; 
+            //   // esp.Esp_sal_id =     uiManteniment.UnEspectacle.Esp_sal_id;
+            //   // esp.Esp_cae_id =     uiManteniment.UnEspectacle.Esp_cae_id;
+            //   // esp.Esp_desc =       uiManteniment.UnEspectacle.Esp_desc;
                 
-               // dtgEspectacles.ItemsSource = EspectacleDB.getLlistaEspectacles();
+            //   // dtgEspectacles.ItemsSource = EspectacleDB.getLlistaEspectacles();
                 
-            }
-            else
-            {
-                String missatgeError = "Error";
-                
-
+            //}
+            //else
+            //{
+            //    String missatgeError = "Error";
                 
 
-            }
+                
+
+            //}
 
             dtgEspectacles.ItemsSource = null;
             dtgEspectacles.ItemsSource = EspectacleDB.getLlistaEspectacles();
@@ -125,7 +122,7 @@ namespace _9_Cinema_UserControl
             if (esp != null)
             {
                 Espectacle clonic = new Espectacle(esp);
-                uiManteniment.UnEspectacle = clonic;
+                //uiManteniment.UnEspectacle = clonic;
             }
         }
 

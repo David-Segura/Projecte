@@ -29,28 +29,28 @@
             <RowDefinition Height="auto" ></RowDefinition>
             <RowDefinition Height="auto" ></RowDefinition>
         </Grid.RowDefinitions>
-        <Button x:ConnectionId='2' Grid.Row="0" Grid.Column="0" Content="⏪ Torna a la pàgina principal"                        ></Button>
+        <Button Grid.Row="0" Grid.Column="0" Content="⏪ Torna a la pàgina principal" ></Button>
         <StackPanel Orientation="Vertical" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" >
                 <TextBlock Text="Nom o Descripció" Padding="20,0,10,0"></TextBlock>
-                <TextBox x:ConnectionId='10' x:Name="txbFiltre" MinWidth="100" Padding="5"/>
-                <ComboBox x:ConnectionId='11' x:Name="cboCat" PlaceholderText="Selecciona la Categoria" Padding="10"/>
+                <TextBox x:ConnectionId='8' x:Name="txbFiltre" MinWidth="100" Padding="5"/>
+                <ComboBox x:ConnectionId='9' x:Name="cboCat" PlaceholderText="Selecciona la Categoria" Padding="10"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
-                <Button x:ConnectionId='8' x:Name="Filtra" Content="Filtre" Margin="0,20,15,0"                     ></Button>
-                <Button x:ConnectionId='9' x:Name="NoFiltra" Content="Neteja Filtre" Margin="0,20,0,0"></Button>
+                <Button x:ConnectionId='6' x:Name="Filtra" Content="Filtre" Margin="0,20,15,0"                     ></Button>
+                <Button x:ConnectionId='7' x:Name="NoFiltra" Content="Neteja Filtre" Margin="0,20,0,0"></Button>
             </StackPanel>
         </StackPanel>
-        <controls:DataGrid x:ConnectionId='3' Grid.Row="1" Grid.Column="0" Margin="10" x:Name="dtgEspectacles" MinHeight="500" MaxHeight="800"                                                     VerticalScrollBarVisibility="Auto"/>
+        <controls:DataGrid x:ConnectionId='2' Grid.Row="1" Grid.Column="0" Margin="10" x:Name="dtgEspectacles" MinHeight="500" MaxHeight="800"                                                     VerticalScrollBarVisibility="Auto"/>
 
-        <view:UIManteniment x:ConnectionId='4' Grid.Row="2" Grid.Column="1" x:Name="uiManteniment"></view:UIManteniment>
+        
 
         <StackPanel Grid.Column="1" Grid.Row="3" Orientation="Horizontal" >
 
 
-            <Button x:ConnectionId='5' Grid.Row="2"                           Grid.Column="1" Content="💾 DESAR" Margin="10"></Button>
-            <Button x:ConnectionId='6' Grid.Row="2"                              Grid.Column="1" Content="🚫 DESCARTAR CANVIS" Margin="10"></Button>
-            <Button x:ConnectionId='7' Grid.Row="2"                               Grid.Column="1" Content="🗑 ESBORRAR" Margin="10"></Button>
+            <Button x:ConnectionId='3' Grid.Row="2"                           Grid.Column="1" Content="💾 DESAR" Margin="10"></Button>
+            <Button x:ConnectionId='4' Grid.Row="2"                              Grid.Column="1" Content="🚫 DESCARTAR CANVIS" Margin="10"></Button>
+            <Button x:ConnectionId='5' Grid.Row="2"                               Grid.Column="1" Content="🗑 ESBORRAR" Margin="10"></Button>
 
             <!--IsEnabled="{Binding ElementName=dtgFuncions, Path=SelectedItem, Converter={StaticResource IsNullToBooleanConverter}}"-->
 

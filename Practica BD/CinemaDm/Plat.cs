@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace CinemaDM
+namespace GestioRestaurantDm
 {
     public class Plat
     {

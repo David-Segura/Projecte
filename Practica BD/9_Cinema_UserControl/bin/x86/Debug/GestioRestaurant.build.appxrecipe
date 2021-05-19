@@ -25,8 +25,8 @@
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\9_Cinema_UserControl\bin\x86\Debug\9_Cinema_UserControl.exe">
-      <PackagePath>entrypoint\9_Cinema_UserControl.exe</PackagePath>
+    <AppxPackagedFile Include="E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\9_Cinema_UserControl\bin\x86\Debug\GestioRestaurant.exe">
+      <PackagePath>entrypoint\GestioRestaurant.exe</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\David-PC\.nuget\packages\bouncycastle.netcore\1.8.3\lib\netstandard2.0\BouncyCastle.Crypto.dll">
       <PackagePath>BouncyCastle.Crypto.dll</PackagePath>
@@ -700,8 +700,8 @@
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\9_Cinema_UserControl\bin\x86\Debug\9_Cinema_UserControl.xr.xml">
-      <PackagePath>9_Cinema_UserControl.xr.xml</PackagePath>
+    <AppxPackagedFile Include="E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\9_Cinema_UserControl\bin\x86\Debug\GestioRestaurant.xr.xml">
+      <PackagePath>GestioRestaurant.xr.xml</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\9_Cinema_UserControl\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
@@ -711,30 +711,6 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\9_Cinema_UserControl\bin\x86\Debug\Manteniment.xbf">
       <PackagePath>Manteniment.xbf</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\9_Cinema_UserControl\bin\x86\Debug\Model\MainPage.xbf">
-      <PackagePath>Model\MainPage.xbf</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\9_Cinema_UserControl\bin\x86\Debug\View\UICadira.xbf">
-      <PackagePath>View\UICadira.xbf</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\9_Cinema_UserControl\bin\x86\Debug\View\UIDescripcioFuncio.xbf">
-      <PackagePath>View\UIDescripcioFuncio.xbf</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\9_Cinema_UserControl\bin\x86\Debug\View\UIDetall.xbf">
-      <PackagePath>View\UIDetall.xbf</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\9_Cinema_UserControl\bin\x86\Debug\View\UIItems.xbf">
-      <PackagePath>View\UIItems.xbf</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\9_Cinema_UserControl\bin\x86\Debug\View\UILlegenda.xbf">
-      <PackagePath>View\UILlegenda.xbf</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\9_Cinema_UserControl\bin\x86\Debug\View\UIManteniment.xbf">
-      <PackagePath>View\UIManteniment.xbf</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\9_Cinema_UserControl\bin\x86\Debug\View\UITotal.xbf">
-      <PackagePath>View\UITotal.xbf</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.UniversalCRT.Debug\10.0.17134.0\\redist\Debug\x86\ucrtbased.dll">
       <PackagePath>ucrtbased.dll</PackagePath>
@@ -757,8 +733,8 @@
     <AppxPackagedFile Include="E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\9_Cinema_UserControl\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\9_Cinema_UserControl\bin\x86\Debug\Core\9_Cinema_UserControl.exe">
-      <PackagePath>9_Cinema_UserControl.exe</PackagePath>
+    <AppxPackagedFile Include="E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\9_Cinema_UserControl\bin\x86\Debug\Core\GestioRestaurant.exe">
+      <PackagePath>GestioRestaurant.exe</PackagePath>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

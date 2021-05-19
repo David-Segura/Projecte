@@ -1,5 +1,6 @@
-﻿using CinemaDm;
-using CinemaDM;
+﻿
+using _9_Cinema_UserControl;
+using GestioRestaurantDm;
 using Microsoft.Toolkit.Uwp.UI.Controls;
 using System;
 using System.Collections.Generic;
@@ -23,7 +24,7 @@ using Windows.UI.Xaml.Navigation;
 
 // La plantilla de elemento Página en blanco está documentada en https://go.microsoft.com/fwlink/?LinkId=234238
 
-namespace _9_Cinema_UserControl
+namespace GestioRestaurant
 {
     /// <summary>
     /// Una página vacía que se puede usar de forma independiente o a la que se puede navegar dentro de un objeto Frame.
@@ -35,10 +36,7 @@ namespace _9_Cinema_UserControl
             this.InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            this.Frame.Navigate(typeof(MainPage));
-        }
+        
         ObservableCollection<Plat> llplats = PlatDB.getLlistaPlats();
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {

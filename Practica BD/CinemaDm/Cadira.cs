@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CinemaDm
+namespace GestioRestaurantDm
 {
     public class Cadira: INotifyPropertyChanged
     {

@@ -19,7 +19,7 @@
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
     <LayoutDir>E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\9_Cinema_UserControl\bin\x86\Debug\AppX</LayoutDir>
-    <RegisteredManifestChecksum>DF39FCF40CCDE257F4CF9D28BAEF5FFCFF43E3F09A502F8F0FB571DD03809E15</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>EE552CAC17562874C7E2CA267CCD09F1B7794F2C1A11B318CE731454C5697312</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>2d4914af-19ce-4ec0-8c0d-ac2dc06a19b1_1.0.0.0_x86__n82rqfc3nm07y</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>2d4914af-19ce-4ec0-8c0d-ac2dc06a19b1_n82rqfc3nm07y!App</RegisteredUserModeAppID>
     <RegisteredPackageID>2d4914af-19ce-4ec0-8c0d-ac2dc06a19b1</RegisteredPackageID>
@@ -30,13 +30,13 @@
     <AppXManifest Include="E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\9_Cinema_UserControl\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-05-19T17:13:21.963</Modified>
+      <Modified>2021-05-19T19:24:15.054</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\9_Cinema_UserControl\bin\x86\Debug\9_Cinema_UserControl.exe">
-      <PackagePath>entrypoint\9_Cinema_UserControl.exe</PackagePath>
-      <Modified>2021-05-19T17:13:20.604</Modified>
+    <AppxPackagedFile Include="E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\9_Cinema_UserControl\bin\x86\Debug\GestioRestaurant.exe">
+      <PackagePath>entrypoint\GestioRestaurant.exe</PackagePath>
+      <Modified>2021-05-19T19:24:13.650</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\David-PC\.nuget\packages\bouncycastle.netcore\1.8.3\lib\netstandard2.0\BouncyCastle.Crypto.dll">
       <PackagePath>BouncyCastle.Crypto.dll</PackagePath>
@@ -884,7 +884,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\CinemaDm\bin\Debug\netstandard2.0\GestioRestaurantDm.dll">
       <PackagePath>GestioRestaurantDm.dll</PackagePath>
-      <Modified>2021-05-19T17:13:11.443</Modified>
+      <Modified>2021-05-19T19:10:39.962</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\David-PC\.nuget\packages\metrolog\1.0.1\lib\win81\MetroLog.WinRT.winmd">
       <PackagePath>MetroLog.WinRT.winmd</PackagePath>
@@ -932,53 +932,21 @@
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
       <Modified>2019-11-06T15:08:53.634</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\9_Cinema_UserControl\bin\x86\Debug\9_Cinema_UserControl.xr.xml">
-      <PackagePath>9_Cinema_UserControl.xr.xml</PackagePath>
-      <Modified>2021-05-19T16:39:50.664</Modified>
+    <AppxPackagedFile Include="E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\9_Cinema_UserControl\bin\x86\Debug\GestioRestaurant.xr.xml">
+      <PackagePath>GestioRestaurant.xr.xml</PackagePath>
+      <Modified>2021-05-19T19:22:03.382</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\9_Cinema_UserControl\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2021-05-19T17:13:19.971</Modified>
+      <Modified>2021-05-19T19:24:13.096</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\9_Cinema_UserControl\bin\x86\Debug\GestioCarta.xbf">
       <PackagePath>GestioCarta.xbf</PackagePath>
-      <Modified>2021-05-19T17:13:19.975</Modified>
+      <Modified>2021-05-19T19:24:13.101</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\9_Cinema_UserControl\bin\x86\Debug\Manteniment.xbf">
       <PackagePath>Manteniment.xbf</PackagePath>
-      <Modified>2021-05-19T17:13:19.978</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\9_Cinema_UserControl\bin\x86\Debug\Model\MainPage.xbf">
-      <PackagePath>Model\MainPage.xbf</PackagePath>
-      <Modified>2021-05-19T17:13:19.981</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\9_Cinema_UserControl\bin\x86\Debug\View\UICadira.xbf">
-      <PackagePath>View\UICadira.xbf</PackagePath>
-      <Modified>2021-05-19T17:13:19.984</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\9_Cinema_UserControl\bin\x86\Debug\View\UIDescripcioFuncio.xbf">
-      <PackagePath>View\UIDescripcioFuncio.xbf</PackagePath>
-      <Modified>2021-05-19T17:13:19.987</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\9_Cinema_UserControl\bin\x86\Debug\View\UIDetall.xbf">
-      <PackagePath>View\UIDetall.xbf</PackagePath>
-      <Modified>2021-05-19T17:13:19.988</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\9_Cinema_UserControl\bin\x86\Debug\View\UIItems.xbf">
-      <PackagePath>View\UIItems.xbf</PackagePath>
-      <Modified>2021-05-19T17:13:19.991</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\9_Cinema_UserControl\bin\x86\Debug\View\UILlegenda.xbf">
-      <PackagePath>View\UILlegenda.xbf</PackagePath>
-      <Modified>2021-05-19T17:13:19.994</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\9_Cinema_UserControl\bin\x86\Debug\View\UIManteniment.xbf">
-      <PackagePath>View\UIManteniment.xbf</PackagePath>
-      <Modified>2021-05-19T17:13:19.997</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\9_Cinema_UserControl\bin\x86\Debug\View\UITotal.xbf">
-      <PackagePath>View\UITotal.xbf</PackagePath>
-      <Modified>2021-05-19T17:13:20.000</Modified>
+      <Modified>2021-05-19T19:24:13.104</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.UniversalCRT.Debug\10.0.17134.0\\redist\Debug\x86\ucrtbased.dll">
       <PackagePath>ucrtbased.dll</PackagePath>
@@ -1006,11 +974,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\9_Cinema_UserControl\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2021-05-19T15:08:20.690</Modified>
+      <Modified>2021-05-19T19:23:00.456</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\9_Cinema_UserControl\bin\x86\Debug\Core\9_Cinema_UserControl.exe">
-      <PackagePath>9_Cinema_UserControl.exe</PackagePath>
-      <Modified>2021-05-19T17:13:21.954</Modified>
+    <AppxPackagedFile Include="E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\9_Cinema_UserControl\bin\x86\Debug\Core\GestioRestaurant.exe">
+      <PackagePath>GestioRestaurant.exe</PackagePath>
+      <Modified>2021-05-19T19:24:15.044</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

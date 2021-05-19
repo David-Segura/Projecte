@@ -12,14 +12,14 @@ namespace _9_Cinema_UserControl
 {
     public partial class App : global::Windows.UI.Xaml.Markup.IXamlMetadataProvider
     {
-        private global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMetaDataProvider __appProvider;
-        private global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMetaDataProvider _AppProvider
+        private global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlMetaDataProvider __appProvider;
+        private global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlMetaDataProvider _AppProvider
         {
             get
             {
                 if (__appProvider == null)
                 {
-                    __appProvider = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMetaDataProvider();
+                    __appProvider = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlMetaDataProvider();
                 }
                 return __appProvider;
             }
@@ -51,7 +51,7 @@ namespace _9_Cinema_UserControl
     }
 }
 
-namespace _9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo
+namespace GestioRestaurant.GestioRestaurant_XamlTypeInfo
 {
     /// <summary>
     /// Main class for providing metadata for the app or library
@@ -60,15 +60,15 @@ namespace _9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     public sealed class XamlMetaDataProvider : global::Windows.UI.Xaml.Markup.IXamlMetadataProvider
     {
-        private global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlTypeInfoProvider _provider = null;
+        private global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlTypeInfoProvider _provider = null;
 
-        private global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlTypeInfoProvider Provider
+        private global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlTypeInfoProvider Provider
         {
             get
             {
                 if (_provider == null)
                 {
-                    _provider = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlTypeInfoProvider();
+                    _provider = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlTypeInfoProvider();
                 }
                 return _provider;
             }
@@ -117,7 +117,7 @@ namespace _9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo
                 {
                     xamlType = CreateXamlType(typeIndex);
                 }
-                var userXamlType = xamlType as global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType;
+                var userXamlType = xamlType as global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType;
                 if(xamlType == null || (userXamlType != null && userXamlType.IsReturnTypeStub && !userXamlType.IsLocalType))
                 {
                     global::Windows.UI.Xaml.Markup.IXamlType libXamlType = CheckOtherMetadataProvidersForType(type);
@@ -156,7 +156,7 @@ namespace _9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo
                 {
                     xamlType = CreateXamlType(typeIndex);
                 }
-                var userXamlType = xamlType as global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType;
+                var userXamlType = xamlType as global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType;
                 if(xamlType == null || (userXamlType != null && userXamlType.IsReturnTypeStub && !userXamlType.IsLocalType))
                 {
                     global::Windows.UI.Xaml.Markup.IXamlType libXamlType = CheckOtherMetadataProvidersForName(typeName);
@@ -213,7 +213,7 @@ namespace _9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[65];
+            _typeNameTable = new string[45];
             _typeNameTable[0] = "Microsoft.UI.Xaml.Controls.XamlControlsResources";
             _typeNameTable[1] = "Windows.UI.Xaml.ResourceDictionary";
             _typeNameTable[2] = "Object";
@@ -247,40 +247,20 @@ namespace _9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo
             _typeNameTable[30] = "System.Collections.ObjectModel.ObservableCollection`1<Windows.UI.Xaml.Style>";
             _typeNameTable[31] = "System.Collections.ObjectModel.Collection`1<Windows.UI.Xaml.Style>";
             _typeNameTable[32] = "System.Collections.IList";
-            _typeNameTable[33] = "_9_Cinema_UserControl.CompraEntrades";
+            _typeNameTable[33] = "GestioRestaurant.CompraEntrades";
             _typeNameTable[34] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[35] = "Windows.UI.Xaml.Controls.UserControl";
             _typeNameTable[36] = "_9_Cinema_UserControl.View.IsNullToBooleanConverter";
-            _typeNameTable[37] = "_9_Cinema_UserControl.View.UIManteniment";
-            _typeNameTable[38] = "CinemaDm.Espectacle";
-            _typeNameTable[39] = "_9_Cinema_UserControl.Manteniment";
-            _typeNameTable[40] = "_9_Cinema_UserControl.MainPage";
-            _typeNameTable[41] = "_9_Cinema_UserControl.View.UICadira";
-            _typeNameTable[42] = "CinemaDm.Cadira";
-            _typeNameTable[43] = "System.Collections.Generic.List`1<CinemaDm.Categoria>";
-            _typeNameTable[44] = "CinemaDm.Categoria";
-            _typeNameTable[45] = "_9_Cinema_UserControl.View.UIDescripcioFuncio";
-            _typeNameTable[46] = "CinemaDm.Funcio";
-            _typeNameTable[47] = "CinemaDM.Plat";
-            _typeNameTable[48] = "_9_Cinema_UserControl.View.UIDetall";
-            _typeNameTable[49] = "System.Collections.ObjectModel.ObservableCollection`1<CinemaDm.Entrada>";
-            _typeNameTable[50] = "System.Collections.ObjectModel.Collection`1<CinemaDm.Entrada>";
-            _typeNameTable[51] = "CinemaDm.Entrada";
-            _typeNameTable[52] = "System.Decimal";
-            _typeNameTable[53] = "_9_Cinema_UserControl.View.UIItems";
-            _typeNameTable[54] = "CinemaDm.ItemEscenari";
-            _typeNameTable[55] = "Windows.UI.Xaml.Media.PointCollection";
-            _typeNameTable[56] = "_9_Cinema_UserControl.View.UILlegenda";
-            _typeNameTable[57] = "_9_Cinema_UserControl.View.UITotal";
-            _typeNameTable[58] = "Microsoft.Toolkit.Uwp.UI.Extensions.NullableBool";
-            _typeNameTable[59] = "Windows.UI.Xaml.Markup.MarkupExtension";
-            _typeNameTable[60] = "Microsoft.Toolkit.Uwp.UI.Extensions.Markup.OnDevice";
-            _typeNameTable[61] = "Microsoft.Toolkit.Uwp.UI.Converters.DoubleToObjectConverter";
-            _typeNameTable[62] = "Microsoft.Toolkit.Uwp.UI.Converters.DoubleToVisibilityConverter";
-            _typeNameTable[63] = "Microsoft.UI.Xaml.Controls.TreeViewNode";
-            _typeNameTable[64] = "System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>";
+            _typeNameTable[37] = "_9_Cinema_UserControl.Manteniment";
+            _typeNameTable[38] = "Microsoft.Toolkit.Uwp.UI.Extensions.NullableBool";
+            _typeNameTable[39] = "Windows.UI.Xaml.Markup.MarkupExtension";
+            _typeNameTable[40] = "Microsoft.Toolkit.Uwp.UI.Extensions.Markup.OnDevice";
+            _typeNameTable[41] = "Microsoft.Toolkit.Uwp.UI.Converters.DoubleToObjectConverter";
+            _typeNameTable[42] = "Microsoft.Toolkit.Uwp.UI.Converters.DoubleToVisibilityConverter";
+            _typeNameTable[43] = "Microsoft.UI.Xaml.Controls.TreeViewNode";
+            _typeNameTable[44] = "System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>";
 
-            _typeTable = new global::System.Type[65];
+            _typeTable = new global::System.Type[45];
             _typeTable[0] = typeof(global::Microsoft.UI.Xaml.Controls.XamlControlsResources);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.ResourceDictionary);
             _typeTable[2] = typeof(global::System.Object);
@@ -314,38 +294,18 @@ namespace _9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo
             _typeTable[30] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::Windows.UI.Xaml.Style>);
             _typeTable[31] = typeof(global::System.Collections.ObjectModel.Collection<global::Windows.UI.Xaml.Style>);
             _typeTable[32] = typeof(global::System.Collections.IList);
-            _typeTable[33] = typeof(global::_9_Cinema_UserControl.CompraEntrades);
+            _typeTable[33] = typeof(global::GestioRestaurant.CompraEntrades);
             _typeTable[34] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[35] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
             _typeTable[36] = typeof(global::_9_Cinema_UserControl.View.IsNullToBooleanConverter);
-            _typeTable[37] = typeof(global::_9_Cinema_UserControl.View.UIManteniment);
-            _typeTable[38] = typeof(global::CinemaDm.Espectacle);
-            _typeTable[39] = typeof(global::_9_Cinema_UserControl.Manteniment);
-            _typeTable[40] = typeof(global::_9_Cinema_UserControl.MainPage);
-            _typeTable[41] = typeof(global::_9_Cinema_UserControl.View.UICadira);
-            _typeTable[42] = typeof(global::CinemaDm.Cadira);
-            _typeTable[43] = typeof(global::System.Collections.Generic.List<global::CinemaDm.Categoria>);
-            _typeTable[44] = typeof(global::CinemaDm.Categoria);
-            _typeTable[45] = typeof(global::_9_Cinema_UserControl.View.UIDescripcioFuncio);
-            _typeTable[46] = typeof(global::CinemaDm.Funcio);
-            _typeTable[47] = typeof(global::CinemaDM.Plat);
-            _typeTable[48] = typeof(global::_9_Cinema_UserControl.View.UIDetall);
-            _typeTable[49] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::CinemaDm.Entrada>);
-            _typeTable[50] = typeof(global::System.Collections.ObjectModel.Collection<global::CinemaDm.Entrada>);
-            _typeTable[51] = typeof(global::CinemaDm.Entrada);
-            _typeTable[52] = typeof(global::System.Decimal);
-            _typeTable[53] = typeof(global::_9_Cinema_UserControl.View.UIItems);
-            _typeTable[54] = typeof(global::CinemaDm.ItemEscenari);
-            _typeTable[55] = typeof(global::Windows.UI.Xaml.Media.PointCollection);
-            _typeTable[56] = typeof(global::_9_Cinema_UserControl.View.UILlegenda);
-            _typeTable[57] = typeof(global::_9_Cinema_UserControl.View.UITotal);
-            _typeTable[58] = typeof(global::Microsoft.Toolkit.Uwp.UI.Extensions.NullableBool);
-            _typeTable[59] = typeof(global::Windows.UI.Xaml.Markup.MarkupExtension);
-            _typeTable[60] = typeof(global::Microsoft.Toolkit.Uwp.UI.Extensions.Markup.OnDevice);
-            _typeTable[61] = typeof(global::Microsoft.Toolkit.Uwp.UI.Converters.DoubleToObjectConverter);
-            _typeTable[62] = typeof(global::Microsoft.Toolkit.Uwp.UI.Converters.DoubleToVisibilityConverter);
-            _typeTable[63] = typeof(global::Microsoft.UI.Xaml.Controls.TreeViewNode);
-            _typeTable[64] = typeof(global::System.Collections.Generic.IList<global::Microsoft.UI.Xaml.Controls.TreeViewNode>);
+            _typeTable[37] = typeof(global::_9_Cinema_UserControl.Manteniment);
+            _typeTable[38] = typeof(global::Microsoft.Toolkit.Uwp.UI.Extensions.NullableBool);
+            _typeTable[39] = typeof(global::Windows.UI.Xaml.Markup.MarkupExtension);
+            _typeTable[40] = typeof(global::Microsoft.Toolkit.Uwp.UI.Extensions.Markup.OnDevice);
+            _typeTable[41] = typeof(global::Microsoft.Toolkit.Uwp.UI.Converters.DoubleToObjectConverter);
+            _typeTable[42] = typeof(global::Microsoft.Toolkit.Uwp.UI.Converters.DoubleToVisibilityConverter);
+            _typeTable[43] = typeof(global::Microsoft.UI.Xaml.Controls.TreeViewNode);
+            _typeTable[44] = typeof(global::System.Collections.Generic.IList<global::Microsoft.UI.Xaml.Controls.TreeViewNode>);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -386,31 +346,14 @@ namespace _9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo
         private object Activate_23_Collection() { return new global::System.Collections.ObjectModel.Collection<global::Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn>(); }
         private object Activate_30_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::Windows.UI.Xaml.Style>(); }
         private object Activate_31_Collection() { return new global::System.Collections.ObjectModel.Collection<global::Windows.UI.Xaml.Style>(); }
-        private object Activate_33_CompraEntrades() { return new global::_9_Cinema_UserControl.CompraEntrades(); }
+        private object Activate_33_CompraEntrades() { return new global::GestioRestaurant.CompraEntrades(); }
         private object Activate_36_IsNullToBooleanConverter() { return new global::_9_Cinema_UserControl.View.IsNullToBooleanConverter(); }
-        private object Activate_37_UIManteniment() { return new global::_9_Cinema_UserControl.View.UIManteniment(); }
-        private object Activate_38_Espectacle() { return new global::CinemaDm.Espectacle(); }
-        private object Activate_39_Manteniment() { return new global::_9_Cinema_UserControl.Manteniment(); }
-        private object Activate_40_MainPage() { return new global::_9_Cinema_UserControl.MainPage(); }
-        private object Activate_41_UICadira() { return new global::_9_Cinema_UserControl.View.UICadira(); }
-        private object Activate_42_Cadira() { return new global::CinemaDm.Cadira(); }
-        private object Activate_43_List() { return new global::System.Collections.Generic.List<global::CinemaDm.Categoria>(); }
-        private object Activate_44_Categoria() { return new global::CinemaDm.Categoria(); }
-        private object Activate_45_UIDescripcioFuncio() { return new global::_9_Cinema_UserControl.View.UIDescripcioFuncio(); }
-        private object Activate_46_Funcio() { return new global::CinemaDm.Funcio(); }
-        private object Activate_47_Plat() { return new global::CinemaDM.Plat(); }
-        private object Activate_48_UIDetall() { return new global::_9_Cinema_UserControl.View.UIDetall(); }
-        private object Activate_49_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::CinemaDm.Entrada>(); }
-        private object Activate_50_Collection() { return new global::System.Collections.ObjectModel.Collection<global::CinemaDm.Entrada>(); }
-        private object Activate_51_Entrada() { return new global::CinemaDm.Entrada(); }
-        private object Activate_53_UIItems() { return new global::_9_Cinema_UserControl.View.UIItems(); }
-        private object Activate_56_UILlegenda() { return new global::_9_Cinema_UserControl.View.UILlegenda(); }
-        private object Activate_57_UITotal() { return new global::_9_Cinema_UserControl.View.UITotal(); }
-        private object Activate_58_NullableBool() { return new global::Microsoft.Toolkit.Uwp.UI.Extensions.NullableBool(); }
-        private object Activate_60_OnDevice() { return new global::Microsoft.Toolkit.Uwp.UI.Extensions.Markup.OnDevice(); }
-        private object Activate_61_DoubleToObjectConverter() { return new global::Microsoft.Toolkit.Uwp.UI.Converters.DoubleToObjectConverter(); }
-        private object Activate_62_DoubleToVisibilityConverter() { return new global::Microsoft.Toolkit.Uwp.UI.Converters.DoubleToVisibilityConverter(); }
-        private object Activate_63_TreeViewNode() { return new global::Microsoft.UI.Xaml.Controls.TreeViewNode(); }
+        private object Activate_37_Manteniment() { return new global::_9_Cinema_UserControl.Manteniment(); }
+        private object Activate_38_NullableBool() { return new global::Microsoft.Toolkit.Uwp.UI.Extensions.NullableBool(); }
+        private object Activate_40_OnDevice() { return new global::Microsoft.Toolkit.Uwp.UI.Extensions.Markup.OnDevice(); }
+        private object Activate_41_DoubleToObjectConverter() { return new global::Microsoft.Toolkit.Uwp.UI.Converters.DoubleToObjectConverter(); }
+        private object Activate_42_DoubleToVisibilityConverter() { return new global::Microsoft.Toolkit.Uwp.UI.Converters.DoubleToVisibilityConverter(); }
+        private object Activate_43_TreeViewNode() { return new global::Microsoft.UI.Xaml.Controls.TreeViewNode(); }
         private void MapAdd_0_XamlControlsResources(object instance, object key, object item)
         {
             var collection = (global::System.Collections.Generic.IDictionary<global::System.Object, global::System.Object>)instance;
@@ -442,25 +385,7 @@ namespace _9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo
             var newItem = (global::Windows.UI.Xaml.Style)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_43_List(object instance, object item)
-        {
-            var collection = (global::System.Collections.Generic.ICollection<global::CinemaDm.Categoria>)instance;
-            var newItem = (global::CinemaDm.Categoria)item;
-            collection.Add(newItem);
-        }
-        private void VectorAdd_49_ObservableCollection(object instance, object item)
-        {
-            var collection = (global::System.Collections.Generic.ICollection<global::CinemaDm.Entrada>)instance;
-            var newItem = (global::CinemaDm.Entrada)item;
-            collection.Add(newItem);
-        }
-        private void VectorAdd_50_Collection(object instance, object item)
-        {
-            var collection = (global::System.Collections.Generic.ICollection<global::CinemaDm.Entrada>)instance;
-            var newItem = (global::CinemaDm.Entrada)item;
-            collection.Add(newItem);
-        }
-        private void VectorAdd_64_IList(object instance, object item)
+        private void VectorAdd_44_IList(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::Microsoft.UI.Xaml.Controls.TreeViewNode>)instance;
             var newItem = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)item;
@@ -469,8 +394,8 @@ namespace _9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
-            global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlSystemBaseType xamlType = null;
-            global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType userType;
+            global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlSystemBaseType xamlType = null;
+            global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType userType;
             string typeName = _typeNameTable[typeIndex];
             global::System.Type type = _typeTable[typeIndex];
 
@@ -478,22 +403,22 @@ namespace _9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo
             {
 
             case 0:   //  Microsoft.UI.Xaml.Controls.XamlControlsResources
-                userType = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.ResourceDictionary"));
+                userType = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.ResourceDictionary"));
                 userType.Activator = Activate_0_XamlControlsResources;
                 userType.DictionaryAdd = MapAdd_0_XamlControlsResources;
                 xamlType = userType;
                 break;
 
             case 1:   //  Windows.UI.Xaml.ResourceDictionary
-                xamlType = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                xamlType = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
             case 2:   //  Object
-                xamlType = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                xamlType = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
             case 3:   //  Microsoft.Toolkit.Uwp.UI.Controls.DataGrid
-                userType = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Control"));
+                userType = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Control"));
                 userType.Activator = Activate_3_DataGrid;
                 userType.AddMemberName("AlternatingRowBackground");
                 userType.AddMemberName("AlternatingRowForeground");
@@ -545,23 +470,23 @@ namespace _9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo
                 break;
 
             case 4:   //  Windows.UI.Xaml.Controls.Control
-                xamlType = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                xamlType = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
             case 5:   //  Windows.UI.Xaml.Media.Brush
-                xamlType = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                xamlType = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
             case 6:   //  Boolean
-                xamlType = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                xamlType = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
             case 7:   //  Windows.UI.Xaml.Style
-                xamlType = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                xamlType = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
             case 8:   //  Microsoft.Toolkit.Uwp.UI.Controls.DataGridClipboardCopyMode
-                userType = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
+                userType = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
                 userType.AddEnumValue("None", global::Microsoft.Toolkit.Uwp.UI.Controls.DataGridClipboardCopyMode.None);
                 userType.AddEnumValue("ExcludeHeader", global::Microsoft.Toolkit.Uwp.UI.Controls.DataGridClipboardCopyMode.ExcludeHeader);
                 userType.AddEnumValue("IncludeHeader", global::Microsoft.Toolkit.Uwp.UI.Controls.DataGridClipboardCopyMode.IncludeHeader);
@@ -569,32 +494,32 @@ namespace _9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo
                 break;
 
             case 9:   //  System.Enum
-                userType = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.ValueType"));
+                userType = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.ValueType"));
                 xamlType = userType;
                 break;
 
             case 10:   //  System.ValueType
-                userType = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
                 xamlType = userType;
                 break;
 
             case 11:   //  Double
-                xamlType = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                xamlType = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
             case 12:   //  Microsoft.Toolkit.Uwp.UI.Controls.DataGridLength
-                userType = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.ValueType"));
+                userType = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.ValueType"));
                 userType.CreateFromStringMethod = x => (global::System.Object)global::Microsoft.Toolkit.Uwp.UI.Controls.DataGridLength.ConvertFromString(x);
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
             case 13:   //  Int32
-                xamlType = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                xamlType = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
             case 14:   //  Microsoft.Toolkit.Uwp.UI.Controls.DataGridGridLinesVisibility
-                userType = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
+                userType = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
                 userType.AddEnumValue("None", global::Microsoft.Toolkit.Uwp.UI.Controls.DataGridGridLinesVisibility.None);
                 userType.AddEnumValue("Horizontal", global::Microsoft.Toolkit.Uwp.UI.Controls.DataGridGridLinesVisibility.Horizontal);
                 userType.AddEnumValue("Vertical", global::Microsoft.Toolkit.Uwp.UI.Controls.DataGridGridLinesVisibility.Vertical);
@@ -603,7 +528,7 @@ namespace _9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo
                 break;
 
             case 15:   //  Microsoft.Toolkit.Uwp.UI.Controls.DataGridHeadersVisibility
-                userType = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
+                userType = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
                 userType.AddEnumValue("None", global::Microsoft.Toolkit.Uwp.UI.Controls.DataGridHeadersVisibility.None);
                 userType.AddEnumValue("Column", global::Microsoft.Toolkit.Uwp.UI.Controls.DataGridHeadersVisibility.Column);
                 userType.AddEnumValue("Row", global::Microsoft.Toolkit.Uwp.UI.Controls.DataGridHeadersVisibility.Row);
@@ -612,25 +537,25 @@ namespace _9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo
                 break;
 
             case 16:   //  Windows.UI.Xaml.Controls.ScrollBarVisibility
-                xamlType = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                xamlType = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
             case 17:   //  Windows.UI.Xaml.Controls.IncrementalLoadingTrigger
-                xamlType = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                xamlType = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
             case 18:   //  System.Collections.IEnumerable
-                userType = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType(this, typeName, type, null);
+                userType = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType(this, typeName, type, null);
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
             case 19:   //  Windows.UI.Xaml.DataTemplate
-                xamlType = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                xamlType = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
             case 20:   //  Microsoft.Toolkit.Uwp.UI.Controls.DataGridRowDetailsVisibilityMode
-                userType = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
+                userType = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
                 userType.AddEnumValue("VisibleWhenSelected", global::Microsoft.Toolkit.Uwp.UI.Controls.DataGridRowDetailsVisibilityMode.VisibleWhenSelected);
                 userType.AddEnumValue("Visible", global::Microsoft.Toolkit.Uwp.UI.Controls.DataGridRowDetailsVisibilityMode.Visible);
                 userType.AddEnumValue("Collapsed", global::Microsoft.Toolkit.Uwp.UI.Controls.DataGridRowDetailsVisibilityMode.Collapsed);
@@ -638,28 +563,28 @@ namespace _9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo
                 break;
 
             case 21:   //  Microsoft.Toolkit.Uwp.UI.Controls.DataGridSelectionMode
-                userType = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
+                userType = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
                 userType.AddEnumValue("Extended", global::Microsoft.Toolkit.Uwp.UI.Controls.DataGridSelectionMode.Extended);
                 userType.AddEnumValue("Single", global::Microsoft.Toolkit.Uwp.UI.Controls.DataGridSelectionMode.Single);
                 xamlType = userType;
                 break;
 
             case 22:   //  System.Collections.ObjectModel.ObservableCollection`1<Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn>
-                userType = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Collections.ObjectModel.Collection`1<Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn>"));
+                userType = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Collections.ObjectModel.Collection`1<Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn>"));
                 userType.CollectionAdd = VectorAdd_22_ObservableCollection;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
             case 23:   //  System.Collections.ObjectModel.Collection`1<Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn>
-                userType = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
                 userType.Activator = Activate_23_Collection;
                 userType.CollectionAdd = VectorAdd_23_Collection;
                 xamlType = userType;
                 break;
 
             case 24:   //  Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn
-                userType = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
+                userType = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
                 userType.AddMemberName("ActualWidth");
                 userType.AddMemberName("CanUserReorder");
                 userType.AddMemberName("CanUserResize");
@@ -683,232 +608,79 @@ namespace _9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo
                 break;
 
             case 25:   //  Windows.UI.Xaml.DependencyObject
-                xamlType = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                xamlType = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
             case 26:   //  Windows.UI.Xaml.Data.Binding
-                xamlType = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                xamlType = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
             case 27:   //  System.Nullable`1<Microsoft.Toolkit.Uwp.UI.Controls.DataGridSortDirection>
-                userType = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.ValueType"));
+                userType = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.ValueType"));
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
             case 28:   //  Windows.UI.Xaml.Visibility
-                xamlType = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                xamlType = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
             case 29:   //  String
-                xamlType = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                xamlType = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
             case 30:   //  System.Collections.ObjectModel.ObservableCollection`1<Windows.UI.Xaml.Style>
-                userType = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Collections.ObjectModel.Collection`1<Windows.UI.Xaml.Style>"));
+                userType = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Collections.ObjectModel.Collection`1<Windows.UI.Xaml.Style>"));
                 userType.CollectionAdd = VectorAdd_30_ObservableCollection;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
             case 31:   //  System.Collections.ObjectModel.Collection`1<Windows.UI.Xaml.Style>
-                userType = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
                 userType.Activator = Activate_31_Collection;
                 userType.CollectionAdd = VectorAdd_31_Collection;
                 xamlType = userType;
                 break;
 
             case 32:   //  System.Collections.IList
-                userType = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType(this, typeName, type, null);
+                userType = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType(this, typeName, type, null);
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 33:   //  _9_Cinema_UserControl.CompraEntrades
-                userType = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+            case 33:   //  GestioRestaurant.CompraEntrades
+                userType = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
                 userType.Activator = Activate_33_CompraEntrades;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
             case 34:   //  Windows.UI.Xaml.Controls.Page
-                xamlType = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                xamlType = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
             case 35:   //  Windows.UI.Xaml.Controls.UserControl
-                xamlType = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                xamlType = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
             case 36:   //  _9_Cinema_UserControl.View.IsNullToBooleanConverter
-                userType = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
                 userType.Activator = Activate_36_IsNullToBooleanConverter;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 37:   //  _9_Cinema_UserControl.View.UIManteniment
-                userType = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.UserControl"));
-                userType.Activator = Activate_37_UIManteniment;
-                userType.AddMemberName("UnEspectacle");
+            case 37:   //  _9_Cinema_UserControl.Manteniment
+                userType = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_37_Manteniment;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 38:   //  CinemaDm.Espectacle
-                userType = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.SetIsReturnTypeStub();
-                xamlType = userType;
-                break;
-
-            case 39:   //  _9_Cinema_UserControl.Manteniment
-                userType = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_39_Manteniment;
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 40:   //  _9_Cinema_UserControl.MainPage
-                userType = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_40_MainPage;
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 41:   //  _9_Cinema_UserControl.View.UICadira
-                userType = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.UserControl"));
-                userType.Activator = Activate_41_UICadira;
-                userType.AddMemberName("LaCadira");
-                userType.AddMemberName("CategoriesListEnCadira");
-                userType.AddMemberName("Size");
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 42:   //  CinemaDm.Cadira
-                userType = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.SetIsReturnTypeStub();
-                xamlType = userType;
-                break;
-
-            case 43:   //  System.Collections.Generic.List`1<CinemaDm.Categoria>
-                userType = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.CollectionAdd = VectorAdd_43_List;
-                userType.SetIsReturnTypeStub();
-                xamlType = userType;
-                break;
-
-            case 44:   //  CinemaDm.Categoria
-                userType = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_44_Categoria;
-                userType.AddMemberName("Id");
-                userType.AddMemberName("Nom");
-                userType.AddMemberName("Color");
-                xamlType = userType;
-                break;
-
-            case 45:   //  _9_Cinema_UserControl.View.UIDescripcioFuncio
-                userType = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.UserControl"));
-                userType.Activator = Activate_45_UIDescripcioFuncio;
-                userType.AddMemberName("UnEspectacle");
-                userType.AddMemberName("UnaFuncio");
-                userType.AddMemberName("UnaSala");
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 46:   //  CinemaDm.Funcio
-                userType = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.SetIsReturnTypeStub();
-                xamlType = userType;
-                break;
-
-            case 47:   //  CinemaDM.Plat
-                userType = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.SetIsReturnTypeStub();
-                xamlType = userType;
-                break;
-
-            case 48:   //  _9_Cinema_UserControl.View.UIDetall
-                userType = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.UserControl"));
-                userType.Activator = Activate_48_UIDetall;
-                userType.AddMemberName("ListEntrades");
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 49:   //  System.Collections.ObjectModel.ObservableCollection`1<CinemaDm.Entrada>
-                userType = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Collections.ObjectModel.Collection`1<CinemaDm.Entrada>"));
-                userType.CollectionAdd = VectorAdd_49_ObservableCollection;
-                userType.SetIsReturnTypeStub();
-                xamlType = userType;
-                break;
-
-            case 50:   //  System.Collections.ObjectModel.Collection`1<CinemaDm.Entrada>
-                userType = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_50_Collection;
-                userType.CollectionAdd = VectorAdd_50_Collection;
-                xamlType = userType;
-                break;
-
-            case 51:   //  CinemaDm.Entrada
-                userType = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_51_Entrada;
-                userType.AddMemberName("Ent_id");
-                userType.AddMemberName("Ent_fun_esp_id");
-                userType.AddMemberName("Ent_fun_num");
-                userType.AddMemberName("Ent_cad_sal_id");
-                userType.AddMemberName("Ent_cad_num");
-                userType.AddMemberName("Ent_preu");
-                xamlType = userType;
-                break;
-
-            case 52:   //  System.Decimal
-                userType = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.ValueType"));
-                userType.SetIsReturnTypeStub();
-                xamlType = userType;
-                break;
-
-            case 53:   //  _9_Cinema_UserControl.View.UIItems
-                userType = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.UserControl"));
-                userType.Activator = Activate_53_UIItems;
-                userType.AddMemberName("Item");
-                userType.AddMemberName("PointList");
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 54:   //  CinemaDm.ItemEscenari
-                userType = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.SetIsReturnTypeStub();
-                xamlType = userType;
-                break;
-
-            case 55:   //  Windows.UI.Xaml.Media.PointCollection
-                xamlType = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 56:   //  _9_Cinema_UserControl.View.UILlegenda
-                userType = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.UserControl"));
-                userType.Activator = Activate_56_UILlegenda;
-                userType.AddMemberName("LaCategoria");
-                userType.AddMemberName("fondo");
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 57:   //  _9_Cinema_UserControl.View.UITotal
-                userType = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.UserControl"));
-                userType.Activator = Activate_57_UITotal;
-                userType.AddMemberName("LaCadira");
-                userType.AddMemberName("id");
-                userType.AddMemberName("preu");
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 58:   //  Microsoft.Toolkit.Uwp.UI.Extensions.NullableBool
-                userType = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Markup.MarkupExtension"));
-                userType.Activator = Activate_58_NullableBool;
+            case 38:   //  Microsoft.Toolkit.Uwp.UI.Extensions.NullableBool
+                userType = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Markup.MarkupExtension"));
+                userType.Activator = Activate_38_NullableBool;
                 userType.AddMemberName("Value");
                 userType.AddMemberName("IsNull");
                 userType.SetIsBindable();
@@ -916,13 +688,13 @@ namespace _9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 59:   //  Windows.UI.Xaml.Markup.MarkupExtension
-                xamlType = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+            case 39:   //  Windows.UI.Xaml.Markup.MarkupExtension
+                xamlType = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 60:   //  Microsoft.Toolkit.Uwp.UI.Extensions.Markup.OnDevice
-                userType = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Markup.MarkupExtension"));
-                userType.Activator = Activate_60_OnDevice;
+            case 40:   //  Microsoft.Toolkit.Uwp.UI.Extensions.Markup.OnDevice
+                userType = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Markup.MarkupExtension"));
+                userType.Activator = Activate_40_OnDevice;
                 userType.AddMemberName("Default");
                 userType.AddMemberName("Desktop");
                 userType.AddMemberName("Holographic");
@@ -934,9 +706,9 @@ namespace _9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 61:   //  Microsoft.Toolkit.Uwp.UI.Converters.DoubleToObjectConverter
-                userType = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
-                userType.Activator = Activate_61_DoubleToObjectConverter;
+            case 41:   //  Microsoft.Toolkit.Uwp.UI.Converters.DoubleToObjectConverter
+                userType = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
+                userType.Activator = Activate_41_DoubleToObjectConverter;
                 userType.AddMemberName("TrueValue");
                 userType.AddMemberName("FalseValue");
                 userType.AddMemberName("NullValue");
@@ -946,16 +718,16 @@ namespace _9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 62:   //  Microsoft.Toolkit.Uwp.UI.Converters.DoubleToVisibilityConverter
-                userType = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Converters.DoubleToObjectConverter"));
-                userType.Activator = Activate_62_DoubleToVisibilityConverter;
+            case 42:   //  Microsoft.Toolkit.Uwp.UI.Converters.DoubleToVisibilityConverter
+                userType = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Converters.DoubleToObjectConverter"));
+                userType.Activator = Activate_42_DoubleToVisibilityConverter;
                 userType.SetIsBindable();
                 xamlType = userType;
                 break;
 
-            case 63:   //  Microsoft.UI.Xaml.Controls.TreeViewNode
-                userType = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
-                userType.Activator = Activate_63_TreeViewNode;
+            case 43:   //  Microsoft.UI.Xaml.Controls.TreeViewNode
+                userType = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
+                userType.Activator = Activate_43_TreeViewNode;
                 userType.AddMemberName("IsExpanded");
                 userType.AddMemberName("HasUnrealizedChildren");
                 userType.AddMemberName("Content");
@@ -967,9 +739,9 @@ namespace _9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 64:   //  System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>
-                userType = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType(this, typeName, type, null);
-                userType.CollectionAdd = VectorAdd_64_IList;
+            case 44:   //  System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>
+                userType = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType(this, typeName, type, null);
+                userType.CollectionAdd = VectorAdd_44_IList;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
@@ -1649,422 +1421,182 @@ namespace _9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo
             var that = (global::Microsoft.Toolkit.Uwp.UI.Controls.DataGrid)instance;
             return that.SelectedItems;
         }
-        private object get_65_UIManteniment_UnEspectacle(object instance)
-        {
-            var that = (global::_9_Cinema_UserControl.View.UIManteniment)instance;
-            return that.UnEspectacle;
-        }
-        private void set_65_UIManteniment_UnEspectacle(object instance, object Value)
-        {
-            var that = (global::_9_Cinema_UserControl.View.UIManteniment)instance;
-            that.UnEspectacle = (global::CinemaDm.Espectacle)Value;
-        }
-        private object get_66_UICadira_LaCadira(object instance)
-        {
-            var that = (global::_9_Cinema_UserControl.View.UICadira)instance;
-            return that.LaCadira;
-        }
-        private void set_66_UICadira_LaCadira(object instance, object Value)
-        {
-            var that = (global::_9_Cinema_UserControl.View.UICadira)instance;
-            that.LaCadira = (global::CinemaDm.Cadira)Value;
-        }
-        private object get_67_UICadira_CategoriesListEnCadira(object instance)
-        {
-            var that = (global::_9_Cinema_UserControl.View.UICadira)instance;
-            return that.CategoriesListEnCadira;
-        }
-        private void set_67_UICadira_CategoriesListEnCadira(object instance, object Value)
-        {
-            var that = (global::_9_Cinema_UserControl.View.UICadira)instance;
-            that.CategoriesListEnCadira = (global::System.Collections.Generic.List<global::CinemaDm.Categoria>)Value;
-        }
-        private object get_68_Categoria_Id(object instance)
-        {
-            var that = (global::CinemaDm.Categoria)instance;
-            return that.Id;
-        }
-        private void set_68_Categoria_Id(object instance, object Value)
-        {
-            var that = (global::CinemaDm.Categoria)instance;
-            that.Id = (global::System.Int32)Value;
-        }
-        private object get_69_Categoria_Nom(object instance)
-        {
-            var that = (global::CinemaDm.Categoria)instance;
-            return that.Nom;
-        }
-        private void set_69_Categoria_Nom(object instance, object Value)
-        {
-            var that = (global::CinemaDm.Categoria)instance;
-            that.Nom = (global::System.String)Value;
-        }
-        private object get_70_Categoria_Color(object instance)
-        {
-            var that = (global::CinemaDm.Categoria)instance;
-            return that.Color;
-        }
-        private void set_70_Categoria_Color(object instance, object Value)
-        {
-            var that = (global::CinemaDm.Categoria)instance;
-            that.Color = (global::System.Int32)Value;
-        }
-        private object get_71_UICadira_Size(object instance)
-        {
-            var that = (global::_9_Cinema_UserControl.View.UICadira)instance;
-            return that.Size;
-        }
-        private void set_71_UICadira_Size(object instance, object Value)
-        {
-            var that = (global::_9_Cinema_UserControl.View.UICadira)instance;
-            that.Size = (global::System.Int32)Value;
-        }
-        private object get_72_UIDescripcioFuncio_UnEspectacle(object instance)
-        {
-            var that = (global::_9_Cinema_UserControl.View.UIDescripcioFuncio)instance;
-            return that.UnEspectacle;
-        }
-        private void set_72_UIDescripcioFuncio_UnEspectacle(object instance, object Value)
-        {
-            var that = (global::_9_Cinema_UserControl.View.UIDescripcioFuncio)instance;
-            that.UnEspectacle = (global::CinemaDm.Espectacle)Value;
-        }
-        private object get_73_UIDescripcioFuncio_UnaFuncio(object instance)
-        {
-            var that = (global::_9_Cinema_UserControl.View.UIDescripcioFuncio)instance;
-            return that.UnaFuncio;
-        }
-        private void set_73_UIDescripcioFuncio_UnaFuncio(object instance, object Value)
-        {
-            var that = (global::_9_Cinema_UserControl.View.UIDescripcioFuncio)instance;
-            that.UnaFuncio = (global::CinemaDm.Funcio)Value;
-        }
-        private object get_74_UIDescripcioFuncio_UnaSala(object instance)
-        {
-            var that = (global::_9_Cinema_UserControl.View.UIDescripcioFuncio)instance;
-            return that.UnaSala;
-        }
-        private void set_74_UIDescripcioFuncio_UnaSala(object instance, object Value)
-        {
-            var that = (global::_9_Cinema_UserControl.View.UIDescripcioFuncio)instance;
-            that.UnaSala = (global::CinemaDM.Plat)Value;
-        }
-        private object get_75_UIDetall_ListEntrades(object instance)
-        {
-            var that = (global::_9_Cinema_UserControl.View.UIDetall)instance;
-            return that.ListEntrades;
-        }
-        private void set_75_UIDetall_ListEntrades(object instance, object Value)
-        {
-            var that = (global::_9_Cinema_UserControl.View.UIDetall)instance;
-            that.ListEntrades = (global::System.Collections.ObjectModel.ObservableCollection<global::CinemaDm.Entrada>)Value;
-        }
-        private object get_76_Entrada_Ent_id(object instance)
-        {
-            var that = (global::CinemaDm.Entrada)instance;
-            return that.Ent_id;
-        }
-        private void set_76_Entrada_Ent_id(object instance, object Value)
-        {
-            var that = (global::CinemaDm.Entrada)instance;
-            that.Ent_id = (global::System.String)Value;
-        }
-        private object get_77_Entrada_Ent_fun_esp_id(object instance)
-        {
-            var that = (global::CinemaDm.Entrada)instance;
-            return that.Ent_fun_esp_id;
-        }
-        private void set_77_Entrada_Ent_fun_esp_id(object instance, object Value)
-        {
-            var that = (global::CinemaDm.Entrada)instance;
-            that.Ent_fun_esp_id = (global::System.Int32)Value;
-        }
-        private object get_78_Entrada_Ent_fun_num(object instance)
-        {
-            var that = (global::CinemaDm.Entrada)instance;
-            return that.Ent_fun_num;
-        }
-        private void set_78_Entrada_Ent_fun_num(object instance, object Value)
-        {
-            var that = (global::CinemaDm.Entrada)instance;
-            that.Ent_fun_num = (global::System.String)Value;
-        }
-        private object get_79_Entrada_Ent_cad_sal_id(object instance)
-        {
-            var that = (global::CinemaDm.Entrada)instance;
-            return that.Ent_cad_sal_id;
-        }
-        private void set_79_Entrada_Ent_cad_sal_id(object instance, object Value)
-        {
-            var that = (global::CinemaDm.Entrada)instance;
-            that.Ent_cad_sal_id = (global::System.Int32)Value;
-        }
-        private object get_80_Entrada_Ent_cad_num(object instance)
-        {
-            var that = (global::CinemaDm.Entrada)instance;
-            return that.Ent_cad_num;
-        }
-        private void set_80_Entrada_Ent_cad_num(object instance, object Value)
-        {
-            var that = (global::CinemaDm.Entrada)instance;
-            that.Ent_cad_num = (global::System.Int32)Value;
-        }
-        private object get_81_Entrada_Ent_preu(object instance)
-        {
-            var that = (global::CinemaDm.Entrada)instance;
-            return that.Ent_preu;
-        }
-        private void set_81_Entrada_Ent_preu(object instance, object Value)
-        {
-            var that = (global::CinemaDm.Entrada)instance;
-            that.Ent_preu = (global::System.Decimal)Value;
-        }
-        private object get_82_UIItems_Item(object instance)
-        {
-            var that = (global::_9_Cinema_UserControl.View.UIItems)instance;
-            return that.Item;
-        }
-        private void set_82_UIItems_Item(object instance, object Value)
-        {
-            var that = (global::_9_Cinema_UserControl.View.UIItems)instance;
-            that.Item = (global::CinemaDm.ItemEscenari)Value;
-        }
-        private object get_83_UIItems_PointList(object instance)
-        {
-            var that = (global::_9_Cinema_UserControl.View.UIItems)instance;
-            return that.PointList;
-        }
-        private void set_83_UIItems_PointList(object instance, object Value)
-        {
-            var that = (global::_9_Cinema_UserControl.View.UIItems)instance;
-            that.PointList = (global::Windows.UI.Xaml.Media.PointCollection)Value;
-        }
-        private object get_84_UILlegenda_LaCategoria(object instance)
-        {
-            var that = (global::_9_Cinema_UserControl.View.UILlegenda)instance;
-            return that.LaCategoria;
-        }
-        private void set_84_UILlegenda_LaCategoria(object instance, object Value)
-        {
-            var that = (global::_9_Cinema_UserControl.View.UILlegenda)instance;
-            that.LaCategoria = (global::CinemaDm.Categoria)Value;
-        }
-        private object get_85_UILlegenda_fondo(object instance)
-        {
-            var that = (global::_9_Cinema_UserControl.View.UILlegenda)instance;
-            return that.fondo;
-        }
-        private void set_85_UILlegenda_fondo(object instance, object Value)
-        {
-            var that = (global::_9_Cinema_UserControl.View.UILlegenda)instance;
-            that.fondo = (global::Windows.UI.Xaml.Media.Brush)Value;
-        }
-        private object get_86_UITotal_LaCadira(object instance)
-        {
-            var that = (global::_9_Cinema_UserControl.View.UITotal)instance;
-            return that.LaCadira;
-        }
-        private void set_86_UITotal_LaCadira(object instance, object Value)
-        {
-            var that = (global::_9_Cinema_UserControl.View.UITotal)instance;
-            that.LaCadira = (global::CinemaDm.Cadira)Value;
-        }
-        private object get_87_UITotal_id(object instance)
-        {
-            var that = (global::_9_Cinema_UserControl.View.UITotal)instance;
-            return that.id;
-        }
-        private void set_87_UITotal_id(object instance, object Value)
-        {
-            var that = (global::_9_Cinema_UserControl.View.UITotal)instance;
-            that.id = (global::System.String)Value;
-        }
-        private object get_88_UITotal_preu(object instance)
-        {
-            var that = (global::_9_Cinema_UserControl.View.UITotal)instance;
-            return that.preu;
-        }
-        private void set_88_UITotal_preu(object instance, object Value)
-        {
-            var that = (global::_9_Cinema_UserControl.View.UITotal)instance;
-            that.preu = (global::System.String)Value;
-        }
-        private object get_89_NullableBool_Value(object instance)
+        private object get_65_NullableBool_Value(object instance)
         {
             var that = (global::Microsoft.Toolkit.Uwp.UI.Extensions.NullableBool)instance;
             return that.Value;
         }
-        private void set_89_NullableBool_Value(object instance, object Value)
+        private void set_65_NullableBool_Value(object instance, object Value)
         {
             var that = (global::Microsoft.Toolkit.Uwp.UI.Extensions.NullableBool)instance;
             that.Value = (global::System.Boolean)Value;
         }
-        private object get_90_NullableBool_IsNull(object instance)
+        private object get_66_NullableBool_IsNull(object instance)
         {
             var that = (global::Microsoft.Toolkit.Uwp.UI.Extensions.NullableBool)instance;
             return that.IsNull;
         }
-        private void set_90_NullableBool_IsNull(object instance, object Value)
+        private void set_66_NullableBool_IsNull(object instance, object Value)
         {
             var that = (global::Microsoft.Toolkit.Uwp.UI.Extensions.NullableBool)instance;
             that.IsNull = (global::System.Boolean)Value;
         }
-        private object get_91_OnDevice_Default(object instance)
+        private object get_67_OnDevice_Default(object instance)
         {
             var that = (global::Microsoft.Toolkit.Uwp.UI.Extensions.Markup.OnDevice)instance;
             return that.Default;
         }
-        private void set_91_OnDevice_Default(object instance, object Value)
+        private void set_67_OnDevice_Default(object instance, object Value)
         {
             var that = (global::Microsoft.Toolkit.Uwp.UI.Extensions.Markup.OnDevice)instance;
             that.Default = (global::System.Object)Value;
         }
-        private object get_92_OnDevice_Desktop(object instance)
+        private object get_68_OnDevice_Desktop(object instance)
         {
             var that = (global::Microsoft.Toolkit.Uwp.UI.Extensions.Markup.OnDevice)instance;
             return that.Desktop;
         }
-        private void set_92_OnDevice_Desktop(object instance, object Value)
+        private void set_68_OnDevice_Desktop(object instance, object Value)
         {
             var that = (global::Microsoft.Toolkit.Uwp.UI.Extensions.Markup.OnDevice)instance;
             that.Desktop = (global::System.Object)Value;
         }
-        private object get_93_OnDevice_Holographic(object instance)
+        private object get_69_OnDevice_Holographic(object instance)
         {
             var that = (global::Microsoft.Toolkit.Uwp.UI.Extensions.Markup.OnDevice)instance;
             return that.Holographic;
         }
-        private void set_93_OnDevice_Holographic(object instance, object Value)
+        private void set_69_OnDevice_Holographic(object instance, object Value)
         {
             var that = (global::Microsoft.Toolkit.Uwp.UI.Extensions.Markup.OnDevice)instance;
             that.Holographic = (global::System.Object)Value;
         }
-        private object get_94_OnDevice_IoT(object instance)
+        private object get_70_OnDevice_IoT(object instance)
         {
             var that = (global::Microsoft.Toolkit.Uwp.UI.Extensions.Markup.OnDevice)instance;
             return that.IoT;
         }
-        private void set_94_OnDevice_IoT(object instance, object Value)
+        private void set_70_OnDevice_IoT(object instance, object Value)
         {
             var that = (global::Microsoft.Toolkit.Uwp.UI.Extensions.Markup.OnDevice)instance;
             that.IoT = (global::System.Object)Value;
         }
-        private object get_95_OnDevice_Team(object instance)
+        private object get_71_OnDevice_Team(object instance)
         {
             var that = (global::Microsoft.Toolkit.Uwp.UI.Extensions.Markup.OnDevice)instance;
             return that.Team;
         }
-        private void set_95_OnDevice_Team(object instance, object Value)
+        private void set_71_OnDevice_Team(object instance, object Value)
         {
             var that = (global::Microsoft.Toolkit.Uwp.UI.Extensions.Markup.OnDevice)instance;
             that.Team = (global::System.Object)Value;
         }
-        private object get_96_OnDevice_Xbox(object instance)
+        private object get_72_OnDevice_Xbox(object instance)
         {
             var that = (global::Microsoft.Toolkit.Uwp.UI.Extensions.Markup.OnDevice)instance;
             return that.Xbox;
         }
-        private void set_96_OnDevice_Xbox(object instance, object Value)
+        private void set_72_OnDevice_Xbox(object instance, object Value)
         {
             var that = (global::Microsoft.Toolkit.Uwp.UI.Extensions.Markup.OnDevice)instance;
             that.Xbox = (global::System.Object)Value;
         }
-        private object get_97_DoubleToObjectConverter_TrueValue(object instance)
+        private object get_73_DoubleToObjectConverter_TrueValue(object instance)
         {
             var that = (global::Microsoft.Toolkit.Uwp.UI.Converters.DoubleToObjectConverter)instance;
             return that.TrueValue;
         }
-        private void set_97_DoubleToObjectConverter_TrueValue(object instance, object Value)
+        private void set_73_DoubleToObjectConverter_TrueValue(object instance, object Value)
         {
             var that = (global::Microsoft.Toolkit.Uwp.UI.Converters.DoubleToObjectConverter)instance;
             that.TrueValue = (global::System.Object)Value;
         }
-        private object get_98_DoubleToObjectConverter_FalseValue(object instance)
+        private object get_74_DoubleToObjectConverter_FalseValue(object instance)
         {
             var that = (global::Microsoft.Toolkit.Uwp.UI.Converters.DoubleToObjectConverter)instance;
             return that.FalseValue;
         }
-        private void set_98_DoubleToObjectConverter_FalseValue(object instance, object Value)
+        private void set_74_DoubleToObjectConverter_FalseValue(object instance, object Value)
         {
             var that = (global::Microsoft.Toolkit.Uwp.UI.Converters.DoubleToObjectConverter)instance;
             that.FalseValue = (global::System.Object)Value;
         }
-        private object get_99_DoubleToObjectConverter_NullValue(object instance)
+        private object get_75_DoubleToObjectConverter_NullValue(object instance)
         {
             var that = (global::Microsoft.Toolkit.Uwp.UI.Converters.DoubleToObjectConverter)instance;
             return that.NullValue;
         }
-        private void set_99_DoubleToObjectConverter_NullValue(object instance, object Value)
+        private void set_75_DoubleToObjectConverter_NullValue(object instance, object Value)
         {
             var that = (global::Microsoft.Toolkit.Uwp.UI.Converters.DoubleToObjectConverter)instance;
             that.NullValue = (global::System.Object)Value;
         }
-        private object get_100_DoubleToObjectConverter_GreaterThan(object instance)
+        private object get_76_DoubleToObjectConverter_GreaterThan(object instance)
         {
             var that = (global::Microsoft.Toolkit.Uwp.UI.Converters.DoubleToObjectConverter)instance;
             return that.GreaterThan;
         }
-        private void set_100_DoubleToObjectConverter_GreaterThan(object instance, object Value)
+        private void set_76_DoubleToObjectConverter_GreaterThan(object instance, object Value)
         {
             var that = (global::Microsoft.Toolkit.Uwp.UI.Converters.DoubleToObjectConverter)instance;
             that.GreaterThan = (global::System.Double)Value;
         }
-        private object get_101_DoubleToObjectConverter_LessThan(object instance)
+        private object get_77_DoubleToObjectConverter_LessThan(object instance)
         {
             var that = (global::Microsoft.Toolkit.Uwp.UI.Converters.DoubleToObjectConverter)instance;
             return that.LessThan;
         }
-        private void set_101_DoubleToObjectConverter_LessThan(object instance, object Value)
+        private void set_77_DoubleToObjectConverter_LessThan(object instance, object Value)
         {
             var that = (global::Microsoft.Toolkit.Uwp.UI.Converters.DoubleToObjectConverter)instance;
             that.LessThan = (global::System.Double)Value;
         }
-        private object get_102_TreeViewNode_IsExpanded(object instance)
+        private object get_78_TreeViewNode_IsExpanded(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.IsExpanded;
         }
-        private void set_102_TreeViewNode_IsExpanded(object instance, object Value)
+        private void set_78_TreeViewNode_IsExpanded(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             that.IsExpanded = (global::System.Boolean)Value;
         }
-        private object get_103_TreeViewNode_HasUnrealizedChildren(object instance)
+        private object get_79_TreeViewNode_HasUnrealizedChildren(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.HasUnrealizedChildren;
         }
-        private void set_103_TreeViewNode_HasUnrealizedChildren(object instance, object Value)
+        private void set_79_TreeViewNode_HasUnrealizedChildren(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             that.HasUnrealizedChildren = (global::System.Boolean)Value;
         }
-        private object get_104_TreeViewNode_Content(object instance)
+        private object get_80_TreeViewNode_Content(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.Content;
         }
-        private void set_104_TreeViewNode_Content(object instance, object Value)
+        private void set_80_TreeViewNode_Content(object instance, object Value)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             that.Content = (global::System.Object)Value;
         }
-        private object get_105_TreeViewNode_Children(object instance)
+        private object get_81_TreeViewNode_Children(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.Children;
         }
-        private object get_106_TreeViewNode_Depth(object instance)
+        private object get_82_TreeViewNode_Depth(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.Depth;
         }
-        private object get_107_TreeViewNode_HasChildren(object instance)
+        private object get_83_TreeViewNode_HasChildren(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.HasChildren;
         }
-        private object get_108_TreeViewNode_Parent(object instance)
+        private object get_84_TreeViewNode_Parent(object instance)
         {
             var that = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)instance;
             return that.Parent;
@@ -2072,726 +1604,569 @@ namespace _9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo
 
         private global::Windows.UI.Xaml.Markup.IXamlMember CreateXamlMember(string longMemberName)
         {
-            global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember xamlMember = null;
-            global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType userType;
+            global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlMember xamlMember = null;
+            global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType userType;
 
             switch (longMemberName)
             {
             case "Microsoft.Toolkit.Uwp.UI.Controls.DataGrid.AlternatingRowBackground":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "AlternatingRowBackground", "Windows.UI.Xaml.Media.Brush");
+                userType = (global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
+                xamlMember = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlMember(this, "AlternatingRowBackground", "Windows.UI.Xaml.Media.Brush");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_0_DataGrid_AlternatingRowBackground;
                 xamlMember.Setter = set_0_DataGrid_AlternatingRowBackground;
                 break;
             case "Microsoft.Toolkit.Uwp.UI.Controls.DataGrid.AlternatingRowForeground":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "AlternatingRowForeground", "Windows.UI.Xaml.Media.Brush");
+                userType = (global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
+                xamlMember = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlMember(this, "AlternatingRowForeground", "Windows.UI.Xaml.Media.Brush");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_1_DataGrid_AlternatingRowForeground;
                 xamlMember.Setter = set_1_DataGrid_AlternatingRowForeground;
                 break;
             case "Microsoft.Toolkit.Uwp.UI.Controls.DataGrid.AreRowDetailsFrozen":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "AreRowDetailsFrozen", "Boolean");
+                userType = (global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
+                xamlMember = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlMember(this, "AreRowDetailsFrozen", "Boolean");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_2_DataGrid_AreRowDetailsFrozen;
                 xamlMember.Setter = set_2_DataGrid_AreRowDetailsFrozen;
                 break;
             case "Microsoft.Toolkit.Uwp.UI.Controls.DataGrid.AreRowGroupHeadersFrozen":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "AreRowGroupHeadersFrozen", "Boolean");
+                userType = (global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
+                xamlMember = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlMember(this, "AreRowGroupHeadersFrozen", "Boolean");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_3_DataGrid_AreRowGroupHeadersFrozen;
                 xamlMember.Setter = set_3_DataGrid_AreRowGroupHeadersFrozen;
                 break;
             case "Microsoft.Toolkit.Uwp.UI.Controls.DataGrid.AutoGenerateColumns":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "AutoGenerateColumns", "Boolean");
+                userType = (global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
+                xamlMember = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlMember(this, "AutoGenerateColumns", "Boolean");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_4_DataGrid_AutoGenerateColumns;
                 xamlMember.Setter = set_4_DataGrid_AutoGenerateColumns;
                 break;
             case "Microsoft.Toolkit.Uwp.UI.Controls.DataGrid.CanUserReorderColumns":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "CanUserReorderColumns", "Boolean");
+                userType = (global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
+                xamlMember = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlMember(this, "CanUserReorderColumns", "Boolean");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_5_DataGrid_CanUserReorderColumns;
                 xamlMember.Setter = set_5_DataGrid_CanUserReorderColumns;
                 break;
             case "Microsoft.Toolkit.Uwp.UI.Controls.DataGrid.CanUserResizeColumns":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "CanUserResizeColumns", "Boolean");
+                userType = (global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
+                xamlMember = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlMember(this, "CanUserResizeColumns", "Boolean");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_6_DataGrid_CanUserResizeColumns;
                 xamlMember.Setter = set_6_DataGrid_CanUserResizeColumns;
                 break;
             case "Microsoft.Toolkit.Uwp.UI.Controls.DataGrid.CanUserSortColumns":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "CanUserSortColumns", "Boolean");
+                userType = (global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
+                xamlMember = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlMember(this, "CanUserSortColumns", "Boolean");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_7_DataGrid_CanUserSortColumns;
                 xamlMember.Setter = set_7_DataGrid_CanUserSortColumns;
                 break;
             case "Microsoft.Toolkit.Uwp.UI.Controls.DataGrid.CellStyle":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "CellStyle", "Windows.UI.Xaml.Style");
+                userType = (global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
+                xamlMember = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlMember(this, "CellStyle", "Windows.UI.Xaml.Style");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_8_DataGrid_CellStyle;
                 xamlMember.Setter = set_8_DataGrid_CellStyle;
                 break;
             case "Microsoft.Toolkit.Uwp.UI.Controls.DataGrid.ClipboardCopyMode":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "ClipboardCopyMode", "Microsoft.Toolkit.Uwp.UI.Controls.DataGridClipboardCopyMode");
+                userType = (global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
+                xamlMember = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlMember(this, "ClipboardCopyMode", "Microsoft.Toolkit.Uwp.UI.Controls.DataGridClipboardCopyMode");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_9_DataGrid_ClipboardCopyMode;
                 xamlMember.Setter = set_9_DataGrid_ClipboardCopyMode;
                 break;
             case "Microsoft.Toolkit.Uwp.UI.Controls.DataGrid.ColumnHeaderHeight":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "ColumnHeaderHeight", "Double");
+                userType = (global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
+                xamlMember = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlMember(this, "ColumnHeaderHeight", "Double");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_10_DataGrid_ColumnHeaderHeight;
                 xamlMember.Setter = set_10_DataGrid_ColumnHeaderHeight;
                 break;
             case "Microsoft.Toolkit.Uwp.UI.Controls.DataGrid.ColumnHeaderStyle":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "ColumnHeaderStyle", "Windows.UI.Xaml.Style");
+                userType = (global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
+                xamlMember = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlMember(this, "ColumnHeaderStyle", "Windows.UI.Xaml.Style");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_11_DataGrid_ColumnHeaderStyle;
                 xamlMember.Setter = set_11_DataGrid_ColumnHeaderStyle;
                 break;
             case "Microsoft.Toolkit.Uwp.UI.Controls.DataGrid.ColumnWidth":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "ColumnWidth", "Microsoft.Toolkit.Uwp.UI.Controls.DataGridLength");
+                userType = (global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
+                xamlMember = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlMember(this, "ColumnWidth", "Microsoft.Toolkit.Uwp.UI.Controls.DataGridLength");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_12_DataGrid_ColumnWidth;
                 xamlMember.Setter = set_12_DataGrid_ColumnWidth;
                 break;
             case "Microsoft.Toolkit.Uwp.UI.Controls.DataGrid.DataFetchSize":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "DataFetchSize", "Double");
+                userType = (global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
+                xamlMember = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlMember(this, "DataFetchSize", "Double");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_13_DataGrid_DataFetchSize;
                 xamlMember.Setter = set_13_DataGrid_DataFetchSize;
                 break;
             case "Microsoft.Toolkit.Uwp.UI.Controls.DataGrid.DragIndicatorStyle":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "DragIndicatorStyle", "Windows.UI.Xaml.Style");
+                userType = (global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
+                xamlMember = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlMember(this, "DragIndicatorStyle", "Windows.UI.Xaml.Style");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_14_DataGrid_DragIndicatorStyle;
                 xamlMember.Setter = set_14_DataGrid_DragIndicatorStyle;
                 break;
             case "Microsoft.Toolkit.Uwp.UI.Controls.DataGrid.DropLocationIndicatorStyle":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "DropLocationIndicatorStyle", "Windows.UI.Xaml.Style");
+                userType = (global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
+                xamlMember = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlMember(this, "DropLocationIndicatorStyle", "Windows.UI.Xaml.Style");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_15_DataGrid_DropLocationIndicatorStyle;
                 xamlMember.Setter = set_15_DataGrid_DropLocationIndicatorStyle;
                 break;
             case "Microsoft.Toolkit.Uwp.UI.Controls.DataGrid.FrozenColumnCount":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "FrozenColumnCount", "Int32");
+                userType = (global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
+                xamlMember = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlMember(this, "FrozenColumnCount", "Int32");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_16_DataGrid_FrozenColumnCount;
                 xamlMember.Setter = set_16_DataGrid_FrozenColumnCount;
                 break;
             case "Microsoft.Toolkit.Uwp.UI.Controls.DataGrid.GridLinesVisibility":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "GridLinesVisibility", "Microsoft.Toolkit.Uwp.UI.Controls.DataGridGridLinesVisibility");
+                userType = (global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
+                xamlMember = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlMember(this, "GridLinesVisibility", "Microsoft.Toolkit.Uwp.UI.Controls.DataGridGridLinesVisibility");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_17_DataGrid_GridLinesVisibility;
                 xamlMember.Setter = set_17_DataGrid_GridLinesVisibility;
                 break;
             case "Microsoft.Toolkit.Uwp.UI.Controls.DataGrid.HeadersVisibility":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "HeadersVisibility", "Microsoft.Toolkit.Uwp.UI.Controls.DataGridHeadersVisibility");
+                userType = (global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
+                xamlMember = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlMember(this, "HeadersVisibility", "Microsoft.Toolkit.Uwp.UI.Controls.DataGridHeadersVisibility");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_18_DataGrid_HeadersVisibility;
                 xamlMember.Setter = set_18_DataGrid_HeadersVisibility;
                 break;
             case "Microsoft.Toolkit.Uwp.UI.Controls.DataGrid.HorizontalGridLinesBrush":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "HorizontalGridLinesBrush", "Windows.UI.Xaml.Media.Brush");
+                userType = (global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
+                xamlMember = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlMember(this, "HorizontalGridLinesBrush", "Windows.UI.Xaml.Media.Brush");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_19_DataGrid_HorizontalGridLinesBrush;
                 xamlMember.Setter = set_19_DataGrid_HorizontalGridLinesBrush;
                 break;
             case "Microsoft.Toolkit.Uwp.UI.Controls.DataGrid.HorizontalScrollBarVisibility":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "HorizontalScrollBarVisibility", "Windows.UI.Xaml.Controls.ScrollBarVisibility");
+                userType = (global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
+                xamlMember = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlMember(this, "HorizontalScrollBarVisibility", "Windows.UI.Xaml.Controls.ScrollBarVisibility");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_20_DataGrid_HorizontalScrollBarVisibility;
                 xamlMember.Setter = set_20_DataGrid_HorizontalScrollBarVisibility;
                 break;
             case "Microsoft.Toolkit.Uwp.UI.Controls.DataGrid.IsReadOnly":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "IsReadOnly", "Boolean");
+                userType = (global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
+                xamlMember = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlMember(this, "IsReadOnly", "Boolean");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_21_DataGrid_IsReadOnly;
                 xamlMember.Setter = set_21_DataGrid_IsReadOnly;
                 break;
             case "Microsoft.Toolkit.Uwp.UI.Controls.DataGrid.IsValid":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "IsValid", "Boolean");
+                userType = (global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
+                xamlMember = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlMember(this, "IsValid", "Boolean");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_22_DataGrid_IsValid;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.Toolkit.Uwp.UI.Controls.DataGrid.IncrementalLoadingThreshold":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "IncrementalLoadingThreshold", "Double");
+                userType = (global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
+                xamlMember = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlMember(this, "IncrementalLoadingThreshold", "Double");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_23_DataGrid_IncrementalLoadingThreshold;
                 xamlMember.Setter = set_23_DataGrid_IncrementalLoadingThreshold;
                 break;
             case "Microsoft.Toolkit.Uwp.UI.Controls.DataGrid.IncrementalLoadingTrigger":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "IncrementalLoadingTrigger", "Windows.UI.Xaml.Controls.IncrementalLoadingTrigger");
+                userType = (global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
+                xamlMember = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlMember(this, "IncrementalLoadingTrigger", "Windows.UI.Xaml.Controls.IncrementalLoadingTrigger");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_24_DataGrid_IncrementalLoadingTrigger;
                 xamlMember.Setter = set_24_DataGrid_IncrementalLoadingTrigger;
                 break;
             case "Microsoft.Toolkit.Uwp.UI.Controls.DataGrid.ItemsSource":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "ItemsSource", "System.Collections.IEnumerable");
+                userType = (global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
+                xamlMember = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlMember(this, "ItemsSource", "System.Collections.IEnumerable");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_25_DataGrid_ItemsSource;
                 xamlMember.Setter = set_25_DataGrid_ItemsSource;
                 break;
             case "Microsoft.Toolkit.Uwp.UI.Controls.DataGrid.MaxColumnWidth":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "MaxColumnWidth", "Double");
+                userType = (global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
+                xamlMember = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlMember(this, "MaxColumnWidth", "Double");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_26_DataGrid_MaxColumnWidth;
                 xamlMember.Setter = set_26_DataGrid_MaxColumnWidth;
                 break;
             case "Microsoft.Toolkit.Uwp.UI.Controls.DataGrid.MinColumnWidth":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "MinColumnWidth", "Double");
+                userType = (global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
+                xamlMember = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlMember(this, "MinColumnWidth", "Double");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_27_DataGrid_MinColumnWidth;
                 xamlMember.Setter = set_27_DataGrid_MinColumnWidth;
                 break;
             case "Microsoft.Toolkit.Uwp.UI.Controls.DataGrid.RowBackground":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "RowBackground", "Windows.UI.Xaml.Media.Brush");
+                userType = (global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
+                xamlMember = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlMember(this, "RowBackground", "Windows.UI.Xaml.Media.Brush");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_28_DataGrid_RowBackground;
                 xamlMember.Setter = set_28_DataGrid_RowBackground;
                 break;
             case "Microsoft.Toolkit.Uwp.UI.Controls.DataGrid.RowDetailsTemplate":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "RowDetailsTemplate", "Windows.UI.Xaml.DataTemplate");
+                userType = (global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
+                xamlMember = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlMember(this, "RowDetailsTemplate", "Windows.UI.Xaml.DataTemplate");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_29_DataGrid_RowDetailsTemplate;
                 xamlMember.Setter = set_29_DataGrid_RowDetailsTemplate;
                 break;
             case "Microsoft.Toolkit.Uwp.UI.Controls.DataGrid.RowDetailsVisibilityMode":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "RowDetailsVisibilityMode", "Microsoft.Toolkit.Uwp.UI.Controls.DataGridRowDetailsVisibilityMode");
+                userType = (global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
+                xamlMember = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlMember(this, "RowDetailsVisibilityMode", "Microsoft.Toolkit.Uwp.UI.Controls.DataGridRowDetailsVisibilityMode");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_30_DataGrid_RowDetailsVisibilityMode;
                 xamlMember.Setter = set_30_DataGrid_RowDetailsVisibilityMode;
                 break;
             case "Microsoft.Toolkit.Uwp.UI.Controls.DataGrid.RowForeground":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "RowForeground", "Windows.UI.Xaml.Media.Brush");
+                userType = (global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
+                xamlMember = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlMember(this, "RowForeground", "Windows.UI.Xaml.Media.Brush");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_31_DataGrid_RowForeground;
                 xamlMember.Setter = set_31_DataGrid_RowForeground;
                 break;
             case "Microsoft.Toolkit.Uwp.UI.Controls.DataGrid.RowHeight":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "RowHeight", "Double");
+                userType = (global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
+                xamlMember = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlMember(this, "RowHeight", "Double");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_32_DataGrid_RowHeight;
                 xamlMember.Setter = set_32_DataGrid_RowHeight;
                 break;
             case "Microsoft.Toolkit.Uwp.UI.Controls.DataGrid.RowHeaderWidth":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "RowHeaderWidth", "Double");
+                userType = (global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
+                xamlMember = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlMember(this, "RowHeaderWidth", "Double");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_33_DataGrid_RowHeaderWidth;
                 xamlMember.Setter = set_33_DataGrid_RowHeaderWidth;
                 break;
             case "Microsoft.Toolkit.Uwp.UI.Controls.DataGrid.RowHeaderStyle":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "RowHeaderStyle", "Windows.UI.Xaml.Style");
+                userType = (global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
+                xamlMember = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlMember(this, "RowHeaderStyle", "Windows.UI.Xaml.Style");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_34_DataGrid_RowHeaderStyle;
                 xamlMember.Setter = set_34_DataGrid_RowHeaderStyle;
                 break;
             case "Microsoft.Toolkit.Uwp.UI.Controls.DataGrid.RowStyle":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "RowStyle", "Windows.UI.Xaml.Style");
+                userType = (global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
+                xamlMember = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlMember(this, "RowStyle", "Windows.UI.Xaml.Style");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_35_DataGrid_RowStyle;
                 xamlMember.Setter = set_35_DataGrid_RowStyle;
                 break;
             case "Microsoft.Toolkit.Uwp.UI.Controls.DataGrid.SelectionMode":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "SelectionMode", "Microsoft.Toolkit.Uwp.UI.Controls.DataGridSelectionMode");
+                userType = (global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
+                xamlMember = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlMember(this, "SelectionMode", "Microsoft.Toolkit.Uwp.UI.Controls.DataGridSelectionMode");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_36_DataGrid_SelectionMode;
                 xamlMember.Setter = set_36_DataGrid_SelectionMode;
                 break;
             case "Microsoft.Toolkit.Uwp.UI.Controls.DataGrid.SelectedIndex":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "SelectedIndex", "Int32");
+                userType = (global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
+                xamlMember = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlMember(this, "SelectedIndex", "Int32");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_37_DataGrid_SelectedIndex;
                 xamlMember.Setter = set_37_DataGrid_SelectedIndex;
                 break;
             case "Microsoft.Toolkit.Uwp.UI.Controls.DataGrid.SelectedItem":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "SelectedItem", "Object");
+                userType = (global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
+                xamlMember = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlMember(this, "SelectedItem", "Object");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_38_DataGrid_SelectedItem;
                 xamlMember.Setter = set_38_DataGrid_SelectedItem;
                 break;
             case "Microsoft.Toolkit.Uwp.UI.Controls.DataGrid.VerticalGridLinesBrush":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "VerticalGridLinesBrush", "Windows.UI.Xaml.Media.Brush");
+                userType = (global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
+                xamlMember = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlMember(this, "VerticalGridLinesBrush", "Windows.UI.Xaml.Media.Brush");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_39_DataGrid_VerticalGridLinesBrush;
                 xamlMember.Setter = set_39_DataGrid_VerticalGridLinesBrush;
                 break;
             case "Microsoft.Toolkit.Uwp.UI.Controls.DataGrid.VerticalScrollBarVisibility":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "VerticalScrollBarVisibility", "Windows.UI.Xaml.Controls.ScrollBarVisibility");
+                userType = (global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
+                xamlMember = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlMember(this, "VerticalScrollBarVisibility", "Windows.UI.Xaml.Controls.ScrollBarVisibility");
                 xamlMember.SetIsDependencyProperty();
                 xamlMember.Getter = get_40_DataGrid_VerticalScrollBarVisibility;
                 xamlMember.Setter = set_40_DataGrid_VerticalScrollBarVisibility;
                 break;
             case "Microsoft.Toolkit.Uwp.UI.Controls.DataGrid.Columns":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "Columns", "System.Collections.ObjectModel.ObservableCollection`1<Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn>");
+                userType = (global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
+                xamlMember = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlMember(this, "Columns", "System.Collections.ObjectModel.ObservableCollection`1<Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn>");
                 xamlMember.Getter = get_41_DataGrid_Columns;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn.ActualWidth":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "ActualWidth", "Double");
+                userType = (global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn");
+                xamlMember = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlMember(this, "ActualWidth", "Double");
                 xamlMember.Getter = get_42_DataGridColumn_ActualWidth;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn.CanUserReorder":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "CanUserReorder", "Boolean");
+                userType = (global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn");
+                xamlMember = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlMember(this, "CanUserReorder", "Boolean");
                 xamlMember.Getter = get_43_DataGridColumn_CanUserReorder;
                 xamlMember.Setter = set_43_DataGridColumn_CanUserReorder;
                 break;
             case "Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn.CanUserResize":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "CanUserResize", "Boolean");
+                userType = (global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn");
+                xamlMember = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlMember(this, "CanUserResize", "Boolean");
                 xamlMember.Getter = get_44_DataGridColumn_CanUserResize;
                 xamlMember.Setter = set_44_DataGridColumn_CanUserResize;
                 break;
             case "Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn.CanUserSort":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "CanUserSort", "Boolean");
+                userType = (global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn");
+                xamlMember = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlMember(this, "CanUserSort", "Boolean");
                 xamlMember.Getter = get_45_DataGridColumn_CanUserSort;
                 xamlMember.Setter = set_45_DataGridColumn_CanUserSort;
                 break;
             case "Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn.CellStyle":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "CellStyle", "Windows.UI.Xaml.Style");
+                userType = (global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn");
+                xamlMember = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlMember(this, "CellStyle", "Windows.UI.Xaml.Style");
                 xamlMember.Getter = get_46_DataGridColumn_CellStyle;
                 xamlMember.Setter = set_46_DataGridColumn_CellStyle;
                 break;
             case "Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn.ClipboardContentBinding":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "ClipboardContentBinding", "Windows.UI.Xaml.Data.Binding");
+                userType = (global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn");
+                xamlMember = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlMember(this, "ClipboardContentBinding", "Windows.UI.Xaml.Data.Binding");
                 xamlMember.Getter = get_47_DataGridColumn_ClipboardContentBinding;
                 xamlMember.Setter = set_47_DataGridColumn_ClipboardContentBinding;
                 break;
             case "Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn.DisplayIndex":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "DisplayIndex", "Int32");
+                userType = (global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn");
+                xamlMember = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlMember(this, "DisplayIndex", "Int32");
                 xamlMember.Getter = get_48_DataGridColumn_DisplayIndex;
                 xamlMember.Setter = set_48_DataGridColumn_DisplayIndex;
                 break;
             case "Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn.DragIndicatorStyle":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "DragIndicatorStyle", "Windows.UI.Xaml.Style");
+                userType = (global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn");
+                xamlMember = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlMember(this, "DragIndicatorStyle", "Windows.UI.Xaml.Style");
                 xamlMember.Getter = get_49_DataGridColumn_DragIndicatorStyle;
                 xamlMember.Setter = set_49_DataGridColumn_DragIndicatorStyle;
                 break;
             case "Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn.HeaderStyle":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "HeaderStyle", "Windows.UI.Xaml.Style");
+                userType = (global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn");
+                xamlMember = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlMember(this, "HeaderStyle", "Windows.UI.Xaml.Style");
                 xamlMember.Getter = get_50_DataGridColumn_HeaderStyle;
                 xamlMember.Setter = set_50_DataGridColumn_HeaderStyle;
                 break;
             case "Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn.Header":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "Header", "Object");
+                userType = (global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn");
+                xamlMember = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlMember(this, "Header", "Object");
                 xamlMember.Getter = get_51_DataGridColumn_Header;
                 xamlMember.Setter = set_51_DataGridColumn_Header;
                 break;
             case "Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn.IsAutoGenerated":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "IsAutoGenerated", "Boolean");
+                userType = (global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn");
+                xamlMember = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlMember(this, "IsAutoGenerated", "Boolean");
                 xamlMember.Getter = get_52_DataGridColumn_IsAutoGenerated;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn.IsFrozen":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "IsFrozen", "Boolean");
+                userType = (global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn");
+                xamlMember = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlMember(this, "IsFrozen", "Boolean");
                 xamlMember.Getter = get_53_DataGridColumn_IsFrozen;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn.IsReadOnly":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "IsReadOnly", "Boolean");
+                userType = (global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn");
+                xamlMember = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlMember(this, "IsReadOnly", "Boolean");
                 xamlMember.Getter = get_54_DataGridColumn_IsReadOnly;
                 xamlMember.Setter = set_54_DataGridColumn_IsReadOnly;
                 break;
             case "Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn.MaxWidth":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "MaxWidth", "Double");
+                userType = (global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn");
+                xamlMember = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlMember(this, "MaxWidth", "Double");
                 xamlMember.Getter = get_55_DataGridColumn_MaxWidth;
                 xamlMember.Setter = set_55_DataGridColumn_MaxWidth;
                 break;
             case "Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn.MinWidth":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "MinWidth", "Double");
+                userType = (global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn");
+                xamlMember = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlMember(this, "MinWidth", "Double");
                 xamlMember.Getter = get_56_DataGridColumn_MinWidth;
                 xamlMember.Setter = set_56_DataGridColumn_MinWidth;
                 break;
             case "Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn.SortDirection":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "SortDirection", "System.Nullable`1<Microsoft.Toolkit.Uwp.UI.Controls.DataGridSortDirection>");
+                userType = (global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn");
+                xamlMember = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlMember(this, "SortDirection", "System.Nullable`1<Microsoft.Toolkit.Uwp.UI.Controls.DataGridSortDirection>");
                 xamlMember.Getter = get_57_DataGridColumn_SortDirection;
                 xamlMember.Setter = set_57_DataGridColumn_SortDirection;
                 break;
             case "Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn.Tag":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "Tag", "Object");
+                userType = (global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn");
+                xamlMember = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlMember(this, "Tag", "Object");
                 xamlMember.Getter = get_58_DataGridColumn_Tag;
                 xamlMember.Setter = set_58_DataGridColumn_Tag;
                 break;
             case "Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn.Visibility":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "Visibility", "Windows.UI.Xaml.Visibility");
+                userType = (global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn");
+                xamlMember = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlMember(this, "Visibility", "Windows.UI.Xaml.Visibility");
                 xamlMember.Getter = get_59_DataGridColumn_Visibility;
                 xamlMember.Setter = set_59_DataGridColumn_Visibility;
                 break;
             case "Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn.Width":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "Width", "Microsoft.Toolkit.Uwp.UI.Controls.DataGridLength");
+                userType = (global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn");
+                xamlMember = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlMember(this, "Width", "Microsoft.Toolkit.Uwp.UI.Controls.DataGridLength");
                 xamlMember.Getter = get_60_DataGridColumn_Width;
                 xamlMember.Setter = set_60_DataGridColumn_Width;
                 break;
             case "Microsoft.Toolkit.Uwp.UI.Controls.DataGrid.CurrentColumn":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "CurrentColumn", "Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn");
+                userType = (global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
+                xamlMember = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlMember(this, "CurrentColumn", "Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn");
                 xamlMember.Getter = get_61_DataGrid_CurrentColumn;
                 xamlMember.Setter = set_61_DataGrid_CurrentColumn;
                 break;
             case "Microsoft.Toolkit.Uwp.UI.Controls.DataGrid.RowGroupHeaderPropertyNameAlternative":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "RowGroupHeaderPropertyNameAlternative", "String");
+                userType = (global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
+                xamlMember = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlMember(this, "RowGroupHeaderPropertyNameAlternative", "String");
                 xamlMember.Getter = get_62_DataGrid_RowGroupHeaderPropertyNameAlternative;
                 xamlMember.Setter = set_62_DataGrid_RowGroupHeaderPropertyNameAlternative;
                 break;
             case "Microsoft.Toolkit.Uwp.UI.Controls.DataGrid.RowGroupHeaderStyles":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "RowGroupHeaderStyles", "System.Collections.ObjectModel.ObservableCollection`1<Windows.UI.Xaml.Style>");
+                userType = (global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
+                xamlMember = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlMember(this, "RowGroupHeaderStyles", "System.Collections.ObjectModel.ObservableCollection`1<Windows.UI.Xaml.Style>");
                 xamlMember.Getter = get_63_DataGrid_RowGroupHeaderStyles;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.Toolkit.Uwp.UI.Controls.DataGrid.SelectedItems":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "SelectedItems", "System.Collections.IList");
+                userType = (global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Controls.DataGrid");
+                xamlMember = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlMember(this, "SelectedItems", "System.Collections.IList");
                 xamlMember.Getter = get_64_DataGrid_SelectedItems;
                 xamlMember.SetIsReadOnly();
                 break;
-            case "_9_Cinema_UserControl.View.UIManteniment.UnEspectacle":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("_9_Cinema_UserControl.View.UIManteniment");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "UnEspectacle", "CinemaDm.Espectacle");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_65_UIManteniment_UnEspectacle;
-                xamlMember.Setter = set_65_UIManteniment_UnEspectacle;
-                break;
-            case "_9_Cinema_UserControl.View.UICadira.LaCadira":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("_9_Cinema_UserControl.View.UICadira");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "LaCadira", "CinemaDm.Cadira");
-                xamlMember.Getter = get_66_UICadira_LaCadira;
-                xamlMember.Setter = set_66_UICadira_LaCadira;
-                break;
-            case "_9_Cinema_UserControl.View.UICadira.CategoriesListEnCadira":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("_9_Cinema_UserControl.View.UICadira");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "CategoriesListEnCadira", "System.Collections.Generic.List`1<CinemaDm.Categoria>");
-                xamlMember.Getter = get_67_UICadira_CategoriesListEnCadira;
-                xamlMember.Setter = set_67_UICadira_CategoriesListEnCadira;
-                break;
-            case "CinemaDm.Categoria.Id":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CinemaDm.Categoria");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "Id", "Int32");
-                xamlMember.Getter = get_68_Categoria_Id;
-                xamlMember.Setter = set_68_Categoria_Id;
-                break;
-            case "CinemaDm.Categoria.Nom":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CinemaDm.Categoria");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "Nom", "String");
-                xamlMember.Getter = get_69_Categoria_Nom;
-                xamlMember.Setter = set_69_Categoria_Nom;
-                break;
-            case "CinemaDm.Categoria.Color":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CinemaDm.Categoria");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "Color", "Int32");
-                xamlMember.Getter = get_70_Categoria_Color;
-                xamlMember.Setter = set_70_Categoria_Color;
-                break;
-            case "_9_Cinema_UserControl.View.UICadira.Size":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("_9_Cinema_UserControl.View.UICadira");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "Size", "Int32");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_71_UICadira_Size;
-                xamlMember.Setter = set_71_UICadira_Size;
-                break;
-            case "_9_Cinema_UserControl.View.UIDescripcioFuncio.UnEspectacle":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("_9_Cinema_UserControl.View.UIDescripcioFuncio");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "UnEspectacle", "CinemaDm.Espectacle");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_72_UIDescripcioFuncio_UnEspectacle;
-                xamlMember.Setter = set_72_UIDescripcioFuncio_UnEspectacle;
-                break;
-            case "_9_Cinema_UserControl.View.UIDescripcioFuncio.UnaFuncio":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("_9_Cinema_UserControl.View.UIDescripcioFuncio");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "UnaFuncio", "CinemaDm.Funcio");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_73_UIDescripcioFuncio_UnaFuncio;
-                xamlMember.Setter = set_73_UIDescripcioFuncio_UnaFuncio;
-                break;
-            case "_9_Cinema_UserControl.View.UIDescripcioFuncio.UnaSala":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("_9_Cinema_UserControl.View.UIDescripcioFuncio");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "UnaSala", "CinemaDM.Plat");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_74_UIDescripcioFuncio_UnaSala;
-                xamlMember.Setter = set_74_UIDescripcioFuncio_UnaSala;
-                break;
-            case "_9_Cinema_UserControl.View.UIDetall.ListEntrades":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("_9_Cinema_UserControl.View.UIDetall");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "ListEntrades", "System.Collections.ObjectModel.ObservableCollection`1<CinemaDm.Entrada>");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_75_UIDetall_ListEntrades;
-                xamlMember.Setter = set_75_UIDetall_ListEntrades;
-                break;
-            case "CinemaDm.Entrada.Ent_id":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CinemaDm.Entrada");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "Ent_id", "String");
-                xamlMember.Getter = get_76_Entrada_Ent_id;
-                xamlMember.Setter = set_76_Entrada_Ent_id;
-                break;
-            case "CinemaDm.Entrada.Ent_fun_esp_id":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CinemaDm.Entrada");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "Ent_fun_esp_id", "Int32");
-                xamlMember.Getter = get_77_Entrada_Ent_fun_esp_id;
-                xamlMember.Setter = set_77_Entrada_Ent_fun_esp_id;
-                break;
-            case "CinemaDm.Entrada.Ent_fun_num":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CinemaDm.Entrada");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "Ent_fun_num", "String");
-                xamlMember.Getter = get_78_Entrada_Ent_fun_num;
-                xamlMember.Setter = set_78_Entrada_Ent_fun_num;
-                break;
-            case "CinemaDm.Entrada.Ent_cad_sal_id":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CinemaDm.Entrada");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "Ent_cad_sal_id", "Int32");
-                xamlMember.Getter = get_79_Entrada_Ent_cad_sal_id;
-                xamlMember.Setter = set_79_Entrada_Ent_cad_sal_id;
-                break;
-            case "CinemaDm.Entrada.Ent_cad_num":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CinemaDm.Entrada");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "Ent_cad_num", "Int32");
-                xamlMember.Getter = get_80_Entrada_Ent_cad_num;
-                xamlMember.Setter = set_80_Entrada_Ent_cad_num;
-                break;
-            case "CinemaDm.Entrada.Ent_preu":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("CinemaDm.Entrada");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "Ent_preu", "System.Decimal");
-                xamlMember.Getter = get_81_Entrada_Ent_preu;
-                xamlMember.Setter = set_81_Entrada_Ent_preu;
-                break;
-            case "_9_Cinema_UserControl.View.UIItems.Item":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("_9_Cinema_UserControl.View.UIItems");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "Item", "CinemaDm.ItemEscenari");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_82_UIItems_Item;
-                xamlMember.Setter = set_82_UIItems_Item;
-                break;
-            case "_9_Cinema_UserControl.View.UIItems.PointList":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("_9_Cinema_UserControl.View.UIItems");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "PointList", "Windows.UI.Xaml.Media.PointCollection");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_83_UIItems_PointList;
-                xamlMember.Setter = set_83_UIItems_PointList;
-                break;
-            case "_9_Cinema_UserControl.View.UILlegenda.LaCategoria":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("_9_Cinema_UserControl.View.UILlegenda");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "LaCategoria", "CinemaDm.Categoria");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_84_UILlegenda_LaCategoria;
-                xamlMember.Setter = set_84_UILlegenda_LaCategoria;
-                break;
-            case "_9_Cinema_UserControl.View.UILlegenda.fondo":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("_9_Cinema_UserControl.View.UILlegenda");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "fondo", "Windows.UI.Xaml.Media.Brush");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_85_UILlegenda_fondo;
-                xamlMember.Setter = set_85_UILlegenda_fondo;
-                break;
-            case "_9_Cinema_UserControl.View.UITotal.LaCadira":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("_9_Cinema_UserControl.View.UITotal");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "LaCadira", "CinemaDm.Cadira");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_86_UITotal_LaCadira;
-                xamlMember.Setter = set_86_UITotal_LaCadira;
-                break;
-            case "_9_Cinema_UserControl.View.UITotal.id":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("_9_Cinema_UserControl.View.UITotal");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "id", "String");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_87_UITotal_id;
-                xamlMember.Setter = set_87_UITotal_id;
-                break;
-            case "_9_Cinema_UserControl.View.UITotal.preu":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("_9_Cinema_UserControl.View.UITotal");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "preu", "String");
-                xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_88_UITotal_preu;
-                xamlMember.Setter = set_88_UITotal_preu;
-                break;
             case "Microsoft.Toolkit.Uwp.UI.Extensions.NullableBool.Value":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Extensions.NullableBool");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "Value", "Boolean");
-                xamlMember.Getter = get_89_NullableBool_Value;
-                xamlMember.Setter = set_89_NullableBool_Value;
+                userType = (global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Extensions.NullableBool");
+                xamlMember = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlMember(this, "Value", "Boolean");
+                xamlMember.Getter = get_65_NullableBool_Value;
+                xamlMember.Setter = set_65_NullableBool_Value;
                 break;
             case "Microsoft.Toolkit.Uwp.UI.Extensions.NullableBool.IsNull":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Extensions.NullableBool");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "IsNull", "Boolean");
-                xamlMember.Getter = get_90_NullableBool_IsNull;
-                xamlMember.Setter = set_90_NullableBool_IsNull;
+                userType = (global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Extensions.NullableBool");
+                xamlMember = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlMember(this, "IsNull", "Boolean");
+                xamlMember.Getter = get_66_NullableBool_IsNull;
+                xamlMember.Setter = set_66_NullableBool_IsNull;
                 break;
             case "Microsoft.Toolkit.Uwp.UI.Extensions.Markup.OnDevice.Default":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Extensions.Markup.OnDevice");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "Default", "Object");
-                xamlMember.Getter = get_91_OnDevice_Default;
-                xamlMember.Setter = set_91_OnDevice_Default;
+                userType = (global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Extensions.Markup.OnDevice");
+                xamlMember = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlMember(this, "Default", "Object");
+                xamlMember.Getter = get_67_OnDevice_Default;
+                xamlMember.Setter = set_67_OnDevice_Default;
                 break;
             case "Microsoft.Toolkit.Uwp.UI.Extensions.Markup.OnDevice.Desktop":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Extensions.Markup.OnDevice");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "Desktop", "Object");
-                xamlMember.Getter = get_92_OnDevice_Desktop;
-                xamlMember.Setter = set_92_OnDevice_Desktop;
+                userType = (global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Extensions.Markup.OnDevice");
+                xamlMember = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlMember(this, "Desktop", "Object");
+                xamlMember.Getter = get_68_OnDevice_Desktop;
+                xamlMember.Setter = set_68_OnDevice_Desktop;
                 break;
             case "Microsoft.Toolkit.Uwp.UI.Extensions.Markup.OnDevice.Holographic":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Extensions.Markup.OnDevice");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "Holographic", "Object");
-                xamlMember.Getter = get_93_OnDevice_Holographic;
-                xamlMember.Setter = set_93_OnDevice_Holographic;
+                userType = (global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Extensions.Markup.OnDevice");
+                xamlMember = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlMember(this, "Holographic", "Object");
+                xamlMember.Getter = get_69_OnDevice_Holographic;
+                xamlMember.Setter = set_69_OnDevice_Holographic;
                 break;
             case "Microsoft.Toolkit.Uwp.UI.Extensions.Markup.OnDevice.IoT":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Extensions.Markup.OnDevice");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "IoT", "Object");
-                xamlMember.Getter = get_94_OnDevice_IoT;
-                xamlMember.Setter = set_94_OnDevice_IoT;
+                userType = (global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Extensions.Markup.OnDevice");
+                xamlMember = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlMember(this, "IoT", "Object");
+                xamlMember.Getter = get_70_OnDevice_IoT;
+                xamlMember.Setter = set_70_OnDevice_IoT;
                 break;
             case "Microsoft.Toolkit.Uwp.UI.Extensions.Markup.OnDevice.Team":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Extensions.Markup.OnDevice");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "Team", "Object");
-                xamlMember.Getter = get_95_OnDevice_Team;
-                xamlMember.Setter = set_95_OnDevice_Team;
+                userType = (global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Extensions.Markup.OnDevice");
+                xamlMember = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlMember(this, "Team", "Object");
+                xamlMember.Getter = get_71_OnDevice_Team;
+                xamlMember.Setter = set_71_OnDevice_Team;
                 break;
             case "Microsoft.Toolkit.Uwp.UI.Extensions.Markup.OnDevice.Xbox":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Extensions.Markup.OnDevice");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "Xbox", "Object");
-                xamlMember.Getter = get_96_OnDevice_Xbox;
-                xamlMember.Setter = set_96_OnDevice_Xbox;
+                userType = (global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Extensions.Markup.OnDevice");
+                xamlMember = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlMember(this, "Xbox", "Object");
+                xamlMember.Getter = get_72_OnDevice_Xbox;
+                xamlMember.Setter = set_72_OnDevice_Xbox;
                 break;
             case "Microsoft.Toolkit.Uwp.UI.Converters.DoubleToObjectConverter.TrueValue":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Converters.DoubleToObjectConverter");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "TrueValue", "Object");
+                userType = (global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Converters.DoubleToObjectConverter");
+                xamlMember = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlMember(this, "TrueValue", "Object");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_97_DoubleToObjectConverter_TrueValue;
-                xamlMember.Setter = set_97_DoubleToObjectConverter_TrueValue;
+                xamlMember.Getter = get_73_DoubleToObjectConverter_TrueValue;
+                xamlMember.Setter = set_73_DoubleToObjectConverter_TrueValue;
                 break;
             case "Microsoft.Toolkit.Uwp.UI.Converters.DoubleToObjectConverter.FalseValue":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Converters.DoubleToObjectConverter");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "FalseValue", "Object");
+                userType = (global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Converters.DoubleToObjectConverter");
+                xamlMember = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlMember(this, "FalseValue", "Object");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_98_DoubleToObjectConverter_FalseValue;
-                xamlMember.Setter = set_98_DoubleToObjectConverter_FalseValue;
+                xamlMember.Getter = get_74_DoubleToObjectConverter_FalseValue;
+                xamlMember.Setter = set_74_DoubleToObjectConverter_FalseValue;
                 break;
             case "Microsoft.Toolkit.Uwp.UI.Converters.DoubleToObjectConverter.NullValue":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Converters.DoubleToObjectConverter");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "NullValue", "Object");
+                userType = (global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Converters.DoubleToObjectConverter");
+                xamlMember = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlMember(this, "NullValue", "Object");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_99_DoubleToObjectConverter_NullValue;
-                xamlMember.Setter = set_99_DoubleToObjectConverter_NullValue;
+                xamlMember.Getter = get_75_DoubleToObjectConverter_NullValue;
+                xamlMember.Setter = set_75_DoubleToObjectConverter_NullValue;
                 break;
             case "Microsoft.Toolkit.Uwp.UI.Converters.DoubleToObjectConverter.GreaterThan":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Converters.DoubleToObjectConverter");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "GreaterThan", "Double");
+                userType = (global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Converters.DoubleToObjectConverter");
+                xamlMember = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlMember(this, "GreaterThan", "Double");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_100_DoubleToObjectConverter_GreaterThan;
-                xamlMember.Setter = set_100_DoubleToObjectConverter_GreaterThan;
+                xamlMember.Getter = get_76_DoubleToObjectConverter_GreaterThan;
+                xamlMember.Setter = set_76_DoubleToObjectConverter_GreaterThan;
                 break;
             case "Microsoft.Toolkit.Uwp.UI.Converters.DoubleToObjectConverter.LessThan":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Converters.DoubleToObjectConverter");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "LessThan", "Double");
+                userType = (global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Converters.DoubleToObjectConverter");
+                xamlMember = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlMember(this, "LessThan", "Double");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_101_DoubleToObjectConverter_LessThan;
-                xamlMember.Setter = set_101_DoubleToObjectConverter_LessThan;
+                xamlMember.Getter = get_77_DoubleToObjectConverter_LessThan;
+                xamlMember.Setter = set_77_DoubleToObjectConverter_LessThan;
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.IsExpanded":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "IsExpanded", "Boolean");
+                userType = (global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
+                xamlMember = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlMember(this, "IsExpanded", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_102_TreeViewNode_IsExpanded;
-                xamlMember.Setter = set_102_TreeViewNode_IsExpanded;
+                xamlMember.Getter = get_78_TreeViewNode_IsExpanded;
+                xamlMember.Setter = set_78_TreeViewNode_IsExpanded;
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.HasUnrealizedChildren":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "HasUnrealizedChildren", "Boolean");
-                xamlMember.Getter = get_103_TreeViewNode_HasUnrealizedChildren;
-                xamlMember.Setter = set_103_TreeViewNode_HasUnrealizedChildren;
+                userType = (global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
+                xamlMember = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlMember(this, "HasUnrealizedChildren", "Boolean");
+                xamlMember.Getter = get_79_TreeViewNode_HasUnrealizedChildren;
+                xamlMember.Setter = set_79_TreeViewNode_HasUnrealizedChildren;
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.Content":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "Content", "Object");
+                userType = (global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
+                xamlMember = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlMember(this, "Content", "Object");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_104_TreeViewNode_Content;
-                xamlMember.Setter = set_104_TreeViewNode_Content;
+                xamlMember.Getter = get_80_TreeViewNode_Content;
+                xamlMember.Setter = set_80_TreeViewNode_Content;
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.Children":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "Children", "System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>");
-                xamlMember.Getter = get_105_TreeViewNode_Children;
+                userType = (global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
+                xamlMember = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlMember(this, "Children", "System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>");
+                xamlMember.Getter = get_81_TreeViewNode_Children;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.Depth":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "Depth", "Int32");
+                userType = (global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
+                xamlMember = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlMember(this, "Depth", "Int32");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_106_TreeViewNode_Depth;
+                xamlMember.Getter = get_82_TreeViewNode_Depth;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.HasChildren":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "HasChildren", "Boolean");
+                userType = (global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
+                xamlMember = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlMember(this, "HasChildren", "Boolean");
                 xamlMember.SetIsDependencyProperty();
-                xamlMember.Getter = get_107_TreeViewNode_HasChildren;
+                xamlMember.Getter = get_83_TreeViewNode_HasChildren;
                 xamlMember.SetIsReadOnly();
                 break;
             case "Microsoft.UI.Xaml.Controls.TreeViewNode.Parent":
-                userType = (global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
-                xamlMember = new global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlMember(this, "Parent", "Microsoft.UI.Xaml.Controls.TreeViewNode");
-                xamlMember.Getter = get_108_TreeViewNode_Parent;
+                userType = (global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType)GetXamlTypeByName("Microsoft.UI.Xaml.Controls.TreeViewNode");
+                xamlMember = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlMember(this, "Parent", "Microsoft.UI.Xaml.Controls.TreeViewNode");
+                xamlMember.Getter = get_84_TreeViewNode_Parent;
                 xamlMember.SetIsReadOnly();
                 break;
             }
@@ -2849,9 +2224,9 @@ namespace _9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo
 
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 10.0.17.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-    internal class XamlUserType : global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlSystemBaseType
+    internal class XamlUserType : global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlSystemBaseType
     {
-        global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlTypeInfoProvider _provider;
+        global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlTypeInfoProvider _provider;
         global::Windows.UI.Xaml.Markup.IXamlType _baseType;
         bool _isArray;
         bool _isMarkupExtension;
@@ -2865,7 +2240,7 @@ namespace _9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo
         global::System.Collections.Generic.Dictionary<string, string> _memberNames;
         global::System.Collections.Generic.Dictionary<string, object> _enumValues;
 
-        public XamlUserType(global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlTypeInfoProvider provider, string fullName, global::System.Type fullType, global::Windows.UI.Xaml.Markup.IXamlType baseType)
+        public XamlUserType(global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlTypeInfoProvider provider, string fullName, global::System.Type fullType, global::Windows.UI.Xaml.Markup.IXamlType baseType)
             :base(fullName, fullType)
         {
             _provider = provider;
@@ -3062,7 +2437,7 @@ namespace _9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     internal class XamlMember : global::Windows.UI.Xaml.Markup.IXamlMember
     {
-        global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlTypeInfoProvider _provider;
+        global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlTypeInfoProvider _provider;
         string _name;
         bool _isAttachable;
         bool _isDependencyProperty;
@@ -3071,7 +2446,7 @@ namespace _9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo
         string _typeName;
         string _targetTypeName;
 
-        public XamlMember(global::_9_Cinema_UserControl.GestioRestaurant_XamlTypeInfo.XamlTypeInfoProvider provider, string name, string typeName)
+        public XamlMember(global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlTypeInfoProvider provider, string name, string typeName)
         {
             _name = name;
             _typeName = typeName;

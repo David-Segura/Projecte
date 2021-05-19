@@ -1,5 +1,4 @@
-﻿using CinemaDM;
-using MetroLog;
+﻿using MetroLog;
 using Microsoft.EntityFrameworkCore;
 using MySql.Data.MySqlClient;
 using System;
@@ -10,7 +9,7 @@ using System.Data.Common;
 using System.Globalization;
 using System.Text;
 
-namespace CinemaDm
+namespace GestioRestaurantDm
 {
     public class PlatDB
     {
@@ -25,7 +24,7 @@ namespace CinemaDm
             try
             {
 
-                using (CinemaDBContext context = new CinemaDBContext())
+                using (RestaurantDBContext context = new RestaurantDBContext())
                 {
                     using (var connexio = context.Database.GetDbConnection())
                     {
@@ -69,7 +68,7 @@ namespace CinemaDm
             try
             {
 
-                using (CinemaDBContext context = new CinemaDBContext())
+                using (RestaurantDBContext context = new RestaurantDBContext())
                 {
                     using (var connexio = context.Database.GetDbConnection())
                     {
@@ -106,7 +105,7 @@ namespace CinemaDm
         {
             try
             {
-                using (CinemaDBContext context = new CinemaDBContext())
+                using (RestaurantDBContext context = new RestaurantDBContext())
                 {
                     using (var connexio = context.Database.GetDbConnection())
                     {
@@ -190,7 +189,7 @@ namespace CinemaDm
         {
             try
             {
-                using (CinemaDBContext context = new CinemaDBContext())
+                using (RestaurantDBContext context = new RestaurantDBContext())
                 {
                     using (var connexio = context.Database.GetDbConnection())
                     {

@@ -6,7 +6,7 @@ using System.Text;
 using MetroLog;
 using Microsoft.EntityFrameworkCore;
 
-namespace CinemaDm
+namespace GestioRestaurantDm
 {
     public class CategoriaDB
     {
@@ -15,7 +15,7 @@ namespace CinemaDm
             try
             {
 
-                using (CinemaDBContext context = new CinemaDBContext())
+                using (RestaurantDBContext context = new RestaurantDBContext())
                 {
                     using (var connexio = context.Database.GetDbConnection())
                     {
