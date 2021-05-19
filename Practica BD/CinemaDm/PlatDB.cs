@@ -1,6 +1,7 @@
 ﻿using CinemaDM;
 using MetroLog;
 using Microsoft.EntityFrameworkCore;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -45,7 +46,7 @@ namespace CinemaDm
                                 DBUtils.Llegeix(reader, out c.nom, "nom");
                                 DBUtils.Llegeix(reader, out c.descripcioMD, "descripcioMD");
                                 DBUtils.Llegeix(reader, out c.preu, "preu");
-                                //DBUtils.Llegeix(reader, out c.foto[0], "foto");
+                                DBUtils.Llegeix(reader, out c.foto, "foto");
                                 DBUtils.Llegeix(reader, out c.disponible, "disponible");
                                 DBUtils.Llegeix(reader, out c.categoria, "categoria");
                                 sales.Add(c);
@@ -210,14 +211,14 @@ namespace CinemaDm
                                 DBUtils.createParameter(consulta, "nom", plat.nom, DbType.String);
                                 DBUtils.createParameter(consulta, "desc", plat.descripcioMD, DbType.String);
                                 DBUtils.createParameter(consulta, "preu", plat.preu, DbType.Double);
-                                DBUtils.createParameter(consulta, "foto", plat.foto, DbType.Byte);
+                                DBUtils.createParameter(consulta, "foto", plat.foto, DbType.Binary);
                                 DBUtils.createParameter(consulta, "disponible", plat.disponible, DbType.Boolean);
                                 DBUtils.createParameter(consulta, "categoria", plat.categoria, DbType.Int32);
                                 NumberFormatInfo nfi = new NumberFormatInfo();
                                 nfi.NumberDecimalSeparator = ".";
                                 //object o = consulta.ExecuteScalar();
                                 consulta.CommandText =
-                                   $@"insert into plat values("+plat.codi+ ",'" + plat.nom + "','" + plat.descripcioMD + "',"+plat.preu.ToString(nfi)+", null ," + plat.disponible + "," + plat.categoria + ")";
+                                   $@"insert into plat values("+plat.codi+ ",'" + plat.nom + "','" + plat.descripcioMD + "',"+plat.preu.ToString(nfi)+", @foto,"+plat.disponible + "," + plat.categoria + ")";
 
 
                                 //string cognom, int salari, int deptNo

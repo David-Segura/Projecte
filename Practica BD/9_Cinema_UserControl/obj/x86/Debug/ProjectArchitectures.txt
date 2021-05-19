@@ -1,1 +1,1 @@
-E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\9_Cinema_UserControl\9_Cinema_UserControl.csproj;x86
+E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\9_Cinema_UserControl\GestioRestaurant.csproj;x86

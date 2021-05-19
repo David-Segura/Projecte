@@ -1,6 +1,8 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Data;
 using System.Data.Common;
+using System.IO;
 
 namespace CinemaDm
 {
@@ -69,6 +71,23 @@ namespace CinemaDm
                 Type t = reader.GetFieldType(reader.GetOrdinal(nomColumna));
 
                 valor = reader.GetByte(ordinal);
+            }
+
+
+        }
+
+        public static void Llegeix(DbDataReader reader, out byte[] valor, string nomColumna, byte[] valorPerDefecte = null)
+        {
+            valor = valorPerDefecte;
+            int ordinal = reader.GetOrdinal(nomColumna);
+            if (!reader.IsDBNull(ordinal))
+            {
+                Type t = reader.GetFieldType(reader.GetOrdinal(nomColumna));
+                //byte[] buffer = new byte[50000];
+                valor = (byte[])reader.GetValue(ordinal);
+
+                //long l = reader.GetBytes(ordinal,0,valor,0,50000);
+                //valor = BitConverter.GetBytes(l);
             }
 
 
