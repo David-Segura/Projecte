@@ -50,3 +50,10 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+/GestioEscandalls/nbproject/private/
+/GestioEscandalls/build/
+/GestioEscandalls/dist/
+/JavaClasses/nbproject/private/
+/JavaClasses/build/
+/JavaClasses/dist/
+/MappedJavaClasses/nbproject/private/

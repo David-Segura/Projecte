@@ -33,9 +33,9 @@ insert into taula values (1);
 insert into taula values (2);
 insert into taula values (3);
 
-insert into comanda values (1,STR_TO_DATE('17-05-2021', '%d-%m-%Y'),1,1);
-insert into comanda values (2,STR_TO_DATE('16-05-2021', '%d-%m-%Y'),2,2);
-insert into comanda values (3,STR_TO_DATE('18-05-2021', '%d-%m-%Y'),3,3);
+insert into comanda values (1,'2021-05-18 20:45:16',1,1);
+insert into comanda values (2,'2021-05-18 20:50:29',2,2);
+insert into comanda values (3,'2021-05-18 20:51:02',3,3);
 
 insert into estat_linia values (1);
 insert into estat_linia values (2);

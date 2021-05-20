@@ -61,7 +61,7 @@ create table Taula(
 );
 create table comanda(
 	codi integer (7),
-	data date,
+	data datetime,
 	taula integer(3),
 	cambrer integer (7),
     PRIMARY KEY (codi),
