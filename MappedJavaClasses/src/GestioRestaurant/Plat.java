@@ -6,21 +6,49 @@
 package GestioRestaurant;
 
 import java.awt.Image;
+import java.sql.Blob;
+import javax.persistence.Access;
+import javax.persistence.AccessType;
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
 
-/**
- *
- * @author Usuari
- */
+@Entity
+@Access(AccessType.FIELD)
+@Table(
+        name = "Plat"
+)
+@NamedQueries({
+    //    @NamedQuery(name = "trobaFilmsAmbIdiomaId",
+    //            query = "select f from Film f where f.idioma.getCodi() = :idiomaId"),
+    @NamedQuery(name = "trobaPlats",
+            query = "select p from Plat p"),
+    @NamedQuery(name = "trobaPlatsPerNom",
+            query = "select p from Plat p where p.nom = :nom")
+    
+})
 public class Plat {
+    @Id
     int codi;
+    @Basic
     String nom;
+    @Basic
     String descripcioMD;
+    @Basic
     float preu;
-    Image foto;
+    @Basic
+    @Column(columnDefinition = "Blob")      
+    byte[] foto;
+    @Basic
     boolean disponible ;
+    @Basic
     int categoria;
 
-    public Plat(int codi, String nom, String descripcioMD, float preu, Image foto, boolean disponible, int categoria) {
+    public Plat(int codi, String nom, String descripcioMD, float preu, byte[] foto, boolean disponible, int categoria) {
         this.codi = codi;
         this.nom = nom;
         this.descripcioMD = descripcioMD;
@@ -65,11 +93,11 @@ public class Plat {
         this.preu = preu;
     }
 
-    public Image getFoto() {
+    public byte[] getFoto() {
         return foto;
     }
 
-    public void setFoto(Image foto) {
+    public void setFoto(byte[] foto) {
         this.foto = foto;
     }
 
@@ -87,6 +115,11 @@ public class Plat {
 
     public void setCategoria(int categoria) {
         this.categoria = categoria;
+    }
+
+    @Override
+    public String toString() {
+        return "Plat{" + "codi=" + codi + ", nom=" + nom + ", descripcioMD=" + descripcioMD + ", preu=" + preu + ", foto=" + foto + ", disponible=" + disponible + ", categoria=" + categoria + '}';
     }
     
     

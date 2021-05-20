@@ -57,3 +57,5 @@ dkms.conf
 /JavaClasses/build/
 /JavaClasses/dist/
 /MappedJavaClasses/nbproject/private/
+/MappedJavaClasses/build/
+/MappedJavaClasses/dist/
