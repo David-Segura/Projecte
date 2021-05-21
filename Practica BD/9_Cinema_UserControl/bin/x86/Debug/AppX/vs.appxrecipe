@@ -19,7 +19,7 @@
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
     <LayoutDir>E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\9_Cinema_UserControl\bin\x86\Debug\AppX</LayoutDir>
-    <RegisteredManifestChecksum>EE552CAC17562874C7E2CA267CCD09F1B7794F2C1A11B318CE731454C5697312</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>00E0984E9B9AA7A540A61D8D2AD246D751C2B02EFD4D0B2F72AFB25DEC20EB65</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>2d4914af-19ce-4ec0-8c0d-ac2dc06a19b1_1.0.0.0_x86__n82rqfc3nm07y</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>2d4914af-19ce-4ec0-8c0d-ac2dc06a19b1_n82rqfc3nm07y!App</RegisteredUserModeAppID>
     <RegisteredPackageID>2d4914af-19ce-4ec0-8c0d-ac2dc06a19b1</RegisteredPackageID>
@@ -30,13 +30,13 @@
     <AppXManifest Include="E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\9_Cinema_UserControl\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-05-19T19:24:15.054</Modified>
+      <Modified>2021-05-21T15:31:48.678</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\9_Cinema_UserControl\bin\x86\Debug\GestioRestaurant.exe">
       <PackagePath>entrypoint\GestioRestaurant.exe</PackagePath>
-      <Modified>2021-05-19T19:24:13.650</Modified>
+      <Modified>2021-05-21T15:31:46.369</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\David-PC\.nuget\packages\bouncycastle.netcore\1.8.3\lib\netstandard2.0\BouncyCastle.Crypto.dll">
       <PackagePath>BouncyCastle.Crypto.dll</PackagePath>
@@ -884,7 +884,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\CinemaDm\bin\Debug\netstandard2.0\GestioRestaurantDm.dll">
       <PackagePath>GestioRestaurantDm.dll</PackagePath>
-      <Modified>2021-05-19T19:10:39.962</Modified>
+      <Modified>2021-05-21T15:21:33.104</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\David-PC\.nuget\packages\metrolog\1.0.1\lib\win81\MetroLog.WinRT.winmd">
       <PackagePath>MetroLog.WinRT.winmd</PackagePath>
@@ -934,19 +934,15 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\9_Cinema_UserControl\bin\x86\Debug\GestioRestaurant.xr.xml">
       <PackagePath>GestioRestaurant.xr.xml</PackagePath>
-      <Modified>2021-05-19T19:22:03.382</Modified>
+      <Modified>2021-05-21T15:31:45.774</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\9_Cinema_UserControl\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2021-05-19T19:24:13.096</Modified>
+      <Modified>2021-05-21T15:31:45.805</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\9_Cinema_UserControl\bin\x86\Debug\GestioCarta.xbf">
       <PackagePath>GestioCarta.xbf</PackagePath>
-      <Modified>2021-05-19T19:24:13.101</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\9_Cinema_UserControl\bin\x86\Debug\Manteniment.xbf">
-      <PackagePath>Manteniment.xbf</PackagePath>
-      <Modified>2021-05-19T19:24:13.104</Modified>
+      <Modified>2021-05-21T15:31:45.808</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.UniversalCRT.Debug\10.0.17134.0\\redist\Debug\x86\ucrtbased.dll">
       <PackagePath>ucrtbased.dll</PackagePath>
@@ -974,11 +970,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\9_Cinema_UserControl\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2021-05-19T19:23:00.456</Modified>
+      <Modified>2021-05-21T15:31:47.578</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\9_Cinema_UserControl\bin\x86\Debug\Core\GestioRestaurant.exe">
       <PackagePath>GestioRestaurant.exe</PackagePath>
-      <Modified>2021-05-19T19:24:15.044</Modified>
+      <Modified>2021-05-21T15:31:48.669</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>
@@ -1020,36 +1016,36 @@
     </ResolvedSDKReference>
     <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\">
       <Name>Microsoft.VCLibs.140.00.Debug</Name>
-      <Version>14.0.27023.1</Version>
+      <Version>14.0.29231.0</Version>
       <Architecture>ARM</Architecture>
-      <FrameworkIdentity>Name = Microsoft.VCLibs.140.00.Debug, MinVersion = 14.0.27023.1, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <FrameworkIdentity>Name = Microsoft.VCLibs.140.00.Debug, MinVersion = 14.0.29231.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
       <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\.\AppX\Debug\ARM\Microsoft.VCLibs.ARM.Debug.14.00.appx</AppxLocation>
       <MoreInfo>
       </MoreInfo>
     </ResolvedSDKReference>
     <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\">
       <Name>Microsoft.VCLibs.140.00.Debug</Name>
-      <Version>14.0.27023.1</Version>
+      <Version>14.0.29231.0</Version>
       <Architecture>ARM64</Architecture>
-      <FrameworkIdentity>Name = Microsoft.VCLibs.140.00.Debug, MinVersion = 14.0.27023.1, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <FrameworkIdentity>Name = Microsoft.VCLibs.140.00.Debug, MinVersion = 14.0.29231.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
       <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\.\AppX\Debug\ARM64\Microsoft.VCLibs.ARM64.Debug.14.00.appx</AppxLocation>
       <MoreInfo>
       </MoreInfo>
     </ResolvedSDKReference>
     <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\">
       <Name>Microsoft.VCLibs.140.00.Debug</Name>
-      <Version>14.0.27023.1</Version>
+      <Version>14.0.29231.0</Version>
       <Architecture>x64</Architecture>
-      <FrameworkIdentity>Name = Microsoft.VCLibs.140.00.Debug, MinVersion = 14.0.27023.1, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <FrameworkIdentity>Name = Microsoft.VCLibs.140.00.Debug, MinVersion = 14.0.29231.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
       <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\.\AppX\Debug\x64\Microsoft.VCLibs.x64.Debug.14.00.appx</AppxLocation>
       <MoreInfo>
       </MoreInfo>
     </ResolvedSDKReference>
     <ResolvedSDKReference Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\">
       <Name>Microsoft.VCLibs.140.00.Debug</Name>
-      <Version>14.0.27023.1</Version>
+      <Version>14.0.29231.0</Version>
       <Architecture>x86</Architecture>
-      <FrameworkIdentity>Name = Microsoft.VCLibs.140.00.Debug, MinVersion = 14.0.27023.1, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
+      <FrameworkIdentity>Name = Microsoft.VCLibs.140.00.Debug, MinVersion = 14.0.29231.0, Publisher = %27CN=Microsoft Corporation, O=Microsoft Corporation, L=Redmond, S=Washington, C=US%27</FrameworkIdentity>
       <AppxLocation>C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.VCLibs\14.0\.\AppX\Debug\x86\Microsoft.VCLibs.x86.Debug.14.00.appx</AppxLocation>
       <MoreInfo>
       </MoreInfo>

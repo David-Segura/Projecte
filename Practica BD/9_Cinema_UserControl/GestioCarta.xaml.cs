@@ -1,6 +1,4 @@
-﻿
-using _9_Cinema_UserControl;
-using GestioRestaurantDm;
+﻿using GestioRestaurantDm;
 using Microsoft.Toolkit.Uwp.UI.Controls;
 using System;
 using System.Collections.Generic;

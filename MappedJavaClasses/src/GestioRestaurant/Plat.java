@@ -28,7 +28,9 @@ import javax.persistence.Table;
     @NamedQuery(name = "trobaPlats",
             query = "select p from Plat p"),
     @NamedQuery(name = "trobaPlatsPerNom",
-            query = "select p from Plat p where p.nom = :nom")
+           query = "select p from Plat p where p.nom = :nom"),
+    @NamedQuery(name = "trobaPlatsPerCategoriaIDisponibilitat",
+            query = "select p from Plat p where categoria = :idCategoria and disponible = :disponible"),
     
 })
 public class Plat {

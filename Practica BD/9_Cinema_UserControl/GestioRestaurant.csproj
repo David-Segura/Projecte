@@ -98,9 +98,6 @@
     <Compile Include="GestioCarta.xaml.cs">
       <DependentUpon>GestioCarta.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Manteniment.xaml.cs">
-      <DependentUpon>Manteniment.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="View\IsNullToBooleanConverter.cs" />
   </ItemGroup>
@@ -108,7 +105,6 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
-    <None Include="Model\DiagramaDeClasses.cd" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Properties\Default.rd.xml" />
@@ -126,10 +122,6 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Page Include="GestioCarta.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Manteniment.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -176,6 +168,9 @@
       <Project>{7CD0AC02-512C-4F94-A115-42057222C086}</Project>
       <Name>GestioRestaurantDm</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Model\" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>

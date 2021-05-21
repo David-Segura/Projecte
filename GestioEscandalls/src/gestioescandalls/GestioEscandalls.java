@@ -25,6 +25,7 @@ import javax.swing.BorderFactory;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
+import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -32,6 +33,7 @@ import javax.swing.JRadioButton;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
+import javax.swing.WindowConstants;
 import javax.swing.border.Border;
 import javax.swing.border.TitledBorder;
 import javax.swing.event.ListSelectionEvent;
@@ -49,14 +51,22 @@ public class GestioEscandalls {
     private static JButton add,remove,edit;
     private static JPanel esq, centre;
     private static JTable taula;
+    private static JTable taulaEscandall;
     private static String[] columnes = new String[] {"NOM","DESCRIPCIO","PREU"};
+    private static String[] columnesEscandall = new String[] {"NumLinea","Quantitat","Unitat","Ingredient"};
     private static DefaultTableModel model = new DefaultTableModel();
     private static JComboBox cboCat;
-    private static ArrayList<Plat> llp = new ArrayList();
-    private static ArrayList<Categoria> llc = new ArrayList();
+    private static java.util.List<Plat> llp = new ArrayList();
+    private static java.util.List<Categoria> llc = new ArrayList();
+    private static java.util.List<Linea_Escandall> llesc = new ArrayList();
     private static EntityManagerFactory emf = null;
     private static EntityManager em = null;
     private static String up = "UP-MySQL";
+    private static JButton btnCerca;
+    private static JRadioButton btnSi = new JRadioButton("Si");
+    private static JRadioButton btnNo = new JRadioButton("No");
+    private static JRadioButton btnTots = new JRadioButton("Tots");
+    private static JDialog subfinestra;
         
     public static void main(String[] args) {
         comprovaEsquema();
@@ -69,6 +79,82 @@ public class GestioEscandalls {
         f.setLocation(10,300); 
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
+    
+    
+    private static void prepararSubfinestra()
+    {
+        subfinestra = new JDialog(f,true);
+        subfinestra.setLocation(15,300);
+        // el true és per bloquejar l'accés a altres finestres mentre aquesta està activa
+        // afegir elements
+                
+        JPanel pa1 = new JPanel(); // FlowLayout
+        
+        construirTaulaEscandall();
+        
+        
+        pa1.add(taulaEscandall);
+        
+        subfinestra.add(pa1);
+        
+        
+        // crear com a mínim un panell , i afegir-lo dins la subfinestra
+        subfinestra.setVisible(false);
+        subfinestra.setTitle("Escandall");
+        //subfinestra.setSize(20,60);
+        subfinestra.pack();
+        subfinestra.setResizable(false);
+        // centrar-lo al frame
+        subfinestra.setLocationRelativeTo(f);
+        subfinestra.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+        
+    }
+    
+    private static String[][] obtenirMatriuEscandall() {
+        String matriuInfo[][] = new String[llesc.size()][columnesEscandall.length];
+
+        for (int i = 0; i < llesc.size(); i++) {
+            Linea_Escandall le = llesc.get(i);
+
+            matriuInfo[i][0] = le.getNum()+"";
+            matriuInfo[i][1] = le.getQuantitat()+"";
+            matriuInfo[i][2] = le.getUnitat()+"";
+            matriuInfo[i][3] = le.getIngredient()+"";
+//            matriuInfo[i][0] = p.getNom(); // TODO GET FOTO
+//            matriuInfo[i][3] = p.isDisponible()+"";
+//            matriuInfo[i][4] = p.getCategoria()+"";
+        }
+        return matriuInfo;
+    }
+    
+    private static void construirTaulaEscandall() {
+        
+        String bdInfo[][] = obtenirMatriuEscandall();
+
+        taulaEscandall = new JTable(bdInfo,columnesEscandall){
+             @Override
+            public boolean isCellEditable(int row, int column)
+            {
+                return false;
+            }
+            @Override
+            public Class<?> getColumnClass(int column)
+            {
+                Class clazz = String.class;
+                switch (column)
+                {
+                    case 0: case 1: clazz = String.class;
+                                    break;
+                    case 2: case 3: clazz = String.class;
+                                    break;
+                }
+                return clazz;
+            }
+        };
+
+    }
+    
+    
     private static void afegirElements()
     {
         GridLayout g = new GridLayout(1,3);
@@ -91,9 +177,8 @@ public class GestioEscandalls {
         disponible.setSize(100, 1000);
         disponible.setBorder(new TitledBorder("Disponible"));
         ButtonGroup rdoDire = new ButtonGroup();
-        JRadioButton btnSi = new JRadioButton("Si");
-        JRadioButton btnNo = new JRadioButton("No");
-        JRadioButton btnTots = new JRadioButton("Tots");
+        
+        btnTots.setSelected(true);
         rdoDire.add(btnSi);
         rdoDire.add(btnNo);
         rdoDire.add(btnTots);
@@ -108,6 +193,10 @@ public class GestioEscandalls {
         f.add(esq,BorderLayout.WEST);
         
         centre.add(cboCat);
+        btnCerca = new JButton();
+        btnCerca.setText("Cercar");
+        btnCerca.addActionListener(new GestioBotons());
+        centre.add(btnCerca);
 //        centre.add(remove);
 //        centre.add(edit);
         
@@ -135,8 +224,8 @@ public class GestioEscandalls {
             matriuInfo[i][1] = p.getDescripcioMD();
             matriuInfo[i][2] = p.getPreu()+"";
 //            matriuInfo[i][0] = p.getNom(); // TODO GET FOTO
-            //matriuInfo[i][3] = p.isDisponible()+"";
-            //matriuInfo[i][4] = p.getCategoria()+"";
+//            matriuInfo[i][3] = p.isDisponible()+"";
+//            matriuInfo[i][4] = p.getCategoria()+"";
         }
         return matriuInfo;
     }
@@ -197,7 +286,22 @@ public class GestioEscandalls {
         public void actionPerformed(ActionEvent e) {
             String boto = e.getActionCommand();
             System.out.println("Boto premut: "+boto);
-            int fila;
+            
+            if(btnTots.isSelected()){
+                
+            }else{
+                
+               
+                llp = buscaPlatFiltreAmbDisponibilitat();
+                //obtenirMatriu();
+                //construirTaula();
+                 model.fireTableDataChanged();
+                 taula.repaint();
+                
+            }
+            
+            
+            /*int fila;
             switch (boto)
             {
                 case "Afegir":
@@ -230,7 +334,7 @@ public class GestioEscandalls {
                     }
 
                     break;
-            }
+            }*/
             
         }
         
@@ -250,10 +354,23 @@ public class GestioEscandalls {
                     Plat p = buscaPlatPerNom(n);
                     System.out.println(p.toString());
                     
-                    Linea_Escandall le = buscaEscandallPlatPerIdPlat(p.getCodi());
-                    System.out.println(le.toString());
+                    llesc = buscaEscandallPlatPerIdPlat(p.getCodi());
+                    
+                    prepararSubfinestra();
+                    subfinestra.setVisible(true);
+                    //System.out.println(le.toString());
                 }
         }
+        
+    }
+    
+    private static java.util.List<Plat> buscaPlatFiltreAmbDisponibilitat(){
+        Query q = em.createNamedQuery("trobaPlatsPerCategoriaIDisponibilitat");
+        q.setParameter("idCategoria", cboCat.getSelectedIndex()+1);
+        boolean disponible = btnSi.isSelected();
+        q.setParameter("disponible",disponible );
+        java.util.List<Plat> llp = q.getResultList();
+        return llp;
         
     }
     
@@ -266,11 +383,11 @@ public class GestioEscandalls {
         return p;
     }
     
-    private static Linea_Escandall buscaEscandallPlatPerIdPlat(int idPlat){
+    private static java.util.List<Linea_Escandall> buscaEscandallPlatPerIdPlat(int idPlat){
         Query q = em.createNamedQuery("trobaEscandallPlatPerId");
         q.setParameter("idPlat", idPlat);
         
-        Linea_Escandall le = (Linea_Escandall) q.getSingleResult();
+        java.util.List<Linea_Escandall> le = q.getResultList();
         
         return le;
     }
