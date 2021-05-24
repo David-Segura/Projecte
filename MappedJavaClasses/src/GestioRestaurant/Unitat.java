@@ -5,12 +5,22 @@
  */
 package GestioRestaurant;
 
-/**
- *
- * @author Usuari
- */
+import javax.persistence.Access;
+import javax.persistence.AccessType;
+import javax.persistence.Basic;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Access(AccessType.FIELD)
+@Table(
+        name = "Unitat"
+)
 public class Unitat {
+    @Id
     int codi;
+    @Basic
     String nom;
 
     public Unitat(int codi, String nom) {

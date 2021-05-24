@@ -187,6 +187,12 @@
       <Version>2.0.19091.2</Version>
     </PackageReference>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CinemaDm\GestioRestaurantDm.csproj">
+      <Project>{7cd0ac02-512c-4f94-a115-42057222c086}</Project>
+      <Name>GestioRestaurantDm</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

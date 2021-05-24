@@ -1712,6 +1712,23 @@
             "rid": "win10-x86"
           }
         }
+      },
+      "GestioRestaurantDm/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "MetroLog": "1.0.1",
+          "Microsoft.EntityFrameworkCore.Sqlite": "2.2.6",
+          "MySql.Data.EntityFrameworkCore": "8.0.18",
+          "PropertyChanged.Fody": "2.6.1",
+          "ValueConverters": "2.0.19091.2"
+        },
+        "compile": {
+          "bin/placeholder/GestioRestaurantDm.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GestioRestaurantDm.dll": {}
+        }
       }
     },
     "UAP,Version=v10.0.16299/win10-arm": {
@@ -3741,6 +3758,23 @@
         },
         "native": {
           "runtimes/win10-arm/native/Microsoft.Graphics.Canvas.dll": {}
+        }
+      },
+      "GestioRestaurantDm/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "MetroLog": "1.0.1",
+          "Microsoft.EntityFrameworkCore.Sqlite": "2.2.6",
+          "MySql.Data.EntityFrameworkCore": "8.0.18",
+          "PropertyChanged.Fody": "2.6.1",
+          "ValueConverters": "2.0.19091.2"
+        },
+        "compile": {
+          "bin/placeholder/GestioRestaurantDm.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GestioRestaurantDm.dll": {}
         }
       }
     },
@@ -5803,6 +5837,23 @@
         "native": {
           "runtimes/win10-arm/native/Microsoft.Graphics.Canvas.dll": {}
         }
+      },
+      "GestioRestaurantDm/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "MetroLog": "1.0.1",
+          "Microsoft.EntityFrameworkCore.Sqlite": "2.2.6",
+          "MySql.Data.EntityFrameworkCore": "8.0.18",
+          "PropertyChanged.Fody": "2.6.1",
+          "ValueConverters": "2.0.19091.2"
+        },
+        "compile": {
+          "bin/placeholder/GestioRestaurantDm.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GestioRestaurantDm.dll": {}
+        }
       }
     },
     "UAP,Version=v10.0.16299/win10-arm64-aot": {
@@ -7651,6 +7702,23 @@
         },
         "runtime": {
           "lib/uap10.0/Microsoft.Graphics.Canvas.winmd": {}
+        }
+      },
+      "GestioRestaurantDm/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "MetroLog": "1.0.1",
+          "Microsoft.EntityFrameworkCore.Sqlite": "2.2.6",
+          "MySql.Data.EntityFrameworkCore": "8.0.18",
+          "PropertyChanged.Fody": "2.6.1",
+          "ValueConverters": "2.0.19091.2"
+        },
+        "compile": {
+          "bin/placeholder/GestioRestaurantDm.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GestioRestaurantDm.dll": {}
         }
       }
     },
@@ -9681,6 +9749,23 @@
         },
         "native": {
           "runtimes/win10-x64/native/Microsoft.Graphics.Canvas.dll": {}
+        }
+      },
+      "GestioRestaurantDm/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "MetroLog": "1.0.1",
+          "Microsoft.EntityFrameworkCore.Sqlite": "2.2.6",
+          "MySql.Data.EntityFrameworkCore": "8.0.18",
+          "PropertyChanged.Fody": "2.6.1",
+          "ValueConverters": "2.0.19091.2"
+        },
+        "compile": {
+          "bin/placeholder/GestioRestaurantDm.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GestioRestaurantDm.dll": {}
         }
       }
     },
@@ -11743,6 +11828,23 @@
         "native": {
           "runtimes/win10-x64/native/Microsoft.Graphics.Canvas.dll": {}
         }
+      },
+      "GestioRestaurantDm/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "MetroLog": "1.0.1",
+          "Microsoft.EntityFrameworkCore.Sqlite": "2.2.6",
+          "MySql.Data.EntityFrameworkCore": "8.0.18",
+          "PropertyChanged.Fody": "2.6.1",
+          "ValueConverters": "2.0.19091.2"
+        },
+        "compile": {
+          "bin/placeholder/GestioRestaurantDm.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GestioRestaurantDm.dll": {}
+        }
       }
     },
     "UAP,Version=v10.0.16299/win10-x86": {
@@ -13772,6 +13874,23 @@
         },
         "native": {
           "runtimes/win10-x86/native/Microsoft.Graphics.Canvas.dll": {}
+        }
+      },
+      "GestioRestaurantDm/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "MetroLog": "1.0.1",
+          "Microsoft.EntityFrameworkCore.Sqlite": "2.2.6",
+          "MySql.Data.EntityFrameworkCore": "8.0.18",
+          "PropertyChanged.Fody": "2.6.1",
+          "ValueConverters": "2.0.19091.2"
+        },
+        "compile": {
+          "bin/placeholder/GestioRestaurantDm.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GestioRestaurantDm.dll": {}
         }
       }
     },
@@ -15833,6 +15952,23 @@
         },
         "native": {
           "runtimes/win10-x86/native/Microsoft.Graphics.Canvas.dll": {}
+        }
+      },
+      "GestioRestaurantDm/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "MetroLog": "1.0.1",
+          "Microsoft.EntityFrameworkCore.Sqlite": "2.2.6",
+          "MySql.Data.EntityFrameworkCore": "8.0.18",
+          "PropertyChanged.Fody": "2.6.1",
+          "ValueConverters": "2.0.19091.2"
+        },
+        "compile": {
+          "bin/placeholder/GestioRestaurantDm.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/GestioRestaurantDm.dll": {}
         }
       }
     }
@@ -23874,11 +24010,17 @@
         "win2d.uwp.1.21.0.nupkg.sha512",
         "win2d.uwp.nuspec"
       ]
+    },
+    "GestioRestaurantDm/1.0.0": {
+      "type": "project",
+      "path": "../CinemaDm/GestioRestaurantDm.csproj",
+      "msbuildProject": "../CinemaDm/GestioRestaurantDm.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "UAP,Version=v10.0.16299": [
       "Fody >= 4.2.1",
+      "GestioRestaurantDm >= 1.0.0",
       "MetroLog >= 1.0.1",
       "Microsoft.EntityFrameworkCore.Sqlite >= 2.2.6",
       "Microsoft.NETCore.UniversalWindowsPlatform >= 6.1.5",
@@ -23924,7 +24066,11 @@
       },
       "frameworks": {
         "uap10.0.16299": {
-          "projectReferences": {}
+          "projectReferences": {
+            "E:\\GGSS\\GS\\DAM - 2.1\\Projecte\\Projecte\\Projecte\\Practica BD\\CinemaDm\\GestioRestaurantDm.csproj": {
+              "projectPath": "E:\\GGSS\\GS\\DAM - 2.1\\Projecte\\Projecte\\Projecte\\Practica BD\\CinemaDm\\GestioRestaurantDm.csproj"
+            }
+          }
         }
       }
     },

@@ -9,6 +9,7 @@ import GestioRestaurant.Categoria;
 import GestioRestaurant.Linea_Escandall;
 import GestioRestaurant.Plat;
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
@@ -32,6 +33,7 @@ import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 import javax.swing.border.Border;
@@ -39,6 +41,7 @@ import javax.swing.border.TitledBorder;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableCellRenderer;
 
 /**
  *
@@ -52,7 +55,7 @@ public class GestioEscandalls {
     private static JPanel esq, centre;
     private static JTable taula;
     private static JTable taulaEscandall;
-    private static String[] columnes = new String[] {"NOM","DESCRIPCIO","PREU"};
+    private static String[] columnes = new String[] {"NOM","DESCRIPCIO","PREU","COLOR"};
     private static String[] columnesEscandall = new String[] {"NumLinea","Quantitat","Unitat","Ingredient"};
     private static DefaultTableModel model = new DefaultTableModel();
     private static JComboBox cboCat;
@@ -75,35 +78,63 @@ public class GestioEscandalls {
         afegirTaula();
         f.setVisible(true);
         f.pack();
-        f.setResizable(false); 
+        //f.setResizable(false); 
         f.setLocation(10,300); 
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
     
     
-    private static void prepararSubfinestra()
+    private static void prepararSubfinestra(Plat p)
     {
         subfinestra = new JDialog(f,true);
         subfinestra.setLocation(15,300);
         // el true és per bloquejar l'accés a altres finestres mentre aquesta està activa
         // afegir elements
                 
+        JPanel pa2 = new JPanel(new GridLayout(6,2)); // FlowLayout
         JPanel pa1 = new JPanel(); // FlowLayout
+        
+        
+        JLabel nomPlat = new JLabel(p.getCodi() + "    " +p.getDescripcioMD());
+        JLabel preuPlat = new JLabel("Preu: " + p.getPreu()+"€");
         
         construirTaulaEscandall();
         
+        pa2.add(nomPlat);
+        pa2.add(preuPlat);
+        pa2.add(taulaEscandall);
+        JButton add = new JButton("Afegir");
+        JButton delete = new JButton("Eliminar");
         
-        pa1.add(taulaEscandall);
+        JLabel qtat = new JLabel("Quantitat:");
+        JTextField txfQuantitat = new JTextField();
+        JLabel unitats = new JLabel("Unitats: ");
+        JComboBox cboUni = new JComboBox();
+        JLabel ingregient = new JLabel("Ingredient: ");
+        JComboBox cboIng = new JComboBox();
         
-        subfinestra.add(pa1);
+        pa1.add(qtat);
+        pa1.add(txfQuantitat);
+        pa1.add(unitats);
+        pa1.add(cboUni);
+        pa1.add(ingregient);
+        pa1.add(cboIng);
+        
+        
+        pa1.add(add);
+        pa1.add(delete);
+        subfinestra.add(pa1,BorderLayout.SOUTH);
+        subfinestra.add(pa2,BorderLayout.CENTER);
+       
+        
         
         
         // crear com a mínim un panell , i afegir-lo dins la subfinestra
         subfinestra.setVisible(false);
         subfinestra.setTitle("Escandall");
-        //subfinestra.setSize(20,60);
-        subfinestra.pack();
-        subfinestra.setResizable(false);
+        subfinestra.setSize(350,300);
+        //subfinestra.pack();
+        subfinestra.setResizable(true);
         // centrar-lo al frame
         subfinestra.setLocationRelativeTo(f);
         subfinestra.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
@@ -118,8 +149,8 @@ public class GestioEscandalls {
 
             matriuInfo[i][0] = le.getNum()+"";
             matriuInfo[i][1] = le.getQuantitat()+"";
-            matriuInfo[i][2] = le.getUnitat()+"";
-            matriuInfo[i][3] = le.getIngredient()+"";
+            matriuInfo[i][2] = le.getUnitat().getNom()+"";
+            matriuInfo[i][3] = le.getIngredient().getNom()+"";
 //            matriuInfo[i][0] = p.getNom(); // TODO GET FOTO
 //            matriuInfo[i][3] = p.isDisponible()+"";
 //            matriuInfo[i][4] = p.getCategoria()+"";
@@ -130,8 +161,12 @@ public class GestioEscandalls {
     private static void construirTaulaEscandall() {
         
         String bdInfo[][] = obtenirMatriuEscandall();
+        
+        DefaultTableModel modelEscandall = new DefaultTableModel();
+        modelEscandall.setColumnIdentifiers(columnesEscandall);
+        modelEscandall.setDataVector(bdInfo, columnesEscandall);
 
-        taulaEscandall = new JTable(bdInfo,columnesEscandall){
+        taulaEscandall = new JTable(modelEscandall){
              @Override
             public boolean isCellEditable(int row, int column)
             {
@@ -151,6 +186,8 @@ public class GestioEscandalls {
                 return clazz;
             }
         };
+        
+        
 
     }
     
@@ -160,10 +197,8 @@ public class GestioEscandalls {
         GridLayout g = new GridLayout(1,3);
         esq = new JPanel();
     
-        
         centre = new JPanel();
       
-        
         nom = new JTextField(12);
         cognom = new JTextField(20);
         edat = new JTextField(3);
@@ -223,7 +258,7 @@ public class GestioEscandalls {
             matriuInfo[i][0] = p.getNom();
             matriuInfo[i][1] = p.getDescripcioMD();
             matriuInfo[i][2] = p.getPreu()+"";
-//            matriuInfo[i][0] = p.getNom(); // TODO GET FOTO
+            matriuInfo[i][3] = p.getCategoria().getColor()+""; // TODO GET FOTO
 //            matriuInfo[i][3] = p.isDisponible()+"";
 //            matriuInfo[i][4] = p.getCategoria()+"";
         }
@@ -253,7 +288,26 @@ public class GestioEscandalls {
                 }
                 return clazz;
             }
+            
+            
         };
+        taula.setDefaultRenderer(Object.class, new TableCellRenderer() {
+            @Override
+            public Component getTableCellRendererComponent(JTable table,
+                    Object value, boolean isSelected, boolean hasFocus,
+                    int row, int column) {
+                JPanel pane = new JPanel();
+                int c = (Integer.parseInt(bdInfo[row][3]));
+                Color color = new Color(c);
+                JLabel l = new JLabel ((String)value);
+                table.setRowHeight(25);
+                pane.setSize(200,500);
+                pane.setBackground(color);
+                pane.add(l);
+                
+                return pane;
+            }
+        });
 
     }
     
@@ -356,7 +410,7 @@ public class GestioEscandalls {
                     
                     llesc = buscaEscandallPlatPerIdPlat(p.getCodi());
                     
-                    prepararSubfinestra();
+                    prepararSubfinestra(p);
                     subfinestra.setVisible(true);
                     //System.out.println(le.toString());
                 }

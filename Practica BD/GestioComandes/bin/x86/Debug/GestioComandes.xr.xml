@@ -1,5 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Roots >
+  <Roots.PropertyPathNames>
+    <RootPropertyPathName Name="Cambrer" />
+    <RootPropertyPathName Name="Nom" />
+    <RootPropertyPathName Name="Taula" />
+    <RootPropertyPathName Name="Data" />
+    <RootPropertyPathName Name="Codi" />
+  </Roots.PropertyPathNames>
   <Roots.RootTypes>
     <RootType FullName="Windows.UI.Xaml.Application">
       <RootProperty Name="Resources" />
@@ -10,7 +17,27 @@
       <RootProperty Name="Content" />
     </RootType>
     <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.ThemeResourceExtension" />
-    <RootType FullName="Windows.UI.Xaml.Controls.Grid" />
+    <RootType FullName="Windows.UI.Xaml.Controls.Grid">
+      <RootProperty Name="RowDefinitions" />
+      <RootProperty Name="Children" />
+      <RootMethod Name="GetColumn" />
+      <RootMethod Name="SetColumn" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.RowDefinition">
+      <RootProperty Name="Height" />
+    </RootType>
+    <RootType FullName="Microsoft.Toolkit.Uwp.UI.Controls.DataGrid">
+      <RootProperty Name="Name" />
+      <RootProperty Name="IsReadOnly" />
+      <RootProperty Name="AutoGenerateColumns" />
+      <RootProperty Name="Columns" />
+      <RootEvent Name="SelectionChanged" />
+    </RootType>
+    <RootType FullName="Microsoft.Toolkit.Uwp.UI.Controls.DataGridTextColumn">
+      <RootProperty Name="Header" />
+      <RootProperty Name="Binding" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Data.Binding" />
     <RootType FullName="GestioComandes.MainPage" />
   </Roots.RootTypes>
 </Roots>

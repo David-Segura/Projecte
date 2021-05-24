@@ -9,8 +9,12 @@ import java.io.Serializable;
 import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
@@ -28,18 +32,22 @@ import javax.persistence.Table;
     
 })
 public class Linea_Escandall implements Serializable{
+    
     @Id
     int plat;
     @Id
     int num;
     @Basic
     int quantitat;
-    @Basic
-    int unitat;
-    @Basic
-    int ingredient;
+    @ManyToOne(optional = false, cascade = CascadeType.PERSIST,fetch = FetchType.LAZY)
+    @JoinColumn(name = "Unitat", insertable = false, updatable = false)
+    Unitat unitat;
+    @ManyToOne(optional = false, cascade = CascadeType.PERSIST,fetch = FetchType.LAZY)
+    @JoinColumn(name = "ingredient", insertable = false, updatable = false)
+    Ingredient ingredient;
 
-    public Linea_Escandall(int plat, int num, int quantitat, int unitat, int ingredient) {
+    public Linea_Escandall( int plat, int num, int quantitat, Unitat unitat, Ingredient ingredient) {
+     
         this.plat = plat;
         this.num = num;
         this.quantitat = quantitat;
@@ -74,19 +82,19 @@ public class Linea_Escandall implements Serializable{
         this.quantitat = quantitat;
     }
 
-    public int getUnitat() {
+    public Unitat getUnitat() {
         return unitat;
     }
 
-    public void setUnitat(int unitat) {
+    public void setUnitat(Unitat unitat) {
         this.unitat = unitat;
     }
 
-    public int getIngredient() {
+    public Ingredient getIngredient() {
         return ingredient;
     }
 
-    public void setIngredient(int ingredient) {
+    public void setIngredient(Ingredient ingredient) {
         this.ingredient = ingredient;
     }
 

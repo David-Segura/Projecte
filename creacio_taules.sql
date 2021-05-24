@@ -75,11 +75,12 @@ create table Estat_Linia(
     PRIMARY KEY (estat)
 );
 create table Linea_Comanda(
+    comanda integer (7),
 	num integer (3),
 	quantitat integer (3),
 	item integer (7),
 	estat integer (1),
-    PRIMARY KEY (item,num),
+    PRIMARY KEY (comanda,num),
     CONSTRAINT FK_Lin_Com_Plat FOREIGN KEY (item)
     REFERENCES Plat(codi),
     CONSTRAINT FK_Lin_Com_Estat_Linia FOREIGN KEY (estat)

@@ -10,6 +10,7 @@ package GestioRestaurant;
  * @author Usuari
  */
 public class LineaComanda {
+   Comanda comanda;
    int num;
    int quantitat;
    int item;

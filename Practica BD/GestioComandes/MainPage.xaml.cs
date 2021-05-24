@@ -1,5 +1,8 @@
-﻿using System;
+﻿using GestioRestaurantDm;
+using Microsoft.Toolkit.Uwp.UI.Controls;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -25,6 +28,43 @@ namespace GestioComandes
         public MainPage()
         {
             this.InitializeComponent();
+            dtgComandes.ItemsSource = llcomandes;
+            //dtgComandes.RowDetailsTemplate = 
+            createDataGrids();
+        }
+
+        ObservableCollection<Comanda> llcomandes = ComandaDB.getLlistaComandesAmbLinies();
+        private void DtgComandes_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        
+        private void createDataGrids()
+        {
+            int i = 1;
+            foreach (Comanda c in llcomandes)
+            {
+               
+                DataGrid dg = new DataGrid();
+                ObservableCollection<Linea_Comanda> lllcomanda = Linea_ComandaDB.getLlistaLineaComanda(c.Codi);
+                dg.ItemsSource = lllcomanda;
+
+                Binding b = new Binding();
+                b.Source = lllcomanda;
+                b.Path = new PropertyPath(lllcomanda[0].Comanda.Codi+"");
+               
+                b.Mode = BindingMode.OneWay;
+                dg.SetBinding(ItemsControl.ItemsSourceProperty, b);
+
+
+                //dg.SetBinding(ItemsControl.ItemsSourceProperty,b);
+                Grid.RowDefinitions.Add(new RowDefinition());
+                Grid.Children.Add(dg);
+                Grid.SetRow(dg, i);
+                
+                i++;
+            } 
         }
     }
 }

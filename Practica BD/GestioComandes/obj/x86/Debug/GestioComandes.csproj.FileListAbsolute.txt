@@ -378,3 +378,5 @@ E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\GestioComandes\obj\x
 E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\GestioComandes\obj\x86\Debug\ProjectArchitectures.txt
 E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\GestioComandes\obj\x86\Debug\.winmd_cache\$MetroLog.WinRT.winmd_635901013300000000.json
 E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\GestioComandes\obj\x86\Debug\.winmd_cache\$Microsoft.Graphics.Canvas.winmd_636340357040000000.json
+E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\GestioComandes\bin\x86\Debug\GestioRestaurantDm.dll
+E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\GestioComandes\bin\x86\Debug\GestioRestaurantDm.pdb

@@ -5,6 +5,8 @@
         <class>GestioRestaurant.Plat</class>
         <class>GestioRestaurant.Categoria</class>
         <class>GestioRestaurant.Linea_Escandall</class>
+        <class>GestioRestaurant.Ingredient</class>
+        <class>GestioRestaurant.Unitat</class>
         <properties>
             <property name="javax.persistence.jdbc.url" 
                       value="jdbc:mysql://127.0.0.1:3306/restaurant?serverTimezone=UTC"/>

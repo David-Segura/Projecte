@@ -10,9 +10,13 @@ import java.sql.Blob;
 import javax.persistence.Access;
 import javax.persistence.AccessType;
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
@@ -47,10 +51,12 @@ public class Plat {
     byte[] foto;
     @Basic
     boolean disponible ;
-    @Basic
-    int categoria;
+    @ManyToOne(optional = false, cascade = CascadeType.PERSIST,
+            fetch = FetchType.LAZY)
+    @JoinColumn(name = "Categoria", insertable = false, updatable = false)
+    Categoria categoria;
 
-    public Plat(int codi, String nom, String descripcioMD, float preu, byte[] foto, boolean disponible, int categoria) {
+    public Plat(int codi, String nom, String descripcioMD, float preu, byte[] foto, boolean disponible, Categoria categoria) {
         this.codi = codi;
         this.nom = nom;
         this.descripcioMD = descripcioMD;
@@ -111,11 +117,11 @@ public class Plat {
         this.disponible = disponible;
     }
 
-    public int getCategoria() {
+    public Categoria getCategoria() {
         return categoria;
     }
 
-    public void setCategoria(int categoria) {
+    public void setCategoria(Categoria categoria) {
         this.categoria = categoria;
     }
 

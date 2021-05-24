@@ -30,13 +30,13 @@
     <AppXManifest Include="E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\GestioComandes\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-05-21T19:23:31.000</Modified>
+      <Modified>2021-05-24T10:18:01.763</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\GestioComandes\bin\x86\Debug\GestioComandes.exe">
       <PackagePath>entrypoint\GestioComandes.exe</PackagePath>
-      <Modified>2021-05-21T19:23:12.147</Modified>
+      <Modified>2021-05-24T10:18:00.371</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\David-PC\.nuget\packages\bouncycastle.netcore\1.8.3\lib\netstandard2.0\BouncyCastle.Crypto.dll">
       <PackagePath>BouncyCastle.Crypto.dll</PackagePath>
@@ -882,6 +882,10 @@
       <PackagePath>Microsoft.Graphics.Canvas.dll</PackagePath>
       <Modified>2017-06-26T01:01:44.000</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\CinemaDm\bin\Debug\netstandard2.0\GestioRestaurantDm.dll">
+      <PackagePath>GestioRestaurantDm.dll</PackagePath>
+      <Modified>2021-05-24T10:17:52.295</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\David-PC\.nuget\packages\metrolog\1.0.1\lib\win81\MetroLog.WinRT.winmd">
       <PackagePath>MetroLog.WinRT.winmd</PackagePath>
       <Modified>2016-02-03T13:02:10.000</Modified>
@@ -930,15 +934,15 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\GestioComandes\bin\x86\Debug\GestioComandes.xr.xml">
       <PackagePath>GestioComandes.xr.xml</PackagePath>
-      <Modified>2021-05-21T19:23:09.444</Modified>
+      <Modified>2021-05-24T09:45:16.635</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\GestioComandes\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2021-05-21T19:23:09.640</Modified>
+      <Modified>2021-05-24T10:17:59.744</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\GestioComandes\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2021-05-21T19:23:09.657</Modified>
+      <Modified>2021-05-24T10:17:59.748</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.UniversalCRT.Debug\10.0.17134.0\\redist\Debug\x86\ucrtbased.dll">
       <PackagePath>ucrtbased.dll</PackagePath>
@@ -966,11 +970,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\GestioComandes\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2021-05-21T19:23:19.181</Modified>
+      <Modified>2021-05-22T10:15:37.535</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\GestioComandes\bin\x86\Debug\Core\GestioComandes.exe">
       <PackagePath>GestioComandes.exe</PackagePath>
-      <Modified>2021-05-21T19:23:30.987</Modified>
+      <Modified>2021-05-24T10:18:01.754</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

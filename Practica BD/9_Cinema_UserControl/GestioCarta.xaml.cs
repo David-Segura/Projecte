@@ -53,7 +53,7 @@ namespace GestioRestaurant
 
         }
         
-        public List <Entrada> list_entrades = new List<Entrada>();
+        public List <Cambrer> list_entrades = new List<Cambrer>();
         private void DtgCaracteristiques_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             DataGrid dg = (DataGrid)sender;

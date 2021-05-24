@@ -5,12 +5,27 @@
  */
 package GestioRestaurant;
 
+import javax.persistence.Access;
+import javax.persistence.AccessType;
+import javax.persistence.Basic;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
  *
  * @author Usuari
  */
+
+@Entity
+@Access(AccessType.FIELD)
+@Table(
+        name = "Ingredient"
+)
 public class Ingredient {
+    @Id
     int codi;
+    @Basic
     String nom;
 
     public Ingredient(int codi, String nom) {

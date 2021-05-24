@@ -661,6 +661,9 @@
     <AppxPackagedFile Include="C:\Users\David-PC\.nuget\packages\win2d.uwp\1.21.0\runtimes\win10-x86\native\Microsoft.Graphics.Canvas.dll">
       <PackagePath>Microsoft.Graphics.Canvas.dll</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\CinemaDm\bin\Debug\netstandard2.0\GestioRestaurantDm.dll">
+      <PackagePath>GestioRestaurantDm.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\David-PC\.nuget\packages\metrolog\1.0.1\lib\win81\MetroLog.WinRT.winmd">
       <PackagePath>MetroLog.WinRT.winmd</PackagePath>
     </AppxPackagedFile>

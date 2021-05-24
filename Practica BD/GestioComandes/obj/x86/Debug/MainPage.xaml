@@ -5,11 +5,24 @@
     xmlns:local="using:GestioComandes"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid>
+    <Grid x:ConnectionId='2' x:Name="Grid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+        <controls:DataGrid x:ConnectionId='3' Name="dtgComandes" IsReadOnly="True" AutoGenerateColumns="False"                                                 Grid.Column="0">
+            <controls:DataGrid.Columns>
+                <controls:DataGridTextColumn Header="Codi" Binding="{Binding Codi}"></controls:DataGridTextColumn>
+                <controls:DataGridTextColumn Header="Data" Binding="{Binding Data}"></controls:DataGridTextColumn>
+                <controls:DataGridTextColumn Header="Taula" Binding="{Binding Taula}"></controls:DataGridTextColumn>
+                <controls:DataGridTextColumn Header="Cambrer" Binding="{Binding Cambrer.Nom}"></controls:DataGridTextColumn>
 
+            </controls:DataGrid.Columns>
+        </controls:DataGrid>
+        
     </Grid>
 </Page>
 

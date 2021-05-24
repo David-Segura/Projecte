@@ -4,9 +4,9 @@ insert into unitat values(3,'litres');
 
 
 
-insert into Categoria values (1,'Primer',1);
-insert into Categoria values (2,'Segon',2);
-insert into Categoria values (3,'Postre',3);
+insert into Categoria values (1,'Primer',conv('33CC33',16,10));
+insert into Categoria values (2,'Segon',conv('CC0099',16,10));
+insert into Categoria values (3,'Postre',conv('44AA66',16,10));
 
 
 insert into Plat values(1,'Amanida','Amanida d''enciam',3.5,null,true,1);
@@ -40,6 +40,6 @@ insert into comanda values (3,'2021-05-18 20:51:02',3,3);
 insert into estat_linia values (1);
 insert into estat_linia values (2);
 
-insert into linea_comanda values(1,2,1,1);
-insert into linea_comanda values(2,5,2,1);
-insert into linea_comanda values(3,4,3,2);
+insert into linea_comanda values(1,1,2,1,1);
+insert into linea_comanda values(1,2,5,2,1);
+insert into linea_comanda values(2,3,4,3,2);
