@@ -7,13 +7,14 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    Loaded="Page_Loaded">
 
     <Grid x:Name="Grid">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"></RowDefinition>
-        </Grid.RowDefinitions>
-        <controls:DataGrid Name="dtgComandes" IsReadOnly="True" AutoGenerateColumns="False" SelectionChanged="DtgComandes_SelectionChanged" Grid.Column="0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <controls:DataGrid Name="dtgComandes" IsReadOnly="True" AutoGenerateColumns="False" SelectionChanged="DtgComandes_SelectionChanged" Grid.Column="0" Grid.Row="0">
             <controls:DataGrid.Columns>
                 <controls:DataGridTextColumn Header="Codi" Binding="{Binding Codi}"></controls:DataGridTextColumn>
                 <controls:DataGridTextColumn Header="Data" Binding="{Binding Data}"></controls:DataGridTextColumn>

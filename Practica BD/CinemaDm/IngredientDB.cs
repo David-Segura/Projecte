@@ -3,13 +3,15 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Data;
 using System.Text;
 
 namespace GestioRestaurantDm
 {
     public class IngredientDB
     {
-        public static ObservableCollection<Ingredient> getLlistaPreus()
+
+        public static Ingredient getIngredient(int codi)
         {
             try
             {
@@ -22,27 +24,66 @@ namespace GestioRestaurantDm
 
                         using (var consulta = connexio.CreateCommand())
                         {
-                            consulta.CommandText = $@"  select * from preucatespec  ";
+                            consulta.CommandText = $@"  select * from ingredient  where codi = @codi";
+                            DBUtils.createParameter(consulta, "codi", codi, DbType.Int32);
                             var reader = consulta.ExecuteReader();
-                            ObservableCollection<Ingredient> preus = new ObservableCollection<Ingredient>();
+                            Ingredient ingredient = new Ingredient();
                             while (reader.Read())
                             {
-                                Ingredient c = new Ingredient();
-                                DBUtils.Llegeix(reader, out c.sal_id, "ptc_cat_sal_id");
-                                DBUtils.Llegeix(reader, out c.cat_num, "ptc_cat_num");
-                                DBUtils.Llegeix(reader, out c.esp_id, "ptc_esp_id");
-                                DBUtils.Llegeix(reader, out c.preu, "pct_preu");
-                                preus.Add(c);
+                                
+                                DBUtils.Llegeix(reader, out ingredient.codi, "codi");
+                                DBUtils.Llegeix(reader, out ingredient.nom, "nom");
+
+                                
                             }
-                            return preus;
+                            return ingredient;
                         }
                     }
                 }
             }
-            catch (Exception ex)
+            catch
             {
                 ILogger log = LogManagerFactory.DefaultLogManager.GetLogger<Ingredient>();
-                log.Fatal("error durant la select dels preus");
+                log.Fatal("error durant la select dels ingredients");
+                return new Ingredient();
+            }
+
+
+
+        }
+        public static ObservableCollection<Ingredient> getLlistaIngredients()
+        {
+            try
+            {
+
+                using (RestaurantDBContext context = new RestaurantDBContext())
+                {
+                    using (var connexio = context.Database.GetDbConnection())
+                    {
+                        connexio.Open();
+
+                        using (var consulta = connexio.CreateCommand())
+                        {
+                            consulta.CommandText = $@"  select * from ingredient  ";
+                            var reader = consulta.ExecuteReader();
+                            ObservableCollection<Ingredient> ingredients = new ObservableCollection<Ingredient>();
+                            while (reader.Read())
+                            {
+                                Ingredient i = new Ingredient();
+                                DBUtils.Llegeix(reader, out i.codi, "codi");
+                                DBUtils.Llegeix(reader, out i.nom, "nom");
+
+                                ingredients.Add(i);
+                            }
+                            return ingredients;
+                        }
+                    }
+                }
+            }
+            catch
+            {
+                ILogger log = LogManagerFactory.DefaultLogManager.GetLogger<Ingredient>();
+                log.Fatal("error durant la select dels ingredients");
                 return new ObservableCollection<Ingredient>();
             }
 

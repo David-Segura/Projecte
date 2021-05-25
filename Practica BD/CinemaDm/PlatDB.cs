@@ -101,6 +101,50 @@ namespace GestioRestaurantDm
 
         }
 
+        public static Plat getPlatPerCodi(int codi)
+        {
+            try
+            {
+
+                using (RestaurantDBContext context = new RestaurantDBContext())
+                {
+                    using (var connexio = context.Database.GetDbConnection())
+                    {
+                        connexio.Open();
+
+                        using (var consulta = connexio.CreateCommand())
+                        {
+                            consulta.CommandText = $@" select * from plat where codi = @codi";
+                            DBUtils.createParameter(consulta, "codi", codi, DbType.Int32);
+
+                            var reader = consulta.ExecuteReader();
+                            Plat p = new Plat();
+                            while (reader.Read())
+                            {
+                                DBUtils.Llegeix(reader, out p.codi, "codi");
+                                DBUtils.Llegeix(reader, out p.nom, "nom");
+                                DBUtils.Llegeix(reader, out p.preu, "preu");
+                                DBUtils.Llegeix(reader, out p.foto, "foto");
+                                DBUtils.Llegeix(reader, out p.categoria, "categoria");
+                                DBUtils.Llegeix(reader, out p.disponible, "disponible");
+
+                            }
+
+                            return p;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                ILogger log = LogManagerFactory.DefaultLogManager.GetLogger<PlatDB>();
+                log.Fatal("error durant la select dels plats");
+                return new Plat();
+            }
+
+        }
+
+
         public static bool Delete(Plat plat)
         {
             try

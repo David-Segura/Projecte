@@ -40,6 +40,6 @@ insert into comanda values (3,'2021-05-18 20:51:02',3,3);
 insert into estat_linia values (1);
 insert into estat_linia values (2);
 
-insert into linea_comanda values(1,1,2,1,1);
-insert into linea_comanda values(1,2,5,2,1);
-insert into linea_comanda values(2,3,4,3,2);
+insert into linea_comanda values(1,1,2,1,true);
+insert into linea_comanda values(1,2,5,2,false);
+insert into linea_comanda values(2,3,4,3,false);

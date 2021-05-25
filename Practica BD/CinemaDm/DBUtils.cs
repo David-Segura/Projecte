@@ -34,6 +34,20 @@ namespace GestioRestaurantDm
             }
         }
 
+        public static void Llegeix(DbDataReader reader, out dynamic valor, string nomColumna, int valorPerDefecte = -1)
+        {
+            valor = valorPerDefecte;
+            int ordinal = reader.GetOrdinal(nomColumna);
+            if (!reader.IsDBNull(ordinal))
+            {
+                Type t = reader.GetFieldType(reader.GetOrdinal(nomColumna));
+
+                valor = reader.GetInt32(ordinal);
+            }
+
+
+        }
+
         public static void Llegeix(DbDataReader reader, out float valor, string nomColumna, float valorPerDefecte = -1)
         {
             valor = valorPerDefecte;

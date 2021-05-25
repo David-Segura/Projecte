@@ -6,8 +6,10 @@
 package gestioescandalls;
 
 import GestioRestaurant.Categoria;
+import GestioRestaurant.Ingredient;
 import GestioRestaurant.Linea_Escandall;
 import GestioRestaurant.Plat;
+import GestioRestaurant.Unitat;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
@@ -17,12 +19,14 @@ import java.awt.GridLayout;
 import java.awt.List;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.PreparedStatement;
 import java.util.ArrayList;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 import javax.swing.BorderFactory;
+import javax.swing.BoxLayout;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -35,6 +39,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.ScrollPaneLayout;
 import javax.swing.WindowConstants;
 import javax.swing.border.Border;
 import javax.swing.border.TitledBorder;
@@ -60,6 +65,8 @@ public class GestioEscandalls {
     private static DefaultTableModel model = new DefaultTableModel();
     private static JComboBox cboCat;
     private static java.util.List<Plat> llp = new ArrayList();
+    private static java.util.List<Unitat> lluni = new ArrayList();
+    private static java.util.List<Ingredient> lling = new ArrayList();
     private static java.util.List<Categoria> llc = new ArrayList();
     private static java.util.List<Linea_Escandall> llesc = new ArrayList();
     private static EntityManagerFactory emf = null;
@@ -70,6 +77,10 @@ public class GestioEscandalls {
     private static JRadioButton btnNo = new JRadioButton("No");
     private static JRadioButton btnTots = new JRadioButton("Tots");
     private static JDialog subfinestra;
+    private static JComboBox cboIng;
+    private static JComboBox cboUni;
+    private static JTextField txfQuantitat;
+    private static Plat platSeleccionat;
         
     public static void main(String[] args) {
         comprovaEsquema();
@@ -86,13 +97,22 @@ public class GestioEscandalls {
     
     private static void prepararSubfinestra(Plat p)
     {
+        platSeleccionat = p;
         subfinestra = new JDialog(f,true);
         subfinestra.setLocation(15,300);
+        //subfinestra.setLayout(new ScrollPaneLayout());
         // el true és per bloquejar l'accés a altres finestres mentre aquesta està activa
         // afegir elements
-                
-        JPanel pa2 = new JPanel(new GridLayout(6,2)); // FlowLayout
+        
+        //subfinestra.setLayout(layout1);
+        JPanel pa0 = new JPanel(); // FlowLayout
+        pa0.setLayout(new BoxLayout(pa0, BoxLayout.Y_AXIS));
         JPanel pa1 = new JPanel(); // FlowLayout
+        JPanel pa2 = new JPanel(); // FlowLayout
+        JPanel pa3 = new JPanel(); // FlowLayout
+        JPanel pa4 = new JPanel(); // FlowLayout
+        JPanel pa5 = new JPanel(); // FlowLayout
+        JPanel pa6 = new JPanel(); // FlowLayout
         
         
         JLabel nomPlat = new JLabel(p.getCodi() + "    " +p.getDescripcioMD());
@@ -100,32 +120,39 @@ public class GestioEscandalls {
         
         construirTaulaEscandall();
         
-        pa2.add(nomPlat);
-        pa2.add(preuPlat);
-        pa2.add(taulaEscandall);
-        JButton add = new JButton("Afegir");
-        JButton delete = new JButton("Eliminar");
-        
-        JLabel qtat = new JLabel("Quantitat:");
-        JTextField txfQuantitat = new JTextField();
-        JLabel unitats = new JLabel("Unitats: ");
-        JComboBox cboUni = new JComboBox();
-        JLabel ingregient = new JLabel("Ingredient: ");
-        JComboBox cboIng = new JComboBox();
-        
-        pa1.add(qtat);
-        pa1.add(txfQuantitat);
-        pa1.add(unitats);
-        pa1.add(cboUni);
-        pa1.add(ingregient);
-        pa1.add(cboIng);
-        
-        
-        pa1.add(add);
-        pa1.add(delete);
-        subfinestra.add(pa1,BorderLayout.SOUTH);
-        subfinestra.add(pa2,BorderLayout.CENTER);
+        pa1.add(nomPlat);
+        pa1.add(preuPlat);
        
+        JButton add = new JButton("Afegir");
+        add.addActionListener(new GestioBotons());
+        JButton delete = new JButton("Eliminar");
+        iniUnitatsIngredients();
+        JLabel qtat = new JLabel("Quantitat:");
+        txfQuantitat = new JTextField(5);
+        JLabel unitats = new JLabel("Unitats: ");
+        
+        emplenarComboUnitats();
+        JLabel ingregient = new JLabel("Ingredient: ");
+        
+        emplenarComboIngredients();
+        
+        pa2.add(qtat);
+        pa2.add(txfQuantitat);
+        pa3.add(unitats);
+        pa3.add(cboUni);
+        pa4.add(ingregient);
+        pa4.add(cboIng);
+         pa5.add(taulaEscandall);
+        
+        pa6.add(add);
+        pa6.add(delete);
+        pa0.add(pa1);
+        pa0.add(pa2);
+        pa0.add(pa3);
+        pa0.add(pa4);
+        pa0.add(pa5);
+        pa0.add(pa6);
+        subfinestra.add(pa0);
         
         
         
@@ -241,6 +268,29 @@ public class GestioEscandalls {
         
     }
     
+    private static void iniUnitatsIngredients(){
+        Query q = em.createNamedQuery("trobaUnitats");
+        lluni =  q.getResultList();
+        Query q2 = em.createNamedQuery("trobaIngredients");
+        lling =  q2.getResultList();
+    }
+    
+    private static void emplenarComboUnitats(){
+        String [] sUnitats = new String[lluni.size()];
+        for(int i = 0; i<lluni.size(); i++){
+            sUnitats[i] = lluni.get(i).getNom();
+        }
+        cboUni = new JComboBox(sUnitats);
+    }
+    
+    private static void emplenarComboIngredients(){
+        String [] sIngredients = new String[lling.size()];
+        for(int i = 0; i<lling.size(); i++){
+            sIngredients[i] = lling.get(i).getNom();
+        }
+        cboIng = new JComboBox(sIngredients);
+    }
+    
     private static void emplenarCombo(){
         String [] sCarac = new String[llc.size()];
         for(int i = 0; i<llc.size(); i++){
@@ -340,17 +390,45 @@ public class GestioEscandalls {
         public void actionPerformed(ActionEvent e) {
             String boto = e.getActionCommand();
             System.out.println("Boto premut: "+boto);
-            
-            if(btnTots.isSelected()){
+            if(boto.equals("Cercar")){
+                if(btnTots.isSelected()){
+
+                }else{
+
+
+                    llp = buscaPlatFiltreAmbDisponibilitat();
+                    //obtenirMatriu();
+                    //construirTaula();
+                     model.fireTableDataChanged();
+                     taula.repaint();
+
+                }
+            }
+            else if(boto.equals("Afegir")){
+                int qtat = Integer.parseInt(txfQuantitat.getText());
+                Query q = em.createNamedQuery("trobaUnitatxNom");
                 
-            }else{
+                String uNom = (String) cboUni.getSelectedItem();
+                q.setParameter("nom", uNom);
+                Unitat u = (Unitat)q.getSingleResult();
                 
-               
-                llp = buscaPlatFiltreAmbDisponibilitat();
-                //obtenirMatriu();
-                //construirTaula();
-                 model.fireTableDataChanged();
-                 taula.repaint();
+                Query q2 = em.createNamedQuery("trobaIngredientxNom");
+                String iNom = (String) cboIng.getSelectedItem();
+                q2.setParameter("nom", iNom);
+                Ingredient i = (Ingredient) q2.getSingleResult();
+                Query q3 = em.createNamedQuery("maxLinxPlatId");
+                q3.setParameter("idPlat", platSeleccionat.getCodi());
+                int lin = (int)q3.getSingleResult() +1;
+                
+                        
+                       
+                Linea_Escandall le = new Linea_Escandall(platSeleccionat.getCodi(), lin, qtat, u, i);
+                em.persist(le);
+                
+                
+//                String insert = "Insert into Linea_Comanda values("+ platSeleccionat.getCodi()+", "+lin+", "+qtat+", "+u.getCodi()+", "+i.getCodi() +" )";
+//                Query q4 = em.createQuery(insert);
+//                q4.executeUpdate();
                 
             }
             

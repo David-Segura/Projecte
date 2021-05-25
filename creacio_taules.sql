@@ -79,10 +79,10 @@ create table Linea_Comanda(
 	num integer (3),
 	quantitat integer (3),
 	item integer (7),
-	estat integer (1),
+	acabat boolean,
     PRIMARY KEY (comanda,num),
     CONSTRAINT FK_Lin_Com_Plat FOREIGN KEY (item)
     REFERENCES Plat(codi),
-    CONSTRAINT FK_Lin_Com_Estat_Linia FOREIGN KEY (estat)
-    REFERENCES Estat_Linia(estat)
+	CONSTRAINT FK_Lin_Com_Comanda FOREIGN KEY (comanda)
+    REFERENCES Comanda(codi)
 );

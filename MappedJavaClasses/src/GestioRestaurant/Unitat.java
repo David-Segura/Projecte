@@ -10,6 +10,8 @@ import javax.persistence.AccessType;
 import javax.persistence.Basic;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 @Entity
@@ -17,6 +19,15 @@ import javax.persistence.Table;
 @Table(
         name = "Unitat"
 )
+@NamedQueries({
+    //    @NamedQuery(name = "trobaFilmsAmbIdiomaId",
+    //            query = "select f from Film f where f.idioma.getCodi() = :idiomaId"),
+    @NamedQuery(name = "trobaUnitats",
+            query = "select u from Unitat u"),
+    @NamedQuery(name = "trobaUnitatxNom",
+            query = "select u from Unitat u where u.nom = :nom"),
+    
+})
 public class Unitat {
     @Id
     int codi;

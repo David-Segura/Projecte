@@ -20,7 +20,7 @@ namespace GestioRestaurantDm
         {
             try
             {
-
+               
                 using (RestaurantDBContext context = new RestaurantDBContext())
                 {
                     using (var connexio = context.Database.GetDbConnection())
@@ -47,7 +47,7 @@ namespace GestioRestaurantDm
                                 DBUtils.Llegeix(reader, out c.num, "num");
                                 DBUtils.Llegeix(reader, out c.quantitat, "quantitat");
                                 DBUtils.Llegeix(reader, out c.item, "item");
-                                DBUtils.Llegeix(reader, out c.estat, "estat");
+                                DBUtils.Llegeix(reader, out c.acabat, "acabat");
                                 lcomandes.Add(c);
                             }
                             return lcomandes;
@@ -64,17 +64,19 @@ namespace GestioRestaurantDm
 
         }
 
-        
 
+        /*comanda integer(7),
+	num integer(3),
+	quantitat integer(3),
+	item integer(7),
+	acabat boolean,*/
 
         public static bool Update(
-            int id,
-            string nom,
-            DateTime data_inici,
-            DateTime data_fi,
-            int sal_id,
-            int cae_id,
-            string desc
+            int comanda,
+            int num,
+            int quantitat,
+            bool acabat
+            
             )
         {
            
@@ -94,8 +96,9 @@ namespace GestioRestaurantDm
 
                             // 
                             consulta.CommandText =
-                                $@"select count(1) from espectacle where esp_id=@id";
-                            DBUtils.createParameter(consulta, "id", id, DbType.Int32);
+                                $@"select count(1) from Linea_Comanda where comanda=@id and num = @num";
+                            DBUtils.createParameter(consulta, "id", comanda, DbType.Int32);
+                            DBUtils.createParameter(consulta, "num", num, DbType.Int32);
                             object o = consulta.ExecuteScalar();
                             int numEspectacles = (int)((long)o);
                             if (numEspectacles == 0)
@@ -108,22 +111,20 @@ namespace GestioRestaurantDm
                             else
                             {
 
-                                //string cognom, int salari, int deptNo
+                               
                                 
 
                                 
-                                DBUtils.createParameter(consulta, "nom", nom, DbType.String);
-                                DBUtils.createParameter(consulta, "data_inici", data_inici, DbType.DateTime);
-                                DBUtils.createParameter(consulta, "data_fi", data_fi, DbType.DateTime);
-                                DBUtils.createParameter(consulta, "sal_id", sal_id, DbType.Int32);
-                                DBUtils.createParameter(consulta, "cae_id", cae_id, DbType.Int32);
-                                DBUtils.createParameter(consulta, "esp_desc", desc, DbType.String);
+                                DBUtils.createParameter(consulta, "comanda", comanda, DbType.Int32);
+                               
+                                DBUtils.createParameter(consulta, "quantitat", quantitat, DbType.Int32);
+                                DBUtils.createParameter(consulta, "acabat", acabat, DbType.Boolean);
+                               
 
                                 consulta.CommandText =
-                                $@"UPDATE espectacle SET esp_nom = [@nom], esp_data_inici = [@data_inici] , esp_data_fi = [@data_fi], esp_sal_id=[@sal_id], esp_cae_id=[@cae_id],esp_desc=[@esp_desc]
-                                WHERE esp_id = @id";
+                                $@"UPDATE linea_comanda SET acabat = @acabat WHERE comanda = @comanda and num = @num";
 
-
+                                object o2 = consulta.ExecuteScalar();
                                 if (numEspectacles == 1)
                                 {
                                     transaction.Commit();
@@ -137,16 +138,9 @@ namespace GestioRestaurantDm
 
                                     ILogger log = LogManagerFactory.DefaultLogManager.GetLogger<Linea_ComandaDB>();
 
-                                    log.Fatal("error durant la modificació de l'espectacle , filesModificades=" +numEspectacles);
+                                    log.Fatal("error durant la modificació de la linea comanda , filesModificades=" +numEspectacles);
 
-                                    //-----------------------------------------------------
-                                    // El log es troba a la carpeta següent
-                                    // (el número llarg en hexadecimal és el Package name
-                                    // que està a l'arxiu "Package.appmanifest"
-                                    // en aquest cas és 727b014c-873f-493e-b051-4dd21cf18dae_n82rqfc3nm07y
-                                    //C:\Users\Usuari\AppData\Local\Packages\727b014c-873f-493e-b051-4dd21cf18dae_n82rqfc3nm07y\LocalState\MetroLogs
-                                    //-----------------------------------------------------
-
+                                    
                                     return false;
 
                                 }

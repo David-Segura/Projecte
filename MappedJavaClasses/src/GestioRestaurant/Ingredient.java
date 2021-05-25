@@ -10,6 +10,8 @@ import javax.persistence.AccessType;
 import javax.persistence.Basic;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 /**
@@ -22,6 +24,15 @@ import javax.persistence.Table;
 @Table(
         name = "Ingredient"
 )
+@NamedQueries({
+    //    @NamedQuery(name = "trobaFilmsAmbIdiomaId",
+    //            query = "select f from Film f where f.idioma.getCodi() = :idiomaId"),
+    @NamedQuery(name = "trobaIngredients",
+            query = "select i from Ingredient i"),
+    @NamedQuery(name = "trobaIngredientxNom",
+            query = "select i from Ingredient i where i.nom = :nom"),
+    
+})
 public class Ingredient {
     @Id
     int codi;
