@@ -46,6 +46,7 @@ import javax.swing.border.TitledBorder;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.JTableHeader;
 import javax.swing.table.TableCellRenderer;
 
 /**
@@ -60,7 +61,7 @@ public class GestioEscandalls {
     private static JPanel esq, centre;
     private static JTable taula;
     private static JTable taulaEscandall;
-    private static String[] columnes = new String[] {"NOM","DESCRIPCIO","PREU","COLOR"};
+    private static String[] columnes = new String[] {"NOM","DESCRIPCIO","PREU"};
     private static String[] columnesEscandall = new String[] {"NumLinea","Quantitat","Unitat","Ingredient"};
     private static DefaultTableModel model = new DefaultTableModel();
     private static JComboBox cboCat;
@@ -81,6 +82,7 @@ public class GestioEscandalls {
     private static JComboBox cboUni;
     private static JTextField txfQuantitat;
     private static Plat platSeleccionat;
+    private static DefaultTableModel modelEscandall;
         
     public static void main(String[] args) {
         comprovaEsquema();
@@ -112,6 +114,7 @@ public class GestioEscandalls {
         JPanel pa3 = new JPanel(); // FlowLayout
         JPanel pa4 = new JPanel(); // FlowLayout
         JPanel pa5 = new JPanel(); // FlowLayout
+//        pa5.setLayout(new FlowLayout(FlowLayout.CENTER));
         JPanel pa6 = new JPanel(); // FlowLayout
         
         
@@ -126,6 +129,7 @@ public class GestioEscandalls {
         JButton add = new JButton("Afegir");
         add.addActionListener(new GestioBotons());
         JButton delete = new JButton("Eliminar");
+        delete.addActionListener(new GestioBotons());
         iniUnitatsIngredients();
         JLabel qtat = new JLabel("Quantitat:");
         txfQuantitat = new JTextField(5);
@@ -142,7 +146,11 @@ public class GestioEscandalls {
         pa3.add(cboUni);
         pa4.add(ingregient);
         pa4.add(cboIng);
-         pa5.add(taulaEscandall);
+        JTableHeader header = taulaEscandall.getTableHeader();
+
+        pa5.add(header);
+        pa5.add(taulaEscandall);
+         //pa5.add(taulaEscandall);
         
         pa6.add(add);
         pa6.add(delete);
@@ -152,6 +160,7 @@ public class GestioEscandalls {
         pa0.add(pa4);
         pa0.add(pa5);
         pa0.add(pa6);
+        
         subfinestra.add(pa0);
         
         
@@ -159,7 +168,7 @@ public class GestioEscandalls {
         // crear com a mínim un panell , i afegir-lo dins la subfinestra
         subfinestra.setVisible(false);
         subfinestra.setTitle("Escandall");
-        subfinestra.setSize(350,300);
+        subfinestra.setSize(350,400);
         //subfinestra.pack();
         subfinestra.setResizable(true);
         // centrar-lo al frame
@@ -189,7 +198,7 @@ public class GestioEscandalls {
         
         String bdInfo[][] = obtenirMatriuEscandall();
         
-        DefaultTableModel modelEscandall = new DefaultTableModel();
+         modelEscandall = new DefaultTableModel();
         modelEscandall.setColumnIdentifiers(columnesEscandall);
         modelEscandall.setDataVector(bdInfo, columnesEscandall);
 
@@ -300,7 +309,7 @@ public class GestioEscandalls {
     }
     
     private static String[][] obtenirMatriu() {
-        String matriuInfo[][] = new String[llp.size()][columnes.length];
+        String matriuInfo[][] = new String[llp.size()][columnes.length +1];
 
         for (int i = 0; i < llp.size(); i++) {
             Plat p = llp.get(i);
@@ -339,8 +348,13 @@ public class GestioEscandalls {
                 return clazz;
             }
             
-            
+           
         };
+        taula.getColumnModel().getColumn(0).setPreferredWidth(110);
+        taula.getColumnModel().getColumn(1).setPreferredWidth(170);
+        taula.getColumnModel().getColumn(2).setPreferredWidth(50);
+        
+        
         taula.setDefaultRenderer(Object.class, new TableCellRenderer() {
             @Override
             public Component getTableCellRendererComponent(JTable table,
@@ -390,7 +404,9 @@ public class GestioEscandalls {
         public void actionPerformed(ActionEvent e) {
             String boto = e.getActionCommand();
             System.out.println("Boto premut: "+boto);
-            if(boto.equals("Cercar")){
+            int fila;
+            switch(boto){
+                case "Cercar":
                 if(btnTots.isSelected()){
 
                 }else{
@@ -403,34 +419,59 @@ public class GestioEscandalls {
                      taula.repaint();
 
                 }
-            }
-            else if(boto.equals("Afegir")){
-                int qtat = Integer.parseInt(txfQuantitat.getText());
-                Query q = em.createNamedQuery("trobaUnitatxNom");
-                
-                String uNom = (String) cboUni.getSelectedItem();
-                q.setParameter("nom", uNom);
-                Unitat u = (Unitat)q.getSingleResult();
-                
-                Query q2 = em.createNamedQuery("trobaIngredientxNom");
-                String iNom = (String) cboIng.getSelectedItem();
-                q2.setParameter("nom", iNom);
-                Ingredient i = (Ingredient) q2.getSingleResult();
-                Query q3 = em.createNamedQuery("maxLinxPlatId");
-                q3.setParameter("idPlat", platSeleccionat.getCodi());
-                int lin = (int)q3.getSingleResult() +1;
-                
-                        
-                       
-                Linea_Escandall le = new Linea_Escandall(platSeleccionat.getCodi(), lin, qtat, u, i);
-                em.persist(le);
+                break;
+                case "Afegir":
+                    int qtat = 0;
+                    try{
+                     qtat = Integer.parseInt(txfQuantitat.getText());
+                    }catch(NumberFormatException ex){
+                    }
+                    Query q = em.createNamedQuery("trobaUnitatxNom");
+
+                    String uNom = (String) cboUni.getSelectedItem();
+                    q.setParameter("nom", uNom);
+                    Unitat u = (Unitat)q.getSingleResult();
+
+                    Query q2 = em.createNamedQuery("trobaIngredientxNom");
+                    String iNom = (String) cboIng.getSelectedItem();
+                    q2.setParameter("nom", iNom);
+                    Ingredient i = (Ingredient) q2.getSingleResult();
+                    Query q3 = em.createNamedQuery("maxLinxPlatId");
+                    q3.setParameter("idPlat", platSeleccionat.getCodi());
+                    int lin = (int)q3.getSingleResult() +1;
+
+
+
+                    Linea_Escandall le = new Linea_Escandall(platSeleccionat.getCodi(), lin, qtat, u, i);
+                    em.persist(le);
                 
                 
 //                String insert = "Insert into Linea_Comanda values("+ platSeleccionat.getCodi()+", "+lin+", "+qtat+", "+u.getCodi()+", "+i.getCodi() +" )";
 //                Query q4 = em.createQuery(insert);
 //                q4.executeUpdate();
-                
-            }
+                break;
+                case "Eliminar":
+                    fila = taulaEscandall.getSelectedRow();
+                    if (fila != -1)
+                    {
+                        String sLin =String.valueOf(modelEscandall.getValueAt(taulaEscandall.getSelectedRow(),0));
+                        modelEscandall.removeRow(fila);
+                        System.out.println(sLin);
+                        
+                        Query q4 = em.createNamedQuery("trobaEscandallPlatPerIdPlatINum");
+                        q4.setParameter("idPlat", platSeleccionat.getCodi());
+                        q4.setParameter("idNum", Integer.parseInt(sLin));
+        
+                        Linea_Escandall les = (Linea_Escandall) q4.getSingleResult();
+                        em.remove(les);                
+                        em.getTransaction().begin();
+                        em.flush();
+                        em.getTransaction().commit();
+                        
+                    } 
+                    
+                    break;
+    }
             
             
             /*int fila;
