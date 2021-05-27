@@ -1,19 +1,17 @@
-package Model;
+package GestioRestaurant;
 
-import android.graphics.Color;
+import java.io.Serializable;
 
-public class Categoria {
+public class NMUnitat implements Serializable {
     int codi;
     String nom;
-    Color color;
 
-    public Categoria(int codi, String nom, Color color) {
+    public NMUnitat(int codi, String nom) {
         this.codi = codi;
         this.nom = nom;
-        this.color = color;
     }
 
-    public Categoria() {
+    public NMUnitat() {
     }
 
     public int getCodi() {
@@ -30,14 +28,6 @@ public class Categoria {
 
     public void setNom(String nom) {
         this.nom = nom;
-    }
-
-    public Color getColor() {
-        return color;
-    }
-
-    public void setColor(Color color) {
-        this.color = color;
     }
 
 

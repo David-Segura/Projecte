@@ -17,16 +17,15 @@ import com.example.restaurantapp.TaulesActivity;
 
 import java.util.List;
 
-import Model.Plat;
-import Model.Taula;
+import GestioRestaurant.NMTaula;
 
 public class TaulesAdapter extends RecyclerView.Adapter<TaulesAdapter.ViewHolder>{
 
-    private List<Taula> mTaules;
+    private List<NMTaula> mTaules;
     private Context mCon;
     private TaulesActivity mActivity;
 
-    public TaulesAdapter(List<Taula> m, TaulesActivity activity, Context con){
+    public TaulesAdapter(List<NMTaula> m, TaulesActivity activity, Context con){
         mTaules = m;
         mCon = con;
         mActivity = activity;
@@ -37,17 +36,17 @@ public class TaulesAdapter extends RecyclerView.Adapter<TaulesAdapter.ViewHolder
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        int layout = R.layout.fitxa_plat;
+        int layout = R.layout.fitxa_taula;
         View filaView = LayoutInflater.from(parent.getContext()).inflate(layout, parent, false);
         return new TaulesAdapter.ViewHolder(filaView);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-        Taula t = mTaules.get(position);
+        NMTaula t = mTaules.get(position);
         Log.d("Taula", "" + t.getNumero());
         holder.txvNumTaula.setText(t.getNumero()+"");
-        holder.txvNomCambrer.setText(t.getComanda().getCambrer().getNom());
+        holder.txvNomCambrer.setText(t.getNMComanda().getNMCambrer().getNom());
         holder.imvFrame.setImageResource(R.drawable.capsa_border);
 
     }
@@ -62,11 +61,21 @@ public class TaulesAdapter extends RecyclerView.Adapter<TaulesAdapter.ViewHolder
         public TextView txvNomCambrer;
         public SeekBar skbProgresCuina;
         public ImageView imvFrame;
-        public ViewHolder(@NonNull View itemView) {
-            super(itemView);
+        int filaSeleccionada;
+        public ViewHolder(@NonNull View fila) {
+            super(fila);
             txvNumTaula = itemView.findViewById(R.id.txvNumTaula);
             txvNomCambrer = itemView.findViewById(R.id.txvNomCambrer);
             imvFrame = itemView.findViewById(R.id.imvFrame);
+            fila.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    filaSeleccionada = getAdapterPosition();
+
+                    mActivity.onTaulaSelected(mTaules,filaSeleccionada);
+
+                }
+            });
         }
     }
 }

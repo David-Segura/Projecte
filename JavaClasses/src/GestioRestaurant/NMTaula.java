@@ -5,18 +5,23 @@
  */
 package GestioRestaurant;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Usuari
  */
-public class Taula {
+public class NMTaula implements Serializable{
+    private static final long serialVersionUID = 6529685098267757690L;
     int numero;
+    NMComanda comanda;
 
-    public Taula() {
+    public NMTaula() {
     }
 
-    public Taula(int numero) {
+    public NMTaula(int numero, NMComanda comanda) {
         this.numero = numero;
+        this.comanda = comanda;
     }
 
     public int getNumero() {
@@ -26,5 +31,14 @@ public class Taula {
     public void setNumero(int numero) {
         this.numero = numero;
     }
+
+    public NMComanda getComanda() {
+        return comanda;
+    }
+
+    public void setComanda(NMComanda comanda) {
+        this.comanda = comanda;
+    }
+    
     
 }

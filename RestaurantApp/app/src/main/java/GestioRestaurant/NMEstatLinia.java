@@ -1,13 +1,15 @@
-package Model;
+package GestioRestaurant;
 
-public class EstatLinia {
+import java.io.Serializable;
+
+public class NMEstatLinia implements Serializable {
     byte estat;
 
-    public EstatLinia(byte estat) {
+    public NMEstatLinia(byte estat) {
         this.estat = estat;
     }
 
-    public EstatLinia() {
+    public NMEstatLinia() {
     }
 
     public byte getEstat() {

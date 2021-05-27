@@ -5,20 +5,22 @@
  */
 package GestioRestaurant;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Usuari
  */
-public class Ingredient {
+public class NMUnitat implements Serializable{
     int codi;
     String nom;
 
-    public Ingredient(int codi, String nom) {
+    public NMUnitat(int codi, String nom) {
         this.codi = codi;
         this.nom = nom;
     }
 
-    public Ingredient() {
+    public NMUnitat() {
     }
 
     public int getCodi() {
@@ -39,5 +41,3 @@ public class Ingredient {
     
     
 }
-
-

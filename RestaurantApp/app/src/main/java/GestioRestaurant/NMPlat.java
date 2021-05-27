@@ -1,26 +1,21 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package GestioRestaurant;
 
-import java.awt.Image;
+import android.media.Image;
 
-/**
- *
- * @author Usuari
- */
-public class Plat {
+import java.io.Serializable;
+import java.util.Arrays;
+
+public class NMPlat implements Serializable {
+    private static final long serialVersionUID = 6120365098540341090L;
     int codi;
     String nom;
     String descripcioMD;
     float preu;
-    Image foto;
+    byte[] foto;
     boolean disponible ;
-    int categoria;
+    NMCategoria categoria;
 
-    public Plat(int codi, String nom, String descripcioMD, float preu, Image foto, boolean disponible, int categoria) {
+    public NMPlat(int codi, String nom, String descripcioMD, float preu, byte[] foto, boolean disponible, NMCategoria categoria) {
         this.codi = codi;
         this.nom = nom;
         this.descripcioMD = descripcioMD;
@@ -30,7 +25,7 @@ public class Plat {
         this.categoria = categoria;
     }
 
-    public Plat() {
+    public NMPlat() {
     }
 
     public int getCodi() {
@@ -65,11 +60,11 @@ public class Plat {
         this.preu = preu;
     }
 
-    public Image getFoto() {
+    public byte[] getFoto() {
         return foto;
     }
 
-    public void setFoto(Image foto) {
+    public void setFoto(byte[] foto) {
         this.foto = foto;
     }
 
@@ -81,13 +76,25 @@ public class Plat {
         this.disponible = disponible;
     }
 
-    public int getCategoria() {
+    public NMCategoria getCategoria() {
         return categoria;
     }
 
-    public void setCategoria(int categoria) {
+    public void setCategoria(NMCategoria categoria) {
         this.categoria = categoria;
     }
-    
-    
+
+    @Override
+    public String toString() {
+        return "NMPlat{" +
+                "codi=" + codi +
+                ", nom='" + nom + '\'' +
+                ", descripcioMD='" + descripcioMD + '\'' +
+                ", preu=" + preu +
+                ", disponible=" + disponible +
+                ", categoria=" + categoria +
+                '}';
+    }
+
+
 }

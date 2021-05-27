@@ -18,12 +18,13 @@
 
 
     <EditText
-        android:id="@+id/txvUser"
+        android:id="@+id/edtUser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
         android:ems="8"
         android:hint="Nom d'usuari"
+        android:text="pepe123"
         android:textAlignment="center"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
@@ -32,7 +33,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imvBck" />
 
     <EditText
-        android:id="@+id/editTextTextPassword"
+        android:id="@+id/edtPwd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
@@ -44,7 +45,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txvUser" />
+        app:layout_constraintTop_toBottomOf="@+id/edtUser" />
 
     <Button
         android:id="@+id/btnEntra"
@@ -55,6 +56,20 @@
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/edtPwd" />
+
+    <TextView
+        android:id="@+id/txvLoginCorrecte"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Login incorrecte"
+        android:visibility="invisible"
+
+        android:textColor="#FF0000"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -29,13 +29,17 @@ insert into Cambrer values(2,'Maria','Garcia','Fernandez','maria321','maria321')
 insert into Cambrer values(3,'Antonio','Gonzalez','Lopez','antonio','antonio');
 
 
-insert into taula values (1);
-insert into taula values (2);
-insert into taula values (3);
+insert into taula (numero) values (1);
+insert into taula (numero) values (2);
+insert into taula (numero) values (3);
 
 insert into comanda values (1,'2021-05-18 20:45:16',1,1);
 insert into comanda values (2,'2021-05-18 20:50:29',2,2);
 insert into comanda values (3,'2021-05-18 20:51:02',3,3);
+
+UPDATE taula set comanda = 1 where numero = 1;
+UPDATE taula set comanda = 2 where numero = 2;
+UPDATE taula set comanda = 3 where numero = 3;
 
 insert into estat_linia values (1);
 insert into estat_linia values (2);

@@ -5,18 +5,20 @@
  */
 package GestioRestaurant;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Usuari
  */
-public class EstatLinia {
+public class NMEstatLinia implements Serializable{
     byte estat;
 
-    public EstatLinia(byte estat) {
+    public NMEstatLinia(byte estat) {
         this.estat = estat;
     }
 
-    public EstatLinia() {
+    public NMEstatLinia() {
     }
 
     public byte getEstat() {

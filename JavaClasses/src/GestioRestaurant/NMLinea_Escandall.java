@@ -1,13 +1,24 @@
-package Model;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package GestioRestaurant;
 
-public class Linea_Escandall {
+import java.io.Serializable;
+
+/**
+ *
+ * @author Usuari
+ */
+public class NMLinea_Escandall implements Serializable{
     int plat;
     int num;
     int quantitat;
-    int unitat;
-    int ingredient;
+    NMUnitat unitat;
+    NMIngredient ingredient;
 
-    public Linea_Escandall(int plat, int num, int quantitat, int unitat, int ingredient) {
+    public NMLinea_Escandall(int plat, int num, int quantitat, NMUnitat unitat, NMIngredient ingredient) {
         this.plat = plat;
         this.num = num;
         this.quantitat = quantitat;
@@ -15,7 +26,7 @@ public class Linea_Escandall {
         this.ingredient = ingredient;
     }
 
-    public Linea_Escandall() {
+    public NMLinea_Escandall() {
     }
 
     public int getPlat() {
@@ -42,21 +53,21 @@ public class Linea_Escandall {
         this.quantitat = quantitat;
     }
 
-    public int getUnitat() {
+    public NMUnitat getUnitat() {
         return unitat;
     }
 
-    public void setUnitat(int unitat) {
+    public void setUnitat(NMUnitat unitat) {
         this.unitat = unitat;
     }
 
-    public int getIngredient() {
+    public NMIngredient getIngredient() {
         return ingredient;
     }
 
-    public void setIngredient(int ingredient) {
+    public void setIngredient(NMIngredient ingredient) {
         this.ingredient = ingredient;
     }
-
-
+    
+    
 }

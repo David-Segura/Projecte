@@ -5,26 +5,28 @@
  */
 package GestioRestaurant;
 
+import java.io.Serializable;
 import java.sql.Timestamp;
 
 /**
  *
  * @author Usuari
  */
-public class Comanda {
+public class NMComanda implements Serializable{
+    private static final long serialVersionUID = 6529685098267741090L;
     int codi;
     Timestamp data;
-    int taula;
-    int cambrer;
+    NMTaula taula;
+    NMCambrer cambrer;
 
-    public Comanda(int codi, Timestamp data, int taula, int cambrer) {
+    public NMComanda(int codi, Timestamp data, NMTaula taula, NMCambrer cambrer) {
         this.codi = codi;
         this.data = data;
         this.taula = taula;
         this.cambrer = cambrer;
     }
 
-    public Comanda() {
+    public NMComanda() {
     }
 
     public int getCodi() {
@@ -43,20 +45,25 @@ public class Comanda {
         this.data = data;
     }
 
-    public int getTaula() {
+    public NMTaula getTaula() {
         return taula;
     }
 
-    public void setTaula(int taula) {
+    public void setTaula(NMTaula taula) {
         this.taula = taula;
     }
 
-    public int getCambrer() {
+    public NMCambrer getCambrer() {
         return cambrer;
     }
 
-    public void setCambrer(int cambrer) {
+    public void setCambrer(NMCambrer cambrer) {
         this.cambrer = cambrer;
+    }
+
+    @Override
+    public String toString() {
+        return "NMComanda{" + "codi=" + codi + ", data=" + data + ", taula=" + taula + ", cambrer=" + cambrer + '}';
     }
     
     

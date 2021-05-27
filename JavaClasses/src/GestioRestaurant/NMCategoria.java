@@ -6,23 +6,25 @@
 package GestioRestaurant;
 
 import java.awt.Color;
+import java.io.Serializable;
 
 /**
  *
  * @author Usuari
  */
-public class Categoria {
+public class NMCategoria implements Serializable{
+    private static final long serialVersionUID = 6126503098540341090L;
     int codi;
     String nom;
-    Color color;
+    int color;
 
-    public Categoria(int codi, String nom, Color color) {
+    public NMCategoria(int codi, String nom, int color) {
         this.codi = codi;
         this.nom = nom;
         this.color = color;
     }
 
-    public Categoria() {
+    public NMCategoria() {
     }
 
     public int getCodi() {
@@ -41,11 +43,11 @@ public class Categoria {
         this.nom = nom;
     }
 
-    public Color getColor() {
+    public int getColor() {
         return color;
     }
 
-    public void setColor(Color color) {
+    public void setColor(int color) {
         this.color = color;
     }
     

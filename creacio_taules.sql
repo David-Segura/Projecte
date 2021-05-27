@@ -57,7 +57,9 @@ create table Cambrer(
 );
 create table Taula(
 	numero integer (3),
-    PRIMARY KEY (numero)
+	comanda integer (7)
+    PRIMARY KEY (numero)	
+	
 );
 create table comanda(
 	codi integer (7),
@@ -70,6 +72,9 @@ create table comanda(
     CONSTRAINT FK_Comanda_Cambrer FOREIGN KEY (cambrer)
     REFERENCES Cambrer(codi)
 );
+
+alter table taula add CONSTRAINT FK_Taula_Comanda FOREIGN KEY (comanda) REFERENCES Comanda(codi);
+
 create table Estat_Linia(
 	estat integer (1),
     PRIMARY KEY (estat)

@@ -1,19 +1,21 @@
-package Model;
+package GestioRestaurant;
 
-public class LineaComanda {
+import java.io.Serializable;
+
+public class NMLineaComanda implements Serializable {
     int num;
     int quantitat;
     int item;
     int estat;
 
-    public LineaComanda(int num, int quantitat, int item, int estat) {
+    public NMLineaComanda(int num, int quantitat, int item, int estat) {
         this.num = num;
         this.quantitat = quantitat;
         this.item = item;
         this.estat = estat;
     }
 
-    public LineaComanda() {
+    public NMLineaComanda() {
     }
 
     public int getNum() {

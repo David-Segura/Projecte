@@ -6,18 +6,48 @@
 package GestioRestaurant;
 
 import java.sql.Timestamp;
+import javax.persistence.Access;
+import javax.persistence.AccessType;
+import javax.persistence.Basic;
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.Table;
 
-/**
- *
- * @author Usuari
- */
+@Entity
+@Access(AccessType.FIELD)
+@Table(
+        name = "Comanda"
+)
+@NamedQueries({
+    //    @NamedQuery(name = "trobaFilmsAmbIdiomaId",
+    //            query = "select f from Film f where f.idioma.getCodi() = :idiomaId"),
+    //@NamedQuery(name = "trobaTotesLesTaules",
+            //query = "select t from Taula t"),
+    
+    
+    
+})
 public class Comanda {
+    @Id
     int codi;
+    @Basic
     Timestamp data;
-    int taula;
-    int cambrer;
+    @ManyToOne(optional = false, cascade = CascadeType.PERSIST,
+            fetch = FetchType.LAZY)
+    @JoinColumn(name = "Taula")
+    Taula taula;
+    @ManyToOne(optional = false, cascade = CascadeType.PERSIST,
+            fetch = FetchType.LAZY)
+    @JoinColumn(name = "Cambrer")
+    Cambrer cambrer;
 
-    public Comanda(int codi, Timestamp data, int taula, int cambrer) {
+    public Comanda(int codi, Timestamp data, Taula taula, Cambrer cambrer) {
         this.codi = codi;
         this.data = data;
         this.taula = taula;
@@ -43,20 +73,25 @@ public class Comanda {
         this.data = data;
     }
 
-    public int getTaula() {
+    public Taula getTaula() {
         return taula;
     }
 
-    public void setTaula(int taula) {
+    public void setTaula(Taula taula) {
         this.taula = taula;
     }
 
-    public int getCambrer() {
+    public Cambrer getCambrer() {
         return cambrer;
     }
 
-    public void setCambrer(int cambrer) {
+    public void setCambrer(Cambrer cambrer) {
         this.cambrer = cambrer;
+    }
+
+    @Override
+    public String toString() {
+        return "Comanda{" + "codi=" + codi + ", data=" + data + ", taula=" + taula + ", cambrer=" + cambrer + '}';
     }
     
     

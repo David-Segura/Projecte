@@ -1,6 +1,9 @@
-package Model;
+package GestioRestaurant;
 
-public class Cambrer {
+import java.io.Serializable;
+
+public class NMCambrer implements Serializable {
+    private static final long serialVersionUID = 6120365098267741090L;
     int codi;
     String nom;
     String cognom1;
@@ -8,7 +11,7 @@ public class Cambrer {
     String user;
     String password;
 
-    public Cambrer(int codi, String nom, String cognom1, String cognom2, String user, String password) {
+    public NMCambrer(int codi, String nom, String cognom1, String cognom2, String user, String password) {
         this.codi = codi;
         this.nom = nom;
         this.cognom1 = cognom1;
@@ -17,7 +20,7 @@ public class Cambrer {
         this.password = password;
     }
 
-    public Cambrer() {
+    public NMCambrer() {
     }
 
     public int getCodi() {
@@ -68,7 +71,12 @@ public class Cambrer {
         this.password = password;
     }
 
+    @Override
+    public String toString() {
+        return "NMCambrer{" +
 
+                " nom='" + nom + '\'' +
 
-
+                '}';
+    }
 }

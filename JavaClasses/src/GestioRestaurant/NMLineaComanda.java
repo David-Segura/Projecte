@@ -5,25 +5,38 @@
  */
 package GestioRestaurant;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Usuari
  */
-public class LineaComanda {
+public class NMLineaComanda implements Serializable{
+   NMComanda comanda;
    int num;
    int quantitat;
    int item;
    int estat;
 
-    public LineaComanda(int num, int quantitat, int item, int estat) {
+    public NMLineaComanda(NMComanda comanda, int num, int quantitat, int item, int estat) {
+        this.comanda = comanda;
         this.num = num;
         this.quantitat = quantitat;
         this.item = item;
         this.estat = estat;
     }
 
-    public LineaComanda() {
+    public NMLineaComanda() {
     }
+
+    public NMComanda getComanda() {
+        return comanda;
+    }
+
+    public void setComanda(NMComanda comanda) {
+        this.comanda = comanda;
+    }
+    
 
     public int getNum() {
         return num;
