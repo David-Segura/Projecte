@@ -43,10 +43,10 @@ public class Linea_Escandall implements Serializable{
     @Basic
     int quantitat;
     @ManyToOne(optional = false, cascade = CascadeType.PERSIST,fetch = FetchType.LAZY)
-    @JoinColumn(name = "Unitat", insertable = false, updatable = false)
+    @JoinColumn(name = "Unitat")
     Unitat unitat;
     @ManyToOne(optional = false, cascade = CascadeType.PERSIST,fetch = FetchType.LAZY)
-    @JoinColumn(name = "ingredient", insertable = false, updatable = false)
+    @JoinColumn(name = "ingredient")
     Ingredient ingredient;
 
     public Linea_Escandall( int plat, int num, int quantitat, Unitat unitat, Ingredient ingredient) {

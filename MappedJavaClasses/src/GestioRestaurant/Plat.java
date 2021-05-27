@@ -34,7 +34,10 @@ import javax.persistence.Table;
     @NamedQuery(name = "trobaPlatsPerNom",
            query = "select p from Plat p where p.nom = :nom"),
     @NamedQuery(name = "trobaPlatsPerCategoriaIDisponibilitat",
-            query = "select p from Plat p where categoria = :idCategoria and disponible = :disponible"),
+            query = "select p from Plat p where categoria.codi = :idCategoria and disponible = :disponible"),
+    @NamedQuery(name = "trobaPlatsPerCategoria",
+            query = "select p from Plat p where categoria.codi = :idCategoria"),
+    
     
 })
 public class Plat {
@@ -109,7 +112,7 @@ public class Plat {
         this.foto = foto;
     }
 
-    public boolean isDisponible() {
+    public boolean getDisponible() {
         return disponible;
     }
 

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="btn_color">
+        <item name="android:background">@color/bck_color</item>
+    </style>
+</resources>

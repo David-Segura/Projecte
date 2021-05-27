@@ -198,7 +198,7 @@ public class GestioEscandalls {
         
         String bdInfo[][] = obtenirMatriuEscandall();
         
-         modelEscandall = new DefaultTableModel();
+        modelEscandall = new DefaultTableModel();
         modelEscandall.setColumnIdentifiers(columnesEscandall);
         modelEscandall.setDataVector(bdInfo, columnesEscandall);
 
@@ -309,7 +309,7 @@ public class GestioEscandalls {
     }
     
     private static String[][] obtenirMatriu() {
-        String matriuInfo[][] = new String[llp.size()][columnes.length +1];
+        String matriuInfo[][] = new String[llp.size()][columnes.length +2];
 
         for (int i = 0; i < llp.size(); i++) {
             Plat p = llp.get(i);
@@ -317,7 +317,9 @@ public class GestioEscandalls {
             matriuInfo[i][0] = p.getNom();
             matriuInfo[i][1] = p.getDescripcioMD();
             matriuInfo[i][2] = p.getPreu()+"";
-            matriuInfo[i][3] = p.getCategoria().getColor()+""; // TODO GET FOTO
+            matriuInfo[i][3] = p.getCategoria().getColor()+"";
+            matriuInfo[i][4] = p.getDisponible()+"";
+            
 //            matriuInfo[i][3] = p.isDisponible()+"";
 //            matriuInfo[i][4] = p.getCategoria()+"";
         }
@@ -327,8 +329,12 @@ public class GestioEscandalls {
     private static void construirTaula() {
         
         String bdInfo[][] = obtenirMatriu();
+        
+        model = new DefaultTableModel();
+        model.setColumnIdentifiers(columnes);
+        model.setDataVector(bdInfo, columnes);
 
-        taula = new JTable(bdInfo,columnes){
+        taula = new JTable(model){
              @Override
             public boolean isCellEditable(int row, int column)
             {
@@ -347,8 +353,6 @@ public class GestioEscandalls {
                 }
                 return clazz;
             }
-            
-           
         };
         taula.getColumnModel().getColumn(0).setPreferredWidth(110);
         taula.getColumnModel().getColumn(1).setPreferredWidth(170);
@@ -408,15 +412,98 @@ public class GestioEscandalls {
             switch(boto){
                 case "Cercar":
                 if(btnTots.isSelected()){
+                    llp = buscaPlatFiltreCategoria();
+                    //obtenirMatriu();
+                    //construirTaula();
+                    
+                    String matriuInfo[][] = new String[llp.size()][columnes.length +2];
 
+                    for (int i = 0; i < llp.size(); i++) {
+                        Plat p = llp.get(i);
+
+                        matriuInfo[i][0] = p.getNom();
+                        matriuInfo[i][1] = p.getDescripcioMD();
+                        matriuInfo[i][2] = p.getPreu()+"";
+                        matriuInfo[i][3] = p.getCategoria().getColor()+"";
+                        matriuInfo[i][4] = p.getDisponible()+"";
+
+            //            matriuInfo[i][3] = p.isDisponible()+"";
+            //            matriuInfo[i][4] = p.getCategoria()+"";
+                    }
+        
+        
+                    model.setDataVector(matriuInfo, columnes);
+                    
+                    
+                    taula.getColumnModel().getColumn(0).setPreferredWidth(110);
+                    taula.getColumnModel().getColumn(1).setPreferredWidth(170);
+                    taula.getColumnModel().getColumn(2).setPreferredWidth(50);
+
+
+                    taula.setDefaultRenderer(Object.class, new TableCellRenderer() {
+                        @Override
+                        public Component getTableCellRendererComponent(JTable table,
+                                Object value, boolean isSelected, boolean hasFocus,
+                                int row, int column) {
+                            JPanel pane = new JPanel();
+                            int c = (Integer.parseInt(matriuInfo[row][3]));
+                            Color color = new Color(c);
+                            JLabel l = new JLabel ((String)value);
+                            table.setRowHeight(25);
+                            pane.setSize(200,500);
+                            pane.setBackground(color);
+                            pane.add(l);
+
+                            return pane;
+                        }
+                    });
+        
                 }else{
 
 
                     llp = buscaPlatFiltreAmbDisponibilitat();
                     //obtenirMatriu();
                     //construirTaula();
-                     model.fireTableDataChanged();
-                     taula.repaint();
+                    
+                    String matriuInfo[][] = new String[llp.size()][columnes.length +2];
+
+                    for (int i = 0; i < llp.size(); i++) {
+                        Plat p = llp.get(i);
+
+                        matriuInfo[i][0] = p.getNom();
+                        matriuInfo[i][1] = p.getDescripcioMD();
+                        matriuInfo[i][2] = p.getPreu()+"";
+                        matriuInfo[i][3] = p.getCategoria().getColor()+"";
+                        matriuInfo[i][4] = p.getDisponible()+"";
+
+            //            matriuInfo[i][3] = p.isDisponible()+"";
+            //            matriuInfo[i][4] = p.getCategoria()+"";
+                    }
+        
+        
+                    model.setDataVector(matriuInfo, columnes);
+                    taula.getColumnModel().getColumn(0).setPreferredWidth(110);
+                    taula.getColumnModel().getColumn(1).setPreferredWidth(170);
+                    taula.getColumnModel().getColumn(2).setPreferredWidth(50);
+
+
+                    taula.setDefaultRenderer(Object.class, new TableCellRenderer() {
+                        @Override
+                        public Component getTableCellRendererComponent(JTable table,
+                                Object value, boolean isSelected, boolean hasFocus,
+                                int row, int column) {
+                            JPanel pane = new JPanel();
+                            int c = (Integer.parseInt(matriuInfo[row][3]));
+                            Color color = new Color(c);
+                            JLabel l = new JLabel ((String)value);
+                            table.setRowHeight(25);
+                            pane.setSize(200,500);
+                            pane.setBackground(color);
+                            pane.add(l);
+
+                            return pane;
+                        }
+                    });
 
                 }
                 break;
@@ -443,8 +530,13 @@ public class GestioEscandalls {
 
 
                     Linea_Escandall le = new Linea_Escandall(platSeleccionat.getCodi(), lin, qtat, u, i);
+                    em.getTransaction().begin();
                     em.persist(le);
-                
+                    em.getTransaction().commit();
+                    llesc.add(le);
+                    modelEscandall.addRow(new Object[]{lin,qtat,u.getNom(),i.getNom()});
+                    modelEscandall.fireTableDataChanged();
+                    
                 
 //                String insert = "Insert into Linea_Comanda values("+ platSeleccionat.getCodi()+", "+lin+", "+qtat+", "+u.getCodi()+", "+i.getCodi() +" )";
 //                Query q4 = em.createQuery(insert);
@@ -456,8 +548,7 @@ public class GestioEscandalls {
                     {
                         String sLin =String.valueOf(modelEscandall.getValueAt(taulaEscandall.getSelectedRow(),0));
                         modelEscandall.removeRow(fila);
-                        System.out.println(sLin);
-                        
+                                                
                         Query q4 = em.createNamedQuery("trobaEscandallPlatPerIdPlatINum");
                         q4.setParameter("idPlat", platSeleccionat.getCodi());
                         q4.setParameter("idNum", Integer.parseInt(sLin));
@@ -467,7 +558,7 @@ public class GestioEscandalls {
                         em.getTransaction().begin();
                         em.flush();
                         em.getTransaction().commit();
-                        
+                        //modelEscandall.fireTableDataChanged();
                     } 
                     
                     break;
@@ -539,9 +630,19 @@ public class GestioEscandalls {
     
     private static java.util.List<Plat> buscaPlatFiltreAmbDisponibilitat(){
         Query q = em.createNamedQuery("trobaPlatsPerCategoriaIDisponibilitat");
-        q.setParameter("idCategoria", cboCat.getSelectedIndex()+1);
+        int idx = cboCat.getSelectedIndex();
+        q.setParameter("idCategoria", idx +1);
         boolean disponible = btnSi.isSelected();
         q.setParameter("disponible",disponible );
+        java.util.List<Plat> llp = q.getResultList();
+        return llp;
+        
+    }
+    
+    private static java.util.List<Plat> buscaPlatFiltreCategoria(){
+        Query q = em.createNamedQuery("trobaPlatsPerCategoria");
+        int idx = cboCat.getSelectedIndex();
+        q.setParameter("idCategoria", idx +1);
         java.util.List<Plat> llp = q.getResultList();
         return llp;
         
@@ -592,7 +693,7 @@ public class GestioEscandalls {
                       
                     
                     
-                    System.out.println(p.toString());
+                    //System.out.println(p.toString());
                 }
                 
               Query q2 = em.createNamedQuery("trobaCategories");
@@ -606,7 +707,7 @@ public class GestioEscandalls {
                       
                     
                     
-                    System.out.println(c.toString());
+                    //System.out.println(c.toString());
                 }  
                 
             Categoria c = null;
@@ -617,10 +718,10 @@ public class GestioEscandalls {
             Query q3 = em.createQuery(cad);
             java.util.List<Linea_Escandall> lllllll = q3.getResultList();
             if (lllllll.size() == 0) {
-                System.out.println("No hi ha cap color");
+                //System.out.println("No hi ha cap color");
             } else {
                 for (Linea_Escandall col : lllllll) {
-                    System.out.println(col);
+                    //System.out.println(col);
                 }
             }      
             
