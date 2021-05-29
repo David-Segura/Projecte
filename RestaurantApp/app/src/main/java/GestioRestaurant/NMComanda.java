@@ -56,7 +56,7 @@ public class NMComanda implements Serializable {
     public String toString() {
         return "NMComanda{" +
                 "codi=" + codi +
-                ", data=" + data.toString() +
+                //", data=" + data.toString() +
                 ", NMCambrer=" + NMCambrer.toString() +
                 '}';
     }

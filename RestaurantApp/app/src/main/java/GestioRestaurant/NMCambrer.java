@@ -74,7 +74,7 @@ public class NMCambrer implements Serializable {
     @Override
     public String toString() {
         return "NMCambrer{" +
-
+                "codi= "+codi+
                 " nom='" + nom + '\'' +
 
                 '}';

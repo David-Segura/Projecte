@@ -183,7 +183,7 @@ public class ComandaActivity extends AppCompatActivity implements View.OnClickLi
                     for(int i = 0; i<Integer.parseInt(resposta);i++){
                         Log.d("XXX","Rebent taula");
 
-                        NMCategoria categoria = (NMCategoria) input.readObject();
+                        //NMCategoria categoria = (NMCategoria) input.readObject();
                         NMPlat plat = (NMPlat) input.readObject();
 
 
@@ -208,7 +208,7 @@ public class ComandaActivity extends AppCompatActivity implements View.OnClickLi
                         t.setComanda(c);*/
 
 
-                        Log.d("XXX",categoria.toString());
+                        //Log.d("XXX",categoria.toString());
                         Log.d("XXX",plat.toString());
                         lPlats.add(plat);
                         Log.d("XXX",lPlats.size()+"");
@@ -350,7 +350,7 @@ public class ComandaActivity extends AppCompatActivity implements View.OnClickLi
 
                     ObjectOutputStream out = new ObjectOutputStream(s.getOutputStream());
                     out.writeObject(msgCod);
-                    Log.d("XXX","Enviant taula "+taula.toString());
+                    //Log.d("XXX","Enviant taula "+taula.toString());
                     out.writeObject(taula.getNMComanda().getNMCambrer());
                     out.writeObject(taula.getNMComanda());
                     out.writeObject(taula);

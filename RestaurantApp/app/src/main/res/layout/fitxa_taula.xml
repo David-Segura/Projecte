@@ -7,6 +7,7 @@
     android:layout_height="230dp"
     android:layout_marginLeft="5dp"
     android:layout_marginTop="30dp"
+    android:id="@+id/layout"
 
     >
     <ImageView

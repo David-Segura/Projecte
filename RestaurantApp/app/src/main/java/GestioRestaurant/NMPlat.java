@@ -89,7 +89,7 @@ public class NMPlat implements Serializable {
         return "NMPlat{" +
                 "codi=" + codi +
                 ", nom='" + nom + '\'' +
-
+                ", categoria"+categoria+
                 '}';
     }
 

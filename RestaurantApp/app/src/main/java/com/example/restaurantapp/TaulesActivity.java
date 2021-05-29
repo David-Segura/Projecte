@@ -27,11 +27,16 @@ public class TaulesActivity extends AppCompatActivity {
     List<NMTaula> lTaules = new ArrayList<>();
     int taulaIndex;
     TaulesActivity mActivity;
+    NMCambrer cambrer;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_taules);
 
+        Intent i = getIntent();
+        cambrer = (NMCambrer) i.getSerializableExtra("CAMBRER");
+
+        Log.d("XXX",cambrer.toString());
         mActivity = this;
         rcyTaules=findViewById(R.id.rcyTaules);
 
@@ -135,7 +140,7 @@ public class TaulesActivity extends AppCompatActivity {
                         @Override
                         public void run() {
 
-                            mAdapter = new TaulesAdapter(lTaules,mActivity,getApplicationContext());
+                            mAdapter = new TaulesAdapter(lTaules,mActivity,getApplicationContext(),cambrer);
                             rcyTaules.setAdapter(mAdapter);
                         }
                     });

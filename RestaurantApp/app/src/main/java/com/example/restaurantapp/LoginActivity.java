@@ -20,6 +20,8 @@ import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.net.Socket;
 
+import GestioRestaurant.NMCambrer;
+
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
     Button btnEntra;
     EditText edtUser;
@@ -27,6 +29,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     Boolean correcte = true;
     String correcte2;
     TextView txvLoginCorrecte;
+    NMCambrer cambrer;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -79,7 +82,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
                     correcte2 = resposta;
 
-
+                    cambrer = (NMCambrer) input.readObject();
                     handler.post(new Runnable() {
                         @Override
                         public void run() {
@@ -96,7 +99,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
                             if(correcte) {
                                 Intent i = new Intent(getApplicationContext(), TaulesActivity.class);
+                                i.putExtra("CAMBRER",cambrer);
                                 startActivity(i);
+                                Log.d("XXX",cambrer.toString());
                             }
                         }
                     });

@@ -1,6 +1,7 @@
 package Adapters;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +11,7 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.restaurantapp.R;
@@ -17,6 +19,7 @@ import com.example.restaurantapp.TaulesActivity;
 
 import java.util.List;
 
+import GestioRestaurant.NMCambrer;
 import GestioRestaurant.NMTaula;
 
 public class TaulesAdapter extends RecyclerView.Adapter<TaulesAdapter.ViewHolder>{
@@ -24,11 +27,13 @@ public class TaulesAdapter extends RecyclerView.Adapter<TaulesAdapter.ViewHolder
     private List<NMTaula> mTaules;
     private Context mCon;
     private TaulesActivity mActivity;
+    private  NMCambrer mCambrer;
 
-    public TaulesAdapter(List<NMTaula> m, TaulesActivity activity, Context con){
+    public TaulesAdapter(List<NMTaula> m, TaulesActivity activity, Context con, NMCambrer cambrer){
         mTaules = m;
         mCon = con;
         mActivity = activity;
+        mCambrer = cambrer;
 
     }
 
@@ -48,7 +53,12 @@ public class TaulesAdapter extends RecyclerView.Adapter<TaulesAdapter.ViewHolder
         holder.txvNumTaula.setText(t.getNumero()+"");
         holder.txvNomCambrer.setText(t.getNMComanda().getNMCambrer().getNom());
         holder.imvFrame.setImageResource(R.drawable.capsa_border);
-
+        Log.d("XXX","t.cambrer: " + t.getNMComanda().getNMCambrer().toString());
+        Log.d("XXX","cambrer: " + mCambrer.toString());
+        if(t.getNMComanda().getNMCambrer().getCodi() == mCambrer.getCodi()){
+            Log.d("XXX","taula del cambrer");
+            holder.layout.setBackgroundColor(Color.CYAN);
+        }
     }
 
     @Override
@@ -62,11 +72,13 @@ public class TaulesAdapter extends RecyclerView.Adapter<TaulesAdapter.ViewHolder
         public SeekBar skbProgresCuina;
         public ImageView imvFrame;
         int filaSeleccionada;
+        public ConstraintLayout layout;
         public ViewHolder(@NonNull View fila) {
             super(fila);
             txvNumTaula = itemView.findViewById(R.id.txvNumTaula);
             txvNomCambrer = itemView.findViewById(R.id.txvNomCambrer);
             imvFrame = itemView.findViewById(R.id.imvFrame);
+            layout = itemView.findViewById(R.id.layout);
             fila.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
