@@ -3,6 +3,7 @@ package GestioRestaurant;
 import android.graphics.Color;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 public class NMCategoria implements Serializable {
     private static final long serialVersionUID = 6126503098540341090L;
@@ -50,5 +51,18 @@ public class NMCategoria implements Serializable {
                 ", nom='" + nom + '\'' +
                 ", color=" + color +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        NMCategoria that = (NMCategoria) o;
+        return codi == that.codi;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(codi);
     }
 }

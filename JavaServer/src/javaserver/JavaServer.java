@@ -7,10 +7,12 @@ package javaserver;
 
 import GestioRestaurant.Cambrer;
 import GestioRestaurant.Categoria;
+import GestioRestaurant.Comanda;
 import GestioRestaurant.Linea_Escandall;
 import GestioRestaurant.NMCambrer;
 import GestioRestaurant.NMCategoria;
 import GestioRestaurant.NMComanda;
+import GestioRestaurant.NMLineaComanda;
 import GestioRestaurant.NMPlat;
 import GestioRestaurant.NMTaula;
 import GestioRestaurant.Plat;
@@ -20,6 +22,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -196,6 +199,57 @@ public class JavaServer {
                         oos.writeObject(categoria);
                         oos.writeObject(p);
                     }
+                    break;
+                case "5":
+                    NMCambrer cambrer = (NMCambrer) ois.readObject();
+                    NMComanda comanda = (NMComanda) ois.readObject();
+                    NMTaula taula = (NMTaula) ois.readObject();
+                    comanda.setCambrer(cambrer);
+                    taula.setComanda(comanda);
+                    System.out.println("Taula: "+ taula.toString());
+                    int nLinies = (int) ois.readObject();
+                    System.out.println("N Linies: " + nLinies);
+                    List<NMLineaComanda> llc = new ArrayList<>();
+                    for (int i = 0; i < nLinies; i++) {
+                        NMLineaComanda lc = (NMLineaComanda)ois.readObject();
+                        System.out.println("Linea comanda: "+ lc.toString());
+                        llc.add(lc);
+                    }
+                    
+                    
+                    
+                    Cambrer c = new Cambrer();
+                    c.setCodi(cambrer.getCodi());
+                    c.setNom(cambrer.getNom());
+                    c.setCognom1(cambrer.getCognom1());
+                    c.setCognom2(cambrer.getCognom2());
+                    c.setUser(cambrer.getUser());
+                    c.setPassword(cambrer.getPassword());
+                    
+                    
+                    Comanda co = new Comanda();
+                    co.setCodi(comanda.getCodi());
+                    co.setData(comanda.getData());
+                    co.setCambrer(c);
+                    
+                    
+                    
+                    Taula t = new Taula();
+                    t.setNumero(taula.getNumero());
+                    t.setComanda(co);
+                    
+                    co.setTaula(t);
+                    
+                    em.getTransaction().begin();
+                    
+                    em.persist(t);
+                    
+                    em.getTransaction().commit();
+                    em.close();
+                    
+                    
+                    
+                    
                     break;
             
             }

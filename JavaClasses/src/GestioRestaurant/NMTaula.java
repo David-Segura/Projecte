@@ -39,6 +39,12 @@ public class NMTaula implements Serializable{
     public void setComanda(NMComanda comanda) {
         this.comanda = comanda;
     }
+
+    @Override
+    public String toString() {
+        return "NMTaula{" + "numero=" + numero + ", comanda=" + comanda + '}';
+    }
+    
     
     
 }

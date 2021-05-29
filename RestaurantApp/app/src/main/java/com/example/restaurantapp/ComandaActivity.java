@@ -1,13 +1,20 @@
 package com.example.restaurantapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -16,40 +23,133 @@ import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
 
+import Adapters.BotoCategoriaAdapter;
+import Adapters.LineaComandaAdapter;
 import Adapters.PlatsAdapter;
 import Adapters.TaulesAdapter;
 import GestioRestaurant.NMCambrer;
 import GestioRestaurant.NMCategoria;
 import GestioRestaurant.NMComanda;
+import GestioRestaurant.NMLineaComanda;
 import GestioRestaurant.NMPlat;
 import GestioRestaurant.NMTaula;
 
-public class ComandaActivity extends AppCompatActivity {
+public class ComandaActivity extends AppCompatActivity implements View.OnClickListener {
     RecyclerView rcyComanda;
     RecyclerView rcyCarta;
     List<NMPlat> lPlats = new ArrayList<>();
+    List<NMPlat> mPlatsFiltrats = new ArrayList<>();
     PlatsAdapter mAdapter;
     ComandaActivity mActivity;
+    List<NMLineaComanda> lComandes = new ArrayList<>();
+    int numComanda = 1;
+    LineaComandaAdapter lcAdapter;
+    TextView txvPreuTotalComanda;
+    LinearLayout lytPerBotons;
+    Button btnConfirmar;
+    NMTaula taula;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_comanda);
         rcyComanda = findViewById(R.id.rcyComanda);
         rcyCarta = findViewById(R.id.rcyCarta);
+        txvPreuTotalComanda = findViewById(R.id.txvPreuTotalComanda);
+        lytPerBotons = findViewById(R.id.lytPerBotons);
+        btnConfirmar = findViewById(R.id.btnConfirmar);
+
+
+
 
         rcyCarta.setLayoutManager(new GridLayoutManager(this, 2));
         rcyCarta.setHasFixedSize(true);
 
-
+        mActivity = this;
 
         Intent i = getIntent();
-        NMTaula taula = (NMTaula)i.getSerializableExtra("TAULA");
+        taula = (NMTaula)i.getSerializableExtra("TAULA");
 
         rebreCarta("3");
+
+
+
+       // mAdapter = new PlatsAdapter(lPlats,mActivity,getApplicationContext());
+        //rcyCarta.setAdapter(mAdapter);
+
+        rcyComanda.setLayoutManager(new GridLayoutManager(this, 1));
+        rcyComanda.setHasFixedSize(true);
+        lcAdapter = new LineaComandaAdapter(lComandes,mActivity,getApplicationContext());
+        rcyComanda.setAdapter(lcAdapter);
+
+
+
+        btnConfirmar.setOnClickListener(this);
+
     }
 
-    public void onPlatSelected(){
+    public void onPlatSelected(NMPlat p){
+        NMLineaComanda lc = new NMLineaComanda();
+        lc.setItem(p);
+        lc.setQuantitat(1);
+        boolean trobat = false;
 
+
+        for(int i = 0; i<lComandes.size();i++){
+            NMPlat plat = lComandes.get(i).getItem();
+            if(p.equals(plat)){
+                Log.d("XXX","Plat repetit");
+
+                NMLineaComanda linCom = lComandes.get(i);
+                linCom.setQuantitat(linCom.getQuantitat()+1);
+                trobat = true;
+            }
+        }
+
+        if(!trobat){
+            lc.setNum(numComanda);
+            lComandes.add(lc);
+            numComanda++;
+        }
+
+        String preuSenseEuro = txvPreuTotalComanda.getText().toString().substring(0,txvPreuTotalComanda.getText().length()-2);
+        float preuAnterior = Float.parseFloat(preuSenseEuro);
+        float preuAAfegir = lc.getItem().getPreu();
+        float nouPreu = preuAnterior+preuAAfegir;
+        txvPreuTotalComanda.setText(nouPreu+" €");
+
+        lcAdapter = new LineaComandaAdapter(lComandes,mActivity,getApplicationContext());
+        rcyComanda.setAdapter(lcAdapter);
+        //lComandes.add(p);
+    }
+
+    public void onPlatDesseleccionat(NMPlat p) {
+        boolean trobat = false;
+        for(int i = 0; i<lComandes.size();i++){
+            NMPlat plat = lComandes.get(i).getItem();
+            if(p.equals(plat)){
+                Log.d("XXX","Plat trobat");
+
+                NMLineaComanda linCom = lComandes.get(i);
+                if(linCom.getQuantitat() == 1){
+                    lComandes.remove(linCom);
+                }else{
+                    linCom.setQuantitat(linCom.getQuantitat()-1);
+                }
+                //linCom.setQuantitat(linCom.getQuantitat()+1);
+                String preuSenseEuro = txvPreuTotalComanda.getText().toString().substring(0,txvPreuTotalComanda.getText().length()-2);
+                float preuAnterior = Float.parseFloat(preuSenseEuro);
+                float preuATreure = linCom.getItem().getPreu();
+                float nouPreu = preuAnterior-preuATreure;
+                txvPreuTotalComanda.setText(nouPreu+" €");
+            }
+        }
+
+
+
+
+
+        lcAdapter = new LineaComandaAdapter(lComandes,mActivity,getApplicationContext());
+        rcyComanda.setAdapter(lcAdapter);
     }
 
     private void rebreCarta(final String msgCod) {
@@ -112,6 +212,12 @@ public class ComandaActivity extends AppCompatActivity {
                         Log.d("XXX",plat.toString());
                         lPlats.add(plat);
                         Log.d("XXX",lPlats.size()+"");
+
+
+
+
+
+
                     }
 
 
@@ -121,6 +227,90 @@ public class ComandaActivity extends AppCompatActivity {
 
                             mAdapter = new PlatsAdapter(lPlats,mActivity,getApplicationContext());
                             rcyCarta.setAdapter(mAdapter);
+
+                            List<NMCategoria> lcats = new ArrayList<>();
+
+                            for(NMPlat p : lPlats){
+                                if(!lcats.contains(p.getCategoria())) {
+                                    Log.d("XXX", "Categoria nova: " + p.getCategoria().toString());
+                                    lcats.add(p.getCategoria());
+                                }
+                            }
+                            /*NMCategoria c = new NMCategoria(1, "entrants", 0);
+                            NMCategoria c1 = new NMCategoria(2, "primers", 0);
+                            NMCategoria c2 = new NMCategoria(3, "segons", 0);
+                            NMCategoria c3 = new NMCategoria(4, "postres", 0);
+                            lcats.add(c);
+                            lcats.add(c1);
+                            lcats.add(c2);
+                            lcats.add(c3);
+                            NMPlat p = new NMPlat(1, "Entrant 1", "El rico entrante", 1.5F, null, true, c);
+                            NMPlat p1 = new NMPlat(2, "Primer Plat", "Primero", 5.5F, null, true, c1);
+                            NMPlat p2 = new NMPlat(3, "Segon Plat", "Segundo", 7.5F, null, true, c2);
+                            NMPlat p3 = new NMPlat(4, "Postres", "Postre", 3.5F, null, true, c3);
+
+
+
+                            lPlats.add(p);
+                            lPlats.add(p1);
+                            lPlats.add(p2);
+                            lPlats.add(p3);
+
+
+
+                            //int id = 1;
+                            */for(NMCategoria categ : lcats) {
+
+                                Button btnTag = new Button(getApplicationContext());
+                                btnTag.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT));
+                                btnTag.setText(categ.getNom());
+                                btnTag.setBackgroundResource(R.color.main_color);
+                                btnTag.setTextColor(Color.WHITE);
+                                btnTag.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View v) {
+                                        mPlatsFiltrats.clear();
+                                        for (NMPlat plat : lPlats) {
+                                            if (plat.getCategoria().equals(categ)) {
+                                                mPlatsFiltrats.add(plat);
+
+                                                mAdapter = new PlatsAdapter(mPlatsFiltrats,mActivity,getApplicationContext());
+                                                rcyCarta.setAdapter(mAdapter);
+                                            }
+                                        }
+
+
+
+                                    }
+                                });
+                                //add button to the layout
+                                lytPerBotons.addView(btnTag);
+
+                            }
+
+
+                            //Afegir botó tots
+                            Button btnTag = new Button(getApplicationContext());
+                            btnTag.setLayoutParams(new LinearLayout.LayoutParams(227, LinearLayout.LayoutParams.WRAP_CONTENT));
+                            btnTag.setText("Tots");
+                            btnTag.setBackgroundResource(R.color.main_color);
+                            btnTag.setTextColor(Color.WHITE);
+
+                            btnTag.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    mAdapter = new PlatsAdapter(lPlats,mActivity,getApplicationContext());
+                                    rcyCarta.setAdapter(mAdapter);
+
+                                }
+
+
+
+
+                            });
+                            //add button to the layout
+                            lytPerBotons.addView(btnTag);
+
                         }
                     });
 
@@ -138,5 +328,63 @@ public class ComandaActivity extends AppCompatActivity {
 
         thread.start();
 
+    }
+
+
+    @Override
+    public void onClick(View v) {
+        enviaLlistaLineaComanda("5",taula,lComandes);
+    }
+
+    private void enviaLlistaLineaComanda(String msgCod, NMTaula taula, List<NMLineaComanda> lComandes) {
+
+        final Handler handler = new Handler();
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+
+                try {
+                    //Replace below IP with the IP of that device in which server socket open.
+                    //If you change port then change the port number in the server side code also.
+                    Socket s = new Socket("192.168.1.34", 9876);
+
+                    ObjectOutputStream out = new ObjectOutputStream(s.getOutputStream());
+                    out.writeObject(msgCod);
+                    Log.d("XXX","Enviant taula "+taula.toString());
+                    out.writeObject(taula.getNMComanda().getNMCambrer());
+                    out.writeObject(taula.getNMComanda());
+                    out.writeObject(taula);
+                    out.writeObject(lComandes.size());
+                    for(int i = 0; i<lComandes.size();i++){
+                        NMLineaComanda lc = lComandes.get(i);
+                        Log.d("XXX","Enviant linea comanda "+lc.toString());
+                        out.writeObject(lc);
+                    }
+                    //PrintWriter output = new PrintWriter(out);
+
+                    //output.println(msg);
+                    //output.flush();
+                    ObjectInputStream input = new ObjectInputStream(s.getInputStream());
+
+                    handler.post(new Runnable() {
+                        @Override
+                        public void run() {
+
+                        }
+                    });
+
+                    //output.close();
+                    out.close();
+                    s.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } /*catch (ClassNotFoundException e) {
+                    e.printStackTrace();
+                }*/
+            }
+
+        });
+
+        thread.start();
     }
 }

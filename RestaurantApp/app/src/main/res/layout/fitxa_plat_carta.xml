@@ -15,8 +15,9 @@
         android:id="@+id/btnAfegir"
         android:layout_width="50dp"
         android:layout_height="wrap_content"
-
+        android:backgroundTint="#00FF00"
         android:text="+"
+        android:layout_marginTop="5dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.186"
         app:layout_constraintStart_toStartOf="parent"
@@ -49,10 +50,10 @@
         android:id="@+id/btnTreure"
         android:layout_width="50dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="224dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginTop="215dp"
+        android:layout_marginEnd="12dp"
+        android:backgroundTint="#FF0000"
         android:text="-"
-
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

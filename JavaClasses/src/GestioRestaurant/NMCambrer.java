@@ -79,6 +79,11 @@ public class NMCambrer implements Serializable{
     public void setPassword(String password) {
         this.password = password;
     }
+
+    @Override
+    public String toString() {
+        return "NMCambrer{" + "codi=" + codi + ", nom=" + nom + '}';
+    }
     
     
     

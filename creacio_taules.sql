@@ -57,7 +57,7 @@ create table Cambrer(
 );
 create table Taula(
 	numero integer (3),
-	comanda integer (7)
+	comanda integer (7),
     PRIMARY KEY (numero)	
 	
 );

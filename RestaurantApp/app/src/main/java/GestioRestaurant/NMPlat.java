@@ -68,7 +68,7 @@ public class NMPlat implements Serializable {
         this.foto = foto;
     }
 
-    public boolean isDisponible() {
+    public boolean getDisponible() {
         return disponible;
     }
 
@@ -89,10 +89,7 @@ public class NMPlat implements Serializable {
         return "NMPlat{" +
                 "codi=" + codi +
                 ", nom='" + nom + '\'' +
-                ", descripcioMD='" + descripcioMD + '\'' +
-                ", preu=" + preu +
-                ", disponible=" + disponible +
-                ", categoria=" + categoria +
+
                 '}';
     }
 

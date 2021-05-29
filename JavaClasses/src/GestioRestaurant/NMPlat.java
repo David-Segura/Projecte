@@ -90,6 +90,12 @@ public class NMPlat implements Serializable{
     public void setCategoria(NMCategoria categoria) {
         this.categoria = categoria;
     }
+
+    @Override
+    public String toString() {
+        return "NMPlat{" + "codi=" + codi + ", nom=" + nom + '}';
+    }
+    
     
     
 }

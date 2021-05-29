@@ -12,18 +12,19 @@ import java.io.Serializable;
  * @author Usuari
  */
 public class NMLineaComanda implements Serializable{
+   private static final long serialVersionUID = 6120463088267741090L;
    NMComanda comanda;
    int num;
    int quantitat;
-   int item;
-   int estat;
+   NMPlat item;
+   boolean acabat;
 
-    public NMLineaComanda(NMComanda comanda, int num, int quantitat, int item, int estat) {
+    public NMLineaComanda(NMComanda comanda, int num, int quantitat, NMPlat item, boolean acabat) {
         this.comanda = comanda;
         this.num = num;
         this.quantitat = quantitat;
         this.item = item;
-        this.estat = estat;
+        this.acabat = acabat;
     }
 
     public NMLineaComanda() {
@@ -54,21 +55,29 @@ public class NMLineaComanda implements Serializable{
         this.quantitat = quantitat;
     }
 
-    public int getItem() {
+    public NMPlat getItem() {
         return item;
     }
 
-    public void setItem(int item) {
+    public void setItem(NMPlat item) {
         this.item = item;
     }
 
-    public int getEstat() {
-        return estat;
+    public boolean getEstat() {
+        return acabat;
     }
 
-    public void setEstat(int estat) {
-        this.estat = estat;
+    public void setEstat(boolean acabat) {
+        this.acabat = acabat;
     }
+
+    @Override
+    public String toString() {
+        return "NMLineaComanda{" + "num=" + num + ", quantitat=" + quantitat + ", item=" + item + ", acabat=" + acabat + '}';
+    }
+
+    
    
+    
    
 }

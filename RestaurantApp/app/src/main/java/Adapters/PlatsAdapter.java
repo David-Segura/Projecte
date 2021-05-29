@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -23,7 +24,7 @@ import java.util.List;
 import GestioRestaurant.NMPlat;
 import GestioRestaurant.NMTaula;
 
-public class PlatsAdapter extends RecyclerView.Adapter<PlatsAdapter.ViewHolder>{
+public class PlatsAdapter extends RecyclerView.Adapter<PlatsAdapter.ViewHolder> implements View.OnClickListener {
 
     private List<NMPlat> mPlats;
     private Context mCon;
@@ -57,6 +58,12 @@ public class PlatsAdapter extends RecyclerView.Adapter<PlatsAdapter.ViewHolder>{
             Bitmap bmp = BitmapFactory.decodeByteArray(p.getFoto(), 0, p.getFoto().length);
             holder.imvFoto.setImageBitmap(bmp);
         }
+        if(!p.getDisponible()){
+            holder.btnAfegir.setVisibility(View.INVISIBLE);
+            holder.btnTreure.setVisibility(View.INVISIBLE);
+        }
+
+
 
     }
 
@@ -65,18 +72,28 @@ public class PlatsAdapter extends RecyclerView.Adapter<PlatsAdapter.ViewHolder>{
         return mPlats.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    @Override
+    public void onClick(View v) {
+
+    }
+
+
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         public TextView txvPreu;
         public TextView txvNomPlat;
-        public SeekBar skbProgresCuina;
+        public Button btnAfegir;
+        public Button btnTreure;
         public ImageView imvFoto;
+
         int filaSeleccionada;
         public ViewHolder(@NonNull View fila) {
             super(fila);
             txvPreu = itemView.findViewById(R.id.txvPreu);
             txvNomPlat = itemView.findViewById(R.id.txvNomPlat);
             imvFoto = itemView.findViewById(R.id.imvFoto);
-            fila.setOnClickListener(new View.OnClickListener() {
+            btnAfegir = itemView.findViewById(R.id.btnAfegir);
+            btnTreure = itemView.findViewById(R.id.btnTreure);
+            /*fila.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     filaSeleccionada = getAdapterPosition();
@@ -84,7 +101,27 @@ public class PlatsAdapter extends RecyclerView.Adapter<PlatsAdapter.ViewHolder>{
                     //mActivity.onTaulaSelected(mTaules,filaSeleccionada);
 
                 }
-            });
+            });*/
+
+            btnAfegir.setOnClickListener(this);
+            btnTreure.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View v) {
+            if(v.getId() == R.id.btnAfegir){
+                filaSeleccionada = getAdapterPosition();
+                Log.d("XXX","Botó afegir a la posició "+ filaSeleccionada);
+                NMPlat p = mPlats.get(filaSeleccionada);
+                Log.d("XXX","Nom plat seleccionat: "+p.getNom());
+                mActivity.onPlatSelected(p);
+            }else if(v.getId() == R.id.btnTreure){
+                filaSeleccionada = getAdapterPosition();
+                Log.d("XXX","Botó treure a la posició "+ filaSeleccionada);
+                NMPlat p = mPlats.get(filaSeleccionada);
+                Log.d("XXX","Nom plat seleccionat: "+p.getNom());
+                mActivity.onPlatDesseleccionat(p);
+            }
         }
     }
 }

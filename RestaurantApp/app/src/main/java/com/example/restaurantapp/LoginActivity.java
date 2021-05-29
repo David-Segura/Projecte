@@ -48,16 +48,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
 
 
-        if(txvLoginCorrecte.getVisibility() == View.VISIBLE){
-            correcte = false;
-        }else{
-            correcte = true;
-        }
 
-        if(correcte) {
-            Intent i = new Intent(getApplicationContext(), TaulesActivity.class);
-            startActivity(i);
-        }
     }
 
     private String sendMessage(final String msg, final String user, final String password) {
@@ -97,9 +88,16 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                             }else{
                                 txvLoginCorrecte.setVisibility(View.INVISIBLE);
                             }
-                            //String s = mTextViewReplyFromServer.getText().toString();
-                            //if (st.trim().length() != 0)
-                                //mTextViewReplyFromServer.setText(s + "\nFrom Server : " + st);
+                            if(txvLoginCorrecte.getVisibility() == View.VISIBLE){
+                                correcte = false;
+                            }else{
+                                correcte = true;
+                            }
+
+                            if(correcte) {
+                                Intent i = new Intent(getApplicationContext(), TaulesActivity.class);
+                                startActivity(i);
+                            }
                         }
                     });
 

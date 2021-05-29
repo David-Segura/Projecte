@@ -63,7 +63,7 @@ public class NMComanda implements Serializable{
 
     @Override
     public String toString() {
-        return "NMComanda{" + "codi=" + codi + ", data=" + data + ", taula=" + taula + ", cambrer=" + cambrer + '}';
+        return "NMComanda{" + "codi=" + codi + ", data=" + data + ", cambrer=" + cambrer + '}';
     }
     
     

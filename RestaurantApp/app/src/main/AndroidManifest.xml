@@ -12,7 +12,9 @@
         android:supportsRtl="true"
         android:largeHeap="true"
         android:theme="@style/Theme.RestaurantApp">
-        <activity android:name=".ComandaActivity" android:screenOrientation="landscape"></activity>
+        <activity android:name=".ComandaActivity" android:screenOrientation="landscape">
+
+        </activity>
         <activity android:name=".TaulesActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".MainActivity">
