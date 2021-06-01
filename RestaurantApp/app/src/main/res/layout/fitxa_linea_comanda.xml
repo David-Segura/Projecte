@@ -13,8 +13,10 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:text="TextView"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:fontFamily="serif-monospace"/>
 
     <TextView
         android:id="@+id/txvNomPlatComanda"
@@ -23,8 +25,10 @@
         android:layout_marginStart="116dp"
         android:layout_marginTop="16dp"
         android:text="TextView"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:fontFamily="serif-monospace"/>
 
     <TextView
         android:id="@+id/txvPreuPlatComanda"
@@ -32,7 +36,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="228dp"
         android:layout_marginTop="16dp"
+        android:fontFamily="serif-monospace"
         android:text="TextView"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -40,9 +46,11 @@
         android:id="@+id/txvPreuTotalLinea"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="296dp"
+        android:layout_marginStart="292dp"
         android:layout_marginTop="16dp"
+        android:fontFamily="serif-monospace"
         android:text="TextView"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

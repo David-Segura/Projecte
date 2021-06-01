@@ -27,11 +27,12 @@ import javax.persistence.Table;
 @NamedQueries({
         //@NamedQuery(name = "trobaFilmsAmbIdiomaId",
                 //query = "select f from Film f where f.idioma.getCodi() = :idiomaId"),
-   @NamedQuery(name = "trobaEscandallPlatPerId",
+    @NamedQuery(name = "trobaEscandallPlatPerId",
             query = "select le from Linea_Escandall le where le.plat = :idPlat"),
     @NamedQuery(name = "trobaEscandallPlatPerIdPlatINum",
             query = "select le from Linea_Escandall le where le.plat = :idPlat and le.num = :idNum"),
-   @NamedQuery(name = "maxLinxPlatId", query = "select max(num) from Linea_Escandall where plat = :idPlat")
+    //@NamedQuery(name = "maxLiniaxPlatId", 
+            //query = "select max(num) from Linea_Escandall where plat = :idPlat")
     
 })
 public class Linea_Escandall implements Serializable{

@@ -99,6 +99,7 @@ public class TaulesAdapter extends RecyclerView.Adapter<TaulesAdapter.ViewHolder
             imvFrame = itemView.findViewById(R.id.imvFrame);
             layout = itemView.findViewById(R.id.layout);
             skbProgresCuina = fila.findViewById(R.id.skbProgresCuina);
+            skbProgresCuina.setEnabled(false);
             fila.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {

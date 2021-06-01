@@ -19,8 +19,11 @@ import java.awt.GridLayout;
 import java.awt.List;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.FileInputStream;
 import java.sql.PreparedStatement;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Properties;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -523,7 +526,8 @@ public class GestioEscandalls {
                     String iNom = (String) cboIng.getSelectedItem();
                     q2.setParameter("nom", iNom);
                     Ingredient i = (Ingredient) q2.getSingleResult();
-                    Query q3 = em.createNamedQuery("maxLinxPlatId");
+                    //Query q3 = em.createNamedQuery("maxLiniaxPlatId");
+                    Query q3 = em.createQuery("select max(num) from Linea_Escandall where plat = :idPlat");
                     q3.setParameter("idPlat", platSeleccionat.getCodi());
                     int lin = (int)q3.getSingleResult() +1;
 
@@ -565,40 +569,7 @@ public class GestioEscandalls {
     }
             
             
-            /*int fila;
-            switch (boto)
-            {
-                case "Afegir":
-                    // TODO: validar dades d'entrada
-                        model.addRow(new Object[]{cognom.getText(),nom.getText(),edat.getText()});
-                        cognom.setText("");
-                        nom.setText("");
-                        edat.setText("");
-                    break;
-                case "Esborrar":
-                    fila = taula.getSelectedRow();
-                    if (fila != -1)
-                    {
-                        model.removeRow(fila);
-                    } else
-                    {
-                        // TODO: avisar a l'usuari amb un JOptionPAne
-                    }
-                    break;
-                case "Editar":
-                    fila = taula.getSelectedRow();
-                    if (fila != -1)
-                    {
-                        model.setValueAt(cognom.getText(), fila, 0);
-                        model.setValueAt(nom.getText(), fila, 1);
-                        model.setValueAt(edat.getText(), fila, 2);
-                    } else
-                    {
-                         // TODO: avisar a l'usuari amb un JOptionPAne
-                    }
-
-                    break;
-            }*/
+        
             
         }
         
@@ -669,12 +640,20 @@ public class GestioEscandalls {
     
     private static void comprovaEsquema() {
         
+        Properties props = new Properties();
         
         try {
+            props.load(new FileInputStream("properties.properties"));
+            
+            up = props.getProperty("up");
+            props.remove("up");
+            
+            HashMap<String,String> p = new HashMap(props);
+            
             em = null;
             emf = null;
             System.out.println("Intent amb " + up);
-            emf = Persistence.createEntityManagerFactory(up);
+            emf = Persistence.createEntityManagerFactory(up,p);
             System.out.println("EntityManagerFactory creada");
             em = emf.createEntityManager();
             System.out.println();
@@ -686,10 +665,10 @@ public class GestioEscandalls {
                 
                 
                 java.util.List<Plat> ll = (java.util.List<Plat>)q.getResultList();
-                for(Plat p : ll){
-                    llp.add(p);
+                for(Plat pl : ll){
+                    llp.add(pl);
                     
-                    model.addRow(new Object[]{p.getNom(),p.getDescripcioMD(),p.getPreu()});
+                    model.addRow(new Object[]{pl.getNom(),pl.getDescripcioMD(),pl.getPreu()});
                       
                     
                     
@@ -714,37 +693,7 @@ public class GestioEscandalls {
             c = em.find(Categoria.class, 1);
             System.out.println(c.toString());
             
-            String cad = "select col from Linea_Escandall col";
-            Query q3 = em.createQuery(cad);
-            java.util.List<Linea_Escandall> lllllll = q3.getResultList();
-            if (lllllll.size() == 0) {
-                //System.out.println("No hi ha cap color");
-            } else {
-                for (Linea_Escandall col : lllllll) {
-                    //System.out.println(col);
-                }
-            }      
-            
-            
-//            Linea_Escandall le = null;
-//            le = em.find(Linea_Escandall.class, 1);
-//            System.out.println(le.toString());
-            /*Query q3 = em.createNamedQuery("trobaEscandallPlatPerId");
-            q3.setParameter("idPlat", 1);
-                
-                
-                java.util.List<Linea_Escandall> llll = (java.util.List<Linea_Escandall>)q3.getResultList();
-                for(Linea_Escandall le : llll){
-                    
-                    
-                    
-                      
-                    
-                    
-                    System.out.println(le.toString());
-                }  
-                */
-            
+       
             
             
             

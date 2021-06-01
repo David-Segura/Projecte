@@ -73,7 +73,7 @@ public class TaulesActivity extends AppCompatActivity {
         lTaules.add(t2);
         lTaules.add(t3);*/
 
-        //rebreTaules("2");
+        rebreTaules("2");
 
         actualitzarTaules();
 
@@ -267,7 +267,7 @@ public class TaulesActivity extends AppCompatActivity {
 
 
 
-    private final int TIEMPO = 2000;
+    private final int TIEMPO = 6500;
 
     public void actualitzarTaules() {
         handler.postDelayed(new Runnable() {
@@ -298,17 +298,14 @@ public class TaulesActivity extends AppCompatActivity {
 
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        Log.d("RESUME","RESUME");
-    }
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         Log.d("result","result");
         parar = false;
+        rebreTaules("2");
         actualitzarTaules();
     }
 }

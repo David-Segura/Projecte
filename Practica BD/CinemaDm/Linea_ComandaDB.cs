@@ -29,8 +29,9 @@ namespace GestioRestaurantDm
 
                         using (var consulta = connexio.CreateCommand())
                         {
+                            
 
-                            consulta.CommandText = $@" select * from linea_comanda where comanda = @id or @id = -1";
+                            consulta.CommandText = $@" select * from linea_comanda where (comanda = @id or @id = -1) and comanda in (select comanda from linea_comanda where acabat = false)";
 
 
                             DBUtils.createParameter(consulta, "id", idComanda, DbType.Int32);
