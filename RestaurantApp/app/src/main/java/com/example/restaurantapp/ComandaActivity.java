@@ -174,7 +174,8 @@ public class ComandaActivity extends AppCompatActivity implements View.OnClickLi
                 try {
                     //Replace below IP with the IP of that device in which server socket open.
                     //If you change port then change the port number in the server side code also.
-                    Socket s = new Socket("192.168.1.35", 9876);
+                    //Socket s = new Socket("192.168.1.35", 9876);
+                    Socket s = new Socket("10.132.0.116", 9876);
 
                     ObjectOutputStream out = new ObjectOutputStream(s.getOutputStream());
                     out.writeObject(msgCod);
@@ -357,7 +358,8 @@ public class ComandaActivity extends AppCompatActivity implements View.OnClickLi
                 try {
                     //Replace below IP with the IP of that device in which server socket open.
                     //If you change port then change the port number in the server side code also.
-                    Socket s = new Socket("192.168.1.35", 9876);
+                    //Socket s = new Socket("192.168.1.35", 9876);
+                    Socket s = new Socket("10.132.0.116", 9876);
 
                     ObjectOutputStream out = new ObjectOutputStream(s.getOutputStream());
                     out.writeObject(msgCod);
@@ -411,7 +413,8 @@ public class ComandaActivity extends AppCompatActivity implements View.OnClickLi
                 try {
                     //Replace below IP with the IP of that device in which server socket open.
                     //If you change port then change the port number in the server side code also.
-                    Socket s = new Socket("192.168.1.35", 9876);
+                    //Socket s = new Socket("192.168.1.35", 9876);
+                    Socket s = new Socket("10.132.0.116", 9876);
 
                     ObjectOutputStream out = new ObjectOutputStream(s.getOutputStream());
                     out.writeObject(msgCod);
@@ -464,7 +467,8 @@ public class ComandaActivity extends AppCompatActivity implements View.OnClickLi
                 try {
                     //Replace below IP with the IP of that device in which server socket open.
                     //If you change port then change the port number in the server side code also.
-                    Socket s = new Socket("192.168.1.35", 9876);
+                    //Socket s = new Socket("192.168.1.35", 9876);
+                    Socket s = new Socket("10.132.0.116", 9876);
 
                     ObjectOutputStream out = new ObjectOutputStream(s.getOutputStream());
                     out.writeObject(msgCod);

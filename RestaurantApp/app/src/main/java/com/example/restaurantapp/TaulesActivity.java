@@ -95,7 +95,7 @@ public class TaulesActivity extends AppCompatActivity {
             i.putExtra("CAMBRER", cambrer);
             //i.putExtra("TYPE", typeName);
 
-            this.startActivity(i);
+            this.startActivityForResult(i,0);
         }catch(Exception e){}
     }
     private void rebreTaules(final String msgCod) {
@@ -109,7 +109,8 @@ public class TaulesActivity extends AppCompatActivity {
                 try {
                     //Replace below IP with the IP of that device in which server socket open.
                     //If you change port then change the port number in the server side code also.
-                    Socket s = new Socket("192.168.1.35", 9876);
+                    //Socket s = new Socket("192.168.1.35", 9876);
+                    Socket s = new Socket("10.132.0.116", 9876);
 
                     ObjectOutputStream out = new ObjectOutputStream(s.getOutputStream());
                     out.writeObject(msgCod);
@@ -209,58 +210,59 @@ public class TaulesActivity extends AppCompatActivity {
     public void eliminaComanda(String msgCod, List<NMTaula> mTaules, int filaSeleccionada) {
 
 
+        try {
+            NMTaula t = mTaules.get(filaSeleccionada);
+            final Handler handler = new Handler();
+            Thread thread = new Thread(new Runnable() {
+                @Override
+                public void run() {
 
-        NMTaula t = mTaules.get(filaSeleccionada);
-        final Handler handler = new Handler();
-        Thread thread = new Thread(new Runnable() {
-            @Override
-            public void run() {
+                    try {
+                        //Replace below IP with the IP of that device in which server socket open.
+                        //If you change port then change the port number in the server side code also.
+                        //Socket s = new Socket("192.168.1.35", 9876);
+                        Socket s = new Socket("10.132.0.116", 9876);
 
-                try {
-                    //Replace below IP with the IP of that device in which server socket open.
-                    //If you change port then change the port number in the server side code also.
-                    Socket s = new Socket("192.168.1.35", 9876);
+                        ObjectOutputStream out = new ObjectOutputStream(s.getOutputStream());
+                        out.writeObject(msgCod);
+                        out.writeObject(t);
+                        //out.writeObject(user);
+                        //out.writeObject(password);
+                        //PrintWriter output = new PrintWriter(out);
 
-                    ObjectOutputStream out = new ObjectOutputStream(s.getOutputStream());
-                    out.writeObject(msgCod);
-                    out.writeObject(t);
-                    //out.writeObject(user);
-                    //out.writeObject(password);
-                    //PrintWriter output = new PrintWriter(out);
+                        //output.println(msg);
+                        //output.flush();
+                        ObjectInputStream input = new ObjectInputStream(s.getInputStream());
+                        //final String st = (String) input.readObject();
+                        //Log.d("XXX",st);
+                        final String resposta = (String) input.readObject();
 
-                    //output.println(msg);
-                    //output.flush();
-                    ObjectInputStream input = new ObjectInputStream(s.getInputStream());
-                    //final String st = (String) input.readObject();
-                    //Log.d("XXX",st);
-                    final String resposta = (String) input.readObject();
-
-                    Log.d("XXX",resposta);
+                        Log.d("XXX", resposta);
 
 
+                        handler.post(new Runnable() {
+                            @Override
+                            public void run() {
 
-                    handler.post(new Runnable() {
-                        @Override
-                        public void run() {
+                                mAdapter = new TaulesAdapter(lTaules, mActivity, getApplicationContext(), cambrer);
+                                rcyTaules.setAdapter(mAdapter);
+                            }
+                        });
 
-                            mAdapter = new TaulesAdapter(lTaules, mActivity, getApplicationContext(), cambrer);
-                            rcyTaules.setAdapter(mAdapter);
-                        }
-                    });
-
-                    //output.close();
-                    out.close();
-                    s.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                } catch (ClassNotFoundException e) {
-                    e.printStackTrace();
+                        //output.close();
+                        out.close();
+                        s.close();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    } catch (ClassNotFoundException e) {
+                        e.printStackTrace();
+                    }
                 }
-            }
 
-        });
+            });
 
-        thread.start();
+            thread.start();
+        }catch(Exception e){}
     }
 
 
@@ -297,8 +299,16 @@ public class TaulesActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onResume() {
+        super.onResume();
+        Log.d("RESUME","RESUME");
+    }
+
+    @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         Log.d("result","result");
+        parar = false;
+        actualitzarTaules();
     }
 }

@@ -82,12 +82,7 @@ public class JavaServer {
         try {
             con = DriverManager.getConnection(url,usu,pwd);
             System.out.println("Connexió establerta");
-            System.out.println("Classe que implementa Connection: ");
-            System.out.println("\t"+con.getClass().getName());
-            
-            System.out.println("Autocommit en punt1: "+con.getAutoCommit());
             con.setAutoCommit(false);
-            System.out.println("Autocommit en punt2: "+con.getAutoCommit());
         } catch (SQLException ex) {
             System.out.println("Problemes en intentar la connexió");
             System.out.println("Més info: "+ex.getMessage());
@@ -100,7 +95,7 @@ public class JavaServer {
         try {
             // Podem intentar establir connexió
             //con = DriverManager.getConnection(url, usu, pwd);
-            System.out.println("Connexió establerta");
+            
            
            
                
@@ -113,14 +108,14 @@ public class JavaServer {
             
            
             while (rs.next()) {
-                System.out.println(rs.getInt("codi"));
+               
                 c.setCodi(rs.getInt("codi"));
                 c.setNom(rs.getString("nom"));
                 c.setCognom1(rs.getString("cognom1"));
                 c.setCognom2(rs.getString("cognom2"));
                 c.setUser(rs.getString("user"));
                 c.setPassword(rs.getString("password"));  
-                System.out.println(c.toString());
+               
             } 
                 
             }catch (SQLException ex) {
@@ -174,7 +169,7 @@ public class JavaServer {
         try {
             // Podem intentar establir connexió
             //con = DriverManager.getConnection(url, usu, pwd);
-            System.out.println("Connexió establerta");
+            
            
            
                
@@ -205,7 +200,7 @@ public class JavaServer {
                 ca.setNom(rs.getString("nom"));
                 ca.setCodi(rs.getInt("cacodi"));
                 co.setCambrer(ca);
-                System.out.println(co.toString());
+               
                 t.setComanda(co);
                 
                 //System.out.println(rs.getInt("codi"));
@@ -262,7 +257,7 @@ public class JavaServer {
         try {
             // Podem intentar establir connexió
             //con = DriverManager.getConnection(url, usu, pwd);
-            System.out.println("Connexió establerta");
+            
            
            
                
@@ -312,7 +307,7 @@ public class JavaServer {
         try {
             // Podem intentar establir connexió
             //con = DriverManager.getConnection(url, usu, pwd);
-            System.out.println("Connexió establerta");
+            
            
            
                
@@ -323,10 +318,10 @@ public class JavaServer {
 
             rs = ps.executeQuery();
             //maxCodiComanda++;
-            System.out.println("Entro Max Codi Comanda");
+           
             while (rs.next()) {
                 maxCodiComanda = rs.getInt(1);
-                System.out.println(maxCodiComanda);
+               
             } 
                 
             }catch (SQLException ex) {
@@ -350,23 +345,18 @@ public class JavaServer {
         PreparedStatement ps = null;
         ResultSet rs = null;
         try {
-            // Podem intentar establir connexió
-            //con = DriverManager.getConnection(url, usu, pwd);
-            System.out.println("Connexió establerta");
            
-           
-               
             String consulta = "select t.numero, c.codi, count(le.num) as n_linies from linea_comanda le join comanda c on c.codi = le.comanda join taula t on t.comanda = c.codi where t.numero = "+taula+" group by t.numero, c.codi";
            
             ps = con.prepareStatement(consulta);
             
 
             rs = ps.executeQuery();
-            //maxCodiComanda++;
+           
             
             while (rs.next()) {
                 countLinies = rs.getInt(3);
-                System.out.println("lin tt "+countLinies);
+                
             } 
             
             consulta = "select t.numero, c.codi, count(le.num) as n_linies from linea_comanda le join comanda c on c.codi = le.comanda join taula t on t.comanda = c.codi "
@@ -380,7 +370,7 @@ public class JavaServer {
             
             while (rs.next()) {
                 liniesAcabades = rs.getInt(3);
-                System.out.println("lin ac " +liniesAcabades);
+                
             } 
             
             consulta = "select t.numero, c.codi, count(le.num) as n_linies from linea_comanda le join comanda c on c.codi = le.comanda join taula t on t.comanda = c.codi "
@@ -394,7 +384,7 @@ public class JavaServer {
             
             while (rs.next()) {
                 liniesPendents = rs.getInt(3);
-                System.out.println("lin pdts "+liniesPendents);
+                
             } 
                 
             }catch (SQLException ex) {
@@ -433,17 +423,17 @@ public class JavaServer {
             switch(message){
                 case "1":
                     String user = (String) ois.readObject();
-                    System.out.println("Usuari: "+ user);
+                   
                     String password = (String) ois.readObject();
-                    System.out.println("Contrasenya: " + password);
+                    
                     
                     trobaCambrer(user);
                     if(c.getPassword().equals(password)){
                         resp= "Login correcte";
-                        System.out.println("Login correcte");
+                        
                     }else{
                         resp = "Login incorrecte";
-                        System.out.println("Login incorrecte");
+                        
                     }
                          oos.writeObject(resp); 
                          oos.writeObject(c);
@@ -480,7 +470,7 @@ public class JavaServer {
                         cambrer.setUser(lt.get(i).getComanda().getCambrer().getUser());
                         cambrer.setPassword(lt.get(i).getComanda().getCambrer().getPassword());
                         com.setCambrer(cambrer);
-                        System.out.println(com.toString());
+                        
                         t.setComanda(com);
                         
                         
@@ -530,14 +520,14 @@ public class JavaServer {
                     comanda.setTaula(taula);
                     comanda.setCambrer(cambrer);
                     taula.setComanda(comanda);
-                    System.out.println("Taula: "+ taula.toString());
+                    
                     int nLinies = (int) ois.readObject();
-                    System.out.println("N Linies: " + nLinies);
+                   
                     List<NMLineaComanda> llc = new ArrayList<>();
                     for (int i = 0; i < nLinies; i++) {
                         NMLineaComanda lc = (NMLineaComanda)ois.readObject();
                         lc.setComanda(comanda);
-                        System.out.println("Linea comanda: "+ lc.toString());
+                       
                         llc.add(lc);
                     }
                    
@@ -547,7 +537,7 @@ public class JavaServer {
                     
                     try {
                         con = DriverManager.getConnection(url, usu, pwd);
-                        System.out.println("Connexió establerta");
+                       
                         con.setAutoCommit(false);   // Per defecte, tota connexió JDBC és amb AutoCommit(true)
 
                         Statement st = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,
@@ -556,7 +546,7 @@ public class JavaServer {
                         // ATENCIÓ!!! Per a que un ResultSet sigui modificable, cal haver 
                         //            creat el Statement adequadament i, a més,
                         //            NO es pot fer "select * " i només sobre una taula!!!
-                        System.out.println("Afegim la comanda " + comanda.getCodi());
+                       
                         rs.moveToInsertRow();
                         rs.updateInt("codi", comanda.getCodi());
                         rs.updateTimestamp("data", comanda.getData());
@@ -594,7 +584,7 @@ public class JavaServer {
                     
                     try {
                         con = DriverManager.getConnection(url, usu, pwd);
-                        System.out.println("Connexió establerta");
+                        
                         con.setAutoCommit(false);   // Per defecte, tota connexió JDBC és amb AutoCommit(true)
 
                         Statement st = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,
@@ -608,7 +598,7 @@ public class JavaServer {
                         
                         for (int i = 0; i < llc.size(); i++) {
                             NMLineaComanda lc = llc.get(i);
-                            System.out.println("Afegim linea comanda " + i);
+                            
                             rs.moveToInsertRow();
                             rs.updateInt("comanda", lc.getComanda().getCodi());
                             rs.updateInt("num", lc.getNum());
@@ -643,7 +633,7 @@ public class JavaServer {
                     PreparedStatement ps = null;
                     try {
                         con = DriverManager.getConnection(url, usu, pwd);
-                        System.out.println("Connexió establerta");
+                        
                         con.setAutoCommit(false);   // Per defecte, tota connexió JDBC és amb AutoCommit(true)
 
                         Statement st = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,
