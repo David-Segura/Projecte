@@ -709,6 +709,9 @@
     <AppxPackagedFile Include="E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\9_Cinema_UserControl\bin\x86\Debug\GestioCarta.xbf">
       <PackagePath>GestioCarta.xbf</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\9_Cinema_UserControl\bin\x86\Debug\PaginaCarta.xbf">
+      <PackagePath>PaginaCarta.xbf</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.UniversalCRT.Debug\10.0.17134.0\\redist\Debug\x86\ucrtbased.dll">
       <PackagePath>ucrtbased.dll</PackagePath>
     </AppxPackagedFile>

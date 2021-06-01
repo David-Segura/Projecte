@@ -2,6 +2,7 @@ package GestioRestaurant;
 
 import java.io.Serializable;
 import java.sql.Timestamp;
+import java.util.List;
 
 public class NMComanda implements Serializable {
     private static final long serialVersionUID = 6529685098267741090L;
@@ -9,6 +10,11 @@ public class NMComanda implements Serializable {
     Timestamp data;
     NMTaula taula;
     NMCambrer NMCambrer;
+
+    int totalLinies;
+    int liniesAcabades;
+    int liniesPendents;
+
 
     public NMComanda(int codi, Timestamp data, NMTaula taula, NMCambrer NMCambrer) {
         this.codi = codi;
@@ -50,6 +56,30 @@ public class NMComanda implements Serializable {
 
     public void setNMCambrer(NMCambrer NMCambrer) {
         this.NMCambrer = NMCambrer;
+    }
+
+    public int getTotalLinies() {
+        return totalLinies;
+    }
+
+    public void setTotalLinies(int totalLinies) {
+        this.totalLinies = totalLinies;
+    }
+
+    public int getLiniesAcabades() {
+        return liniesAcabades;
+    }
+
+    public void setLiniesAcabades(int liniesAcabades) {
+        this.liniesAcabades = liniesAcabades;
+    }
+
+    public int getLiniesPendents() {
+        return liniesPendents;
+    }
+
+    public void setLiniesPendents(int liniesPendents) {
+        this.liniesPendents = liniesPendents;
     }
 
     @Override

@@ -27,24 +27,47 @@ namespace GestioRestaurant
     /// <summary>
     /// Una página vacía que se puede usar de forma independiente o a la que se puede navegar dentro de un objeto Frame.
     /// </summary>
-    public sealed partial class CompraEntrades : Page
+    public sealed partial class GestioCarta : Page
     {
-        public CompraEntrades()
+        public GestioCarta()
         {
             this.InitializeComponent();
         }
 
         
         ObservableCollection<Plat> llplats = PlatDB.getLlistaPlats();
-        protected override void OnNavigatedTo(NavigationEventArgs e)
-        {
-             //f= (Funcio)e.Parameter;
-            
-        }
+        
         private void GestioCarta_Loaded(object sender, RoutedEventArgs e)
         {
             ObservableCollection < Categoria > llc = CategoriaDB.getLlistaCategories();
+
+            dtgCaracteristiques.AutoGeneratingColumn += dataGrid_AutoGeneratingColumn;
+
+            void dataGrid_AutoGeneratingColumn(object sender2, DataGridAutoGeneratingColumnEventArgs e2)
+            {
+                if (e2.PropertyName == "Id")
+                {
+                    e2.Column.Visibility = Visibility.Collapsed;
+                }
+                else if (e2.PropertyName == "Color")
+                {
+                    e2.Column.Visibility = Visibility.Collapsed;
+                }
+               
+            }
             dtgCaracteristiques.ItemsSource =llc;
+
+
+            dtgPlats.AutoGeneratingColumn += dataGrid_AutoGeneratingColumn2;
+
+            void dataGrid_AutoGeneratingColumn2(object sender2, DataGridAutoGeneratingColumnEventArgs e2)
+            {
+                if (e2.PropertyName == "Foto")
+                {
+                    e2.Column.Visibility = Visibility.Collapsed;
+                }
+            }
+
             dtgPlats.ItemsSource = llplats;
             cboCategoria.ItemsSource = llc;
             cboCategoria.DisplayMemberPath = "Nom";
@@ -178,6 +201,14 @@ namespace GestioRestaurant
             }
         }
 
-        
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnVeureCarta_Click(object sender, RoutedEventArgs e)
+        {
+            this.Frame.Navigate(typeof(PaginaCarta));
+        }
     }
 }

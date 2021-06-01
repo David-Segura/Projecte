@@ -19,7 +19,7 @@
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
     <LayoutDir>E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\9_Cinema_UserControl\bin\x86\Debug\AppX</LayoutDir>
-    <RegisteredManifestChecksum>4CF61D3953345C4F056F13577F2BCDEE4824FB42C4377611339C83054C182D55</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>A977B0C2D925D9A2CE23870EDC8187E8417D9EB8F448AA67C996E6D655D3DF9D</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>2d4914af-19ce-4ec0-8c0d-ac2dc06a19b1_1.0.0.0_x86__n82rqfc3nm07y</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>2d4914af-19ce-4ec0-8c0d-ac2dc06a19b1_n82rqfc3nm07y!App</RegisteredUserModeAppID>
     <RegisteredPackageID>2d4914af-19ce-4ec0-8c0d-ac2dc06a19b1</RegisteredPackageID>
@@ -30,13 +30,13 @@
     <AppXManifest Include="E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\9_Cinema_UserControl\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2021-05-24T10:47:21.205</Modified>
+      <Modified>2021-05-31T14:48:43.513</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\9_Cinema_UserControl\bin\x86\Debug\GestioRestaurant.exe">
       <PackagePath>entrypoint\GestioRestaurant.exe</PackagePath>
-      <Modified>2021-05-24T10:47:19.473</Modified>
+      <Modified>2021-05-31T14:48:41.717</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\David-PC\.nuget\packages\bouncycastle.netcore\1.8.3\lib\netstandard2.0\BouncyCastle.Crypto.dll">
       <PackagePath>BouncyCastle.Crypto.dll</PackagePath>
@@ -884,7 +884,7 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\CinemaDm\bin\Debug\netstandard2.0\GestioRestaurantDm.dll">
       <PackagePath>GestioRestaurantDm.dll</PackagePath>
-      <Modified>2021-05-24T10:17:52.295</Modified>
+      <Modified>2021-05-31T10:22:30.951</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\David-PC\.nuget\packages\metrolog\1.0.1\lib\win81\MetroLog.WinRT.winmd">
       <PackagePath>MetroLog.WinRT.winmd</PackagePath>
@@ -934,15 +934,19 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\9_Cinema_UserControl\bin\x86\Debug\GestioRestaurant.xr.xml">
       <PackagePath>GestioRestaurant.xr.xml</PackagePath>
-      <Modified>2021-05-21T15:31:45.774</Modified>
+      <Modified>2021-05-31T14:48:40.925</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\9_Cinema_UserControl\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2021-05-24T10:47:18.137</Modified>
+      <Modified>2021-05-31T14:48:40.979</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\9_Cinema_UserControl\bin\x86\Debug\GestioCarta.xbf">
       <PackagePath>GestioCarta.xbf</PackagePath>
-      <Modified>2021-05-24T10:47:18.140</Modified>
+      <Modified>2021-05-31T14:48:40.983</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\9_Cinema_UserControl\bin\x86\Debug\PaginaCarta.xbf">
+      <PackagePath>PaginaCarta.xbf</PackagePath>
+      <Modified>2021-05-31T14:48:40.986</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\Windows Kits\10\ExtensionSDKs\Microsoft.UniversalCRT.Debug\10.0.17134.0\\redist\Debug\x86\ucrtbased.dll">
       <PackagePath>ucrtbased.dll</PackagePath>
@@ -970,11 +974,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\9_Cinema_UserControl\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2021-05-22T10:13:09.412</Modified>
+      <Modified>2021-05-31T14:36:58.447</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\9_Cinema_UserControl\bin\x86\Debug\Core\GestioRestaurant.exe">
       <PackagePath>GestioRestaurant.exe</PackagePath>
-      <Modified>2021-05-24T10:47:21.195</Modified>
+      <Modified>2021-05-31T14:48:43.503</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

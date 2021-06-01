@@ -1,0 +1,20 @@
+﻿<Page
+    x:Class="GestioRestaurant.PaginaCarta"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:GestioRestaurant"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    Loaded="Page_Loaded">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Button x:Name="btnBack" Grid.Row="0" Click="BtnBack_Click" VerticalAlignment="Top" Margin="50,50,50,0" Content="🔙"></Button>
+        <WebView Grid.Row="1" x:Name="ctlBrowser" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" NavigationStarting="CtrlBrowser_NavigationStarting" NavigationCompleted="CtrlBrowser_NavigationCompleted"></WebView>
+    </Grid>
+</Page>

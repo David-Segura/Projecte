@@ -213,7 +213,7 @@ namespace GestioRestaurant.GestioRestaurant_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[43];
+            _typeNameTable = new string[44];
             _typeNameTable[0] = "Microsoft.UI.Xaml.Controls.XamlControlsResources";
             _typeNameTable[1] = "Windows.UI.Xaml.ResourceDictionary";
             _typeNameTable[2] = "Object";
@@ -247,18 +247,19 @@ namespace GestioRestaurant.GestioRestaurant_XamlTypeInfo
             _typeNameTable[30] = "System.Collections.ObjectModel.ObservableCollection`1<Windows.UI.Xaml.Style>";
             _typeNameTable[31] = "System.Collections.ObjectModel.Collection`1<Windows.UI.Xaml.Style>";
             _typeNameTable[32] = "System.Collections.IList";
-            _typeNameTable[33] = "GestioRestaurant.CompraEntrades";
+            _typeNameTable[33] = "GestioRestaurant.GestioCarta";
             _typeNameTable[34] = "Windows.UI.Xaml.Controls.Page";
             _typeNameTable[35] = "Windows.UI.Xaml.Controls.UserControl";
-            _typeNameTable[36] = "Microsoft.Toolkit.Uwp.UI.Extensions.NullableBool";
-            _typeNameTable[37] = "Windows.UI.Xaml.Markup.MarkupExtension";
-            _typeNameTable[38] = "Microsoft.Toolkit.Uwp.UI.Extensions.Markup.OnDevice";
-            _typeNameTable[39] = "Microsoft.Toolkit.Uwp.UI.Converters.DoubleToObjectConverter";
-            _typeNameTable[40] = "Microsoft.Toolkit.Uwp.UI.Converters.DoubleToVisibilityConverter";
-            _typeNameTable[41] = "Microsoft.UI.Xaml.Controls.TreeViewNode";
-            _typeNameTable[42] = "System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>";
+            _typeNameTable[36] = "GestioRestaurant.PaginaCarta";
+            _typeNameTable[37] = "Microsoft.Toolkit.Uwp.UI.Extensions.NullableBool";
+            _typeNameTable[38] = "Windows.UI.Xaml.Markup.MarkupExtension";
+            _typeNameTable[39] = "Microsoft.Toolkit.Uwp.UI.Extensions.Markup.OnDevice";
+            _typeNameTable[40] = "Microsoft.Toolkit.Uwp.UI.Converters.DoubleToObjectConverter";
+            _typeNameTable[41] = "Microsoft.Toolkit.Uwp.UI.Converters.DoubleToVisibilityConverter";
+            _typeNameTable[42] = "Microsoft.UI.Xaml.Controls.TreeViewNode";
+            _typeNameTable[43] = "System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>";
 
-            _typeTable = new global::System.Type[43];
+            _typeTable = new global::System.Type[44];
             _typeTable[0] = typeof(global::Microsoft.UI.Xaml.Controls.XamlControlsResources);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.ResourceDictionary);
             _typeTable[2] = typeof(global::System.Object);
@@ -292,16 +293,17 @@ namespace GestioRestaurant.GestioRestaurant_XamlTypeInfo
             _typeTable[30] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::Windows.UI.Xaml.Style>);
             _typeTable[31] = typeof(global::System.Collections.ObjectModel.Collection<global::Windows.UI.Xaml.Style>);
             _typeTable[32] = typeof(global::System.Collections.IList);
-            _typeTable[33] = typeof(global::GestioRestaurant.CompraEntrades);
+            _typeTable[33] = typeof(global::GestioRestaurant.GestioCarta);
             _typeTable[34] = typeof(global::Windows.UI.Xaml.Controls.Page);
             _typeTable[35] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
-            _typeTable[36] = typeof(global::Microsoft.Toolkit.Uwp.UI.Extensions.NullableBool);
-            _typeTable[37] = typeof(global::Windows.UI.Xaml.Markup.MarkupExtension);
-            _typeTable[38] = typeof(global::Microsoft.Toolkit.Uwp.UI.Extensions.Markup.OnDevice);
-            _typeTable[39] = typeof(global::Microsoft.Toolkit.Uwp.UI.Converters.DoubleToObjectConverter);
-            _typeTable[40] = typeof(global::Microsoft.Toolkit.Uwp.UI.Converters.DoubleToVisibilityConverter);
-            _typeTable[41] = typeof(global::Microsoft.UI.Xaml.Controls.TreeViewNode);
-            _typeTable[42] = typeof(global::System.Collections.Generic.IList<global::Microsoft.UI.Xaml.Controls.TreeViewNode>);
+            _typeTable[36] = typeof(global::GestioRestaurant.PaginaCarta);
+            _typeTable[37] = typeof(global::Microsoft.Toolkit.Uwp.UI.Extensions.NullableBool);
+            _typeTable[38] = typeof(global::Windows.UI.Xaml.Markup.MarkupExtension);
+            _typeTable[39] = typeof(global::Microsoft.Toolkit.Uwp.UI.Extensions.Markup.OnDevice);
+            _typeTable[40] = typeof(global::Microsoft.Toolkit.Uwp.UI.Converters.DoubleToObjectConverter);
+            _typeTable[41] = typeof(global::Microsoft.Toolkit.Uwp.UI.Converters.DoubleToVisibilityConverter);
+            _typeTable[42] = typeof(global::Microsoft.UI.Xaml.Controls.TreeViewNode);
+            _typeTable[43] = typeof(global::System.Collections.Generic.IList<global::Microsoft.UI.Xaml.Controls.TreeViewNode>);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -342,12 +344,13 @@ namespace GestioRestaurant.GestioRestaurant_XamlTypeInfo
         private object Activate_23_Collection() { return new global::System.Collections.ObjectModel.Collection<global::Microsoft.Toolkit.Uwp.UI.Controls.DataGridColumn>(); }
         private object Activate_30_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::Windows.UI.Xaml.Style>(); }
         private object Activate_31_Collection() { return new global::System.Collections.ObjectModel.Collection<global::Windows.UI.Xaml.Style>(); }
-        private object Activate_33_CompraEntrades() { return new global::GestioRestaurant.CompraEntrades(); }
-        private object Activate_36_NullableBool() { return new global::Microsoft.Toolkit.Uwp.UI.Extensions.NullableBool(); }
-        private object Activate_38_OnDevice() { return new global::Microsoft.Toolkit.Uwp.UI.Extensions.Markup.OnDevice(); }
-        private object Activate_39_DoubleToObjectConverter() { return new global::Microsoft.Toolkit.Uwp.UI.Converters.DoubleToObjectConverter(); }
-        private object Activate_40_DoubleToVisibilityConverter() { return new global::Microsoft.Toolkit.Uwp.UI.Converters.DoubleToVisibilityConverter(); }
-        private object Activate_41_TreeViewNode() { return new global::Microsoft.UI.Xaml.Controls.TreeViewNode(); }
+        private object Activate_33_GestioCarta() { return new global::GestioRestaurant.GestioCarta(); }
+        private object Activate_36_PaginaCarta() { return new global::GestioRestaurant.PaginaCarta(); }
+        private object Activate_37_NullableBool() { return new global::Microsoft.Toolkit.Uwp.UI.Extensions.NullableBool(); }
+        private object Activate_39_OnDevice() { return new global::Microsoft.Toolkit.Uwp.UI.Extensions.Markup.OnDevice(); }
+        private object Activate_40_DoubleToObjectConverter() { return new global::Microsoft.Toolkit.Uwp.UI.Converters.DoubleToObjectConverter(); }
+        private object Activate_41_DoubleToVisibilityConverter() { return new global::Microsoft.Toolkit.Uwp.UI.Converters.DoubleToVisibilityConverter(); }
+        private object Activate_42_TreeViewNode() { return new global::Microsoft.UI.Xaml.Controls.TreeViewNode(); }
         private void MapAdd_0_XamlControlsResources(object instance, object key, object item)
         {
             var collection = (global::System.Collections.Generic.IDictionary<global::System.Object, global::System.Object>)instance;
@@ -379,7 +382,7 @@ namespace GestioRestaurant.GestioRestaurant_XamlTypeInfo
             var newItem = (global::Windows.UI.Xaml.Style)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_42_IList(object instance, object item)
+        private void VectorAdd_43_IList(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::Microsoft.UI.Xaml.Controls.TreeViewNode>)instance;
             var newItem = (global::Microsoft.UI.Xaml.Controls.TreeViewNode)item;
@@ -643,9 +646,9 @@ namespace GestioRestaurant.GestioRestaurant_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 33:   //  GestioRestaurant.CompraEntrades
+            case 33:   //  GestioRestaurant.GestioCarta
                 userType = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_33_CompraEntrades;
+                userType.Activator = Activate_33_GestioCarta;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
@@ -658,9 +661,16 @@ namespace GestioRestaurant.GestioRestaurant_XamlTypeInfo
                 xamlType = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 36:   //  Microsoft.Toolkit.Uwp.UI.Extensions.NullableBool
+            case 36:   //  GestioRestaurant.PaginaCarta
+                userType = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_36_PaginaCarta;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 37:   //  Microsoft.Toolkit.Uwp.UI.Extensions.NullableBool
                 userType = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Markup.MarkupExtension"));
-                userType.Activator = Activate_36_NullableBool;
+                userType.Activator = Activate_37_NullableBool;
                 userType.AddMemberName("Value");
                 userType.AddMemberName("IsNull");
                 userType.SetIsBindable();
@@ -668,13 +678,13 @@ namespace GestioRestaurant.GestioRestaurant_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 37:   //  Windows.UI.Xaml.Markup.MarkupExtension
+            case 38:   //  Windows.UI.Xaml.Markup.MarkupExtension
                 xamlType = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 38:   //  Microsoft.Toolkit.Uwp.UI.Extensions.Markup.OnDevice
+            case 39:   //  Microsoft.Toolkit.Uwp.UI.Extensions.Markup.OnDevice
                 userType = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Markup.MarkupExtension"));
-                userType.Activator = Activate_38_OnDevice;
+                userType.Activator = Activate_39_OnDevice;
                 userType.AddMemberName("Default");
                 userType.AddMemberName("Desktop");
                 userType.AddMemberName("Holographic");
@@ -686,9 +696,9 @@ namespace GestioRestaurant.GestioRestaurant_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 39:   //  Microsoft.Toolkit.Uwp.UI.Converters.DoubleToObjectConverter
+            case 40:   //  Microsoft.Toolkit.Uwp.UI.Converters.DoubleToObjectConverter
                 userType = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
-                userType.Activator = Activate_39_DoubleToObjectConverter;
+                userType.Activator = Activate_40_DoubleToObjectConverter;
                 userType.AddMemberName("TrueValue");
                 userType.AddMemberName("FalseValue");
                 userType.AddMemberName("NullValue");
@@ -698,16 +708,16 @@ namespace GestioRestaurant.GestioRestaurant_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 40:   //  Microsoft.Toolkit.Uwp.UI.Converters.DoubleToVisibilityConverter
+            case 41:   //  Microsoft.Toolkit.Uwp.UI.Converters.DoubleToVisibilityConverter
                 userType = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Microsoft.Toolkit.Uwp.UI.Converters.DoubleToObjectConverter"));
-                userType.Activator = Activate_40_DoubleToVisibilityConverter;
+                userType.Activator = Activate_41_DoubleToVisibilityConverter;
                 userType.SetIsBindable();
                 xamlType = userType;
                 break;
 
-            case 41:   //  Microsoft.UI.Xaml.Controls.TreeViewNode
+            case 42:   //  Microsoft.UI.Xaml.Controls.TreeViewNode
                 userType = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.DependencyObject"));
-                userType.Activator = Activate_41_TreeViewNode;
+                userType.Activator = Activate_42_TreeViewNode;
                 userType.AddMemberName("IsExpanded");
                 userType.AddMemberName("HasUnrealizedChildren");
                 userType.AddMemberName("Content");
@@ -719,9 +729,9 @@ namespace GestioRestaurant.GestioRestaurant_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 42:   //  System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>
+            case 43:   //  System.Collections.Generic.IList`1<Microsoft.UI.Xaml.Controls.TreeViewNode>
                 userType = new global::GestioRestaurant.GestioRestaurant_XamlTypeInfo.XamlUserType(this, typeName, type, null);
-                userType.CollectionAdd = VectorAdd_42_IList;
+                userType.CollectionAdd = VectorAdd_43_IList;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;

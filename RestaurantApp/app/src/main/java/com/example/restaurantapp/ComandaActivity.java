@@ -20,6 +20,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -48,6 +49,10 @@ public class ComandaActivity extends AppCompatActivity implements View.OnClickLi
     LinearLayout lytPerBotons;
     Button btnConfirmar;
     NMTaula taula;
+    int maxComandaCodi;
+    NMCambrer c;
+    NMComanda com;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,7 +64,7 @@ public class ComandaActivity extends AppCompatActivity implements View.OnClickLi
         btnConfirmar = findViewById(R.id.btnConfirmar);
 
 
-
+        lComandes = new ArrayList<>();
 
         rcyCarta.setLayoutManager(new GridLayoutManager(this, 2));
         rcyCarta.setHasFixedSize(true);
@@ -68,8 +73,14 @@ public class ComandaActivity extends AppCompatActivity implements View.OnClickLi
 
         Intent i = getIntent();
         taula = (NMTaula)i.getSerializableExtra("TAULA");
+        c = (NMCambrer) i.getSerializableExtra("CAMBRER");
+        getMaxCodiComanda("99");
+        Log.d("YYY","Comandes: "+taula.getNMComanda().toString());
 
-        rebreCarta("3");
+        if(taula.getNMComanda().getCodi()==0)
+            rebreCarta("3");
+        else
+            rebreComanda("4",taula.getNMComanda());
 
 
 
@@ -163,7 +174,7 @@ public class ComandaActivity extends AppCompatActivity implements View.OnClickLi
                 try {
                     //Replace below IP with the IP of that device in which server socket open.
                     //If you change port then change the port number in the server side code also.
-                    Socket s = new Socket("192.168.1.34", 9876);
+                    Socket s = new Socket("192.168.1.35", 9876);
 
                     ObjectOutputStream out = new ObjectOutputStream(s.getOutputStream());
                     out.writeObject(msgCod);
@@ -346,12 +357,13 @@ public class ComandaActivity extends AppCompatActivity implements View.OnClickLi
                 try {
                     //Replace below IP with the IP of that device in which server socket open.
                     //If you change port then change the port number in the server side code also.
-                    Socket s = new Socket("192.168.1.34", 9876);
+                    Socket s = new Socket("192.168.1.35", 9876);
 
                     ObjectOutputStream out = new ObjectOutputStream(s.getOutputStream());
                     out.writeObject(msgCod);
                     //Log.d("XXX","Enviant taula "+taula.toString());
-                    out.writeObject(taula.getNMComanda().getNMCambrer());
+                    out.writeObject(c);
+                    Log.d("Codi comanda: ", taula.getNMComanda().getCodi()+"");
                     out.writeObject(taula.getNMComanda());
                     out.writeObject(taula);
                     out.writeObject(lComandes.size());
@@ -386,5 +398,145 @@ public class ComandaActivity extends AppCompatActivity implements View.OnClickLi
         });
 
         thread.start();
+    }
+
+
+    private void getMaxCodiComanda(String msgCod) {
+
+        final Handler handler = new Handler();
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+
+                try {
+                    //Replace below IP with the IP of that device in which server socket open.
+                    //If you change port then change the port number in the server side code also.
+                    Socket s = new Socket("192.168.1.35", 9876);
+
+                    ObjectOutputStream out = new ObjectOutputStream(s.getOutputStream());
+                    out.writeObject(msgCod);
+                    //Log.d("XXX","Enviant taula "+taula.toString());
+                    ObjectInputStream oin = new ObjectInputStream(s.getInputStream());
+                    int max = (int) oin.readObject();
+                    //PrintWriter output = new PrintWriter(out);
+
+                    //output.println(msg);
+                    //output.flush();
+                    ObjectInputStream input = new ObjectInputStream(s.getInputStream());
+
+                    handler.post(new Runnable() {
+                        @Override
+                        public void run() {
+                            maxComandaCodi = max;
+                            com = new NMComanda(maxComandaCodi+1, new Timestamp(System.currentTimeMillis()), taula, c);
+                            taula.setNMComanda(com);
+                        }
+                    });
+
+                    //output.close();
+                    out.close();
+                    s.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } catch (ClassNotFoundException e) {
+                    e.printStackTrace();
+                }
+            }
+
+        });
+
+        thread.start();
+    }
+
+
+
+
+
+
+    private void rebreComanda(final String msgCod, NMComanda comanda) {
+        //Log.d("XXX",edtUser.getText().toString());
+
+        final Handler handler = new Handler();
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+
+                try {
+                    //Replace below IP with the IP of that device in which server socket open.
+                    //If you change port then change the port number in the server side code also.
+                    Socket s = new Socket("192.168.1.35", 9876);
+
+                    ObjectOutputStream out = new ObjectOutputStream(s.getOutputStream());
+                    out.writeObject(msgCod);
+
+                    out.writeObject(comanda.getCodi());
+
+                    ObjectInputStream input = new ObjectInputStream(s.getInputStream());
+
+                    final int resposta = (int) input.readObject();
+
+
+                    Log.d("XXX",resposta+"");
+                    for(int i = 0; i<resposta;i++){
+                        Log.d("XXX","Rebent linea comanda");
+
+
+                        NMLineaComanda lc = (NMLineaComanda) input.readObject();
+
+
+
+
+
+
+                        Log.d("XXX",lc.toString());
+                        lComandes.add(lc);
+                        Log.d("XXX",lComandes.size()+"");
+
+
+
+
+
+
+                    }
+
+
+                    handler.post(new Runnable() {
+                        @Override
+                        public void run() {
+
+                            lcAdapter = new LineaComandaAdapter(lComandes,mActivity,getApplicationContext());
+                            rcyComanda.setAdapter(lcAdapter);
+
+
+
+
+                            }
+
+
+
+                        });
+
+
+                    //output.close();
+                    out.close();
+                    s.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } catch (ClassNotFoundException e) {
+                    e.printStackTrace();
+                }
+            }
+
+        });
+
+        thread.start();
+
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.d("STOP","STOP");
+        TaulesActivity.setParar(false);
     }
 }

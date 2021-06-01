@@ -3,15 +3,14 @@
 	<property name="ireport.zoom" value="1.4641000000000013"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
-	<parameter name="categoria" class="java.lang.Integer">
-		<defaultValueExpression><![CDATA[-1]]></defaultValueExpression>
-	</parameter>
+	<property name="ireport.jasperserver.reportUnit" value="/dam2-dsegura/Carta"/>
+	<property name="ireport.jasperserver.url" value="http://51.68.224.27:8080/jasperserver/services/repository"/>
 	<parameter name="CatFiltre" class="java.lang.Integer">
-		<defaultValueExpression><![CDATA[-1]]></defaultValueExpression>
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
 	</parameter>
 	<queryString>
-		<![CDATA[select * from plat
-where categoria = $P{CatFiltre} or  $P{CatFiltre}=-1]]>
+		<![CDATA[select p.codi, p.nom, p.descripcioMD, p.preu, p.disponible, p.foto, le.quantitat, u.nom as unitat, i.nom as ingredient from plat p join linea_escandall le on le.plat = p.codi join unitat u on u.codi = le.unitat join ingredient i on i.codi = le.ingredient
+where categoria = $P{CatFiltre} or  $P{CatFiltre} is null]]>
 	</queryString>
 	<field name="codi" class="java.lang.Integer">
 		<fieldDescription><![CDATA[]]></fieldDescription>
@@ -25,20 +24,109 @@ where categoria = $P{CatFiltre} or  $P{CatFiltre}=-1]]>
 	<field name="preu" class="java.lang.Float">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
-	<field name="foto" class="java.io.InputStream">
-		<fieldDescription><![CDATA[]]></fieldDescription>
-	</field>
 	<field name="disponible" class="java.lang.Boolean">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
-	<field name="categoria" class="java.lang.Integer">
+	<field name="foto" class="java.io.InputStream">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
+	<field name="quantitat" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="unitat" class="java.lang.String"/>
+	<field name="ingredient" class="java.lang.String"/>
+	<group name="Plat grup" keepTogether="true">
+		<groupExpression><![CDATA[$F{codi}]]></groupExpression>
+		<groupHeader>
+			<band height="165">
+				<staticText>
+					<reportElement uuid="31719326-f8b4-4bca-889c-74191dc54852" x="0" y="20" width="100" height="20"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Descripció]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="c2d72fa0-b34b-4ae7-abe8-a2681055d23e" x="0" y="0" width="100" height="20"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Nom]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="2a483eb2-33e3-4acf-a7ba-c7cbddce5c5b" x="0" y="40" width="100" height="20"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Preu]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="c53bb438-9a06-43c6-a055-702890125777" x="0" y="60" width="100" height="20"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Disponible]]></text>
+				</staticText>
+				<image>
+					<reportElement uuid="57b8e390-6771-4b52-8697-7800846f74bf" x="455" y="10" width="100" height="50"/>
+					<imageExpression><![CDATA[$F{foto}]]></imageExpression>
+				</image>
+				<textField isBlankWhenNull="true">
+					<reportElement uuid="a60a33bb-adc2-4634-becd-f3186e032e68" x="100" y="0" width="100" height="20"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{nom}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement uuid="2eaa6515-cc2e-4859-bcd0-f2c88bc556a2" x="100" y="20" width="100" height="20"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{descripcioMD}]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement uuid="1855e4dd-beba-4af3-8ac4-8a81e2482a77" x="100" y="40" width="100" height="20"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{preu} + "€"]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement uuid="9c4436c6-1cad-4924-beb3-e9f34b7817e2" x="100" y="60" width="100" height="20"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{disponible}?"Si":"No"]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement uuid="86c4b940-2a63-4e7e-a817-7951722dcf14" x="0" y="113" width="100" height="20"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Escandall]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="cc096c69-5afa-4a4a-8997-90a7b63fdc1a" x="21" y="145" width="100" height="20"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Quantitat]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="1ecedb1b-6832-40c4-b537-1b21605b6474" x="135" y="145" width="100" height="20"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Unitat]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="785c7493-762d-44e1-8a80-199faf472226" x="251" y="145" width="100" height="20"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<text><![CDATA[Ingredient]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+	</group>
 	<background>
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="79" splitType="Stretch">
+		<band height="86" splitType="Stretch">
 			<staticText>
 				<reportElement uuid="6fa69183-bd71-4c06-ab9c-d02aca00ecda" x="39" y="0" width="225" height="79"/>
 				<textElement>
@@ -46,74 +134,34 @@ where categoria = $P{CatFiltre} or  $P{CatFiltre}=-1]]>
 				</textElement>
 				<text><![CDATA[CARTA]]></text>
 			</staticText>
-		</band>
-	</title>
-	<pageHeader>
-		<band height="35" splitType="Stretch"/>
-	</pageHeader>
-	<columnHeader>
-		<band height="30" splitType="Stretch">
-			<staticText>
-				<reportElement uuid="31719326-f8b4-4bca-889c-74191dc54852" x="110" y="0" width="100" height="20"/>
-				<textElement/>
-				<text><![CDATA[Descripció]]></text>
-			</staticText>
-			<staticText>
-				<reportElement uuid="c2d72fa0-b34b-4ae7-abe8-a2681055d23e" x="0" y="0" width="100" height="20"/>
-				<textElement/>
-				<text><![CDATA[Nom]]></text>
-			</staticText>
-			<staticText>
-				<reportElement uuid="2a483eb2-33e3-4acf-a7ba-c7cbddce5c5b" x="222" y="0" width="100" height="20"/>
-				<textElement/>
-				<text><![CDATA[Preu]]></text>
-			</staticText>
-			<staticText>
-				<reportElement uuid="c53bb438-9a06-43c6-a055-702890125777" x="455" y="0" width="100" height="20"/>
-				<textElement/>
-				<text><![CDATA[Disponible]]></text>
-			</staticText>
-			<line>
-				<reportElement uuid="371848fc-6b9b-41b8-8016-5e6456c5a42f" x="0" y="27" width="555" height="3"/>
-			</line>
-			<staticText>
-				<reportElement uuid="487e4ddc-4154-40fd-80d9-b26ef800e367" x="338" y="0" width="100" height="20"/>
-				<textElement/>
-				<text><![CDATA[Foto]]></text>
-			</staticText>
-		</band>
-	</columnHeader>
-	<detail>
-		<band height="64" splitType="Stretch">
-			<textField>
-				<reportElement uuid="2eaa6515-cc2e-4859-bcd0-f2c88bc556a2" x="110" y="14" width="100" height="20"/>
-				<textElement/>
-				<textFieldExpression><![CDATA[$F{descripcioMD}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement uuid="a60a33bb-adc2-4634-becd-f3186e032e68" x="0" y="14" width="100" height="20"/>
-				<textElement/>
-				<textFieldExpression><![CDATA[$F{nom}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement uuid="1855e4dd-beba-4af3-8ac4-8a81e2482a77" x="222" y="14" width="100" height="20"/>
-				<textElement/>
-				<textFieldExpression><![CDATA[$F{preu}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement uuid="9c4436c6-1cad-4924-beb3-e9f34b7817e2" x="455" y="14" width="100" height="20"/>
-				<textElement/>
-				<textFieldExpression><![CDATA[$F{disponible}]]></textFieldExpression>
-			</textField>
 			<image>
-				<reportElement uuid="57b8e390-6771-4b52-8697-7800846f74bf" x="338" y="14" width="100" height="50"/>
-				<imageExpression><![CDATA[$F{foto}]]></imageExpression>
+				<reportElement uuid="375d2d3d-15f9-4dea-aea6-c82179d59252" x="404" y="0" width="88" height="79"/>
+				<imageExpression><![CDATA["repo:bkg_foto.jpg"]]></imageExpression>
 			</image>
 		</band>
+	</title>
+	<detail>
+		<band height="64" splitType="Stretch">
+			<line>
+				<reportElement uuid="371848fc-6b9b-41b8-8016-5e6456c5a42f" x="0" y="0" width="555" height="3"/>
+			</line>
+			<textField>
+				<reportElement uuid="46c16d18-b2aa-4975-9026-99a85cb3e7a4" x="21" y="3" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{quantitat}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="8bac413c-5fb8-407e-8c26-695cc61092bb" x="135" y="3" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{unitat}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="24dd6fd6-1762-4a3b-b727-2600b495db70" x="251" y="3" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{ingredient}]]></textFieldExpression>
+			</textField>
+		</band>
 	</detail>
-	<columnFooter>
-		<band height="45" splitType="Stretch"/>
-	</columnFooter>
 	<pageFooter>
 		<band height="32" splitType="Stretch">
 			<textField>
@@ -133,7 +181,4 @@ where categoria = $P{CatFiltre} or  $P{CatFiltre}=-1]]>
 			</textField>
 		</band>
 	</pageFooter>
-	<summary>
-		<band height="42" splitType="Stretch"/>
-	</summary>
 </jasperReport>

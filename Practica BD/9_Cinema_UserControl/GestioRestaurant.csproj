@@ -98,6 +98,9 @@
     <Compile Include="GestioCarta.xaml.cs">
       <DependentUpon>GestioCarta.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PaginaCarta.xaml.cs">
+      <DependentUpon>PaginaCarta.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="View\IsNullToBooleanConverter.cs" />
   </ItemGroup>
@@ -122,6 +125,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Page Include="GestioCarta.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PaginaCarta.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

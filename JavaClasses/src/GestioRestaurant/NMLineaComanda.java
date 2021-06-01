@@ -73,7 +73,7 @@ public class NMLineaComanda implements Serializable{
 
     @Override
     public String toString() {
-        return "NMLineaComanda{" + "num=" + num + ", quantitat=" + quantitat + ", item=" + item + ", acabat=" + acabat + '}';
+        return "NMLineaComanda{" +"coamnda= "+comanda+ "num=" + num + ", quantitat=" + quantitat + ", item=" + item + ", acabat=" + acabat + '}';
     }
 
     

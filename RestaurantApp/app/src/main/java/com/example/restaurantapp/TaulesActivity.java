@@ -1,9 +1,12 @@
 package com.example.restaurantapp;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -28,6 +31,9 @@ public class TaulesActivity extends AppCompatActivity {
     int taulaIndex;
     TaulesActivity mActivity;
     NMCambrer cambrer;
+    Handler handler;
+    boolean clicaTaula = false;
+    static boolean parar = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +49,7 @@ public class TaulesActivity extends AppCompatActivity {
         rcyTaules.setLayoutManager(new GridLayoutManager(this, 3));
         rcyTaules.setHasFixedSize(true);
 
+        handler = new Handler();
 
         /*Cambrer c = new Cambrer(1, "Pepe", "Rodriguez", "String cognom2", "String user", "String password");
         Cambrer c1 = new Cambrer(2, "Javi", "Rodriguez", "String cognom2", "String user", "String password");
@@ -66,29 +73,34 @@ public class TaulesActivity extends AppCompatActivity {
         lTaules.add(t2);
         lTaules.add(t3);*/
 
-        rebreTaules("2");
+        //rebreTaules("2");
 
-
+        actualitzarTaules();
 
 
 
     }
 
     public void onTaulaSelected(List<NMTaula> mTaules, int filaSeleccionada) {
+        clicaTaula = true;
         taulaIndex = filaSeleccionada;
-        NMTaula t = mTaules.get(taulaIndex);
+        try {
+            NMTaula t = mTaules.get(taulaIndex);
 
 
-        Log.d("APP", "" + this.getPackageName());
-        Intent i = new Intent(this, ComandaActivity.class);
-        i.putExtra("TAULA", t);
-        //i.putExtra("TYPE", typeName);
 
-        this.startActivity(i);
+            Log.d("APP", "" + this.getPackageName());
+            Intent i = new Intent(this, ComandaActivity.class);
+            i.putExtra("TAULA", t);
+            i.putExtra("CAMBRER", cambrer);
+            //i.putExtra("TYPE", typeName);
+
+            this.startActivity(i);
+        }catch(Exception e){}
     }
     private void rebreTaules(final String msgCod) {
 
-
+        lTaules.clear();
         final Handler handler = new Handler();
         Thread thread = new Thread(new Runnable() {
             @Override
@@ -97,7 +109,7 @@ public class TaulesActivity extends AppCompatActivity {
                 try {
                     //Replace below IP with the IP of that device in which server socket open.
                     //If you change port then change the port number in the server side code also.
-                    Socket s = new Socket("192.168.1.34", 9876);
+                    Socket s = new Socket("192.168.1.35", 9876);
 
                     ObjectOutputStream out = new ObjectOutputStream(s.getOutputStream());
                     out.writeObject(msgCod);
@@ -159,5 +171,134 @@ public class TaulesActivity extends AppCompatActivity {
 
         thread.start();
 
+    }
+
+    public void mostrarDialeg(String msgCod, List<NMTaula> mTaules, int filaSeleccionada) {
+        clicaTaula = true;
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("Segur que vols eliminar la comanda?");
+        builder.setCancelable(true);
+
+        builder.setPositiveButton("Si", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+                dialog.cancel();
+                eliminaComanda(msgCod,mTaules,filaSeleccionada);
+            }
+        });
+        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+
+            }
+        });
+
+        AlertDialog a = builder.create();
+        a.show();
+
+    }
+
+    public void onLongTaulaSelected(String msgCod, List<NMTaula> mTaules, int filaSeleccionada) {
+        clicaTaula = true;
+        mostrarDialeg(msgCod,mTaules,filaSeleccionada);
+
+    }
+
+    public void eliminaComanda(String msgCod, List<NMTaula> mTaules, int filaSeleccionada) {
+
+
+
+        NMTaula t = mTaules.get(filaSeleccionada);
+        final Handler handler = new Handler();
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+
+                try {
+                    //Replace below IP with the IP of that device in which server socket open.
+                    //If you change port then change the port number in the server side code also.
+                    Socket s = new Socket("192.168.1.35", 9876);
+
+                    ObjectOutputStream out = new ObjectOutputStream(s.getOutputStream());
+                    out.writeObject(msgCod);
+                    out.writeObject(t);
+                    //out.writeObject(user);
+                    //out.writeObject(password);
+                    //PrintWriter output = new PrintWriter(out);
+
+                    //output.println(msg);
+                    //output.flush();
+                    ObjectInputStream input = new ObjectInputStream(s.getInputStream());
+                    //final String st = (String) input.readObject();
+                    //Log.d("XXX",st);
+                    final String resposta = (String) input.readObject();
+
+                    Log.d("XXX",resposta);
+
+
+
+                    handler.post(new Runnable() {
+                        @Override
+                        public void run() {
+
+                            mAdapter = new TaulesAdapter(lTaules, mActivity, getApplicationContext(), cambrer);
+                            rcyTaules.setAdapter(mAdapter);
+                        }
+                    });
+
+                    //output.close();
+                    out.close();
+                    s.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } catch (ClassNotFoundException e) {
+                    e.printStackTrace();
+                }
+            }
+
+        });
+
+        thread.start();
+    }
+
+
+
+    private final int TIEMPO = 2000;
+
+    public void actualitzarTaules() {
+        handler.postDelayed(new Runnable() {
+            public void run() {
+
+                // función a ejecutar
+                rebreTaules("2"); // función para refrescar la ubicación del conductor, creada en otra línea de código
+                if(!parar)
+                    handler.postDelayed(this, TIEMPO);
+                else
+                    Log.d("XXX","clica taula, surto actualitzacio taules");
+                    //return;
+            }
+
+        }, TIEMPO);
+
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.d("STOP","STOP");
+        parar = true;
+    }
+
+    public static void setParar(boolean t){
+        parar = t;
+
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        Log.d("result","result");
     }
 }
