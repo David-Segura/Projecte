@@ -308,6 +308,7 @@ public class GestioEscandalls {
         for(int i = 0; i<llc.size(); i++){
             sCarac[i] = llc.get(i).getNom();
         }
+       
         cboCat = new JComboBox(sCarac);
     }
     
@@ -613,7 +614,7 @@ public class GestioEscandalls {
     private static java.util.List<Plat> buscaPlatFiltreCategoria(){
         Query q = em.createNamedQuery("trobaPlatsPerCategoria");
         int idx = cboCat.getSelectedIndex();
-        q.setParameter("idCategoria", idx +1);
+        q.setParameter("idCategoria", idx);
         java.util.List<Plat> llp = q.getResultList();
         return llp;
         
@@ -679,6 +680,7 @@ public class GestioEscandalls {
                 
                 
                 java.util.List<Categoria> lll = (java.util.List<Categoria>)q2.getResultList();
+                llc.add(new Categoria(0,"Tots",0));
                 for(Categoria c : lll){
                     llc.add(c);
                     
@@ -687,7 +689,8 @@ public class GestioEscandalls {
                     
                     
                     //System.out.println(c.toString());
-                }  
+                }
+                
                 
             Categoria c = null;
             c = em.find(Categoria.class, 1);

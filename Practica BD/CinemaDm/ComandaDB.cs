@@ -66,7 +66,8 @@ namespace GestioRestaurantDm
                         using (var consulta = connexio.CreateCommand())
                         {
                             consulta.CommandText = $@"  select co.*, ca.nom from comanda co join cambrer ca on co.cambrer = ca.codi
-                                                        where co.codi in (select comanda from linea_comanda where acabat = false)";
+                                                        where co.codi in (select comanda from linea_comanda where acabat = false)
+                                                                and co.codi in (select comanda from taula)";
                             var reader = consulta.ExecuteReader();
                             ObservableCollection<Comanda> comandes = new ObservableCollection<Comanda>();
                             while (reader.Read())
