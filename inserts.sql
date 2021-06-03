@@ -21,6 +21,11 @@ insert into Plat values(3,'Natilles','Natilles casolanes',1,FROM_BASE64('/9j/4AA
 insert into ingredient values(1,'Enciam');
 insert into ingredient values(2,'Arròs');
 insert into ingredient values(3,'Llet');
+insert into ingredient values(4,'Farina');
+insert into ingredient values(5,'Aigua');
+insert into ingredient values(6,'Tomàquet');
+insert into ingredient values(7,'Formatge');
+
 
 
 insert into Linea_Escandall values (1,1,200,1,1);
@@ -36,6 +41,8 @@ insert into Cambrer values(3,'Antonio','Gonzalez','Lopez','antonio','antonio');
 insert into taula (numero) values (1);
 insert into taula (numero) values (2);
 insert into taula (numero) values (3);
+insert into taula (numero) values (4);
+insert into taula (numero) values (5);
 
 insert into comanda values (1,'2021-05-18 20:45:16',1,1);
 insert into comanda values (2,'2021-05-18 20:50:29',2,2);
@@ -50,4 +57,5 @@ insert into estat_linia values (2);
 
 insert into linea_comanda values(1,1,2,1,true);
 insert into linea_comanda values(1,2,5,2,false);
-insert into linea_comanda values(2,3,4,3,false);
+insert into linea_comanda values(2,1,4,3,false);
+insert into linea_comanda values(3,1,4,1,false);

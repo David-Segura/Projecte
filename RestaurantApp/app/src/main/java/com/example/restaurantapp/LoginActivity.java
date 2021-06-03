@@ -25,7 +25,7 @@ import java.net.Socket;
 import GestioRestaurant.NMCambrer;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
-    public static final String IP_SERVER = "192.168.1.34";
+    public static final String IP_SERVER = "10.132.0.116";
     Button btnEntra;
     EditText edtUser;
     EditText edtPwd;

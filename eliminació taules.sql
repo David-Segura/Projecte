@@ -8,4 +8,5 @@ drop table Linea_Escandall;
 drop table Ingredient;
 drop table plat;
 drop table categoria;
+drop table unitat;
 set FOREIGN_KEY_CHECKS=1;

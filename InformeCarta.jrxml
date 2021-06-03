@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="InformeCarta" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="09e4287a-4fd2-451c-b3d3-0e58cb5afe07">
 	<property name="ireport.zoom" value="3.138428376721006"/>
-	<property name="ireport.x" value="779"/>
-	<property name="ireport.y" value="619"/>
+	<property name="ireport.x" value="892"/>
+	<property name="ireport.y" value="889"/>
 	<property name="ireport.jasperserver.reportUnit" value="/dam2-dsegura/Carta"/>
 	<property name="ireport.jasperserver.url" value="http://51.68.224.27:8080/jasperserver/services/repository"/>
 	<parameter name="CatFiltre" class="java.lang.Integer">
@@ -42,28 +42,28 @@ where categoria = $P{CatFiltre} or  $P{CatFiltre} is null]]>
 				<staticText>
 					<reportElement uuid="31719326-f8b4-4bca-889c-74191dc54852" x="0" y="20" width="100" height="20"/>
 					<textElement>
-						<font isBold="true"/>
+						<font fontName="Castellar" size="12" isBold="true"/>
 					</textElement>
 					<text><![CDATA[Descripció]]></text>
 				</staticText>
 				<staticText>
 					<reportElement uuid="c2d72fa0-b34b-4ae7-abe8-a2681055d23e" x="0" y="0" width="100" height="20"/>
 					<textElement>
-						<font isBold="true"/>
+						<font fontName="Castellar" size="12" isBold="true"/>
 					</textElement>
 					<text><![CDATA[Nom]]></text>
 				</staticText>
 				<staticText>
 					<reportElement uuid="2a483eb2-33e3-4acf-a7ba-c7cbddce5c5b" x="0" y="40" width="100" height="20"/>
 					<textElement>
-						<font isBold="true"/>
+						<font fontName="Castellar" size="12" isBold="true"/>
 					</textElement>
 					<text><![CDATA[Preu]]></text>
 				</staticText>
 				<staticText>
 					<reportElement uuid="c53bb438-9a06-43c6-a055-702890125777" x="0" y="60" width="100" height="20"/>
 					<textElement>
-						<font isBold="true"/>
+						<font fontName="Castellar" size="12" isBold="true"/>
 					</textElement>
 					<text><![CDATA[Disponible]]></text>
 				</staticText>
@@ -73,49 +73,57 @@ where categoria = $P{CatFiltre} or  $P{CatFiltre} is null]]>
 				</image>
 				<textField isBlankWhenNull="true">
 					<reportElement uuid="a60a33bb-adc2-4634-becd-f3186e032e68" x="100" y="0" width="100" height="20"/>
-					<textElement/>
+					<textElement>
+						<font fontName="Forte" size="12" isBold="false"/>
+					</textElement>
 					<textFieldExpression><![CDATA[$F{nom}]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
 					<reportElement uuid="2eaa6515-cc2e-4859-bcd0-f2c88bc556a2" x="100" y="20" width="100" height="20"/>
-					<textElement/>
+					<textElement>
+						<font fontName="Forte" size="12" isBold="false"/>
+					</textElement>
 					<textFieldExpression><![CDATA[$F{descripcioMD}]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
 					<reportElement uuid="1855e4dd-beba-4af3-8ac4-8a81e2482a77" x="100" y="40" width="100" height="20"/>
-					<textElement/>
+					<textElement>
+						<font fontName="Forte" size="12" isBold="false"/>
+					</textElement>
 					<textFieldExpression><![CDATA[$F{preu} + "€"]]></textFieldExpression>
 				</textField>
 				<textField isBlankWhenNull="true">
 					<reportElement uuid="9c4436c6-1cad-4924-beb3-e9f34b7817e2" x="100" y="60" width="100" height="20"/>
-					<textElement/>
+					<textElement>
+						<font fontName="Forte" size="12" isBold="false"/>
+					</textElement>
 					<textFieldExpression><![CDATA[$F{disponible}?"Si":"No"]]></textFieldExpression>
 				</textField>
 				<staticText>
 					<reportElement uuid="86c4b940-2a63-4e7e-a817-7951722dcf14" x="0" y="113" width="100" height="20"/>
 					<textElement>
-						<font isBold="true"/>
+						<font fontName="Castellar" size="12" isBold="true"/>
 					</textElement>
 					<text><![CDATA[Escandall]]></text>
 				</staticText>
 				<staticText>
 					<reportElement uuid="cc096c69-5afa-4a4a-8997-90a7b63fdc1a" x="21" y="141" width="100" height="20"/>
 					<textElement>
-						<font isBold="true"/>
+						<font fontName="Castellar" size="12" isBold="true"/>
 					</textElement>
 					<text><![CDATA[Quantitat]]></text>
 				</staticText>
 				<staticText>
 					<reportElement uuid="1ecedb1b-6832-40c4-b537-1b21605b6474" x="135" y="141" width="100" height="20"/>
 					<textElement>
-						<font isBold="true"/>
+						<font fontName="Castellar" size="12" isBold="true"/>
 					</textElement>
 					<text><![CDATA[Unitat]]></text>
 				</staticText>
 				<staticText>
 					<reportElement uuid="785c7493-762d-44e1-8a80-199faf472226" x="251" y="141" width="100" height="20"/>
 					<textElement>
-						<font isBold="true"/>
+						<font fontName="Castellar" size="12" isBold="true"/>
 					</textElement>
 					<text><![CDATA[Ingredient]]></text>
 				</staticText>
@@ -132,11 +140,11 @@ where categoria = $P{CatFiltre} or  $P{CatFiltre} is null]]>
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="86" splitType="Stretch">
+		<band height="141" splitType="Stretch">
 			<staticText>
-				<reportElement uuid="6fa69183-bd71-4c06-ab9c-d02aca00ecda" x="39" y="0" width="225" height="79"/>
+				<reportElement uuid="6fa69183-bd71-4c06-ab9c-d02aca00ecda" x="39" y="0" width="240" height="79"/>
 				<textElement>
-					<font size="56" isBold="true" isItalic="false"/>
+					<font fontName="Castellar" size="56" isBold="true" isItalic="false"/>
 				</textElement>
 				<text><![CDATA[CARTA]]></text>
 			</staticText>
@@ -144,23 +152,43 @@ where categoria = $P{CatFiltre} or  $P{CatFiltre} is null]]>
 				<reportElement uuid="375d2d3d-15f9-4dea-aea6-c82179d59252" x="404" y="0" width="88" height="79"/>
 				<imageExpression><![CDATA["repo:bkg_foto.jpg"]]></imageExpression>
 			</image>
+			<textField>
+				<reportElement uuid="5579b833-b8bd-40c4-a6ea-c636b0bb379a" x="143" y="89" width="148" height="42"/>
+				<textElement>
+					<font fontName="Castellar" size="18" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{CatFiltre}==1?"Primers":($P{CatFiltre} == 2?"Segons":($P{CatFiltre}==3?"Postres":"Tots"))]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="2dac76e0-6bd2-4387-92c8-7a33cd2e2146" x="3" y="89" width="132" height="42"/>
+				<textElement>
+					<font fontName="Castellar" size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Categoria: ]]></text>
+			</staticText>
 		</band>
 	</title>
 	<detail>
 		<band height="24" splitType="Stretch">
 			<textField>
 				<reportElement uuid="46c16d18-b2aa-4975-9026-99a85cb3e7a4" x="21" y="3" width="100" height="20"/>
-				<textElement/>
+				<textElement>
+					<font fontName="Forte" size="12"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{quantitat}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement uuid="8bac413c-5fb8-407e-8c26-695cc61092bb" x="135" y="3" width="100" height="20"/>
-				<textElement/>
+				<textElement>
+					<font fontName="Forte" size="12"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{unitat}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement uuid="24dd6fd6-1762-4a3b-b727-2600b495db70" x="251" y="3" width="100" height="20"/>
-				<textElement/>
+				<textElement>
+					<font fontName="Forte" size="12"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{ingredient}]]></textFieldExpression>
 			</textField>
 		</band>
@@ -169,17 +197,23 @@ where categoria = $P{CatFiltre} or  $P{CatFiltre} is null]]>
 		<band height="32" splitType="Stretch">
 			<textField>
 				<reportElement uuid="b5dfd4de-2a9d-4372-85ed-4e56b20c0096" x="438" y="0" width="80" height="20"/>
-				<textElement textAlignment="Right"/>
-				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				<textElement textAlignment="Right">
+					<font fontName="Castellar" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Pàg "+$V{PAGE_NUMBER}+" de"]]></textFieldExpression>
 			</textField>
 			<textField evaluationTime="Report">
 				<reportElement uuid="da3dff01-478d-43f8-becd-922b93149262" x="518" y="0" width="40" height="20"/>
-				<textElement/>
+				<textElement>
+					<font fontName="Castellar" size="12"/>
+				</textElement>
 				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
 			</textField>
 			<textField pattern="dd/MM/yyyy HH.mm.ss">
 				<reportElement uuid="9f076112-bdf4-48c9-a594-388ecc700f5d" x="0" y="0" width="100" height="20"/>
-				<textElement/>
+				<textElement>
+					<font fontName="Castellar" size="12"/>
+				</textElement>
 				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 			</textField>
 		</band>

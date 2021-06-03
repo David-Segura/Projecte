@@ -549,7 +549,13 @@ public class GestioEscandalls {
                     //Query q3 = em.createNamedQuery("maxLiniaxPlatId");
                     Query q3 = em.createQuery("select max(num) from Linea_Escandall where plat = :idPlat");
                     q3.setParameter("idPlat", platSeleccionat.getCodi());
-                    int lin = (int)q3.getSingleResult() +1;
+                   
+                    Integer lin = (Integer)q3.getSingleResult();
+                    if(lin == null){
+                        lin = 1;
+                    }else{
+                        lin ++;
+                    }
 
 
 

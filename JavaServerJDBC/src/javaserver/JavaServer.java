@@ -83,6 +83,7 @@ public class JavaServer {
             con = DriverManager.getConnection(url,usu,pwd);
             System.out.println("Connexió establerta");
             con.setAutoCommit(false);
+            con.setTransactionIsolation(Connection.TRANSACTION_READ_COMMITTED);
         } catch (SQLException ex) {
             System.out.println("Problemes en intentar la connexió");
             System.out.println("Més info: "+ex.getMessage());
@@ -153,16 +154,16 @@ public class JavaServer {
     }
     
     private static void trobaTotesLesTaules(){
-        try {
-            //        for (int i = 0; i < lt.size(); i++) {
-//           lt.remove(i);
-//            
+//        try {
+//            //        for (int i = 0; i < lt.size(); i++) {
+////           lt.remove(i);
+////            
+////        }
+//        con = DriverManager.getConnection(url,usu,pwd);
+//        } catch (SQLException ex) {
+//           System.out.println("Problemes en intentar la connexió");
+//            System.out.println("Més info: "+ex.getMessage());
 //        }
-        con = DriverManager.getConnection(url,usu,pwd);
-        } catch (SQLException ex) {
-           System.out.println("Problemes en intentar la connexió");
-            System.out.println("Més info: "+ex.getMessage());
-        }
         lt.clear();
         PreparedStatement ps = null;
         ResultSet rs = null;
@@ -246,12 +247,12 @@ public class JavaServer {
     
     private static void trobaTotsElsPlats(){
         
-        try {
-            con = DriverManager.getConnection(url,usu,pwd);
-        } catch (SQLException ex) {
-            System.out.println("Problemes en intentar la connexió");
-            System.out.println("Més info: "+ex.getMessage());
-        }
+//        try {
+//            con = DriverManager.getConnection(url,usu,pwd);
+//        } catch (SQLException ex) {
+//            System.out.println("Problemes en intentar la connexió");
+//            System.out.println("Més info: "+ex.getMessage());
+//        }
         PreparedStatement ps = null;
         ResultSet rs = null;
         try {
@@ -261,7 +262,7 @@ public class JavaServer {
            
            
                
-            String consulta = "select p.codi as pcodi, p.nom as pnom, p.descripcioMD, p.preu, p.foto, p.disponible, c.codi as ccodi, c.nom as cnom, c.color from plat p join categoria c on p.categoria = c.codi";
+            String consulta = "select p.codi as pcodi, p.nom as pnom, p.descripcioMD, p.preu, p.foto, p.disponible, c.codi as ccodi, c.nom as cnom, c.color from plat p join categoria c on p.categoria = c.codi order by p.categoria, p.codi";
            
             ps = con.prepareStatement(consulta);
             
@@ -296,12 +297,12 @@ public class JavaServer {
     }
     
      private static void trobaMaxCodiComanda(){
-        try {
-            con = DriverManager.getConnection(url,usu,pwd);
-        } catch (SQLException ex) {
-            System.out.println("Problemes en intentar la connexió");
-            System.out.println("Més info: "+ex.getMessage());
-        }
+//        try {
+//            con = DriverManager.getConnection(url,usu,pwd);
+//        } catch (SQLException ex) {
+//            System.out.println("Problemes en intentar la connexió");
+//            System.out.println("Més info: "+ex.getMessage());
+//        }
         PreparedStatement ps = null;
         ResultSet rs = null;
         try {
@@ -336,12 +337,12 @@ public class JavaServer {
      
      
      private static void contLiniesComanda(int taula){
-        try {
-            con = DriverManager.getConnection(url,usu,pwd);
-        } catch (SQLException ex) {
-            System.out.println("Problemes en intentar la connexió");
-            System.out.println("Més info: "+ex.getMessage());
-        }
+//        try {
+//            con = DriverManager.getConnection(url,usu,pwd);
+//        } catch (SQLException ex) {
+//            System.out.println("Problemes en intentar la connexió");
+//            System.out.println("Més info: "+ex.getMessage());
+//        }
         PreparedStatement ps = null;
         ResultSet rs = null;
         try {
@@ -707,12 +708,12 @@ public class JavaServer {
     }
 
     private static void esborraComanda(NMTaula t) {
-        try {
-            con = DriverManager.getConnection(url,usu,pwd);
-        } catch (SQLException ex) {
-            System.out.println("Problemes en intentar la connexió");
-            System.out.println("Més info: "+ex.getMessage());
-        }
+//        try {
+//            con = DriverManager.getConnection(url,usu,pwd);
+//        } catch (SQLException ex) {
+//            System.out.println("Problemes en intentar la connexió");
+//            System.out.println("Més info: "+ex.getMessage());
+//        }
         PreparedStatement ps = null;
         ResultSet rs = null;
         try {
@@ -731,12 +732,12 @@ public class JavaServer {
     }
 
     private static void buscaLinies(int codiComanda) {
-        try {
-            con = DriverManager.getConnection(url,usu,pwd);
-        } catch (SQLException ex) {
-            System.out.println("Problemes en intentar la connexió");
-            System.out.println("Més info: "+ex.getMessage());
-        }
+//        try {
+//            con = DriverManager.getConnection(url,usu,pwd);
+//        } catch (SQLException ex) {
+//            System.out.println("Problemes en intentar la connexió");
+//            System.out.println("Més info: "+ex.getMessage());
+//        }
         PreparedStatement ps = null;
         ResultSet rs = null;
         try {

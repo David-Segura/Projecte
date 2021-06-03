@@ -49,7 +49,7 @@ public class PlatsAdapter extends RecyclerView.Adapter<PlatsAdapter.ViewHolder> 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         NMPlat p = mPlats.get(position);
-        Log.d("Taula", "" + p.getNom());
+        Log.d("Plat", "" + p.getNom());
         holder.txvPreu.setText(p.getPreu()+"€");
         holder.txvNomPlat.setText(p.getNom());
         if(p.getFoto() != null) {

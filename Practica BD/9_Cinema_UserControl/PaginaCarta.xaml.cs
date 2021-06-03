@@ -44,7 +44,7 @@ namespace GestioRestaurant
 
         private void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            String sURL = "http://51.68.224.27:8080/jasperserver/flow.html?_flowId=viewReportFlow&_flowId=viewReportFlow&ParentFolderUri=%2Fdam2-dsegura&reportUnit=%2Fdam2-dsegura%2FCarta&standAlone=true";
+            String sURL = "http://51.68.224.27:8080/jasperserver/flow.html?_flowId=viewReportFlow&_flowId=viewReportFlow&ParentFolderUri=%2Fdam2-dsegura&reportUnit=%2Fdam2-dsegura%2FCarta&standAlone=true&j_username=dam2-dsegura&j_password=47120851S";
 
             if (sURL.IndexOf("http://") == -1) { sURL = "http://" + sURL; }
 

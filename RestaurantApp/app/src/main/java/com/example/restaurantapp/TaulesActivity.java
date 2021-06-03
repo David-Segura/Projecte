@@ -25,7 +25,7 @@ import GestioRestaurant.NMComanda;
 import GestioRestaurant.NMTaula;
 
 public class TaulesActivity extends AppCompatActivity {
-    public static final String IP_SERVER = "192.168.1.34";
+    public static final String IP_SERVER = "10.132.0.116";
     RecyclerView rcyTaules;
     private TaulesAdapter mAdapter;
     List<NMTaula> lTaules = new ArrayList<>();
@@ -322,6 +322,7 @@ public class TaulesActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+        lTaules.clear();
         Log.d("result","result");
         parar = false;
         rebreTaules("2");

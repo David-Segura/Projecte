@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Source>E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\GestioComandes\bkg_foto.jpg</Source>
+    <AppIconSource>E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\GestioComandes\bkg_foto.jpg</AppIconSource>
+    <SmallTileSource>E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\GestioComandes\bkg_foto.jpg</SmallTileSource>
+    <MediumTileSource>E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\GestioComandes\bkg_foto.jpg</MediumTileSource>
+    <WideTileSource>E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\GestioComandes\bkg_foto.jpg</WideTileSource>
+    <LargeTileSource>E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\GestioComandes\bkg_foto.jpg</LargeTileSource>
+    <SplashScreenSource>E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\GestioComandes\bkg_foto.jpg</SplashScreenSource>
+    <BadgeLogoSource>E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\GestioComandes\bkg_foto.jpg</BadgeLogoSource>
+    <PackageLogoSource>E:\GGSS\GS\DAM - 2.1\Projecte\Projecte\Projecte\Practica BD\GestioComandes\bkg_foto.jpg</PackageLogoSource>
+  </PropertyGroup>
+</Project>

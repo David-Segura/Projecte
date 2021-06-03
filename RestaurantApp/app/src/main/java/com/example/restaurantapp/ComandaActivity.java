@@ -37,7 +37,7 @@ import GestioRestaurant.NMPlat;
 import GestioRestaurant.NMTaula;
 
 public class ComandaActivity extends AppCompatActivity implements View.OnClickListener {
-    public static final String IP_SERVER = "192.168.1.34";
+    public static final String IP_SERVER = "10.132.0.116";
     RecyclerView rcyComanda;
     RecyclerView rcyCarta;
     List<NMPlat> lPlats = new ArrayList<>();
@@ -387,7 +387,7 @@ public class ComandaActivity extends AppCompatActivity implements View.OnClickLi
                     handler.post(new Runnable() {
                         @Override
                         public void run() {
-                            Toast toast = Toast.makeText(mActivity.getApplicationContext(), "Comanda emmagatzemada", Toast.LENGTH_LONG);
+                            Toast toast = Toast.makeText(mActivity.getApplicationContext(), "Comanda emmagatzemada", Toast.LENGTH_SHORT);
                             toast.show();
                         }
                     });

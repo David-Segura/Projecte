@@ -93,7 +93,7 @@ namespace GestioComandes
                 margin.Left = 20;
                 margin.Top = 20;
                 dg.Margin = margin;
-               // dg.Background = new SolidColorBrush(Color.FromArgb(255,255,255,255));
+                dg.Background = new SolidColorBrush(Color.FromArgb(255,255,255,255));
 
               
                
