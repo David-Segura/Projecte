@@ -78,7 +78,7 @@ public class TaulesAdapter extends RecyclerView.Adapter<TaulesAdapter.ViewHolder
         Log.d("ZZZ",t.getNMComanda().toString());
         if(t.getNMComanda().getNMCambrer().getCodi() == mCambrer.getCodi()){
             Log.d("XXX","taula del cambrer");
-            holder.layout.setBackgroundColor(Color.CYAN);
+            holder.layout.setBackgroundColor(Color.GREEN);
         }else if(t.getNMComanda().getCodi() == 0){
             holder.layout.setBackgroundColor(Color.WHITE);
         }else{

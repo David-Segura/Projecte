@@ -329,6 +329,7 @@ public class GestioEscandalls {
         }
        
         cboCat = new JComboBox(sCarac);
+        cboCat.setSelectedIndex(-1);
     }
     
     private static String[][] obtenirMatriu() {
@@ -401,6 +402,8 @@ public class GestioEscandalls {
         });
 
     }
+    
+    
     
     
     private static void afegirTaula()

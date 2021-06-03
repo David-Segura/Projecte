@@ -189,12 +189,14 @@ public class TaulesActivity extends AppCompatActivity {
 
                     dialog.cancel();
                     eliminaComanda(msgCod, mTaules, filaSeleccionada);
+                    lTaules.clear();
                 }
             });
             builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
                     dialog.cancel();
+                    lTaules.clear();
 
                 }
             });
@@ -204,6 +206,7 @@ public class TaulesActivity extends AppCompatActivity {
                 public void onClick(DialogInterface dialog, int which) {
 
                     dialog.cancel();
+                    lTaules.clear();
 
                 }
             });

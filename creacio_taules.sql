@@ -10,6 +10,10 @@ create table categoria(
 	color integer (8),
     PRIMARY KEY (codi)
 );
+CREATE INDEX categoria_idx_nom
+ON categoria (nom);
+
+
 create table plat(
 	codi integer(7),
 	nom varchar(40),
@@ -22,11 +26,13 @@ create table plat(
     PRIMARY KEY (codi),
     CONSTRAINT FK_Plat_Categoria FOREIGN KEY (categoria)
     REFERENCES Categoria(codi)
-    
-    
-    
+   
 	
 );
+CREATE INDEX plat_idx_nom
+ON plat (nom);
+
+
 create table Ingredient(
 	codi integer (7),
 	nom varchar (40),
@@ -55,6 +61,12 @@ create table Cambrer(
 	password varchar (40),
     PRIMARY KEY (codi)
 );
+CREATE INDEX cambrer_idx_nom
+ON cambrer (nom);
+CREATE INDEX cambrer_idx_user
+ON cambrer (user);
+
+
 create table Taula(
 	numero integer (3),
 	comanda integer (7),
