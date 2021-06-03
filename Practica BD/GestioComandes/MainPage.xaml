@@ -7,16 +7,19 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
     mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
-    Loaded="Page_Loaded">
+    
+    Loaded="Page_Loaded"
+    Background="LightGray">
 
     <Grid x:Name="Grid">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
+            <ColumnDefinition Width="Auto"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <controls:DataGrid Name="dtgComandes" IsReadOnly="True" AutoGenerateColumns="False" SelectionChanged="DtgComandes_SelectionChanged" Grid.Column="0" Grid.Row="0">
+        <controls:DataGrid Name="dtgComandes" IsReadOnly="True" AutoGenerateColumns="False" SelectionChanged="DtgComandes_SelectionChanged" Grid.Column="0" Grid.Row="0" Background="LightCyan" VerticalAlignment="Top" Margin="20,20,0,0">
             <controls:DataGrid.Columns>
-                <controls:DataGridTextColumn Header="Codi" Binding="{Binding Codi}"></controls:DataGridTextColumn>
+                <controls:DataGridTextColumn Header="Comanda" Binding="{Binding Codi}"></controls:DataGridTextColumn>
                 <controls:DataGridTextColumn Header="Data" Binding="{Binding Data}"></controls:DataGridTextColumn>
                 <controls:DataGridTextColumn Header="Taula" Binding="{Binding Taula}"></controls:DataGridTextColumn>
                 <controls:DataGridTextColumn Header="Cambrer" Binding="{Binding Cambrer.Nom}"></controls:DataGridTextColumn>

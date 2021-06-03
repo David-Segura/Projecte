@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -36,6 +37,7 @@ import GestioRestaurant.NMPlat;
 import GestioRestaurant.NMTaula;
 
 public class ComandaActivity extends AppCompatActivity implements View.OnClickListener {
+    public static final String IP_SERVER = "192.168.1.34";
     RecyclerView rcyComanda;
     RecyclerView rcyCarta;
     List<NMPlat> lPlats = new ArrayList<>();
@@ -79,9 +81,11 @@ public class ComandaActivity extends AppCompatActivity implements View.OnClickLi
 
         if(taula.getNMComanda().getCodi()==0)
             rebreCarta("3");
-        else
-            rebreComanda("4",taula.getNMComanda());
+        else {
+            rebreComanda("4", taula.getNMComanda());
 
+            btnConfirmar.setVisibility(View.INVISIBLE);
+        }
 
 
        // mAdapter = new PlatsAdapter(lPlats,mActivity,getApplicationContext());
@@ -174,8 +178,8 @@ public class ComandaActivity extends AppCompatActivity implements View.OnClickLi
                 try {
                     //Replace below IP with the IP of that device in which server socket open.
                     //If you change port then change the port number in the server side code also.
-                    //Socket s = new Socket("192.168.1.35", 9876);
-                    Socket s = new Socket("10.132.0.116", 9876);
+                    Socket s = new Socket(IP_SERVER, 9876);
+
 
                     ObjectOutputStream out = new ObjectOutputStream(s.getOutputStream());
                     out.writeObject(msgCod);
@@ -358,8 +362,8 @@ public class ComandaActivity extends AppCompatActivity implements View.OnClickLi
                 try {
                     //Replace below IP with the IP of that device in which server socket open.
                     //If you change port then change the port number in the server side code also.
-                    //Socket s = new Socket("192.168.1.35", 9876);
-                    Socket s = new Socket("10.132.0.116", 9876);
+                    Socket s = new Socket(IP_SERVER, 9876);
+
 
                     ObjectOutputStream out = new ObjectOutputStream(s.getOutputStream());
                     out.writeObject(msgCod);
@@ -383,7 +387,8 @@ public class ComandaActivity extends AppCompatActivity implements View.OnClickLi
                     handler.post(new Runnable() {
                         @Override
                         public void run() {
-
+                            Toast toast = Toast.makeText(mActivity.getApplicationContext(), "Comanda emmagatzemada", Toast.LENGTH_LONG);
+                            toast.show();
                         }
                     });
 
@@ -413,8 +418,8 @@ public class ComandaActivity extends AppCompatActivity implements View.OnClickLi
                 try {
                     //Replace below IP with the IP of that device in which server socket open.
                     //If you change port then change the port number in the server side code also.
-                    //Socket s = new Socket("192.168.1.35", 9876);
-                    Socket s = new Socket("10.132.0.116", 9876);
+                    Socket s = new Socket(IP_SERVER, 9876);
+
 
                     ObjectOutputStream out = new ObjectOutputStream(s.getOutputStream());
                     out.writeObject(msgCod);
@@ -467,8 +472,8 @@ public class ComandaActivity extends AppCompatActivity implements View.OnClickLi
                 try {
                     //Replace below IP with the IP of that device in which server socket open.
                     //If you change port then change the port number in the server side code also.
-                    //Socket s = new Socket("192.168.1.35", 9876);
-                    Socket s = new Socket("10.132.0.116", 9876);
+
+                    Socket s = new Socket(IP_SERVER, 9876);
 
                     ObjectOutputStream out = new ObjectOutputStream(s.getOutputStream());
                     out.writeObject(msgCod);
@@ -507,6 +512,12 @@ public class ComandaActivity extends AppCompatActivity implements View.OnClickLi
                     handler.post(new Runnable() {
                         @Override
                         public void run() {
+
+                            float preu =0;
+                            for(NMLineaComanda l : lComandes){
+                                preu += l.getItem().getPreu() * l.getQuantitat();
+                            }
+                            txvPreuTotalComanda.setText(preu+"€");
 
                             lcAdapter = new LineaComandaAdapter(lComandes,mActivity,getApplicationContext());
                             rcyComanda.setAdapter(lcAdapter);

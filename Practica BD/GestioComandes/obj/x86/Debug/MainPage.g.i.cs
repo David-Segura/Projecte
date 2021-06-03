@@ -17,8 +17,6 @@ namespace GestioComandes
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 10.0.17.0")]
         private global::Windows.UI.Xaml.Controls.Grid Grid; 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 10.0.17.0")]
-        private global::Microsoft.Toolkit.Uwp.UI.Controls.DataGrid dtgComandes; 
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.Windows.UI.Xaml.Build.Tasks"," 10.0.17.0")]
         private bool _contentLoaded;
 
         /// <summary>

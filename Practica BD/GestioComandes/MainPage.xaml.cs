@@ -10,6 +10,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -34,7 +35,7 @@ namespace GestioComandes
             dtgComandes.ItemsSource = llcomandes;
             //dtgComandes.RowDetailsTemplate = 
             createDataGrids();
-            _timer = new System.Threading.Timer(new System.Threading.TimerCallback((obj) => Refresh()), null, 0, 02000);
+            _timer = new System.Threading.Timer(new System.Threading.TimerCallback((obj) => Refresh()), null, 0, 5000);
 
         }
 
@@ -75,27 +76,43 @@ namespace GestioComandes
         private void createDataGrids()
         {
             
-            int i = 0;
+            int i = 1;
             int j = 0;
             llcomandes = ComandaDB.getLlistaComandesAmbLinies();
-            for (int l = Grid.Children.Count -1 ; l>=0; l--)
+            dtgComandes.ItemsSource = llcomandes;
+            for (int l = Grid.Children.Count - 1; l >= 1; l--)
             {
                 Grid.Children.RemoveAt(l);
             }
-            
+
             foreach (Comanda c in llcomandes)
             {
 
                 DataGrid dg = new DataGrid();
+                Thickness margin = dg.Margin;
+                margin.Left = 20;
+                margin.Top = 20;
+                dg.Margin = margin;
+               // dg.Background = new SolidColorBrush(Color.FromArgb(255,255,255,255));
+
+              
                
                 lllcomanda = Linea_ComandaDB.getLlistaLineaComanda(c.Codi);
                 dg.ItemsSource = lllcomanda;
 
                 
-                if(llcomandes.Count > Grid.ColumnDefinitions.Count)
-                {
-                    Grid.ColumnDefinitions.Add(new ColumnDefinition());
+                //if(llcomandes.Count > Grid.ColumnDefinitions.Count)
+                //{
+                //    ColumnDefinition col0 = new ColumnDefinition();
+                //    col0.Width = GridLength.Auto;
+                //    Grid.ColumnDefinitions.Add(col0);
 
+                //}
+                if((llcomandes.Count /3 )>= Grid.RowDefinitions.Count-1)
+                {
+                    RowDefinition row = new RowDefinition();
+                    row.Height = GridLength.Auto;
+                    Grid.RowDefinitions.Add(row);
                 }
                 Grid.Children.Add(dg);
                 
@@ -144,6 +161,13 @@ namespace GestioComandes
                 //dg.Columns[0].Visibility = Visibility.Collapsed;
 
                 i++;
+                if (i > 2)
+                {
+                    j++;
+                    //Grid.RowDefinitions.Add(new RowDefinition());
+                    i = 0;
+
+                }
             } 
         }
 

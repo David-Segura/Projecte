@@ -2,7 +2,9 @@ package com.example.restaurantapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Log;
@@ -23,6 +25,7 @@ import java.net.Socket;
 import GestioRestaurant.NMCambrer;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
+    public static final String IP_SERVER = "192.168.1.34";
     Button btnEntra;
     EditText edtUser;
     EditText edtPwd;
@@ -35,23 +38,30 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+
+        SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
+
+        String user = sharedPref.getString("username", "");
+        String password = sharedPref.getString("password", "");
+
+        Log.d("USER",user);
+        Log.d("PWD",password);
+
         btnEntra = findViewById(R.id.btnEntra);
         edtUser = findViewById(R.id.edtUser);
         edtPwd = findViewById(R.id.edtPwd);
         txvLoginCorrecte = findViewById(R.id.txvLoginCorrecte);
 
+        if(user!= "" && password !=""){
+
+          sendMessage("1",user,password);
+        }
         btnEntra.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
-
-
         String a  = sendMessage("1",edtUser.getText().toString(),edtPwd.getText().toString());
-
-
-
-
     }
 
     private String sendMessage(final String msg, final String user, final String password) {
@@ -65,8 +75,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 try {
                     //Replace below IP with the IP of that device in which server socket open.
                     //If you change port then change the port number in the server side code also.
-                    //Socket s = new Socket("192.168.1.35", 9876);
-                    Socket s = new Socket("10.132.0.116", 9876);
+
+                    Socket s = new Socket(IP_SERVER, 9876);
 
                     ObjectOutputStream out = new ObjectOutputStream(s.getOutputStream());
                     out.writeObject(msg);
@@ -99,6 +109,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                             }
 
                             if(correcte) {
+                                SharedPreferences sharedPref = getPreferences(Context.MODE_PRIVATE);
+                                SharedPreferences.Editor editor = sharedPref.edit();
+                                editor.putString("username", edtUser.getText().toString());
+                                editor.putString("password", edtPwd.getText().toString());
+                                editor.apply();
                                 Intent i = new Intent(getApplicationContext(), TaulesActivity.class);
                                 i.putExtra("CAMBRER",cambrer);
                                 startActivity(i);

@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="120dp"
-    android:layout_height="230dp"
+    android:layout_height="245dp"
     android:layout_marginLeft="5dp"
     android:layout_marginTop="30dp"
     android:id="@+id/layout"
@@ -28,6 +28,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:fontFamily="casual"
+        android:textColor="@color/black"
         ></TextView>
 
     <TextView
@@ -40,17 +41,27 @@
         android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        android:textColor="@color/black"
         app:layout_constraintTop_toBottomOf="@+id/txvNumTaula"
         android:fontFamily="casual"></TextView>
 
-    <SeekBar
+
+
+    <ProgressBar
         android:id="@+id/skbProgresCuina"
-        android:layout_width="110dp"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
-
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txvNomCambrer"></SeekBar>
+        app:layout_constraintTop_toBottomOf="@+id/txvNomCambrer"
+        android:progressTint="@color/green"
+        android:progressBackgroundTint="@color/red"
+        android:progressBackgroundTintMode="add"
+
+
+
+        android:outlineSpotShadowColor="#458715"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

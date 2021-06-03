@@ -25,6 +25,7 @@ import GestioRestaurant.NMComanda;
 import GestioRestaurant.NMTaula;
 
 public class TaulesActivity extends AppCompatActivity {
+    public static final String IP_SERVER = "192.168.1.34";
     RecyclerView rcyTaules;
     private TaulesAdapter mAdapter;
     List<NMTaula> lTaules = new ArrayList<>();
@@ -93,6 +94,7 @@ public class TaulesActivity extends AppCompatActivity {
             Intent i = new Intent(this, ComandaActivity.class);
             i.putExtra("TAULA", t);
             i.putExtra("CAMBRER", cambrer);
+
             //i.putExtra("TYPE", typeName);
 
             this.startActivityForResult(i,0);
@@ -109,8 +111,8 @@ public class TaulesActivity extends AppCompatActivity {
                 try {
                     //Replace below IP with the IP of that device in which server socket open.
                     //If you change port then change the port number in the server side code also.
-                    //Socket s = new Socket("192.168.1.35", 9876);
-                    Socket s = new Socket("10.132.0.116", 9876);
+
+                    Socket s = new Socket(IP_SERVER, 9876);
 
                     ObjectOutputStream out = new ObjectOutputStream(s.getOutputStream());
                     out.writeObject(msgCod);
@@ -174,28 +176,38 @@ public class TaulesActivity extends AppCompatActivity {
 
     }
 
-    public void mostrarDialeg(String msgCod, List<NMTaula> mTaules, int filaSeleccionada) {
+    public void mostrarDialeg(String msgCod, List<NMTaula> mTaules, int filaSeleccionada, String msg) {
         clicaTaula = true;
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage("Segur que vols eliminar la comanda?");
+        builder.setMessage(msg);
         builder.setCancelable(true);
 
-        builder.setPositiveButton("Si", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
+        if(msg.equals("Segur que vols eliminar la comanda?")) {
+            builder.setPositiveButton("Si", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
 
-                dialog.cancel();
-                eliminaComanda(msgCod,mTaules,filaSeleccionada);
-            }
-        });
-        builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                dialog.cancel();
+                    dialog.cancel();
+                    eliminaComanda(msgCod, mTaules, filaSeleccionada);
+                }
+            });
+            builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.cancel();
 
-            }
-        });
+                }
+            });
+        }else{
+            builder.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
 
+                    dialog.cancel();
+
+                }
+            });
+        }
         AlertDialog a = builder.create();
         a.show();
 
@@ -203,7 +215,14 @@ public class TaulesActivity extends AppCompatActivity {
 
     public void onLongTaulaSelected(String msgCod, List<NMTaula> mTaules, int filaSeleccionada) {
         clicaTaula = true;
-        mostrarDialeg(msgCod,mTaules,filaSeleccionada);
+        try {
+            NMTaula t = mTaules.get(filaSeleccionada);
+            if (t.getNMComanda().getNMCambrer().getNom().equals(cambrer.getNom())) {
+                mostrarDialeg(msgCod, mTaules, filaSeleccionada, "Segur que vols eliminar la comanda?");
+            } else {
+                mostrarDialeg(null, null, -1, "No pots eliminar la comanda d'un altre cambrer");
+            }
+        }catch (Exception e){}
 
     }
 
@@ -220,8 +239,8 @@ public class TaulesActivity extends AppCompatActivity {
                     try {
                         //Replace below IP with the IP of that device in which server socket open.
                         //If you change port then change the port number in the server side code also.
-                        //Socket s = new Socket("192.168.1.35", 9876);
-                        Socket s = new Socket("10.132.0.116", 9876);
+
+                        Socket s = new Socket(IP_SERVER, 9876);
 
                         ObjectOutputStream out = new ObjectOutputStream(s.getOutputStream());
                         out.writeObject(msgCod);

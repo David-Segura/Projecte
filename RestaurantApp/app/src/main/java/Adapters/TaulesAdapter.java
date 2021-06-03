@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
@@ -74,9 +75,14 @@ public class TaulesAdapter extends RecyclerView.Adapter<TaulesAdapter.ViewHolder
 
         Log.d("XXX","t.cambrer: " + t.getNMComanda().getNMCambrer().toString());
         Log.d("XXX","cambrer: " + mCambrer.toString());
+        Log.d("ZZZ",t.getNMComanda().toString());
         if(t.getNMComanda().getNMCambrer().getCodi() == mCambrer.getCodi()){
             Log.d("XXX","taula del cambrer");
             holder.layout.setBackgroundColor(Color.CYAN);
+        }else if(t.getNMComanda().getCodi() == 0){
+            holder.layout.setBackgroundColor(Color.WHITE);
+        }else{
+            holder.layout.setBackgroundColor(Color.LTGRAY);
         }
     }
 
@@ -88,7 +94,7 @@ public class TaulesAdapter extends RecyclerView.Adapter<TaulesAdapter.ViewHolder
     public class ViewHolder extends RecyclerView.ViewHolder {
         public TextView txvNumTaula;
         public TextView txvNomCambrer;
-        public SeekBar skbProgresCuina;
+        public ProgressBar skbProgresCuina;
         public ImageView imvFrame;
         int filaSeleccionada;
         public ConstraintLayout layout;

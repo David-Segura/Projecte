@@ -9,4 +9,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="main_color">#FF3D3938</color>
     <color name="bck_color">#FFD4D4D4</color>
+    <color name="red">#FF0000</color>
+    <color name="green">#00FF00</color>
 </resources>

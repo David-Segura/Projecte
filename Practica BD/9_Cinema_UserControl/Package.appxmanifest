@@ -3,7 +3,7 @@
   <Identity Name="2d4914af-19ce-4ec0-8c0d-ac2dc06a19b1" Publisher="CN=Usuari" Version="1.0.0.0" />
   <mp:PhoneIdentity PhoneProductId="2d4914af-19ce-4ec0-8c0d-ac2dc06a19b1" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
-    <DisplayName>9_Cinema_UserControl</DisplayName>
+    <DisplayName>RestaurantUWP</DisplayName>
     <PublisherDisplayName>Usuari</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
