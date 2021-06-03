@@ -24,6 +24,8 @@ import java.sql.PreparedStatement;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Properties;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -43,6 +45,9 @@ import javax.swing.JTable;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.ScrollPaneLayout;
+import javax.swing.SwingUtilities;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.WindowConstants;
 import javax.swing.border.Border;
 import javax.swing.border.TitledBorder;
@@ -97,6 +102,20 @@ public class GestioEscandalls {
         //f.setResizable(false); 
         f.setLocation(10,300); 
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
+//        try {
+//            UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
+//        } catch (ClassNotFoundException ex) {
+//            //Logger.getLogger(GestioEscandalls.class.getName()).log(Level.SEVERE, null, ex);
+//        } catch (InstantiationException ex) {
+//            //Logger.getLogger(GestioEscandalls.class.getName()).log(Level.SEVERE, null, ex);
+//        } catch (IllegalAccessException ex) {
+//            //Logger.getLogger(GestioEscandalls.class.getName()).log(Level.SEVERE, null, ex);
+//        } catch (UnsupportedLookAndFeelException ex) {
+//            //Logger.getLogger(GestioEscandalls.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//                // Per que el nou Look  and Feel activat es visualitzi cal:
+//                SwingUtilities.updateComponentTreeUI(f);
     }
     
     
@@ -578,7 +597,6 @@ public class GestioEscandalls {
     
     private static class GestioFiles implements ListSelectionListener
     {
-
         @Override
         public void valueChanged(ListSelectionEvent e) {
                 if (e.getValueIsAdjusting())
@@ -595,6 +613,8 @@ public class GestioEscandalls {
                     prepararSubfinestra(p);
                     subfinestra.setVisible(true);
                     //System.out.println(le.toString());
+                    
+                    taula.setSelectionMode(-1);
                 }
         }
         
@@ -603,7 +623,7 @@ public class GestioEscandalls {
     private static java.util.List<Plat> buscaPlatFiltreAmbDisponibilitat(){
         Query q = em.createNamedQuery("trobaPlatsPerCategoriaIDisponibilitat");
         int idx = cboCat.getSelectedIndex();
-        q.setParameter("idCategoria", idx +1);
+        q.setParameter("idCategoria", idx); 
         boolean disponible = btnSi.isSelected();
         q.setParameter("disponible",disponible );
         java.util.List<Plat> llp = q.getResultList();

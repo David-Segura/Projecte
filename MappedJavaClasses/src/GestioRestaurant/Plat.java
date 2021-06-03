@@ -34,7 +34,7 @@ import javax.persistence.Table;
     @NamedQuery(name = "trobaPlatsPerNom",
            query = "select p from Plat p where p.nom = :nom"),
     @NamedQuery(name = "trobaPlatsPerCategoriaIDisponibilitat",
-            query = "select p from Plat p where p.categoria.codi = :idCategoria and p.disponible = :disponible"),
+            query = "select p from Plat p where (p.categoria.codi = :idCategoria or :idCategoria = 0) and p.disponible = :disponible"),
     @NamedQuery(name = "trobaPlatsPerCategoria",
             query = "select p from Plat p where p.categoria.codi = :idCategoria or :idCategoria = 0"),
     
