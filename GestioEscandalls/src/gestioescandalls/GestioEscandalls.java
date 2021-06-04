@@ -103,19 +103,7 @@ public class GestioEscandalls {
         f.setLocation(10,300); 
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
-//        try {
-//            UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
-//        } catch (ClassNotFoundException ex) {
-//            //Logger.getLogger(GestioEscandalls.class.getName()).log(Level.SEVERE, null, ex);
-//        } catch (InstantiationException ex) {
-//            //Logger.getLogger(GestioEscandalls.class.getName()).log(Level.SEVERE, null, ex);
-//        } catch (IllegalAccessException ex) {
-//            //Logger.getLogger(GestioEscandalls.class.getName()).log(Level.SEVERE, null, ex);
-//        } catch (UnsupportedLookAndFeelException ex) {
-//            //Logger.getLogger(GestioEscandalls.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-//                // Per que el nou Look  and Feel activat es visualitzi cal:
-//                SwingUtilities.updateComponentTreeUI(f);
+
     }
     
     
@@ -128,7 +116,7 @@ public class GestioEscandalls {
         // el true és per bloquejar l'accés a altres finestres mentre aquesta està activa
         // afegir elements
         
-        //subfinestra.setLayout(layout1);
+        
         JPanel pa0 = new JPanel(); // FlowLayout
         pa0.setLayout(new BoxLayout(pa0, BoxLayout.Y_AXIS));
         JPanel pa1 = new JPanel(); // FlowLayout
@@ -136,7 +124,6 @@ public class GestioEscandalls {
         JPanel pa3 = new JPanel(); // FlowLayout
         JPanel pa4 = new JPanel(); // FlowLayout
         JPanel pa5 = new JPanel(); // FlowLayout
-//        pa5.setLayout(new FlowLayout(FlowLayout.CENTER));
         JPanel pa6 = new JPanel(); // FlowLayout
         
         
@@ -172,8 +159,7 @@ public class GestioEscandalls {
 
         pa5.add(header);
         pa5.add(taulaEscandall);
-         //pa5.add(taulaEscandall);
-        
+               
         pa6.add(add);
         pa6.add(delete);
         pa0.add(pa1);
@@ -209,9 +195,7 @@ public class GestioEscandalls {
             matriuInfo[i][1] = le.getQuantitat()+"";
             matriuInfo[i][2] = le.getUnitat().getNom()+"";
             matriuInfo[i][3] = le.getIngredient().getNom()+"";
-//            matriuInfo[i][0] = p.getNom(); // TODO GET FOTO
-//            matriuInfo[i][3] = p.isDisponible()+"";
-//            matriuInfo[i][4] = p.getCategoria()+"";
+
         }
         return matriuInfo;
     }
@@ -280,8 +264,7 @@ public class GestioEscandalls {
         disponible.add(btnTots);
         
         esq.add(disponible);
-        //esq.add(pCognom);
-        //esq.add(pEdat);
+        
         
         f.add(esq,BorderLayout.WEST);
         
@@ -290,9 +273,7 @@ public class GestioEscandalls {
         btnCerca.setText("Cercar");
         btnCerca.addActionListener(new GestioBotons());
         centre.add(btnCerca);
-//        centre.add(remove);
-//        centre.add(edit);
-        
+
         
         f.add(centre);
         
@@ -344,8 +325,6 @@ public class GestioEscandalls {
             matriuInfo[i][3] = p.getCategoria().getColor()+"";
             matriuInfo[i][4] = p.getDisponible()+"";
             
-//            matriuInfo[i][3] = p.isDisponible()+"";
-//            matriuInfo[i][4] = p.getCategoria()+"";
         }
         return matriuInfo;
     }
@@ -433,14 +412,12 @@ public class GestioEscandalls {
         @Override
         public void actionPerformed(ActionEvent e) {
             String boto = e.getActionCommand();
-            System.out.println("Boto premut: "+boto);
             int fila;
             switch(boto){
                 case "Cercar":
                 if(btnTots.isSelected()){
                     llp = buscaPlatFiltreCategoria();
-                    //obtenirMatriu();
-                    //construirTaula();
+
                     
                     String matriuInfo[][] = new String[llp.size()][columnes.length +2];
 
@@ -453,8 +430,7 @@ public class GestioEscandalls {
                         matriuInfo[i][3] = p.getCategoria().getColor()+"";
                         matriuInfo[i][4] = p.getDisponible()+"";
 
-            //            matriuInfo[i][3] = p.isDisponible()+"";
-            //            matriuInfo[i][4] = p.getCategoria()+"";
+           
                     }
         
         
@@ -488,8 +464,7 @@ public class GestioEscandalls {
 
 
                     llp = buscaPlatFiltreAmbDisponibilitat();
-                    //obtenirMatriu();
-                    //construirTaula();
+                    
                     
                     String matriuInfo[][] = new String[llp.size()][columnes.length +2];
 
@@ -502,8 +477,7 @@ public class GestioEscandalls {
                         matriuInfo[i][3] = p.getCategoria().getColor()+"";
                         matriuInfo[i][4] = p.getDisponible()+"";
 
-            //            matriuInfo[i][3] = p.isDisponible()+"";
-            //            matriuInfo[i][4] = p.getCategoria()+"";
+            
                     }
         
         
@@ -549,7 +523,7 @@ public class GestioEscandalls {
                     String iNom = (String) cboIng.getSelectedItem();
                     q2.setParameter("nom", iNom);
                     Ingredient i = (Ingredient) q2.getSingleResult();
-                    //Query q3 = em.createNamedQuery("maxLiniaxPlatId");
+                    
                     Query q3 = em.createQuery("select max(num) from Linea_Escandall where plat = :idPlat");
                     q3.setParameter("idPlat", platSeleccionat.getCodi());
                    
@@ -570,10 +544,6 @@ public class GestioEscandalls {
                     modelEscandall.addRow(new Object[]{lin,qtat,u.getNom(),i.getNom()});
                     modelEscandall.fireTableDataChanged();
                     
-                
-//                String insert = "Insert into Linea_Comanda values("+ platSeleccionat.getCodi()+", "+lin+", "+qtat+", "+u.getCodi()+", "+i.getCodi() +" )";
-//                Query q4 = em.createQuery(insert);
-//                q4.executeUpdate();
                 break;
                 case "Eliminar":
                     fila = taulaEscandall.getSelectedRow();
@@ -591,7 +561,7 @@ public class GestioEscandalls {
                         em.getTransaction().begin();
                         em.flush();
                         em.getTransaction().commit();
-                        //modelEscandall.fireTableDataChanged();
+                      
                     } 
                     
                     break;
@@ -621,7 +591,7 @@ public class GestioEscandalls {
                     
                     prepararSubfinestra(p);
                     subfinestra.setVisible(true);
-                    //System.out.println(le.toString());
+                 
                     
                     taula.setSelectionMode(-1);
                 }
@@ -702,7 +672,7 @@ public class GestioEscandalls {
                       
                     
                     
-                    //System.out.println(p.toString());
+                   
                 }
                 
               Query q2 = em.createNamedQuery("trobaCategories");
@@ -712,12 +682,7 @@ public class GestioEscandalls {
                 llc.add(new Categoria(0,"Tots",0));
                 for(Categoria c : lll){
                     llc.add(c);
-                    
-                    
                       
-                    
-                    
-                    //System.out.println(c.toString());
                 }
                 
                 

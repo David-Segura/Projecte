@@ -13,6 +13,55 @@
         android:layout_weight="1"
         android:orientation="vertical">
 
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:text="Qtat"
+                android:textColor="@color/black"
+                android:fontFamily="sans-serif-light"></TextView>
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Plat"
+                android:textColor="@color/black"
+                android:fontFamily="sans-serif-light"
+                android:layout_marginLeft="60dp"
+                ></TextView>
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="€/Unitat"
+                android:textColor="@color/black"
+                android:fontFamily="sans-serif-light"
+                android:layout_marginLeft="50dp"
+                ></TextView>
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total Linea"
+                android:textColor="@color/black"
+                android:fontFamily="sans-serif-light"
+                android:layout_marginLeft="20dp"
+                ></TextView>
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_marginTop="10dp"
+            android:id="@+id/rcyComanda"
+            android:layout_width="match_parent"
+            android:layout_height="255dp"
+            ></androidx.recyclerview.widget.RecyclerView>
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -35,13 +84,6 @@
                 android:layout_marginLeft="165dp"
                 ></TextView>
         </LinearLayout>
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:layout_marginTop="30dp"
-            android:id="@+id/rcyComanda"
-            android:layout_width="match_parent"
-            android:layout_height="255dp"
-            ></androidx.recyclerview.widget.RecyclerView>
         <Button
             android:id="@+id/btnConfirmar"
             android:layout_height="wrap_content"

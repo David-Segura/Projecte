@@ -25,7 +25,7 @@ import GestioRestaurant.NMComanda;
 import GestioRestaurant.NMTaula;
 
 public class TaulesActivity extends AppCompatActivity {
-    public static final String IP_SERVER = "10.132.0.116";
+    public static final String IP_SERVER = "192.168.1.35";
     RecyclerView rcyTaules;
     private TaulesAdapter mAdapter;
     List<NMTaula> lTaules = new ArrayList<>();

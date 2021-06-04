@@ -93,13 +93,7 @@ public class JavaServer {
     private static void trobaCambrer(String user){
         PreparedStatement ps = null;
         ResultSet rs = null;
-        try {
-            // Podem intentar establir connexió
-            //con = DriverManager.getConnection(url, usu, pwd);
-            
-           
-           
-               
+        try {   
             String consulta = "select c.codi as codi, c.nom as nom, c.cognom1, c.cognom2, c.user, c.password from cambrer c where c.user = ?";
            
             ps = con.prepareStatement(consulta);
@@ -154,26 +148,11 @@ public class JavaServer {
     }
     
     private static void trobaTotesLesTaules(){
-//        try {
-//            //        for (int i = 0; i < lt.size(); i++) {
-////           lt.remove(i);
-////            
-////        }
-//        con = DriverManager.getConnection(url,usu,pwd);
-//        } catch (SQLException ex) {
-//           System.out.println("Problemes en intentar la connexió");
-//            System.out.println("Més info: "+ex.getMessage());
-//        }
+
         lt.clear();
         PreparedStatement ps = null;
         ResultSet rs = null;
         try {
-            // Podem intentar establir connexió
-            //con = DriverManager.getConnection(url, usu, pwd);
-            
-           
-           
-               
             String consulta = "select t.numero, t.comanda as ccodi, c.taula,ca.codi as cacodi, ca.nom from taula t left join comanda c on t.comanda = c.codi "
                     + "left join cambrer ca on c.cambrer = ca.codi "
                     + "order by t.numero;";
@@ -203,8 +182,6 @@ public class JavaServer {
                 co.setCambrer(ca);
                
                 t.setComanda(co);
-                
-                //System.out.println(rs.getInt("codi"));
                 
                 lt.add(t);
             } 
@@ -247,21 +224,11 @@ public class JavaServer {
     
     private static void trobaTotsElsPlats(){
         
-//        try {
-//            con = DriverManager.getConnection(url,usu,pwd);
-//        } catch (SQLException ex) {
-//            System.out.println("Problemes en intentar la connexió");
-//            System.out.println("Més info: "+ex.getMessage());
-//        }
+
         PreparedStatement ps = null;
         ResultSet rs = null;
         try {
-            // Podem intentar establir connexió
-            //con = DriverManager.getConnection(url, usu, pwd);
-            
            
-           
-               
             String consulta = "select p.codi as pcodi, p.nom as pnom, p.descripcioMD, p.preu, p.foto, p.disponible, c.codi as ccodi, c.nom as cnom, c.color from plat p join categoria c on p.categoria = c.codi order by p.categoria, p.codi";
            
             ps = con.prepareStatement(consulta);
@@ -297,28 +264,18 @@ public class JavaServer {
     }
     
      private static void trobaMaxCodiComanda(){
-//        try {
-//            con = DriverManager.getConnection(url,usu,pwd);
-//        } catch (SQLException ex) {
-//            System.out.println("Problemes en intentar la connexió");
-//            System.out.println("Més info: "+ex.getMessage());
-//        }
+
         PreparedStatement ps = null;
         ResultSet rs = null;
         try {
-            // Podem intentar establir connexió
-            //con = DriverManager.getConnection(url, usu, pwd);
-            
            
-           
-               
             String consulta = "select max(codi) from comanda";
            
             ps = con.prepareStatement(consulta);
             
 
             rs = ps.executeQuery();
-            //maxCodiComanda++;
+          
            
             while (rs.next()) {
                 maxCodiComanda = rs.getInt(1);
@@ -337,12 +294,7 @@ public class JavaServer {
      
      
      private static void contLiniesComanda(int taula){
-//        try {
-//            con = DriverManager.getConnection(url,usu,pwd);
-//        } catch (SQLException ex) {
-//            System.out.println("Problemes en intentar la connexió");
-//            System.out.println("Més info: "+ex.getMessage());
-//        }
+
         PreparedStatement ps = null;
         ResultSet rs = null;
         try {
@@ -367,7 +319,7 @@ public class JavaServer {
             
 
             rs = ps.executeQuery();
-            //maxCodiComanda++;
+            
             
             while (rs.next()) {
                 liniesAcabades = rs.getInt(3);
@@ -381,7 +333,7 @@ public class JavaServer {
             
 
             rs = ps.executeQuery();
-            //maxCodiComanda++;
+            
             
             while (rs.next()) {
                 liniesPendents = rs.getInt(3);
@@ -407,8 +359,7 @@ public class JavaServer {
         //keep listens indefinitely until receives 'exit' call or program terminates
         while(true){
             System.out.println("Waiting for the client request");
-            //trobaTotesLesTaules();
-                    //System.out.println(lt.size());
+            
             //creating socket and waiting for client connection
             Socket socket = server.accept();
             //read from socket to ObjectInputStream object
@@ -440,11 +391,9 @@ public class JavaServer {
                          oos.writeObject(c);
                     break;
                 case "2":
-                    //if(lt.size()==0)
-                        trobaTotesLesTaules();
-                    /*for(int i = 0; i<lt.size();i++){
-                        System.out.println(lt.get(i).toString());
-                    }*/
+                    
+                    trobaTotesLesTaules();
+                    
                     resp=lt.size()+"";
                     oos.writeObject(resp);
                     
@@ -508,7 +457,7 @@ public class JavaServer {
                     }
                     break;
                 case "5":
-                    //trobaMaxCodiComanda();
+                    
                     NMCambrer cambrer = (NMCambrer) ois.readObject();
                     NMComanda comanda = (NMComanda) ois.readObject();
                     
@@ -539,15 +488,12 @@ public class JavaServer {
                     try {
                         con = DriverManager.getConnection(url, usu, pwd);
                        
-                        con.setAutoCommit(false);   // Per defecte, tota connexió JDBC és amb AutoCommit(true)
+                        con.setAutoCommit(false);  
 
                         Statement st = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,
                                 ResultSet.CONCUR_UPDATABLE);
                         ResultSet rs = st.executeQuery("select codi, data, taula, cambrer from comanda");
-                        // ATENCIÓ!!! Per a que un ResultSet sigui modificable, cal haver 
-                        //            creat el Statement adequadament i, a més,
-                        //            NO es pot fer "select * " i només sobre una taula!!!
-                       
+                        
                         rs.moveToInsertRow();
                         rs.updateInt("codi", comanda.getCodi());
                         rs.updateTimestamp("data", comanda.getData());
@@ -555,13 +501,10 @@ public class JavaServer {
                         rs.updateInt("cambrer", comanda.getCambrer().getCodi());
                        
                         rs.insertRow();
-                           
-                            //System.out.println("Inserit la linea de comanda " + lc.getComanda().getCodi() + "? " + rs.rowInserted());
                         
                                                 
                         con.commit();
-            //          ATENCIÓ: Els drivers JDBC no sempre implementen els mètodes rowInserted,
-            //          rowUpdated i rowDeleted
+            
                     } catch (SQLException sqle) {
                         sqle.printStackTrace();
                         try {
@@ -591,10 +534,7 @@ public class JavaServer {
                         Statement st = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,
                                 ResultSet.CONCUR_UPDATABLE);
                         ResultSet rs = st.executeQuery("select comanda, num, quantitat, item, acabat from linea_comanda");
-                        // ATENCIÓ!!! Per a que un ResultSet sigui modificable, cal haver 
-                        //            creat el Statement adequadament i, a més,
-                        //            NO es pot fer "select * " i només sobre una taula!!!
-
+                        
                        
                         
                         for (int i = 0; i < llc.size(); i++) {
@@ -612,8 +552,7 @@ public class JavaServer {
                         }
                                                 
                         con.commit();
-            //          ATENCIÓ: Els drivers JDBC no sempre implementen els mètodes rowInserted,
-            //          rowUpdated i rowDeleted
+           
                     } catch (SQLException sqle) {
                         sqle.printStackTrace();
                         try {
@@ -631,7 +570,7 @@ public class JavaServer {
                             sqle.printStackTrace();
                         }
                     }
-                    PreparedStatement ps = null;
+                    
                     try {
                         con = DriverManager.getConnection(url, usu, pwd);
                         
@@ -640,26 +579,16 @@ public class JavaServer {
                         Statement st = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,
                                 ResultSet.CONCUR_UPDATABLE);
                         ResultSet rs = st.executeQuery("select numero, comanda from taula where numero = "+taula.getNumero());
-                        // ATENCIÓ!!! Per a que un ResultSet sigui modificable, cal haver 
-                        //            creat el Statement adequadament i, a més,
-                        //            NO es pot fer "select * " i només sobre una taula!!!
-
-                       
+                        
                         
                         while (rs.next()) {
-                            // Mostrem el departament recuperat
                            
-                            // Modifiquem el nom (i altres columnes si interessés
                             rs.updateInt("comanda", comanda.getCodi());
                             rs.updateRow();
-                            // Tornem a mostrar el departament
-                           
-                            
                         }
                                                 
                         con.commit();
-            //          ATENCIÓ: Els drivers JDBC no sempre implementen els mètodes rowInserted,
-            //          rowUpdated i rowDeleted
+          
                     } catch (SQLException sqle) {
                         sqle.printStackTrace();
                         try {
@@ -690,10 +619,7 @@ public class JavaServer {
             }
             
             
-            //create ObjectOutputStream object
             
-            //write object to Socket
-            //oos.writeObject("Hi Client "+message);
             
             //close resources
             ois.close();
@@ -708,12 +634,7 @@ public class JavaServer {
     }
 
     private static void esborraComanda(NMTaula t) {
-//        try {
-//            con = DriverManager.getConnection(url,usu,pwd);
-//        } catch (SQLException ex) {
-//            System.out.println("Problemes en intentar la connexió");
-//            System.out.println("Més info: "+ex.getMessage());
-//        }
+
         PreparedStatement ps = null;
         ResultSet rs = null;
         try {
@@ -732,12 +653,7 @@ public class JavaServer {
     }
 
     private static void buscaLinies(int codiComanda) {
-//        try {
-//            con = DriverManager.getConnection(url,usu,pwd);
-//        } catch (SQLException ex) {
-//            System.out.println("Problemes en intentar la connexió");
-//            System.out.println("Més info: "+ex.getMessage());
-//        }
+
         PreparedStatement ps = null;
         ResultSet rs = null;
         try {
@@ -747,7 +663,6 @@ public class JavaServer {
             
 
             rs = ps.executeQuery();
-            //maxCodiComanda++;
             llc = new ArrayList<>();
             while (rs.next()) {
                 NMLineaComanda lc = new NMLineaComanda();
